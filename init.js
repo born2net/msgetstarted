@@ -1,10 +1,10 @@
 /**
- Require js initialization module definition file for StudioLite
+ Require js initialization module definition file for GetStarted
  @class Require init js
  **/
 require.config({
     waitSeconds: 25,
-    baseUrl: '/boilerplate/public/',
+    baseUrl: '/msgetstarted',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',
