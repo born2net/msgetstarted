@@ -1,5 +1,5 @@
 /**
- Application router and layout router responsible for kick starting the application as
+ App router and layout router responsible for kick starting the application as
  well as management for sizing events
  @class LayoutRouter
  @constructor
