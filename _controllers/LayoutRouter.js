@@ -12,7 +12,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
         BB.SERVICES.APP_CONTENT_EVERNODES_FADER_VIEW = 'AppContentEverNodesFaderView';
 
-
         /**
          Event fired when app resized
          @event APP_SIZED
