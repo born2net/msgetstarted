@@ -4,6 +4,18 @@ Elements.WAITS_SCREEN_ENTRY_APP = '#waitScreenEntryApp';
 Elements.APP_LOGIN = '#appLogin';
 Elements.APP_LOGOUT = '#appLogout';
 Elements.APP_SELECTOR = '#appSelector';
+
+Elements.SIGNAGE_PLAYER_VIEW = '#signagePlayerView';
+Elements.CREATE_ACCOUNT_VIEW = '#createAccountView';
+Elements.RENAME_VIEW = '#renameView';
+Elements.CHANGE_PASS_VIEW = '#changePassView';
+Elements.FORGET_PASS_VIEW = '#forgetPassView';
+Elements.STUDIO_SELECT_VIEW = '#studioSelectView';
+Elements.STUDIO_LITE_VIEW = '#studioLiteView';
+Elements.STUDIO_PRO_VIEW = '#studioProView';
+Elements.ACCOUNT_VIEW = '#accountView';
+Elements.WEB_DESK_SELECT_VIEW = '#webDeskSelectView';
+
 Elements.FILE_MENU = '#fileMenu';
 Elements.SAVE_CONFIG = '#saveConfig';
 Elements.LIVE_CHAT = '#liveChat';

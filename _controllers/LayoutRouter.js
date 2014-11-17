@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccountView', 'RenameView', 'ChangePassView', 'ForgetPassView', 'StudioSelectView', 'StudioLiteView', 'StudioProView', 'AccountView', 'WebDeskSelectView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccountView, RenameView, ChangePassView, ForgetPassView, StudioSelectView, StudioLiteView, StudioProView, AccountView, WebDeskSelectView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -85,7 +85,14 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              @method authenticating
              **/
             _routeUnauthenticated: function () {
-                this.m_appEntryFaderView.selectView(this.m_loginView);
+                var self = this;
+                // this.m_appEntryFaderView.selectView(this.m_loginView);
+                // this.m_appEntryFaderView.selectView(this.m_signagePlayerView);
+                this.m_appEntryFaderView.selectView(this.m_studioLiteView);
+
+                setTimeout(function(){
+                    self.m_appEntryFaderView.selectView(self.m_signagePlayerView);
+                },2000)
             },
 
             /**
@@ -205,6 +212,46 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.APP_LOGIN
                 });
 
+                this.m_signagePlayerView = new SignagePlayerView({
+                    el: Elements.SIGNAGE_PLAYER_VIEW
+                });
+
+                this.m_createAccountView = new CreateAccountView({
+                    el: Elements.CREATE_ACCOUNT_VIEW
+                });
+
+                this.m_renameView = new RenameView({
+                    el: Elements.RENAME_VIEW
+                });
+
+                this.m_changePassView = new ChangePassView({
+                    el: Elements.CHANGE_PASS_VIEW
+                });
+
+                this.m_forgetPassView = new ForgetPassView({
+                    el: Elements.FORGET_PASS_VIEW
+                });
+
+                this.m_studioSelectView = new StudioSelectView({
+                    el: Elements.STUDIO_SELECT_VIEW
+                });
+
+                this.m_studioLiteView = new StudioLiteView({
+                    el: Elements.STUDIO_LITE_VIEW
+                });
+
+                this.m_studioProView = new StudioProView({
+                    el: Elements.STUDIO_PRO_VIEW
+                });
+
+                this.m_accountView = new AccountView({
+                    el: Elements.ACCOUNT_VIEW
+                });
+
+                this.m_webDeskSelectView = new WebDeskSelectView({
+                    el: Elements.WEB_DESK_SELECT_VIEW
+                });
+
                 this.m_mainAppWaitView = new WaitView({
                     el: Elements.WAITS_SCREEN_ENTRY_APP
                 });
@@ -214,6 +261,16 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 });
 
                 this.m_appEntryFaderView.addView(this.m_appSelectorView);
+                this.m_appEntryFaderView.addView(this.m_signagePlayerView);
+                this.m_appEntryFaderView.addView(this.m_createAccountView);
+                this.m_appEntryFaderView.addView(this.m_renameView);
+                this.m_appEntryFaderView.addView(this.m_changePassView);
+                this.m_appEntryFaderView.addView(this.m_forgetPassView);
+                this.m_appEntryFaderView.addView(this.m_studioSelectView);
+                this.m_appEntryFaderView.addView(this.m_studioLiteView);
+                this.m_appEntryFaderView.addView(this.m_studioProView);
+                this.m_appEntryFaderView.addView(this.m_accountView);
+                this.m_appEntryFaderView.addView(this.m_webDeskSelectView);
                 this.m_appEntryFaderView.addView(this.m_loginView);
                 this.m_appEntryFaderView.addView(this.m_logoutView);
                 this.m_appEntryFaderView.addView(this.m_appContentMailWaspFaderView);
