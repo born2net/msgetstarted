@@ -57,7 +57,7 @@
  * If the input length is not a multiple of 4, or contains invalid characters
  *   then an exception is thrown.
  */
- 
+
 jQuery.base64 = ( function( $ ) {
   
   var _PADCHAR = "=",

@@ -10,6 +10,33 @@ body {
     background-color: #ffffff;
 }
 
+.btn {
+    font-size: 12px;
+}
+
+* {
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+i.fa {
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: 'Jolly Lodger';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Jolly Lodger'), local('JollyLodger'), url(https://themes.googleusercontent.com/static/fonts/jollylodger/v1/RX8HnkBgaEKQSHQyP9itiaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Lobster Two';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Lobster Two'), local('LobsterTwo'), url(https://themes.googleusercontent.com/static/fonts/lobstertwo/v5/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+
 a {
     text-decoration: none !important;
 }
@@ -102,15 +129,6 @@ aside > aside > div > ul > li {
     height: auto;
     margin: 0 auto -60px; /* respective of footer */
     padding: 0 0 60px; /* respective of footer */
-}
-
-#appHeaderName {
-    float: left;
-    color: #428AC9;
-    font-size: 10px;
-    position: relative;
-    top: 31px;
-    left: -40px;
 }
 
 /* Wrapper to push down from header */

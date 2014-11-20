@@ -86,13 +86,15 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              **/
             _routeUnauthenticated: function () {
                 var self = this;
-                // this.m_appEntryFaderView.selectView(this.m_loginView);
-                // this.m_appEntryFaderView.selectView(this.m_signagePlayerView);
+                self.m_appEntryFaderView.selectView(this.m_loginView);
+                /*
+                this.m_appEntryFaderView.selectView(this.m_signagePlayerView);
                 this.m_appEntryFaderView.selectView(this.m_studioLiteView);
 
                 setTimeout(function(){
                     self.m_appEntryFaderView.selectView(self.m_signagePlayerView);
                 },2000)
+                */
             },
 
             /**

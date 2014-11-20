@@ -5,20 +5,11 @@
  @constructor
  @return {Object} instantiated App
  **/
-define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'socketio'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, socketio) {
+define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect) {
     var App = Backbone.Controller.extend({
 
         // app init
         initialize: function () {
-
-            /*
-            // sample socket connection
-            var socket = socketio.connect('https://secure.digitalsignage.com:442');
-            socket.on('news', function (data) {
-                console.log(data.hello);
-                socket.emit('my other event', { my: 'data' });
-            });
-            */
 
             window.BB = Backbone;
             BB.globs = {};
@@ -26,24 +17,34 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.EVENTS = {};
             BB.LOADING = {};
             BB.CONSTS = {};
+            BB.FLASH = false;
             BB.globs['UNIQUE_COUNTER'] = 0;
             BB.globs['RC4KEY'] = '226a3a42f34ddd778ed2c3ba56644315';
             BB.lib = new Lib();
+            BB.Pepper = new Pepper();
+            _.extend(BB.Pepper, BB.comBroker);
             BB.lib.addBackboneViewOptions();
             BB.comBroker = new ComBroker();
             BB.comBroker.name = 'AppBroker';
             window.log = BB.lib.log;
+            window.pepper = BB.Pepper;
 
             // define applications
 
             BB.CONSTS.MAILWASP = 'mailWasp';
             BB.CONSTS.EVERNODES = 'everNodes';
 
-            // internationalization
+            /*
             require(['localizer'], function () {
                 var lang = "en";
-                var opts = { language: lang, pathPrefix: "./_lang" };
+                var opts = {language: lang, pathPrefix: "./_lang"};
                 $("[data-localize]").localize("local", opts);
+            });
+            */
+
+            // localization
+            require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
+                new LanguageSelectorView({appendTo: Elements.LANGUAGE_SELECTION_LOGIN});
             });
 
             // router init
@@ -52,7 +53,9 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 BB.history.start();
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);
                 LayoutRouter.navigate('authenticate/_/_', {trigger: true});
-            })
+            });
+            if (!FlashDetect.installed || !FlashDetect.versionAtLeast(13))
+                BB.FLASH = true;
         }
     });
     return App;

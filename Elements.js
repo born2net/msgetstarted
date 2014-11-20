@@ -71,7 +71,6 @@ Elements.SCREEN_LAYOUT_LIST = '#screenLayoutList';
 Elements.NEXT = '#next';
 Elements.PREVIOUS = '#prev';
 Elements.BUISINESS_ID = '#buisinessID';
-Elements.APP_HEADER_NAME = '#appHeaderName';
 Elements.RESOURCE_LIB_LIST_WRAP = '#resourceLibListWrap';
 Elements.NEW_CAMPAIGN = '#newCampaign';
 Elements.NEW_CAMPAIGN_WASP = '#newCampaignWasp';
@@ -96,6 +95,7 @@ Elements.SUBSCRIBE_ACCOUNT = '#subscribeAccount';
 Elements.STATION_ALERT = '#stationAlert';
 Elements.LANGUAGE_SELECTION_LOGIN = '#languageSelectionLogin';
 Elements.LANGUAGE_PROMPT = '#languagePrompt';
+Elements.TEMPLATE_LANGUAGE_SELECTOR = '#languageSelector';
 
 // messages
 Elements.MSG_BOOTBOX_SAVE_REMOTE_SRV = '#bootBoxSaveRemoteSrv';

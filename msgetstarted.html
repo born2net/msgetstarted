@@ -13,6 +13,7 @@
     <link href="style.css" rel="stylesheet">
     <script data-main="init" src="_common/_js/requirejs/require.js" type="text/javascript"></script>
 
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -28,7 +29,6 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
                     class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-
             <div class="logo_holder">
                 <div id="logo">
                     <a href="../index.html"><img src="../_images/logo.png" width="60" height="39" alt="logo" /></a>
@@ -38,15 +38,7 @@
                         <p><span>FREE</span> Digital Signage for everyone</p></a>
                 </div>
             </div>
-
-            <!--
-            <a id="appLogoText" class="navbar-brand" href="#">DigitalSignage.com</a>
-            <div style="color: #ffffff; position: relative; top: -4px; left: -55px">
-                <span>FREE</span> Digital Signage for everyone</p>
-            </div>
-            -->
-
-            <span id="appHeaderName"></span></div>
+        </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li id="commonFileMenu" class="hidden-lg" dropdown><a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigatior<b class="caret"></b></a>
@@ -67,17 +59,17 @@
                     style="font-size: 2em; position: relative; top: -5px; padding-left: 5px" data-localize="studioLite">StudioLite Login</span>
 
                 <h2 class="form-signin-heading"></h2>
-                <input id="userName" type="text" class="form-control" data-localize="username"
-                       placeholder="Type anything"
-                       required autofocus>
-                <input id="userPass" type="password" class="form-control" data-localize="password"
-                       placeholder="Type anything"
+                <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required
+                       autofocus>
+                <input id="userPass" type="password" class="form-control" data-localize="password" placeholder="Password"
                        required>
                 <label class="checkbox">
                     <input id="rememberMe" type="checkbox" checked value="remember-me">
                     <span data-localize="rememberMe"> Remember me </span></label>
-                <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
-                    Sign in
+                <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Sign in
+                </button>
+                <button id="createAccountButton" class="btn btn-lg btn-default btn-block" data-localize="createAccount">or
+                    create new account
                 </button>
                 <hr class="hrThin"/>
                 <div id="languageSelectionLogin"></div>
@@ -177,18 +169,104 @@
     <h1 data-localize="aboutUs">StackView Rocks, this is a sample StackView Popup</h1>
     <button type="button" class="btn btn-primary modal_close" data-dismiss="modal" data-localize="colse">Close</button>
 </div>
+
+
+<!-- Language selection template -->
+
 <div id="languageSelector" class="dropdownlang" style="display: none">
     <dt><a href="#"><span>Select language</span></a></dt>
     <dd>
         <ul>
-            <li><a href="#"><img class="flag" src="_assets/flags/il.png" alt=""/>Israel<span class="value">he</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/us.png" alt=""/>United States<span
+            <li><a href="#"><img class="flag" src="_assets/flags/en.png" alt=""/>English<span
                     class="value">en</span></a></li>
+            <hr/>
+            <li><a href="#"><img class="flag" src="_assets/flags/ar.png" alt=""/>Arabic<span class="value">ar</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/bg.png" alt=""/>Bulgarian<span class="value">bg</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/sq.png" alt=""/>Albanian<span
+                    class="value">sq</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/ca.png" alt=""/>Catalan<span
+                    class="value">ca</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/zh.png" alt=""/>Chinese Simplified<span class="value">zh</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/hr.png" alt=""/>Croatian<span
+                    class="value">hr</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/cs.png" alt=""/>Czech<span class="value">cs</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/da.png" alt=""/>Danish<span class="value">da</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/nl.png" alt=""/>Dutch<span class="value">nl</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/en.png" alt=""/>English<span
+                    class="value">en</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/et.png" alt=""/>Estonian<span
+                    class="value">et</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/tl.png" alt=""/>Filipino<span
+                    class="value">tl</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/fi.png" alt=""/>Finnish<span
+                    class="value">fi</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/fr.png" alt=""/>French<span class="value">fr</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/gl.png" alt=""/>Galician<span
+                    class="value">gl</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/de.png" alt=""/>German<span class="value">de</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/el.png" alt=""/>Greek<span class="value">el</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/iw.png" alt=""/>Hebrew<span class="value">iw</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/hi.png" alt=""/>Hindi<span class="value">hi</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/hu.png" alt=""/>Hungarian<span class="value">hu</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/id.png" alt=""/>Indonesian<span class="value">id</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/it.png" alt=""/>Italian<span
+                    class="value">it</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/ja.png" alt=""/>Japanese<span
+                    class="value">ja</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/ko.png" alt=""/>Korean<span class="value">ko</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/lv.png" alt=""/>Latvian<span
+                    class="value">lv</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/lt.png" alt=""/>Lithuanian<span class="value">lt</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/mt.png" alt=""/>Maltese<span
+                    class="value">mt</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/no.png" alt=""/>Norwegian<span class="value">no</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/pl.png" alt=""/>Polish<span class="value">pl</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/pt.png" alt=""/>Portuguese<span class="value">pt</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/ro.png" alt=""/>Romanian<span
+                    class="value">ro</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/ru.png" alt=""/>Russian<span
+                    class="value">ru</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/sr.png" alt=""/>Serbian<span
+                    class="value">sr</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/sk.png" alt=""/>Slovak<span class="value">sk</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/sl.png" alt=""/>Slovenian<span class="value">sl</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/es.png" alt=""/>Spanish<span
+                    class="value">es</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/sv.png" alt=""/>Swedish<span
+                    class="value">sv</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/th.png" alt=""/>Thai<span class="value">th</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/tr.png" alt=""/>Turkish<span
+                    class="value">tr</span></a></li>
+            <li><a href="#"><img class="flag" src="_assets/flags/uk.png" alt=""/>Ukrainian<span class="value">uk</span></a>
+            </li>
+            <li><a href="#"><img class="flag" src="_assets/flags/vi.png" alt=""/>Vietnamese<span class="value">vi</span></a>
+            </li>
         </ul>
     </dd>
-    <small>Let us know if you wish to help us add your native language</small>
 </div>
+
+
 <div id="stackWaitModalView" style="display: none"></div>
 
 <!-- Messages used for bootbox and localization inside bootbox -->
