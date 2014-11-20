@@ -15,6 +15,8 @@ define(['jquery', 'backbone', 'StackView'], function ($, Backbone, StackView) {
          @method initialize
          **/
         initialize: function () {
+            var self = this;
+            BB.comBroker.setService(BB.SERVICES['APP_ENTRY_FADER_VIEW'], self);
             Backbone.StackView.ViewPort.prototype.initialize.call(this);
         }
     });

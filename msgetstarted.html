@@ -55,21 +55,27 @@
     <div id="appEntry">
         <div id="appLogin" style="display: none">
             <form class="form-signin" role="form">
-                <span style="font-size: 2em; color: #428bca" class="glyphicon glyphicon-cloud"></span> <span
-                    style="font-size: 2em; position: relative; top: -5px; padding-left: 5px" data-localize="studioLite">StudioLite Login</span>
-
+                <br/>
+                <br/>
                 <h2 class="form-signin-heading"></h2>
-                <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required
-                       autofocus>
-                <input id="userPass" type="password" class="form-control" data-localize="password" placeholder="Password"
-                       required>
-                <label class="checkbox">
-                    <input id="rememberMe" type="checkbox" checked value="remember-me">
+                <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required autofocus>
+                <input id="userPass" type="password" class="form-control" data-localize="password" placeholder="Password" autofocus required>
+                <label id="rememberMeLabel" class="checkbox">
+                    <input id="rememberMe" style="position: relative; top: -2px" type="checkbox" checked value="remember-me">
                     <span data-localize="rememberMe"> Remember me </span></label>
                 <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Sign in
                 </button>
-                <button id="createAccountButton" class="btn btn-lg btn-default btn-block" data-localize="createAccount">or
-                    create new account
+
+                <div id="loginExtras">
+                    <a id="forgotPassword" href="#">forgot password</a>
+                    <br/>
+                    <a id="changePassword" href="#">change password</a>
+                    <br/>
+                    <a id="changeBusiness" href="#">change business</a>
+                </div>
+                <div style="clear: both"></div>
+                <hr/>
+                <button id="createAccountButton" class="btn btn-lg btn-default btn-block" data-localize="createAccount">or create a new account
                 </button>
                 <hr class="hrThin"/>
                 <div id="languageSelectionLogin"></div>
@@ -94,6 +100,10 @@
 
         <div id="forgetPassView" style="display: none">
             <h1>ForgetPassView</h1>
+        </div>
+
+        <div id="changeBusinessView" style="display: none">
+            <h1>ChangeBusinessView</h1>
         </div>
 
         <div id="studioSelectView" style="display: none">

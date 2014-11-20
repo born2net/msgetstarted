@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccountView', 'RenameView', 'ChangePassView', 'ForgetPassView', 'StudioSelectView', 'StudioLiteView', 'StudioProView', 'AccountView', 'WebDeskSelectView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccountView, RenameView, ChangePassView, ForgetPassView, StudioSelectView, StudioLiteView, StudioProView, AccountView, WebDeskSelectView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccountView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioLiteView', 'StudioProView', 'AccountView', 'WebDeskSelectView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccountView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioLiteView, StudioProView, AccountView, WebDeskSelectView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -230,6 +230,10 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.CHANGE_PASS_VIEW
                 });
 
+                this.m_changeBusinessView = new ChangeBusinessView({
+                    el: Elements.CHANGE_BUSINESS_VIEW
+                });
+
                 this.m_forgetPassView = new ForgetPassView({
                     el: Elements.FORGET_PASS_VIEW
                 });
@@ -267,6 +271,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.addView(this.m_createAccountView);
                 this.m_appEntryFaderView.addView(this.m_renameView);
                 this.m_appEntryFaderView.addView(this.m_changePassView);
+                this.m_appEntryFaderView.addView(this.m_changeBusinessView);
                 this.m_appEntryFaderView.addView(this.m_forgetPassView);
                 this.m_appEntryFaderView.addView(this.m_studioSelectView);
                 this.m_appEntryFaderView.addView(this.m_studioLiteView);
@@ -280,7 +285,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.addView(this.m_mainAppWaitView);
 
                 BB.comBroker.setService(BB.SERVICES['APP_AUTH'], this.m_appAuth);
-                BB.comBroker.setService(BB.SERVICES['APP_ENTRY_FADER_VIEW'], this.m_appEntryFaderView);
                 BB.comBroker.setService(BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW, this.m_appContentMailWaspFaderView);
                 BB.comBroker.setService(BB.SERVICES.APP_CONTENT_EVERNODES_FADER_VIEW, this.m_appContentEverNodesFaderView);
             },

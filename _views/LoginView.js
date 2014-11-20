@@ -13,16 +13,36 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
          @method initialize
          **/
         initialize: function () {
-            $('#loginButton').on('click', function () {
+            $(Elements.LOGIN_BUTTON).on('click', function () {
                 if ($(Elements.USER_NAME).val().length > 0 && $(Elements.USER_PASS).val().length > 0) {
                     var user = $(Elements.USER_NAME).val();
                     var pass = $(Elements.USER_PASS).val();
                     Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('authenticate/' + user + '/' + pass, {trigger: true});
                 }
+                return true;
+            });
+
+            $(Elements.CREATE_ACCOUNT_BUTTON).on('click', function () {
+                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.CREATE_ACCOUNT_VIEW);
                 return false;
-            })
+            });
+
+            $(Elements.FORGOT_PASSWORD).on('click', function () {
+                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.FORGET_PASS_VIEW);
+                return false;
+            });
+
+            $(Elements.CHANGE_PASSWORD).on('click', function () {
+                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.CHANGE_PASS_VIEW);
+                return false;
+            });
+
+            $(Elements.CHANGE_BUSINESS).on('click', function () {
+                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.CHANGE_BUSINESS_VIEW);
+                return false;
+            });
         }
-    })
+    });
 
     return LoginView;
 

@@ -45,6 +45,7 @@ require.config({
         'OrdersView': '_views/OrdersView',
         'RenameView': '_views/RenameView',
         'ChangePassView': '_views/ChangePassView',
+        'ChangeBusinessView': '_views/ChangeBusinessView',
         'ForgetPassView': '_views/ForgetPassView',
         'StudioSelectView': '_views/StudioSelectView',
         'StudioLiteView': '_views/StudioLiteView',

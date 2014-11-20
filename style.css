@@ -41,49 +41,53 @@ a {
     text-decoration: none !important;
 }
 
-.navbar-inverse{
+.navbar-inverse {
     background-color: #333333;
 }
 
-.logo_holder{
-    width:330px;
-    float:left;
-    height:auto;
-    margin-top:7px;
+.logo_holder {
+    width: 330px;
+    float: left;
+    height: auto;
+    margin-top: 7px;
 }
+
 #logo {
     float: left;
     /*width: 170px;*/
-    width:60px;
+    width: 60px;
     /*height:66px;*/
     height: 50px;
     /*padding-top:15px;*/
     padding-top: 3px;
-    margin-left:6px;
-    margin-right:2px;
+    margin-left: 6px;
+    margin-right: 2px;
 }
+
 #logo p {
     font-size: 10px;
     color: #FFF;
 }
+
 #logo p span {
     color: #F00;
 }
-.logo_text{
-    float:left;
+
+.logo_text {
+    float: left;
     position: relative;
     top: -12px;
 }
 
-.logo_text h1{
+.logo_text h1 {
 
     font-family: Roboto;
     font-weight: 300;
-    font-size:18px;
+    font-size: 18px;
     letter-spacing: 2px;
-    color:white;
-    margin-bottom:0px;
-    line-height:28px;
+    color: white;
+    margin-bottom: 0px;
+    line-height: 28px;
 
     /*font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -93,19 +97,20 @@ a {
     margin-bottom:0px;
     line-height:28px;*/
 }
-.logo_text p{
+
+.logo_text p {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size:12px;
-    color:#ffffff;
+    font-size: 12px;
+    color: #ffffff;
     letter-spacing: 0.2px;
-    margin-bottom:0px;
-}
-.logo_text p span{
-    color:#ff0000;
-    font-size:12px;
+    margin-bottom: 0px;
 }
 
+.logo_text p span {
+    color: #ff0000;
+    font-size: 12px;
+}
 
 aside > aside > div > ul > li {
     display: block;
@@ -117,6 +122,23 @@ aside > aside > div > ul > li {
     border: 1px solid #666;
     margin-right: 30px;
     margin-left: 30px;
+}
+
+#rememberMeLabel {
+    font-size: 11px;
+}
+
+#loginButton {
+    float: left;
+    width: 190px;
+    height: 44px;
+}
+
+#loginExtras {
+    float: right;
+    font-size: 11px;
+    opacity: 0.4;
+    text-align: right;
 }
 
 /************************************
@@ -265,13 +287,11 @@ aside > aside > div > ul > li {
     color: white;
 }
 
-
 #waitScreenMainPanel span {
     position: relative;
     left: 45%;
     top: 40%;
 }
-
 
 #screenLayoutList {
     overflow-y: scroll;
@@ -478,7 +498,6 @@ aside > aside > div > ul > li {
     border: black;
 }
 
-
 .noTopBorder {
     border-top: none;
 !important;
@@ -682,7 +701,6 @@ aside > aside > div > ul > li {
     width: 100%;
     height: 100%;
 }
-
 
 /************************************
    StackView sliders
