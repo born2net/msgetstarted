@@ -28,17 +28,17 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
             });
 
             $(Elements.FORGOT_PASSWORD).on('click', function () {
-                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.FORGET_PASS_VIEW);
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('forgetPassword', {trigger: true});
                 return false;
             });
 
             $(Elements.CHANGE_PASSWORD).on('click', function () {
-                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.CHANGE_PASS_VIEW);
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('changePassword', {trigger: true});
                 return false;
             });
 
             $(Elements.CHANGE_BUSINESS).on('click', function () {
-                BB.comBroker.getService(BB.SERVICES.APP_ENTRY_FADER_VIEW).selectView(Elements.CHANGE_BUSINESS_VIEW);
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('changeBusiness', {trigger: true});
                 return false;
             });
         }

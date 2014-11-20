@@ -49,6 +49,9 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "appSelector": "_routeAppSelector",
                 "authenticate/:user/:pass": "_routeAuthenticate",
                 "authenticating": "_routeAuthenticating",
+                "forgetPassword": "_routeForgetPassword",
+                "changePassword": "_routeChangePassword",
+                "changeBusiness": "_routeChangeBusiness",
                 "authenticated": "_routeAuthenticated",
                 "unauthenticated": "_routeUnauthenticated",
                 "authenticationFailed": "_routeAuthenticationFailed"
@@ -72,6 +75,19 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.selectView(this.m_mainAppWaitView);
             },
 
+            _routeForgetPassword: function(){
+                this.m_appEntryFaderView.selectView(this.m_forgetPassView);
+            },
+
+            _routeChangePassword: function(){
+                this.m_appEntryFaderView.selectView(this.m_changePassView);
+            },
+
+            _routeChangeBusiness: function(){
+                this.m_appEntryFaderView.selectView(this.m_changeBusinessView);
+            },
+
+
             /**
              Authentication passed, load app page route
              @method authenticating
@@ -87,14 +103,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             _routeUnauthenticated: function () {
                 var self = this;
                 self.m_appEntryFaderView.selectView(this.m_loginView);
-                /*
-                this.m_appEntryFaderView.selectView(this.m_signagePlayerView);
-                this.m_appEntryFaderView.selectView(this.m_studioLiteView);
-
-                setTimeout(function(){
-                    self.m_appEntryFaderView.selectView(self.m_signagePlayerView);
-                },2000)
-                */
             },
 
             /**
