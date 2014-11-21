@@ -1,8 +1,17 @@
 @import url("_common/_js/bootstrap/css/bootstrap-glyphicons.css");
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 /************************************
  StudioLite CSS tags styling
  ************************************/
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf) format('truetype');
+}
+
+
 
 html,
 body {
@@ -1164,3 +1173,6 @@ Language selector
     vertical-align: middle;
     margin-right: 10px;
 }
+
+
+

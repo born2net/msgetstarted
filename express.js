@@ -20,9 +20,9 @@ var app = express();
 
 app.use('/', express.static(__dirname));
 
+// app.use(express.favicon('./public/assets/favicon.ico'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-// app.use(express.favicon('./public/assets/favicon.ico'));
 app.use(express.compress());
 app.use(app.router);
 

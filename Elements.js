@@ -6,7 +6,7 @@ Elements.APP_LOGOUT = '#appLogout';
 Elements.APP_SELECTOR = '#appSelector';
 
 Elements.SIGNAGE_PLAYER_VIEW = '#signagePlayerView';
-Elements.CREATE_ACCOUNT_VIEW = '#createAccountView';
+Elements.CREATE_ACC_VIEW = '#createAccView';
 Elements.RENAME_VIEW = '#renameView';
 Elements.CHANGE_PASS_VIEW = '#changePassView';
 Elements.CHANGE_BUSINESS_VIEW = '#changeBusinessView';

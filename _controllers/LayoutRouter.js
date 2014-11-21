@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccountView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioLiteView', 'StudioProView', 'AccountView', 'WebDeskSelectView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccountView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioLiteView, StudioProView, AccountView, WebDeskSelectView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioLiteView', 'StudioProView', 'AccountView', 'WebDeskSelectView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioLiteView, StudioProView, AccountView, WebDeskSelectView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -50,6 +50,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "authenticate/:user/:pass": "_routeAuthenticate",
                 "authenticating": "_routeAuthenticating",
                 "forgetPassword": "_routeForgetPassword",
+                "createAcc": "_routeCreateAcc",
                 "changePassword": "_routeChangePassword",
                 "changeBusiness": "_routeChangeBusiness",
                 "authenticated": "_routeAuthenticated",
@@ -81,6 +82,10 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
             _routeChangePassword: function(){
                 this.m_appEntryFaderView.selectView(this.m_changePassView);
+            },
+
+            _routeCreateAcc: function(){
+                this.m_appEntryFaderView.selectView(this.m_createAccView);
             },
 
             _routeChangeBusiness: function(){
@@ -226,8 +231,8 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.SIGNAGE_PLAYER_VIEW
                 });
 
-                this.m_createAccountView = new CreateAccountView({
-                    el: Elements.CREATE_ACCOUNT_VIEW
+                this.m_createAccView = new CreateAccView({
+                    el: Elements.CREATE_ACC_VIEW
                 });
 
                 this.m_renameView = new RenameView({
@@ -276,7 +281,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
                 this.m_appEntryFaderView.addView(this.m_appSelectorView);
                 this.m_appEntryFaderView.addView(this.m_signagePlayerView);
-                this.m_appEntryFaderView.addView(this.m_createAccountView);
+                this.m_appEntryFaderView.addView(this.m_createAccView);
                 this.m_appEntryFaderView.addView(this.m_renameView);
                 this.m_appEntryFaderView.addView(this.m_changePassView);
                 this.m_appEntryFaderView.addView(this.m_changeBusinessView);

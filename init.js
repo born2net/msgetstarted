@@ -1,10 +1,15 @@
 /**
  Require js initialization module definition file for GetStarted
  @class Require init js
+
+ Office pc path:
+    baseUrl: '/msgetstarted',
+
  **/
+
 require.config({
     waitSeconds: 25,
-    baseUrl: '/msgetstarted',
+    baseUrl: '/',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',
@@ -39,7 +44,7 @@ require.config({
         'OrientationSelectorView': '_views/_billing/OrientationSelectorView',
         'LoginView': '_views/LoginView',
         'SignagePlayerView': '_views/SignagePlayerView',
-        'CreateAccountView': '_views/CreateAccountView',
+        'CreateAccView': '_views/CreateAccView',
         'PortalView': '_views/PortalView',
         'BillingView': '_views/BillingView',
         'OrdersView': '_views/OrdersView',
