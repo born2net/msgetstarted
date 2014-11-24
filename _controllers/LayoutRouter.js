@@ -55,7 +55,9 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "changeBusiness": "_routeChangeBusiness",
                 "authenticated": "_routeAuthenticated",
                 "unauthenticated": "_routeUnauthenticated",
-                "authenticationFailed": "_routeAuthenticationFailed"
+                "authenticationFailed": "_routeAuthenticationFailed",
+                "selectStudioLite": "_routeSelectStudioLite",
+                "selectStudioPro": "_routeSelectStudioPro"
             },
 
             /**
@@ -128,6 +130,22 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     }
                 });
                 this.m_appEntryFaderView.selectView(this.m_loginView);
+            },
+
+            /**
+             Route selected StudioLite app
+             @method _routeSelectStudioLite
+             **/
+            _routeSelectStudioLite: function(e){
+                log(e);
+            },
+
+            /**
+             Route selected StudioPro app
+             @method _routeSelectStudioPro
+             **/
+            _routeSelectStudioPro: function(e){
+                log(e);
             },
 
             /**
