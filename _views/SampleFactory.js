@@ -1,11 +1,11 @@
 /**
- @class CreateAccView
+ @class SampleFactory
  @constructor
- @return {Object} instantiated CreateAccView
+ @return {Object} instantiated SampleFactory
  **/
 define(['jquery', 'backbone'], function ($, Backbone) {
 
-    var CreateAccView = Backbone.View.extend({
+    var SampleFactory = Backbone.View.extend({
 
         /**
          Constructor
@@ -16,7 +16,7 @@ define(['jquery', 'backbone'], function ($, Backbone) {
         }
     });
 
-    return CreateAccView;
+    return SampleFactory;
 
 });
 

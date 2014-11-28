@@ -23,7 +23,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
             });
 
             $(Elements.CREATE_ACCOUNT_BUTTON).on('click', function () {
-                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('createAcc', {trigger: true});
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('studioSelectView', {trigger: true});
                 return false;
             });
 

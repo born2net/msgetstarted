@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioLiteView', 'StudioProView', 'AccountView', 'WebDeskSelectView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioLiteView, StudioProView, AccountView, WebDeskSelectView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -51,6 +51,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "authenticating": "_routeAuthenticating",
                 "forgetPassword": "_routeForgetPassword",
                 "createAcc": "_routeCreateAcc",
+                "studioSelectView": "_routeStudioSelectView",
                 "changePassword": "_routeChangePassword",
                 "changeBusiness": "_routeChangeBusiness",
                 "authenticated": "_routeAuthenticated",
@@ -88,6 +89,10 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
             _routeCreateAcc: function(){
                 this.m_appEntryFaderView.selectView(this.m_createAccView);
+            },
+
+            _routeStudioSelectView: function(){
+                this.m_appEntryFaderView.selectView(this.m_studioSelectView);
             },
 
             _routeChangeBusiness: function(){
@@ -136,16 +141,16 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected StudioLite app
              @method _routeSelectStudioLite
              **/
-            _routeSelectStudioLite: function(e){
-                log(e);
+            _routeSelectStudioLite: function(){
+                this.m_appEntryFaderView.selectView(this.m_studioLiteView);
             },
 
             /**
              Route selected StudioPro app
              @method _routeSelectStudioPro
              **/
-            _routeSelectStudioPro: function(e){
-                log(e);
+            _routeSelectStudioPro: function(){
+                this.m_appEntryFaderView.selectView(this.m_studioProView);
             },
 
             /**
@@ -273,12 +278,14 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.STUDIO_SELECT_VIEW
                 });
 
-                this.m_studioLiteView = new StudioLiteView({
-                    el: Elements.STUDIO_LITE_VIEW
+                this.m_studioLiteView = new StudioListView({
+                    el: Elements.STUDIO_LITE_VIEW,
+                    stackView: this.m_appEntryFaderView
                 });
 
-                this.m_studioProView = new StudioProView({
-                    el: Elements.STUDIO_PRO_VIEW
+                this.m_studioProView = new StudioListView({
+                    el: Elements.STUDIO_PRO_VIEW,
+                    stackView: this.m_appEntryFaderView
                 });
 
                 this.m_accountView = new AccountView({
