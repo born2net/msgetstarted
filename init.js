@@ -3,13 +3,13 @@
  @class Require init js
 
  Office pc path:
-    baseUrl: '/msgetstarted',
+ baseUrl: '/msgetstarted',
 
  **/
 
 require.config({
     waitSeconds: 25,
-    baseUrl: '/',
+    baseUrl: '/msgetstarted',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',
@@ -132,9 +132,6 @@ require.config({
         'bootbox': {
             deps: ['jquery'],
             exports: 'bootbox'
-        },
-        'RC4': {
-            exports: 'RC4'
         }
     }
 });
