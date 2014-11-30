@@ -38,9 +38,23 @@ define(['jquery', 'backbone', 'SampleFactory'], function ($, Backbone, SampleFac
 
         _render: function(){
             var self = this;
+            var element;
             if (self.m_sampleFactory)
                 return;
-            self.m_sampleFactory = new SampleFactory();
+            switch(self.m_studioType){
+                case BB.CONSTS.STUDIO_PRO: {
+                    element = Elements.SAMPLE_LIST_PRO;
+                    break;
+                }
+                case BB.CONSTS.STUDIO_LITE: {
+                    element = Elements.SAMPLE_LIST_LITE;
+                    break;
+                }
+            }
+            self.m_sampleFactory = new SampleFactory({
+                el: element,
+                studioType: self.m_studioType
+            });
         }
     });
 
