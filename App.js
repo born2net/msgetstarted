@@ -56,6 +56,14 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             });
             if (!FlashDetect.installed || !FlashDetect.versionAtLeast(13))
                 BB.FLASH = true;
+
+            $('div.product-chooser').find('div.product-chooser-item').on('click', function(){
+                $('div.product-chooser-item').removeClass('selected');
+                $(this).addClass('selected');
+                $(this).find('input[type="radio"]').prop("checked", true);
+
+            });
+
         }
     });
     return App;
