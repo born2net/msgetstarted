@@ -71,11 +71,15 @@ a {
 }
 
 .sampleItem:hover {
-    background-color: #f7f7f7;
+    background-color: #e7e7e7;
 }
 
 .samplePreview {
+    /* background-color: red; */
     opacity: 0.7;
+    width: 130px;
+    padding: 0;
+    margin: 0;
 }
 
 .samplePreview:hover {
@@ -184,6 +188,10 @@ aside > aside > div > ul > li {
 }
 
 #renameBusinessButton {
+    margin-top: 3px;
+}
+
+#createAccountInfoButton {
     margin-top: 3px;
 }
 

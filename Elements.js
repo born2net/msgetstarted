@@ -93,6 +93,7 @@ Elements.CAMPAIGN_SELECTOR_WASP = '#campaignSelectorWasp';
 Elements.CAMPAIGN_MANAGER_EVER_VIEW = '#campaignManagerWasp';
 Elements.CAMPAIGN_MANAGER_WASP_VIEW = '#campaignManagerViewWasp';
 
+
 Elements.CAMPAIGN_SLIDER = '#campaignSlider';
 Elements.CAMPAIGN_PROPERTIES = '#campaignProperties'; // properties
 Elements.NEW_CAMPAIGN_NAME = '#newCampaignName';
@@ -133,7 +134,8 @@ Elements.CLASS_LOGOUT_PANEL = '.logoutPanel';
 Elements.CLASS_NAV_ICONS = '.navicons';
 Elements.CLASS_HELP_LINKS = '.helpLinks';
 Elements.CLASS_APP_HEIGHT = '.appHeight';
-
+Elements.CLASS_SAMPLE_PREVIEW = '.samplePreview';
+Elements.CLASS_SAMPLE_ITEM = '.sampleItem';
 
 /**
  List of all Elements / Classes of elements used in the DOM

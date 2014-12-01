@@ -33,13 +33,18 @@ define(['jquery', 'backbone'], function ($, Backbone) {
 
         _listenPreview: function () {
             var self = this;
-            $('.samplePreview', self.el).on('click', function () {
-                alert('aaa');
+            $(Elements.CLASS_SAMPLE_PREVIEW, self.el).on('click', function () {
+                alert('launch preview');
+                return false;
             });
         },
 
         _listenSelection: function () {
             var self = this;
+            $(Elements.CLASS_SAMPLE_ITEM, self.el).on('click', function () {
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('createAcc', {trigger: true});
+                return false;
+            });
         },
 
         _render: function () {

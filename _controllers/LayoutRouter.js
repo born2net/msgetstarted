@@ -88,7 +88,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             _routeCreateAcc: function(){
-                this.m_appEntryFaderView.selectView(this.m_createAccView);
+                this.m_appEntryFaderView.selectView(this.m_accountView);
             },
 
             _routeStudioSelectView: function(){

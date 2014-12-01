@@ -134,7 +134,7 @@
         <h2 class="form-signin-heading"></h2>
 
         <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
             <input type="text" class="form-control" name="username" value="" required autofocus placeholder="email">
         </div>
         <div style="margin-bottom: 0px" class="input-group">
@@ -170,7 +170,7 @@
         <h2 class="form-signin-heading"></h2>
 
         <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
             <input id="resetPassInput" type="text" class="form-control" name="username" value="" required autofocus
                    placeholder="email">
         </div>
@@ -191,7 +191,7 @@
         <h2 class="form-signin-heading"></h2>
 
         <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
             <input type="text" class="form-control" name="username" value="" required autofocus placeholder="email">
         </div>
         <div style="margin-bottom: 0px" class="input-group">
@@ -207,9 +207,7 @@
         <button id="renameBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
             change password
         </button>
-
     </form>
-
 </div>
 
 <div id="studioSelectView" style="display: none">
@@ -220,6 +218,7 @@
                 <div class="product-chooser-item selected">
                     <img src="./_assets/LiteIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
                     <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <div>
                             <h2>StudioLite</h2>
                             <ul>
                                 <li>100% FREE</li>
@@ -227,9 +226,10 @@
                                 <li>easy to use</li>
                                 <li>convert to the free Pro version at anytime</li>
                             </ul>
+                        </div>
                         <input type="radio" name="product" value="desktop">
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Go Lite
+                    <button id="StudioLiteSelection" name="StudioLite"  class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Go Lite
                     </button>
                     <div class="clear"></div>
                 </div>
@@ -250,7 +250,7 @@
 
                         <input type="radio" name="product" value="desktop">
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Go Pro
+                    <button id="StudioProSelected" name="StudioPro" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Go Pro
                     </button>
                     <div class="clear"></div>
                 </div>
@@ -283,9 +283,7 @@
 </div>
 
 <div id="studioLiteView" style="display: none">
-    <h1>StudioLiteView</h1>
     <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
     <div class="row">
         <div class="col-xs-12 col-sm-offset-3 col-sm-6">
             <div class="panel panel-default">
@@ -318,7 +316,6 @@
                         </div>
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">International Lite Airport</span><br/>
-
                             <div class="samplePreview">
                                 <span style="font-size: 2em; position: relative; top: 5px; left: -3px"
                                       class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>
@@ -337,7 +334,6 @@
 </div>
 
 <div id="studioProView" style="display: none">
-    <h1>StudioProView</h1>
     <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
 
     <div class="row">
@@ -391,8 +387,38 @@
 </div>
 
 <div id="accountView" style="display: none">
-    <h1>AccountView</h1>
     <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+    <form class="form-signin" role="form">
+        <br/>
+        <br/>
+
+        <h2 class="form-signin-heading"></h2>
+
+        <div style="margin-bottom: 0px" class="input-group">
+            <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
+            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="business name">
+        </div>
+        <div style="margin-bottom: 0px" class="input-group">
+            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="email">
+        </div>
+        <div style="margin-bottom: 0px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="password">
+        </div>
+        <div style="margin-bottom: 0px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="confirm password">
+        </div>
+        <div style="margin-bottom: 0px" class="input-group">
+            <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="enter your phone (optional)">
+        </div>
+
+        <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
+            create account
+        </button>
+    </form>
 </div>
 
 <div id="webDeskSelectView" style="display: none">
