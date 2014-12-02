@@ -217,6 +217,10 @@ aside > aside > div > ul > li {
     display: block;
 }
 
+#studioProWeb:hover{
+    opacity: 0.9;
+}
+
 /************************************
  StudioLite CSS element styling
  ************************************/
