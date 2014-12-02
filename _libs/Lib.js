@@ -4,7 +4,7 @@
  @constructor
  @return {Object} instantiated Lib
  **/
-define(['jquery', 'backbone'], function ($, Backbone) {
+define(['jquery', 'backbone', 'platform'], function ($, Backbone, platform) {
     var Lib = function (type) {
         this.type = type;
     };
@@ -23,20 +23,9 @@ define(['jquery', 'backbone'], function ($, Backbone) {
          @param {String} msg
          **/
         log: function (msg) {
-            if (!$.browser == undefined && $.browser.msie && $.browser.version <= 8) {
-                if (globs['debug']) {
-                    console = {};
-                    console.log = function (m) {
-                        alert('msg:' + m)
-                    };
-                } else {
-                    console = {};
-                    console.log = function () {
-                    };
-                }
-            }
+            if (platform.name == 'IE' && platform.version < 10)
+                return;
             console.log(new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1") + ': ' + msg);
-
         },
 
         /**
@@ -309,11 +298,11 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
         },
 
-        setIntervalTimes: function(i_func, i_sleep, i_timesRun){
+        setIntervalTimes: function (i_func, i_sleep, i_timesRun) {
             var timesRun = 0;
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 timesRun += 1;
-                if(timesRun === i_timesRun){
+                if (timesRun === i_timesRun) {
                     clearInterval(interval);
                 }
                 i_func();
@@ -322,21 +311,21 @@ define(['jquery', 'backbone'], function ($, Backbone) {
 
         logout: function () {
             $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, {path: '/'});
-            $.cookie(BB.lib.CONSTS.COOKIE_KEY, '', { expires: -300 });
+            $.cookie(BB.lib.CONSTS.COOKIE_KEY, '', {expires: -300});
         },
 
-        removeCookie: function(){
-            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, { path: '/' });
-            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, { path: '/_studiolite' });
-            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, { path: '/_studiolite-dev' });
-            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, { path: '/_studiolite-dist' });
+        removeCookie: function () {
+            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, {path: '/'});
+            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, {path: '/_studiolite'});
+            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, {path: '/_studiolite-dev'});
+            $.removeCookie(BB.lib.CONSTS.COOKIE_KEY, {path: '/_studiolite-dist'});
         },
 
         bakeCookie: function (i_user, i_pass) {
             var rc4 = new RC4(BB.globs['RC4KEY']);
             var crumb = i_user + ':SignageStudioLite:' + i_pass + ':' + ' USER'
             crumb = rc4.doEncrypt(crumb);
-            $.cookie(BB.lib.CONSTS.COOKIE_KEY, crumb, { expires: 300 });
+            $.cookie(BB.lib.CONSTS.COOKIE_KEY, crumb, {expires: 300});
         },
 
         getCookieCredentials: function () {
@@ -344,7 +333,7 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             if (cookieCredentials) {
                 var rc4 = new RC4(BB.globs['RC4KEY']);
                 var crumb = rc4.doDecrypt(cookieCredentials).split(':');
-                return { user: crumb[0], pass: crumb[2] };
+                return {user: crumb[0], pass: crumb[2]};
             }
             return undefined;
         },
@@ -357,13 +346,13 @@ define(['jquery', 'backbone'], function ($, Backbone) {
                 authMode = BB.lib.CONSTS.AUTH_USER_PASS;
             } else {
                 var credentials = BB.lib.getCookieCredentials();
-                if (credentials){
+                if (credentials) {
                     user = credentials.user;
                     pass = credentials.pass;
                     authMode = BB.lib.CONSTS.AUTH_COOKIE;
                 }
             }
-            if (user){
+            if (user) {
                 var data = {
                     user: user,
                     pass: pass

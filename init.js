@@ -19,6 +19,7 @@ require.config({
         'bootbox': '_common/_js/bootbox/bootbox',
         'platform': '_common/_js/platform/platform',
         'nouislider': '_common/_js/nouislider/jquery.nouislider',
+        'placeholder': '_common/_js/placeholder/placeholder',
         'Cookie': '_common/_js/cookie/jquery.cookie',
         'Base64': '_common/_js/base64/jquery.base64',
         'RC4': '_common/_js/rc4/RC4',
@@ -106,6 +107,9 @@ require.config({
         'Pepper': {
             deps: ['jquery', 'RC4V2'],
             exports: 'Pepper'
+        },
+        'placeholder': {
+            exports: 'placeholder'
         },
         'RC4': {
             exports: 'RC4'

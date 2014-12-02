@@ -5,7 +5,7 @@
  @constructor
  @return {Object} instantiated App
  **/
-define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect) {
+define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder) {
     var App = Backbone.Controller.extend({
 
         // app init
@@ -34,6 +34,8 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.CONSTS.MAILWASP = 'mailWasp';
             BB.CONSTS.EVERNODES = 'everNodes';
 
+
+
             /*
             require(['localizer'], function () {
                 var lang = "en";
@@ -52,7 +54,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);
-                LayoutRouter.navigate('authenticate/_/_', {trigger: true});
+                // LayoutRouter.navigate('authenticate/_/_', {trigger: true});
             });
             if (!FlashDetect.installed || !FlashDetect.versionAtLeast(13))
                 BB.FLASH = true;
