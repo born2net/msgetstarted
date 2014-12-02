@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'VerifyEmailView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, VerifyEmailView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -60,6 +60,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "selectStudioLite": "_routeSelectStudioLite",
                 "selectStudioPro": "_routeSelectStudioPro",
                 "selectWebOrDesk": "_routeSelectWebOrDesktop",
+                "verifyEmail": "_routeVerifyEmail",
                 "start": "_routeStart"
             },
 
@@ -165,6 +166,14 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              **/
             _routeSelectWebOrDesktop: function(){
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectView);
+            },
+
+            /**
+             Route selected verify email
+             @method _routeVerifyEmail
+             **/
+            _routeVerifyEmail: function(){
+                this.m_appEntryFaderView.selectView(this.m_verifyEmailView);
             },
 
             /**
@@ -310,6 +319,11 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.WEB_DESK_SELECT_VIEW
                 });
 
+                this.m_verifyEmailView = new VerifyEmailView({
+                    el: Elements.VERIFY_EMAIL_VIEW
+                });
+
+
                 this.m_mainAppWaitView = new WaitView({
                     el: Elements.WAITS_SCREEN_ENTRY_APP
                 });
@@ -330,6 +344,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.addView(this.m_studioProView);
                 this.m_appEntryFaderView.addView(this.m_accountView);
                 this.m_appEntryFaderView.addView(this.m_webDeskSelectView);
+                this.m_appEntryFaderView.addView(this.m_verifyEmailView);
                 this.m_appEntryFaderView.addView(this.m_loginView);
                 this.m_appEntryFaderView.addView(this.m_logoutView);
                 this.m_appEntryFaderView.addView(this.m_appContentMailWaspFaderView);

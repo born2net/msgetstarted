@@ -58,6 +58,7 @@ require.config({
         'SampleFactory': '_views/SampleFactory',
         'AccountView': '_views/AccountView',
         'WebDeskSelectView': '_views/WebDeskSelectView',
+        'VerifyEmailView': '_views/VerifyEmailView',
         'WaitView': '_views/WaitView',
         'PropertiesView': '_views/_billing/PropertiesView',
         'LogoutView': '_views/_billing/LogoutView',

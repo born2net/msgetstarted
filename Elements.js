@@ -18,6 +18,7 @@ Elements.SAMPLE_LIST_PRO = '#sampleListPro';
 Elements.STUDIO_PRO_VIEW = '#studioProView';
 Elements.ACCOUNT_VIEW = '#accountView';
 Elements.WEB_DESK_SELECT_VIEW = '#webDeskSelectView';
+Elements.VERIFY_EMAIL_VIEW = '#verifyEmailView';
 Elements.CREATE_ACCOUNT_BUTTON = '#createAccountButton';
 Elements.CREATE_ACCOUNT_INFO_BUTTON = '#createAccountInfoButton';
 Elements.STUDIO_LITE_SELECTION = '#StudioLiteSelection';

@@ -21,7 +21,11 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
 
         _listenCreateAccount: function(){
             $(Elements.CREATE_ACCOUNT_INFO_BUTTON).on('click',function(e){
-                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('verifyEmail', {trigger: true});
+                setTimeout(function(){
+                    Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+                },3000);
+
                return false;
             });
         }
