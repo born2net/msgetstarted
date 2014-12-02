@@ -74,16 +74,14 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="username or email">
+                      data-localize="userNameEmail" placeholder="username or email">
                 </div>
 
                 <div style="margin-bottom: 3px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input id="userPass" type="password" class="form-control" name="password" required autofocus
-                           placeholder="password">
+                       data-localize="password" placeholder="password">
                 </div>
-
-                <!-- <input id="userPass" type="password" class="form-control" data-localize="password" placeholder="Password" autofocus required> -->
 
                 <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
                     Sign in
@@ -96,25 +94,23 @@
 
 
                 <div id="loginExtras">
-                    <a id="forgotPassword" href="#">forgot password</a>
+                    <a id="forgotPassword" data-localize="forgotPassword" href="#">forgot password</a>
                     <br/>
-                    <a id="changePassword" href="#">change password</a>
+                    <a id="changePassword" data-localize="changePassword" href="#">change password</a>
                     <br/>
-                    <a id="changeBusiness" href="#">change business name</a>
+                    <a id="changeBusiness" data-localize="changeBusiness" href="#">change business name</a>
                 </div>
 
                 <div style="clear: both">
                     <hr class="hrThin" style="position: relative; top: 10px"/>
                     <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
-                        <span id="or">or</span>
-
+                        <span data-localize="or" id="or">or</span>
                         <div style="clear: both"></div>
                     </div>
 
                 </div>
                 <button id="createAccountButton" class="btn btn-lg btn-default btn-block" data-localize="createAccount">
-                    create
-                    new account
+                    create new account
                 </button>
                 <hr class="hrThin"/>
                 <div id="languageSelectionLogin"></div>
@@ -122,61 +118,50 @@
         </div>
         <div id="signagePlayerView" style="display: none">
             <h1>SignagePlayerView</h1>
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
         </div>
         <div id="createAccView" style="display: none">
             <h1>CreateAccView</h1>
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
         </div>
-
         <div id="renameView" style="display: none">
             <h1>RenameView</h1>
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
         </div>
-
         <div id="changePassView" style="display: none">
-
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <form class="form-signin" role="form">
                 <br/>
                 <br/>
-
                 <h2 class="form-signin-heading"></h2>
-
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="email">
+                       data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="old password">
+                        data-localize="oldPassword" placeholder="old password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="new password">
+                         data-localize="newPassword" placeholder="new password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="verify new password">
+                        data-localize="verifyNewPassword" placeholder="verify new password">
                 </div>
-                <button id="changePass" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
-                    change
-                    password
+                <button id="changePass" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="changePassword">
+                    change password
                 </button>
-
             </form>
-
-
         </div>
 
         <div id="forgetPassView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <form class="form-signin" role="form">
                 <br/>
                 <br/>
@@ -185,20 +170,16 @@
 
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="resetPassInput" type="text" class="form-control" name="username" value="" required
-                           autofocus
-                           placeholder="email">
+                    <input id="resetPassInput" type="text" class="form-control" data-localize="email" name="username" value="" required autofocus placeholder="email">
                 </div>
                 <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" type="submit"
                         data-localize="resetPassword">reset password
                 </button>
             </form>
-
-
         </div>
 
         <div id="changeBusinessView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
 
             <form class="form-signin" role="form">
                 <br/>
@@ -209,7 +190,7 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="email">
+                         data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
@@ -219,19 +200,16 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="new business name">
+                         data-localize="newBusinessName" placeholder="new business name">
                 </div>
-
                 <button id="renameBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="signin">
-                    change password
+                        data-localize="renameBusiness">
+                    rename business
                 </button>
             </form>
         </div>
-
         <div id="studioSelectView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <div class="container">
                 <div class="row form-group product-chooser disabled">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -243,16 +221,16 @@
                                 <div>
                                     <h2>StudioLite</h2>
                                     <ul>
-                                        <li>100% FREE</li>
-                                        <li>simple to learn</li>
-                                        <li>easy to use</li>
-                                        <li>convert to the free Pro version at anytime</li>
+                                        <li data-localize="freeHundred">100% FREE</li>
+                                        <li data-localize="simpleToLearn">simple to learn</li>
+                                        <li data-localize="easyToUse">easy to use</li>
+                                        <li data-localize="convertAnytime">convert to the free Pro version at anytime</li>
                                     </ul>
                                 </div>
                                 <input type="radio" name="product" value="desktop">
                             </div>
                             <button id="StudioLiteSelection" name="StudioLite" class="btn btn-lg btn-primary btn-block"
-                                    type="submit" data-localize="signin">Go Lite
+                                    type="submit" data-localize="goLite">Go Lite
                             </button>
                             <div class="clear"></div>
                         </div>
@@ -266,17 +244,17 @@
                                 <div>
                                     <h2>StudioPro</h2>
                                     <ul>
-                                        <li>100% FREE</li>
-                                        <li>more to learn</li>
-                                        <li>packed with advanced features</li>
-                                        <li>build a powerful presentation</li>
+                                        <li data-localize="freeHundred">100% FREE</li>
+                                        <li data-localize="moreToLearn">more to learn</li>
+                                        <li data-localize="packedFeatures">packed with advanced features</li>
+                                        <li data-localize="buildPowerful">build a powerful presentation</li>
                                     </ul>
                                 </div>
 
                                 <input type="radio" name="product" value="desktop">
                             </div>
                             <button id="StudioProSelected" name="StudioPro" class="btn btn-lg btn-primary btn-block"
-                                    type="submit" data-localize="signin">Go Pro
+                                    type="submit" data-localize="goPro">Go Pro
                             </button>
                             <div class="clear"></div>
                         </div>
@@ -284,10 +262,8 @@
                 </div>
             </div>
         </div>
-
         <div id="studioLiteView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <div class="row">
                 <div class="col-xs-12 col-sm-offset-3 col-sm-6">
                     <div class="panel panel-default">
@@ -321,7 +297,6 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-9">
                                     <span class="name">International Lite Airport</span><br/>
-
                                     <div class="samplePreview">
                                 <span style="font-size: 2em; position: relative; top: 5px; left: -3px"
                                       class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>
@@ -331,7 +306,6 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -339,8 +313,7 @@
         </div>
 
         <div id="studioProView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <div class="row">
                 <div class="col-xs-12 col-sm-offset-3 col-sm-6">
                     <div class="panel panel-default">
@@ -392,7 +365,7 @@
         </div>
 
         <div id="accountView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
 
             <form class="form-signin" role="form">
                 <br/>
@@ -403,44 +376,43 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="business name">
+                         data-localize="businessName" placeholder="business name">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="email">
+                        data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="password">
+                         data-localize="password" placeholder="password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="confirm password">
+                         data-localize="confirmPassword"  placeholder="confirm password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
                     <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="enter your phone (optional)">
+                         data-localize="enterPhone" placeholder="enter your phone (optional)">
                 </div>
 
                 <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="signin">
+                        data-localize="createAccount">
                     create account
                 </button>
             </form>
         </div>
-
         <div id="verifyEmailView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-            <h4 style="text-align: center">please check your email inbox</h4>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
+            <h4 style="text-align: center" data-localize="pleaseCheckEamil">please check your email inbox</h4>
         </div>
 
         <div id="webDeskSelectView" style="display: none">
-            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-            <h2 style="text-align: center; color: #428ac9">Ready to get started? lets go...</h2>
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
+            <h2 style="text-align: center; color: #428ac9" data-localize="congrats">Congrats... you are ready to get started!</h2>
             <br/>
 
             <div class="container">
@@ -490,8 +462,8 @@
                     </div>
                 </div>
             </div>
-            <h3 style="text-align: center">Choose between <u>Web</u> or <u>Desktop</u> version</h3>
-            <h6 style="text-align: center">Both the Web and Desktop save your data to the cloud, it’s just that the Desktop version loads faster and has a few minor enhancements. <br/>Best of all both versions are 100% FREE, so you switch between the two at any time... so no big decisions here.</h6>
+            <h3 style="text-align: center" data-localize="chooseBetween">Choose between <u>Web</u> or <u>Desktop</u> version</h3>
+            <h6 style="text-align: center" data-localize="webDeskText">Both the Web and Desktop save your data to the cloud, it’s just that the Desktop version loads faster and has a few minor enhancements. <br/>Best of all both versions are 100% FREE, so you switch between the two at any time... so no big decisions here.</h6>
 
         </div>
 

@@ -185,7 +185,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     this.navigate('unauthenticated', {trigger: true});
                     return;
                 }
-                this._disableBack();
+                // this._disableBack();
                 this.m_appEntryFaderView.selectView(this.m_appSelectorView);
             },
 

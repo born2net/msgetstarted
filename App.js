@@ -36,13 +36,11 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
 
 
 
-            /*
             require(['localizer'], function () {
                 var lang = "en";
                 var opts = {language: lang, pathPrefix: "./_lang"};
                 $("[data-localize]").localize("local", opts);
             });
-            */
 
             // localization
             require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
