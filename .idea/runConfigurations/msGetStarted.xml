@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="msGetStarted" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://www.digitalsignage.com/msgetstarted/msgetstarted.html">
+  <configuration default="false" name="msGetStarted" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://www.digitalsignage.com/msgetstarted/msgetstarted.html#start">
     <RunnerSettings RunnerId="JavascriptDebugRunner" />
     <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
     <method />

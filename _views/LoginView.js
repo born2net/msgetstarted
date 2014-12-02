@@ -19,7 +19,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
                     var pass = $(Elements.USER_PASS).val();
                     Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('authenticate/' + user + '/' + pass, {trigger: true});
                 }
-                return true;
+                return false;
             });
 
             $(Elements.CREATE_ACCOUNT_BUTTON).on('click', function () {

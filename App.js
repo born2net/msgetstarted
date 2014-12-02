@@ -50,7 +50,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             // router init
             require(['LayoutRouter'], function (LayoutRouter) {
                 var LayoutRouter = new LayoutRouter();
-                BB.history.start();
+                Backbone.history.start({root: '/msgetstarted/'});
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);
                 LayoutRouter.navigate('authenticate/_/_', {trigger: true});
             });

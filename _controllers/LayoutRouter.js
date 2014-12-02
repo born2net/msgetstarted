@@ -58,7 +58,12 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "unauthenticated": "_routeUnauthenticated",
                 "authenticationFailed": "_routeAuthenticationFailed",
                 "selectStudioLite": "_routeSelectStudioLite",
-                "selectStudioPro": "_routeSelectStudioPro"
+                "selectStudioPro": "_routeSelectStudioPro",
+                "start": "_routeStart"
+            },
+
+            _routeStart: function(){
+                this.navigate('authenticate/_/_', {trigger: true});
             },
 
             /**
