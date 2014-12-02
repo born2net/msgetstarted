@@ -14,6 +14,13 @@
     <script data-main="init" src="_common/_js/requirejs/require.js" type="text/javascript"></script>
 
 
+    <script src="http://www.digitalsignage.com/_js/swfobject.js" language="javascript"></script>
+    <script src="http://www.digitalsignage.com/_js/AC_RunActiveContent.js" language="javascript"></script>
+    <script src="http://www.digitalsignage.com/_js/DownloadUtilsv2.js" language="javascript"></script>
+    <script src="http://www.digitalsignage.com/_js/playerERI3.js" type="text/javascript"></script>
+    <script src="http://www.digitalsignage.com/_js/flashdetect.js" type="text/javascript"></script>
+
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -22,429 +29,520 @@
 </head>
 <body>
 <div id="domRoot">
-<div id="headerPad"></div>
-<!-- Navigation -->
-<nav id="fileMenu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
-                class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-        <div class="logo_holder">
-            <div id="logo">
-                <a href="../index.html"><img src="./_assets/logo.png" width="60" height="39" alt="logo"/></a>
+    <div id="headerPad"></div>
+    <!-- Navigation -->
+    <nav id="fileMenu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <div class="logo_holder">
+                <div id="logo">
+                    <a href="../index.html"><img src="./_assets/logo.png" width="60" height="39" alt="logo"/></a>
+                </div>
+                <div class="logo_text">
+                    <a href="http://www.digitalsignage.com"><h1>DigitalSignage.com</h1>
+
+                        <p><span>FREE</span> Digital Signage for everyone</p></a>
+                </div>
             </div>
-            <div class="logo_text">
-                <a href="http://www.digitalsignage.com"><h1>DigitalSignage.com</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li id="commonFileMenu" class="hidden-lg" dropdown><a href="#" class="dropdown-toggle"
+                                                                      data-toggle="dropdown">Navigatior<b
+                        class="caret"></b></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-localize="saveConfig" id="saveConfig" href="#">Save</a></li>
+                <li><a data-localize="liveChat" id="liveChat" href="#">Live chat</a></li>
+                <li><a id="languagePrompt" href="#">Language &nbsp;</a></li>
+                <li><a id="dashboard" href="#">Dashboard &nbsp;</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="appEntry">
+        <div id="appLogin" style="display: none">
+            <form class="form-signin" role="form">
+                <br/>
+                <br/>
 
-                    <p><span>FREE</span> Digital Signage for everyone</p></a>
+                <h2 class="form-signin-heading"></h2>
+                <!-- <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required autofocus> -->
+
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="username or email">
+                </div>
+
+                <div style="margin-bottom: 3px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input id="userPass" type="password" class="form-control" name="password" required autofocus
+                           placeholder="password">
+                </div>
+
+                <!-- <input id="userPass" type="password" class="form-control" data-localize="password" placeholder="Password" autofocus required> -->
+
+                <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
+                    Sign in
+                </button>
+
+                <label id="rememberMeLabel" class="checkbox">
+                    <input id="rememberMe" style="position: relative; top: -2px" type="checkbox" checked
+                           value="remember-me">
+                    <span data-localize="rememberMe"> Remember me </span></label>
+
+
+                <div id="loginExtras">
+                    <a id="forgotPassword" href="#">forgot password</a>
+                    <br/>
+                    <a id="changePassword" href="#">change password</a>
+                    <br/>
+                    <a id="changeBusiness" href="#">change business name</a>
+                </div>
+
+                <div style="clear: both">
+                    <hr class="hrThin" style="position: relative; top: 10px"/>
+                    <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
+                        <span id="or">or</span>
+
+                        <div style="clear: both"></div>
+                    </div>
+
+                </div>
+                <button id="createAccountButton" class="btn btn-lg btn-default btn-block" data-localize="createAccount">
+                    create
+                    new account
+                </button>
+                <hr class="hrThin"/>
+                <div id="languageSelectionLogin"></div>
+            </form>
+        </div>
+        <div id="signagePlayerView" style="display: none">
+            <h1>SignagePlayerView</h1>
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+        </div>
+        <div id="createAccView" style="display: none">
+            <h1>CreateAccView</h1>
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+        </div>
+
+        <div id="renameView" style="display: none">
+            <h1>RenameView</h1>
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+        </div>
+
+        <div id="changePassView" style="display: none">
+
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+
+            <form class="form-signin" role="form">
+                <br/>
+                <br/>
+
+                <h2 class="form-signin-heading"></h2>
+
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="email">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="old password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="new password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="verify new password">
+                </div>
+                <button id="changePass" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
+                    change
+                    password
+                </button>
+
+            </form>
+
+
+        </div>
+
+        <div id="forgetPassView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+
+            <form class="form-signin" role="form">
+                <br/>
+                <br/>
+
+                <h2 class="form-signin-heading"></h2>
+
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    <input id="resetPassInput" type="text" class="form-control" name="username" value="" required
+                           autofocus
+                           placeholder="email">
+                </div>
+                <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" type="submit"
+                        data-localize="resetPassword">reset password
+                </button>
+            </form>
+
+
+        </div>
+
+        <div id="changeBusinessView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+
+            <form class="form-signin" role="form">
+                <br/>
+                <br/>
+
+                <h2 class="form-signin-heading"></h2>
+
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="email">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="new business name">
+                </div>
+
+                <button id="renameBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
+                        data-localize="signin">
+                    change password
+                </button>
+            </form>
+        </div>
+
+        <div id="studioSelectView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+
+            <div class="container">
+                <div class="row form-group product-chooser disabled">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="product-chooser-item selected">
+                            <img src="./_assets/LiteIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
+                                 alt="Desktop">
+
+                            <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                                <div>
+                                    <h2>StudioLite</h2>
+                                    <ul>
+                                        <li>100% FREE</li>
+                                        <li>simple to learn</li>
+                                        <li>easy to use</li>
+                                        <li>convert to the free Pro version at anytime</li>
+                                    </ul>
+                                </div>
+                                <input type="radio" name="product" value="desktop">
+                            </div>
+                            <button id="StudioLiteSelection" name="StudioLite" class="btn btn-lg btn-primary btn-block"
+                                    type="submit" data-localize="signin">Go Lite
+                            </button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="product-chooser-item disabled">
+                            <img src="./_assets/ProIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
+                                 alt="Desktop">
+
+                            <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                                <div>
+                                    <h2>StudioPro</h2>
+                                    <ul>
+                                        <li>100% FREE</li>
+                                        <li>more to learn</li>
+                                        <li>packed with advanced features</li>
+                                        <li>build a powerful presentation</li>
+                                    </ul>
+                                </div>
+
+                                <input type="radio" name="product" value="desktop">
+                            </div>
+                            <button id="StudioProSelected" name="StudioPro" class="btn btn-lg btn-primary btn-block"
+                                    type="submit" data-localize="signin">Go Pro
+                            </button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li id="commonFileMenu" class="hidden-lg" dropdown><a href="#" class="dropdown-toggle"
-                                                                  data-toggle="dropdown">Navigatior<b class="caret"></b></a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a data-localize="saveConfig" id="saveConfig" href="#">Save</a></li>
-            <li><a data-localize="liveChat" id="liveChat" href="#">Live chat</a></li>
-            <li><a id="languagePrompt" href="#">Language &nbsp;</a></li>
-            <li><a id="dashboard" href="#">Dashboard &nbsp;</a></li>
-        </ul>
-    </div>
-</nav>
-<div id="appEntry">
-<div id="appLogin" style="display: none">
-    <form class="form-signin" role="form">
-        <br/>
-        <br/>
 
-        <h2 class="form-signin-heading"></h2>
-        <!-- <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required autofocus> -->
+            <!--
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-2">
+                    <div id="StudioLiteSelection" name="StudioLite" class="studioSelect">
+                        <spam>
+                            <br/> <br/>
+                            StudioLite
+                        </spam>
+                    </div>
 
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
-                   placeholder="username or email">
-        </div>
-
-        <div style="margin-bottom: 3px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input id="userPass" type="password" class="form-control" name="password" required autofocus
-                   placeholder="password">
-        </div>
-
-        <!-- <input id="userPass" type="password" class="form-control" data-localize="password" placeholder="Password" autofocus required> -->
-
-        <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Sign in
-        </button>
-
-        <label id="rememberMeLabel" class="checkbox">
-            <input id="rememberMe" style="position: relative; top: -2px" type="checkbox" checked value="remember-me">
-            <span data-localize="rememberMe"> Remember me </span></label>
-
-
-        <div id="loginExtras">
-            <a id="forgotPassword" href="#">forgot password</a>
-            <br/>
-            <a id="changePassword" href="#">change password</a>
-            <br/>
-            <a id="changeBusiness" href="#">change business name</a>
-        </div>
-
-        <div style="clear: both">
-            <hr class="hrThin" style="position: relative; top: 10px"/>
-            <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
-                <span id="or">or</span>
-
-                <div style="clear: both"></div>
+                </div>
+                <div class="col-xs-4">
+                    <div id="StudioProSelected" name="StudioPro" class="studioSelect">
+                        <spam>
+                            <br/> <br/>
+                            StudioPro
+                        </spam>
+                    </div>
+                </div>
             </div>
+            -->
 
         </div>
-        <button id="createAccountButton" class="btn btn-lg btn-default btn-block" data-localize="createAccount">create
-            new account
-        </button>
-        <hr class="hrThin"/>
-        <div id="languageSelectionLogin"></div>
-    </form>
-</div>
-<div id="signagePlayerView" style="display: none">
-    <h1>SignagePlayerView</h1>
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-</div>
-<div id="createAccView" style="display: none">
-    <h1>CreateAccView</h1>
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-</div>
 
-<div id="renameView" style="display: none">
-    <h1>RenameView</h1>
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-</div>
+        <div id="studioLiteView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
 
-<div id="changePassView" style="display: none">
-
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
-    <form class="form-signin" role="form">
-        <br/>
-        <br/>
-
-        <h2 class="form-signin-heading"></h2>
-
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="email">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus
-                   placeholder="old password">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus
-                   placeholder="new password">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus
-                   placeholder="verify new password">
-        </div>
-        <button id="changePass" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">change
-            password
-        </button>
-
-    </form>
-
-
-</div>
-
-<div id="forgetPassView" style="display: none">
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-    <form class="form-signin" role="form">
-        <br/>
-        <br/>
-
-        <h2 class="form-signin-heading"></h2>
-
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-            <input id="resetPassInput" type="text" class="form-control" name="username" value="" required autofocus
-                   placeholder="email">
-        </div>
-        <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                data-localize="resetPassword">reset password
-        </button>
-    </form>
-
-
-</div>
-
-<div id="changeBusinessView" style="display: none">
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-    <form class="form-signin" role="form">
-        <br/>
-        <br/>
-
-        <h2 class="form-signin-heading"></h2>
-
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="email">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="password">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus
-                   placeholder="new business name">
-        </div>
-
-        <button id="renameBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
-            change password
-        </button>
-    </form>
-</div>
-
-<div id="studioSelectView" style="display: none">
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-    <div class="container">
-        <div class="row form-group product-chooser disabled">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="product-chooser-item selected">
-                    <img src="./_assets/LiteIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
-                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                        <div>
-                            <h2>StudioLite</h2>
-                            <ul>
-                                <li>100% FREE</li>
-                                <li>simple to learn</li>
-                                <li>easy to use</li>
-                                <li>convert to the free Pro version at anytime</li>
+            <div class="row">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading c-list">
+                            <span class="title">Select starting sample</span>
+                            <ul class="pull-right c-controls">
+                                <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top"
+                                       title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
+                                <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
+                                       data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a>
+                                </li>
                             </ul>
                         </div>
-                        <input type="radio" name="product" value="desktop">
-                    </div>
-                    <button id="StudioLiteSelection" name="StudioLite"  class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Go Lite
-                    </button>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="product-chooser-item disabled">
-                    <img src="./_assets/ProIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
-                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                        <div>
-                            <h2>StudioPro</h2>
-                            <ul>
-                                <li>100% FREE</li>
-                                <li>more to learn</li>
-                                <li>packed with advanced features</li>
-                                <li>build a powerful presentation</li>
-                            </ul>
-                        </div>
 
-                        <input type="radio" name="product" value="desktop">
-                    </div>
-                    <button id="StudioProSelected" name="StudioPro" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">Go Pro
-                    </button>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--
-    <div class="row">
-        <div class="col-xs-4 col-xs-offset-2">
-            <div id="StudioLiteSelection" name="StudioLite" class="studioSelect">
-                <spam>
-                    <br/> <br/>
-                    StudioLite
-                </spam>
-            </div>
-
-        </div>
-        <div class="col-xs-4">
-            <div id="StudioProSelected" name="StudioPro" class="studioSelect">
-                <spam>
-                    <br/> <br/>
-                    StudioPro
-                </spam>
-            </div>
-        </div>
-    </div>
-    -->
-
-</div>
-
-<div id="studioLiteView" style="display: none">
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-    <div class="row">
-        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading c-list">
-                    <span class="title">Select starting sample</span>
-                    <ul class="pull-right c-controls">
-                        <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top"
-                               title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
-                        <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
-                               data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
-                    </ul>
-                </div>
-
-                <div class="row" style="display: none;">
-                    <div class="col-xs-12">
-                        <div class="input-group c-search">
-                            <input type="text" class="form-control">
+                        <div class="row" style="display: none;">
+                            <div class="col-xs-12">
+                                <div class="input-group c-search">
+                                    <input type="text" class="form-control">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><span
                                         class="glyphicon glyphicon-search text-muted"></span></button>
                             </span>
-                        </div>
-                    </div>
-                </div>
-
-                <ul id="sampleListLite" class="list-group">
-                    <li class="sampleItem list-group-item">
-                        <div class="col-xs-12 col-sm-3">
-                            <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>
-                        </div>
-                        <div class="col-xs-12 col-sm-9">
-                            <span class="name">International Lite Airport</span><br/>
-                            <div class="samplePreview">
-                                <span style="font-size: 2em; position: relative; top: 5px; left: -3px"
-                                      class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>
-                                <h4 style="display: inline; position: relative; left: -9px; color: #939393">preview</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
-                    </li>
 
-                </ul>
-            </div>
-        </div>
-    </div>
+                        <ul id="sampleListLite" class="list-group">
+                            <li class="sampleItem list-group-item">
+                                <div class="col-xs-12 col-sm-3">
+                                    <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>
+                                </div>
+                                <div class="col-xs-12 col-sm-9">
+                                    <span class="name">International Lite Airport</span><br/>
 
+                                    <div class="samplePreview">
+                                <span style="font-size: 2em; position: relative; top: 5px; left: -3px"
+                                      class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>
+                                        <h4 style="display: inline; position: relative; left: -9px; color: #939393">
+                                            preview</h4>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
 
-</div>
-
-<div id="studioProView" style="display: none">
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading c-list">
-                    <span class="title">Select starting sample</span>
-                    <ul class="pull-right c-controls">
-                        <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top"
-                               title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
-                        <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
-                               data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
+            </div>
 
-                <div class="row" style="display: none;">
-                    <div class="col-xs-12">
-                        <div class="input-group c-search">
-                            <input type="text" class="form-control">
+
+        </div>
+
+        <div id="studioProView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading c-list">
+                            <span class="title">Select starting sample</span>
+                            <ul class="pull-right c-controls">
+                                <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top"
+                                       title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
+                                <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
+                                       data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row" style="display: none;">
+                            <div class="col-xs-12">
+                                <div class="input-group c-search">
+                                    <input type="text" class="form-control">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><span
                                         class="glyphicon glyphicon-search text-muted"></span></button>
                             </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul id="sampleListPro" class="list-group">
+                            <li class="sampleItem list-group-item">
+                                <div class="col-xs-12 col-sm-3">
+                                    <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>
+                                </div>
+                                <div class="col-xs-12 col-sm-9">
+                                    <span class="name">International Pro Airport</span><br/>
+
+                                    <div class="samplePreview">
+                                <span style="font-size: 2em; position: relative; top: 5px; left: -3px"
+                                      class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>
+                                        <h4 style="display: inline; position: relative; left: -9px; color: #939393">
+                                            preview</h4>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="accountView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+
+            <form class="form-signin" role="form">
+                <br/>
+                <br/>
+
+                <h2 class="form-signin-heading"></h2>
+
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="business name">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="email">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="confirm password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                    <input type="text" class="form-control" name="username" value="" required autofocus
+                           placeholder="enter your phone (optional)">
+                </div>
+
+                <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit"
+                        data-localize="signin">
+                    create account
+                </button>
+            </form>
+        </div>
+
+        <div id="webDeskSelectView" style="display: none">
+            <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
+            <div class="container">
+                <div class="row">
+                    <div style="padding-bottom: 30px" class="col-sm-2">
+                    </div>
+                    <div style="padding-bottom: 30px" class="col-sm-8">
+                        <h2 style="text-align: center">123</h2>
+                    </div>
+                    <div style="padding-bottom: 30px" class="col-sm-2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row form-group">
+                    <div style="padding-bottom: 30px" class="col-xs-offset-0 col-xs-12 col-sm-offset-2 col-sm-4">
+                        <div >
+                            <a href="javascript:openLoginApp('trial', 'http://galaxy.mediasignage.com/WebService/', airApplicationArguments)"
+                               id="openWebAccount">
+                                <img class="img-responsive img-center" height="133" width="217"
+                                     src="http://www.digitalsignage.com/_images/WebOpenv3.png" border="0">
+                            </a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-xs-offset-0 col-sm-offset-0 col-xs-12 col-sm-4 col-sm-offset-2">
+                        <div>
+                            <div>
+                                <div id="flashContent">
+                                    <script language="JavaScript" type="text/javascript">
+                                        var airApplicationURL = "http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air&buttoncolor=222222&messagecolor=000000";
+                                        var airApplicationName = "Air Studio";
+                                        var airApplicationImage = "http://mediasignage.com/assets/images/AirStudiov6.jpg";
+                                    </script>
+
+                                    <!-- <script src="http://www.digitalsignage.com/_js/InstallBadge.js" language="javascript"></script> -->
+                                    <div>
+                                        <embed width="217" height="180" class="img-resp img-center"
+                                               src="http://www.digitalsignage.com/_html/badge.swf" quality="high"
+                                               bgcolor="#FFFFFF" name="badge" allowscriptaccess="all"
+                                               pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                               flashvars="appname=Air%20Studio&amp;appurl=http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air&amp;buttoncolor=222222&amp;messagecolor=000000&amp;airversion=3.0&amp;imageurl=http://mediasignage.com/assets/images/AirStudiov6.jpg&amp;buttoncolor=E00000&amp;messagecolor=000000&amp;arguments=f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141"
+                                               type="application/x-shockwave-flash">
+                                            <noscript>
+                                                &lt;div id="AIRDownloadMessageTable"&gt; Download &lt;a
+                                                href="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air"&gt;SignageStudio&lt;/a&gt;&lt;br
+                                                /&gt;
+                                                &lt;span id="AIRDownloadMessageRuntime"&gt; This application
+                                                requires Adobe Flash/AIR to be installed. &lt;a
+                                                href="http://www.adobe.com/go/getair/"&gt;Download here&lt;/a&gt;&lt;/span&gt;
+                                                &lt;/div&gt;
+                                            </noscript>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
                         </div>
                     </div>
                 </div>
-
-                <ul id="sampleListPro" class="list-group">
-                    <li class="sampleItem list-group-item">
-                        <div class="col-xs-12 col-sm-3">
-                            <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>
-                        </div>
-                        <div class="col-xs-12 col-sm-9">
-                            <span class="name">International Pro Airport</span><br/>
-
-                            <div class="samplePreview">
-                                <span style="font-size: 2em; position: relative; top: 5px; left: -3px"
-                                      class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>
-                                <h4 style="display: inline; position: relative; left: -9px; color: #939393">preview</h4>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-
-                </ul>
             </div>
         </div>
-    </div>
 
-
-</div>
-
-<div id="accountView" style="display: none">
-    <a href="#"><i class="back fa fa-chevron-circle-left"></i></a>
-    <form class="form-signin" role="form">
-        <br/>
-        <br/>
-
-        <h2 class="form-signin-heading"></h2>
-
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="business name">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="email">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="password">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="confirm password">
-        </div>
-        <div style="margin-bottom: 0px" class="input-group">
-            <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
-            <input type="text" class="form-control" name="username" value="" required autofocus placeholder="enter your phone (optional)">
-        </div>
-
-        <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
-            create account
-        </button>
-    </form>
-</div>
-
-<div id="webDeskSelectView" style="display: none">
-    <h1>WebDeskSelectView</h1>
-</div>
-
-<div id="waitScreenEntryApp" style="display: none"><span style="position: absolute; left: 45%; top: 20%">
+        <div id="waitScreenEntryApp" style="display: none"><span style="position: absolute; left: 45%; top: 20%">
     <img src="./_assets/preload5.gif"> </span></div>
-<div id="appLogout" style="display: none"> <span style="position: absolute; left: 40%; top: 20%">
+        <div id="appLogout" style="display: none"> <span style="position: absolute; left: 40%; top: 20%">
       <h3 data-localize="haveNiceDay">Have a nice day :)</h3>
       </span></div>
-<div id="appSelector" class="noScroll container" style="display: none">
-    <div align="center" style="padding-top: 100px">
-        <button type="button" name="mailWasp" class="btn btn-default"><i
-                style="margin: 20px; padding: 20px; font-size: 5em" class="fa fa-envelope"></i> <span
-                data-localize="none"></span></button>
-        <button type="button" name="everNodes" class="btn btn-default"><i
-                style="margin: 20px; padding: 20px ; font-size: 5em" class="fa fa-sitemap"></i> <span
-                data-localize="none"></span></button>
+        <div id="appSelector" class="noScroll container" style="display: none">
+            <div align="center" style="padding-top: 100px">
+                <button type="button" name="mailWasp" class="btn btn-default"><i
+                        style="margin: 20px; padding: 20px; font-size: 5em" class="fa fa-envelope"></i> <span
+                        data-localize="none"></span></button>
+                <button type="button" name="everNodes" class="btn btn-default"><i
+                        style="margin: 20px; padding: 20px ; font-size: 5em" class="fa fa-sitemap"></i> <span
+                        data-localize="none"></span></button>
+            </div>
+        </div>
+        <div id="appMailWaspContent" class="noScroll container" style="display: none">
+        </div>
+        <div id="appEverNodesContent" class="noScroll container" style="display: none">
+        </div>
     </div>
-</div>
-<div id="appMailWaspContent" class="noScroll container" style="display: none">
-</div>
-<div id="appEverNodesContent" class="noScroll container" style="display: none">
-</div>
-</div>
 </div>
 <div id="footer"><br>
     <span id="footerText">&nbsp;MediaSignage Inc &#169; | version 0.9.27 </span></div>

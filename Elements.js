@@ -19,6 +19,7 @@ Elements.STUDIO_PRO_VIEW = '#studioProView';
 Elements.ACCOUNT_VIEW = '#accountView';
 Elements.WEB_DESK_SELECT_VIEW = '#webDeskSelectView';
 Elements.CREATE_ACCOUNT_BUTTON = '#createAccountButton';
+Elements.CREATE_ACCOUNT_INFO_BUTTON = '#createAccountInfoButton';
 Elements.STUDIO_LITE_SELECTION = '#StudioLiteSelection';
 Elements.STUDIO_PRO_SELECTED = '#StudioProSelected';
 Elements.LOGIN_BUTTON = '#loginButton';

@@ -211,6 +211,12 @@ aside > aside > div > ul > li {
     top: 3px;
 }
 
+.img-center {margin:0 auto;}
+
+.img-resp {
+    display: block;
+}
+
 /************************************
  StudioLite CSS element styling
  ************************************/

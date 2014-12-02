@@ -59,6 +59,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "authenticationFailed": "_routeAuthenticationFailed",
                 "selectStudioLite": "_routeSelectStudioLite",
                 "selectStudioPro": "_routeSelectStudioPro",
+                "selectWebOrDesk": "_routeSelectWebOrDesktop",
                 "start": "_routeStart"
             },
 
@@ -143,7 +144,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             /**
-             Route selected StudioLite app
+             Route selected StudioLite vuew
              @method _routeSelectStudioLite
              **/
             _routeSelectStudioLite: function(){
@@ -151,7 +152,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             /**
-             Route selected StudioPro app
+             Route selected StudioPro view
              @method _routeSelectStudioPro
              **/
             _routeSelectStudioPro: function(){
@@ -159,7 +160,15 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             /**
-             On successful authentication load app selector
+             Route selected Web or Desktop view
+             @method _routeSelectWebOrDesktop
+             **/
+            _routeSelectWebOrDesktop: function(){
+                this.m_appEntryFaderView.selectView(this.m_webDeskSelectView);
+            },
+
+            /**
+             On successful authentication load view selector
              @method _routeAppSelector
              **/
             _routeAppSelector: function () {

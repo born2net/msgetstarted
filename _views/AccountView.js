@@ -16,8 +16,17 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
             self.$el.find('.back').on('click',function(e){
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('appSelector', {trigger: true});
             });
+            self._listenCreateAccount();
+        },
+
+        _listenCreateAccount: function(){
+            $(Elements.CREATE_ACCOUNT_INFO_BUTTON).on('click',function(e){
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+               return false;
+            });
         }
-    })
+
+    });
 
     return AccountView;
 
