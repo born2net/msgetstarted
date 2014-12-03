@@ -210,7 +210,7 @@
             <div class="container">
                 <div class="row form-group product-chooser disabled">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="product-chooser-item selected">
+                        <div name="StudioLite" class="product-chooser-item selected">
                             <img src="./_assets/LiteIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
                                  alt="Desktop">
 
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="product-chooser-item disabled">
+                        <div name="StudioPro" class="product-chooser-item disabled">
                             <img src="./_assets/ProIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
                                  alt="Desktop">
 
@@ -374,6 +374,33 @@
         <div id="verifyEmailView" style="display: none">
             <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <h4 style="text-align: center" data-localize="pleaseCheckEamil">please check your email inbox</h4>
+        </div>
+
+        <div id="webDeskSelectNoFlashView" style="display: none">
+            <a href="#"><i class="back fa fa-times-circle-o"></i></a>
+            <div class="container">
+                <div class="row">
+                    <div class="center-block placeholder">
+                        <!-- <h2 style="text-align: center">Install StudioPro</h2> -->
+                        <br/><br/><br/>
+                        <ul class="ds-btn" style="width: 300px; padding: 0; margin: auto">
+                            <li>
+                                <a class="btn btn-lg btn-primary" href="http://get.adobe.com/air/" target="_blank">
+                                    <i class="airIconGlyphicon fa fa-circle-o  pull-left"></i><span>1. Install Adobe AIR</span></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-lg btn-primary" href="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air">
+                                    <i class="airIconGlyphicon fa fa-dot-circle-o pull-left"></i><span>2. Install StudioPro</span></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-lg btn-primary" href="#">
+                                    <i class="airIconGlyphicon fa fa-circle pull-left"></i><span>3. Build your presentation</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="webDeskSelectView" style="display: none">
@@ -596,6 +623,8 @@
 <p style="display: none" id="bootBoxCancel" data-localize="bootBoxCancel">Cancel</p>
 
 <p style="display: none" id="bootBoxOk" data-localize="bootBoxOk">OK</p>
+
+<p style="display: none" id="bootboxNoProbOnMobile" data-localize="bootboxNoProbOnMobile">StudioPro is suupported on Windows and Mac only (non mobile)</p>
 
 <p style="display: none" id="bootBoxRestartStations" data-localize="bootBoxRestartStations">Restart connected stations
     and apply your saved work?</p>

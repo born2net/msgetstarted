@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated StudioListView
  **/
-define(['jquery', 'backbone', 'SampleFactory'], function ($, Backbone, SampleFactory) {
+define(['jquery', 'backbone', 'SampleCreator'], function ($, Backbone, SampleCreator) {
 
     BB.CONSTS.STUDIO_LITE = 'STUDIO_LITE';
     BB.CONSTS.STUDIO_PRO = 'STUDIO_PRO';
@@ -39,7 +39,7 @@ define(['jquery', 'backbone', 'SampleFactory'], function ($, Backbone, SampleFac
         _render: function(){
             var self = this;
             var element;
-            if (self.m_sampleFactory)
+            if (self.m_SampleCreator)
                 return;
             switch(self.m_studioType){
                 case BB.CONSTS.STUDIO_PRO: {
@@ -51,7 +51,8 @@ define(['jquery', 'backbone', 'SampleFactory'], function ($, Backbone, SampleFac
                     break;
                 }
             }
-            self.m_sampleFactory = new SampleFactory({
+
+            self.m_SampleCreator = new SampleCreator({
                 el: element,
                 studioType: self.m_studioType
             });

@@ -38,12 +38,7 @@
     "haveNiceDay": "Have a nice day :)",
     "close": "close",
     "saveChanges": "save changes",
-    "saveConfig": "",
-    "saveConfig": "",
-    "saveConfig": "",
-    "saveConfig": "",
-    "saveConfig": ""
-
+    "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead..."
 }
 
 

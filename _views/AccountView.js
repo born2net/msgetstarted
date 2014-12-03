@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated AccountView
  **/
-define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
+define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
 
     var AccountView = Backbone.View.extend({
 
@@ -22,9 +22,29 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
         _listenCreateAccount: function(){
             $(Elements.CREATE_ACCOUNT_INFO_BUTTON).on('click',function(e){
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('verifyEmail', {trigger: true});
-                setTimeout(function(){
-                    Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
-                },3000);
+
+                var studioSelectView = BB.comBroker.getService(BB.SERVICES.STUDIO_SELECT_VIEW).getStudioTypeSelected();
+
+                switch (studioSelectView){
+                    case 'StudioLite': {
+                        setTimeout(function(){
+                            bootbox.alert('redirecting to studiolite');
+                        },3000);
+                        break;
+                    }
+
+                    case 'StudioPro': {
+                        setTimeout(function(){
+                            if (BB.APPS_SUPPORT==BB.CONSTS.OS_FLASH){
+                                // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+                            } else {
+                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                            }
+                        },3000);
+                        break;
+                    }
+                }
 
                return false;
             });

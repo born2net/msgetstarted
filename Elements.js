@@ -18,6 +18,7 @@ Elements.SAMPLE_LIST_PRO = '#sampleListPro';
 Elements.STUDIO_PRO_VIEW = '#studioProView';
 Elements.ACCOUNT_VIEW = '#accountView';
 Elements.WEB_DESK_SELECT_VIEW = '#webDeskSelectView';
+Elements.WEB_DESK_SELECT_NO_FLASH_VIEW = '#webDeskSelectNoFlashView';
 Elements.VERIFY_EMAIL_VIEW = '#verifyEmailView';
 Elements.CREATE_ACCOUNT_BUTTON = '#createAccountButton';
 Elements.CREATE_ACCOUNT_INFO_BUTTON = '#createAccountInfoButton';
@@ -117,6 +118,7 @@ Elements.MSG_BOOTBOX_CANCEL = '#bootBoxCancel';
 Elements.MSG_BOOTBOX_OK = '#bootBoxOk';
 Elements.MSG_BOOTBOX_RESTART_STATIONS = '#bootBoxRestartStations';
 Elements.MSG_BOOTBOX_STUDIO_LITE_ACC = '#bootBoxStudioLiteAcc';
+Elements.MSG_BOOTBOX_NO_PRO_ON_MOBILE = '#bootboxNoProbOnMobile'
 
 // templates
 Elements.LANGUAGE_SELECTOR_TEMPLATE = '#languageSelector';

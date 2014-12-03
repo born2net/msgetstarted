@@ -11,8 +11,6 @@
     src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf) format('truetype');
 }
 
-
-
 html,
 body {
     height: 100%;
@@ -55,11 +53,11 @@ a {
 }
 
 .studioSelect {
-     border: solid 1px gray;
-     text-align: center;
-     height: 100px;
-     cursor: pointer;
-     background-color: #e3e3e3;
+    border: solid 1px gray;
+    text-align: center;
+    height: 100px;
+    cursor: pointer;
+    background-color: #e3e3e3;
 }
 
 .studioSelect:hover {
@@ -211,13 +209,15 @@ aside > aside > div > ul > li {
     top: 3px;
 }
 
-.img-center {margin:0 auto;}
+.img-center {
+    margin: 0 auto;
+}
 
 .img-resp {
     display: block;
 }
 
-#studioProWeb:hover{
+#studioProWeb:hover {
     opacity: 0.9;
 }
 
@@ -631,8 +631,6 @@ aside > aside > div > ul > li {
 .form-signin .form-control:focus {
     z-index: 2;
 }
-
-
 
 .screenResolutionLabel {
     padding: 10px;
@@ -1235,8 +1233,6 @@ Language selector
     margin-right: 10px;
 }
 
-
-
 /************************************
 sample selector
 ************************************/
@@ -1244,21 +1240,24 @@ sample selector
 .panel > .list-group .list-group-item:first-child {
     /*border-top: 1px solid rgb(204, 204, 204);*/
 }
+
 @media (max-width: 767px) {
     .visible-xs {
         display: inline-block !important;
     }
+
     .block {
         display: block !important;
         width: 100%;
         height: 1px !important;
     }
 }
+
 #back-to-bootsnipp {
     position: fixed;
-    top: 10px; right: 10px;
+    top: 10px;
+    right: 10px;
 }
-
 
 .c-search > .form-control {
     border-radius: 0px;
@@ -1269,11 +1268,13 @@ sample selector
     height: 44px;
     outline: none !important;
 }
+
 .c-search > .form-control:focus {
-    outline:0px !important;
-    -webkit-appearance:none;
+    outline: 0px !important;
+    -webkit-appearance: none;
     box-shadow: none;
 }
+
 .c-search > .input-group-btn .btn {
     border-radius: 0px;
     border-width: 0px;
@@ -1282,16 +1283,17 @@ sample selector
     height: 44px;
 }
 
-
 .c-list {
     padding: 0px;
     min-height: 44px;
 }
+
 .title {
     display: inline-block;
     font-size: 1.7em;
     padding: 5px 15px;
 }
+
 ul.c-controls {
     list-style: none;
     margin: 0px;
@@ -1307,6 +1309,7 @@ ul.c-controls li a {
     font-size: 1.7em;
     padding: 11px 10px 6px;
 }
+
 ul.c-controls li a i {
     min-width: 24px;
     text-align: center;
@@ -1338,32 +1341,66 @@ ul.c-controls li a:hover {
     font-size: 4em !important;
 }
 
-.back:hover{
+.back:hover {
     color: #9e9e9e;
+}
+
+/************************************
+manual installation of StudioPro / AIR
+************************************/
+
+.ds-btn li {
+    list-style: none;
+    padding: 20px;
+}
+
+.ds-btn li a {
+    width: 300px;
+}
+
+.ds-btn li a i {
+    font-size: 2em;
+}
+
+.ds-btn li a span {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.6em;
+}
+
+.ds-btn li a span small {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+.airIconGlyphicon {
+       font-size: 2em;
 }
 
 /************************************
 product selector
 ************************************/
 
-div.clear
-{
+div.clear {
     clear: both;
 }
 
-div.product-chooser{
+div.product-chooser {
 
 }
 
-div.product-chooser.disabled div.product-chooser-item
-{
+div.product-chooser.disabled div.product-chooser-item {
     zoom: 1;
     filter: alpha(opacity=60);
     opacity: 0.6;
     cursor: default;
 }
 
-div.product-chooser div.product-chooser-item{
+div.product-chooser div.product-chooser-item {
     padding: 11px;
     border-radius: 6px;
     cursor: pointer;
@@ -1374,7 +1411,7 @@ div.product-chooser div.product-chooser-item{
     margin-right: 10x;
 }
 
-div.product-chooser div.product-chooser-item.selected{
+div.product-chooser div.product-chooser-item.selected {
     border: 4px solid #428bca;
     background: #efefef;
     padding: 8px;
@@ -1382,24 +1419,24 @@ div.product-chooser div.product-chooser-item.selected{
     opacity: 1;
 }
 
-div.product-chooser div.product-chooser-item img{
+div.product-chooser div.product-chooser-item img {
     padding: 0;
 }
 
-div.product-chooser div.product-chooser-item span.title{
+div.product-chooser div.product-chooser-item span.title {
     display: block;
     margin: 10px 0 5px 0;
     font-weight: bold;
     font-size: 12px;
 }
 
-div.product-chooser div.product-chooser-item span.description{
+div.product-chooser div.product-chooser-item span.description {
     font-size: 12px;
 }
 
-div.product-chooser div.product-chooser-item input{
+div.product-chooser div.product-chooser-item input {
     position: absolute;
     left: 0;
     top: 0;
-    visibility:hidden;
+    visibility: hidden;
 }

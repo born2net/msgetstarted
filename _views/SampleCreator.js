@@ -1,11 +1,11 @@
 /**
- @class SampleFactory
+ @class SampleCreator
  @constructor
- @return {Object} instantiated SampleFactory
+ @return {Object} instantiated SampleCreator
  **/
 define(['jquery', 'backbone'], function ($, Backbone) {
 
-    var SampleFactory = Backbone.View.extend({
+    var SampleCreator = Backbone.View.extend({
 
         /**
          Constructor
@@ -69,10 +69,15 @@ define(['jquery', 'backbone'], function ($, Backbone) {
                 snippet += self.m_sampleSnippet;
             }
             self.$el.append(snippet);
+
+            // no flash support so remove preview capabilities
+            if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH){
+                $(Elements.CLASS_SAMPLE_PREVIEW).hide();
+            }
         }
     });
 
-    return SampleFactory;
+    return SampleCreator;
 
 });
 

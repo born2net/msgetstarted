@@ -17,7 +17,13 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.EVENTS = {};
             BB.LOADING = {};
             BB.CONSTS = {};
-            BB.FLASH = false;
+
+            BB.CONSTS.OS_UNKNOWN = 0;
+            BB.CONSTS.OS_FLASH = 1;
+            BB.CONSTS.OS_DESK_NO_FLASH = 2;
+            BB.CONSTS.OS_MOBILE = 3;
+            BB.APPS_SUPPORT = BB.CONSTS.OS_UNKNOWN;
+
             BB.globs['UNIQUE_COUNTER'] = 0;
             BB.globs['RC4KEY'] = '226a3a42f34ddd778ed2c3ba56644315';
             BB.lib = new Lib();
@@ -34,9 +40,6 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.CONSTS.MAILWASP = 'mailWasp';
             BB.CONSTS.EVERNODES = 'everNodes';
 
-            // alert('name: ' + platform.name + ' version: ' + platform.version + ' product: ' + platform.product + ' os: ' + platform.os);
-
-            BB.lib.getOS();
 
             require(['localizer'], function () {
                 var lang = "en";
@@ -56,16 +59,19 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);
                 // LayoutRouter.navigate('authenticate/_/_', {trigger: true});
             });
-            if (!FlashDetect.installed || !FlashDetect.versionAtLeast(13))
-                BB.FLASH = true;
 
-            $('div.product-chooser').find('div.product-chooser-item').on('click', function(){
-                $('div.product-chooser-item').removeClass('selected');
-                $(this).addClass('selected');
-                $(this).find('input[type="radio"]').prop("checked", true);
+            // alert('name: ' + platform.name + ' version: ' + platform.version + ' product: ' + platform.product + ' os: ' + platform.os);
 
-            });
-
+            if (FlashDetect.installed || FlashDetect.versionAtLeast(13)){
+                BB.APPS_SUPPORT = BB.CONSTS.OS_FLASH;
+            } else {
+                var os = BB.lib.getOS();
+                if (os == 'windows' || os == 'osx') {
+                    BB.APPS_SUPPORT = BB.CONSTS.OS_DESK_NO_FLASH;
+                } else {
+                    BB.APPS_SUPPORT = BB.CONSTS.OS_MOBILE;
+                }
+            }
         }
     });
     return App;
