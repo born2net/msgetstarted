@@ -34,7 +34,9 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.CONSTS.MAILWASP = 'mailWasp';
             BB.CONSTS.EVERNODES = 'everNodes';
 
+            // alert('name: ' + platform.name + ' version: ' + platform.version + ' product: ' + platform.product + ' os: ' + platform.os);
 
+            BB.lib.getOS();
 
             require(['localizer'], function () {
                 var lang = "en";
@@ -43,9 +45,9 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             });
 
             // localization
-            require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
-                new LanguageSelectorView({appendTo: Elements.LANGUAGE_SELECTION_LOGIN});
-            });
+            //require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
+            //    new LanguageSelectorView({appendTo: Elements.LANGUAGE_SELECTION_LOGIN});
+            //});
 
             // router init
             require(['LayoutRouter'], function (LayoutRouter) {

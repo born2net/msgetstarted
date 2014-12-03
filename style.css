@@ -645,7 +645,7 @@ aside > aside > div > ul > li {
 }
 
 .navbar-nav {
-    display: none;
+    display: block;
 }
 
 .centerElement {

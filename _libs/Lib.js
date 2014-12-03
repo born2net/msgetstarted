@@ -23,9 +23,8 @@ define(['jquery', 'backbone', 'platform'], function ($, Backbone, platform) {
          @param {String} msg
          **/
         log: function (msg) {
-            if (platform.name == 'IE' && platform.version < 10)
-                return;
-            console.log(new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1") + ': ' + msg);
+            if (platform.name == 'Chrome')
+                console.log(new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1") + ': ' + msg);
         },
 
         /**
@@ -60,72 +59,24 @@ define(['jquery', 'backbone', 'platform'], function ($, Backbone, platform) {
         },
 
         /**
-         Set user agent / browser version
-         @method initUserAgent
+         Get OS (windows / osx / ios / android ...)
+         @method getOS
+         @return {String} lower cases os
          **/
-        initUserAgent: function () {
-
-            var ua = navigator.userAgent.toLowerCase(),
-                match = /(chrome)[ \/]([\w.]+)/.exec(ua) ||
-                    /(webkit)[ \/]([\w.]+)/.exec(ua) ||
-                    /(opera)(?:.*version|)[ \/]([\w.]+)/.exec(ua) ||
-                    /(msie) ([\w.]+)/.exec(ua) ||
-                    ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec(ua) || [],
-                browser = match[1] || "",
-                version = match[2] || "0";
-
-            $.browser = {};
-            $.browser.type = '';
-
-            if (browser) {
-                $.browser[browser] = true;
-                $.browser.version = version;
-            }
-
-            // Chrome is Webkit, but Webkit is also Safari.
-            if (jQuery.browser.chrome) {
-                jQuery.browser.webkit = true;
-            } else if (jQuery.browser.webkit) {
-                jQuery.browser.safari = true;
-            }
-
-            if (!(window.mozInnerScreenX == null)) {
-                $.browser.type = 'FF';
-                return;
-            }
-
-            if ($.browser.msie) {
-                $.browser.type = 'IE';
-            }
-
-            if (/Android/i.test(navigator.userAgent)) {
-                $.browser.type = 'ANDROID';
-            }
-
-            if (/webOS/i.test(navigator.userAgent)) {
-                $.browser.type = 'WEBOS';
-            }
-
-            if (/iPhone/i.test(navigator.userAgent)) {
-                $.browser.type = 'IPHONE';
-            }
-
-            if (/iPad/i.test(navigator.userAgent)) {
-                $.browser.type = 'IPAD';
-            }
-
-            if (/iPod/i.test(navigator.userAgent)) {
-                $.browser.type = 'IPOD';
-            }
-
-            if (/BlackBerry/i.test(navigator.userAgent)) {
-                $.browser.type = 'BLACKBARRY';
-            }
-
-            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-                $.browser.type = 'SAFARI';
-                return;
-            }
+        getOS:function(){
+            var os = platform.os;
+            var family = os.family.replace(/ /g,'');
+            family = family.toLowerCase();
+            if (family.match('windows'))
+                family = 'windows';
+            if (family.match('ios'))
+                family = 'ios';
+            if (family.match('osx'))
+                family = 'osx';
+            if (family.match('android'))
+                family = 'android';
+            // alert(family);
+            return family;
         },
 
         /**

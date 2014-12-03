@@ -45,6 +45,7 @@ require.config({
         'OrientationSelectorView': '_views/_billing/OrientationSelectorView',
         'LoginView': '_views/LoginView',
         'SignagePlayerView': '_views/SignagePlayerView',
+        'NavigationView': '_views/NavigationView',
         'CreateAccView': '_views/CreateAccView',
         'PortalView': '_views/PortalView',
         'BillingView': '_views/BillingView',

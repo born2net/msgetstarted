@@ -1,5 +1,5 @@
 /**
- Create language selector widget
+ Create the language selector widget
  @class LanguageSelectorView
  @constructor
  @return {Object} instantiated LanguageSelectorView

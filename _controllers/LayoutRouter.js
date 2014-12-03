@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'VerifyEmailView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, VerifyEmailView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'VerifyEmailView', 'NavigationView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, VerifyEmailView, NavigationView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -252,6 +252,10 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView = new AppEntryFaderView({
                     el: Elements.APP_ENTRY,
                     duration: 500
+                });
+
+                this.m_navigationView = new NavigationView({
+                    el: Elements.FILE_MENU
                 });
 
                 this.m_appSelectorView = new AppSelectorView({
