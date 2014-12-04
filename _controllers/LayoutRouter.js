@@ -51,7 +51,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "authenticating": "_routeAuthenticating",
                 "forgetPassword": "_routeForgetPassword",
                 "createAcc": "_routeCreateAcc",
-                "studioSelectView": "_routeStudioSelectView",
+                "studioSelectView/:id": "_routeStudioSelectView",
                 "changePassword": "_routeChangePassword",
                 "changeBusiness": "_routeChangeBusiness",
                 "authenticated": "_routeAuthenticated",
@@ -65,7 +65,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "start": "_routeStart"
             },
 
-            _routeStart: function(){
+            _routeStart: function () {
                 this.navigate('authenticate/_/_', {trigger: true});
             },
 
@@ -87,23 +87,25 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.selectView(this.m_mainAppWaitView);
             },
 
-            _routeForgetPassword: function(){
+            _routeForgetPassword: function () {
                 this.m_appEntryFaderView.selectView(this.m_forgetPassView);
             },
 
-            _routeChangePassword: function(){
+            _routeChangePassword: function () {
                 this.m_appEntryFaderView.selectView(this.m_changePassView);
             },
 
-            _routeCreateAcc: function(){
+            _routeCreateAcc: function () {
                 this.m_appEntryFaderView.selectView(this.m_accountView);
             },
 
-            _routeStudioSelectView: function(){
-                this.m_appEntryFaderView.selectView(this.m_studioSelectView);
+            _routeStudioSelectView: function (i_id) {
+                var self = this;
+                self.m_appEntryFaderView.selectView(this.m_studioSelectView);
+                self.m_studioSelectView.showAccordionStudioPlayer(i_id);
             },
 
-            _routeChangeBusiness: function(){
+            _routeChangeBusiness: function () {
                 this.m_appEntryFaderView.selectView(this.m_changeBusinessView);
             },
 
@@ -149,7 +151,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected StudioLite vuew
              @method _routeSelectStudioLite
              **/
-            _routeSelectStudioLite: function(){
+            _routeSelectStudioLite: function () {
                 this.m_appEntryFaderView.selectView(this.m_studioLiteView);
             },
 
@@ -157,7 +159,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected StudioPro view
              @method _routeSelectStudioPro
              **/
-            _routeSelectStudioPro: function(){
+            _routeSelectStudioPro: function () {
                 this.m_appEntryFaderView.selectView(this.m_studioProView);
             },
 
@@ -165,7 +167,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected Web or Desktop view
              @method _routeSelectWebOrDesktop
              **/
-            _routeSelectWebOrDesktop: function(){
+            _routeSelectWebOrDesktop: function () {
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectView);
             },
 
@@ -173,7 +175,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected Web or Desktop view
              @method _routeSelectWebOrDesktopNoFlash
              **/
-            _routeSelectWebOrDesktopNoFlash: function(){
+            _routeSelectWebOrDesktopNoFlash: function () {
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectNoFlashView);
             },
 
@@ -181,7 +183,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected verify email
              @method _routeVerifyEmail
              **/
-            _routeVerifyEmail: function(){
+            _routeVerifyEmail: function () {
                 this.m_appEntryFaderView.selectView(this.m_verifyEmailView);
             },
 

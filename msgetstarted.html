@@ -208,56 +208,178 @@
         <div id="studioSelectView" style="display: none">
             <a href="#"><i class="back fa fa-times-circle-o"></i></a>
             <div class="container">
-                <div class="row form-group product-chooser disabled">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div name="StudioLite" class="product-chooser-item selected">
-                            <img src="./_assets/LiteIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
-                                 alt="Desktop">
-
-                            <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                <div>
-                                    <h2>StudioLite</h2>
-                                    <ul>
-                                        <li data-localize="freeHundred">100% FREE</li>
-                                        <li data-localize="simpleToLearn">simple to learn</li>
-                                        <li data-localize="easyToUse">easy to use</li>
-                                        <li data-localize="convertAnytime">convert to the free Pro version at anytime</li>
-                                    </ul>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading prodSelectAcc">
+                                    <h4 class="panel-title">
+                                        <a id="accordionStudio" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                            <span class="fa fa-arrow-circle-right">
+                                            </span>
+                                            SignageStudio - Lite / Pro
+                                        </a>
+                                    </h4>
                                 </div>
-                                <input type="radio" name="product" value="desktop">
-                            </div>
-                            <button id="StudioLiteSelection" name="StudioLite" class="startButtons btn btn-lg btn-primary btn-block"
-                                    type="submit" data-localize="goLite">Go Lite
-                            </button>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div name="StudioPro" class="product-chooser-item disabled">
-                            <img src="./_assets/ProIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
-                                 alt="Desktop">
+                                <div id="collapseOne" class="accordion-body panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="container" style="width: 100%; padding-left: 150px; padding-right: 50px">
+                                            <div class="row form-group product-chooser disabled">
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                    <div name="StudioLite" class="product-chooser-item selected">
+                                                        <img src="./_assets/LiteIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
+                                                             alt="Desktop">
 
-                            <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                <div>
-                                    <h2>StudioPro</h2>
-                                    <ul>
-                                        <li data-localize="freeHundred">100% FREE</li>
-                                        <li data-localize="moreToLearn">more to learn</li>
-                                        <li data-localize="packedFeatures">packed with advanced features</li>
-                                        <li data-localize="buildPowerful">build a powerful presentation</li>
-                                    </ul>
+                                                        <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                                                            <div>
+                                                                <h4>StudioLite - 100% FREE</h4>
+                                                                <ul>
+                                                                    <li data-localize="simpleToLearn">simple to learn</li>
+                                                                    <li data-localize="easyToUse">easy to use</li>
+                                                                    <li data-localize="convertAnytime">convert to the free Pro version at anytime</li>
+                                                                </ul>
+                                                            </div>
+                                                            <input type="radio" name="product" value="desktop">
+                                                        </div>
+                                                        <button id="StudioLiteSelection" name="StudioLite" class="startButtons btn btn-lg btn-primary btn-block"
+                                                                type="submit" data-localize="goLite">Go Lite
+                                                        </button>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                    <div name="StudioPro" class="product-chooser-item disabled">
+                                                        <img src="./_assets/ProIcon.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
+                                                             alt="Desktop">
+
+                                                        <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                                                            <div>
+                                                                <h4>StudioPro - 100% FREE</h4>
+                                                                <ul>
+                                                                    <li data-localize="moreToLearn">more to learn</li>
+                                                                    <li data-localize="packedFeatures">packed with advanced features</li>
+                                                                    <li data-localize="buildPowerful">build a powerful presentation</li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <input type="radio" name="product" value="desktop">
+                                                        </div>
+                                                        <button id="StudioProSelected" name="StudioPro" class="startButtons btn btn-lg btn-primary btn-block"
+                                                                type="submit" data-localize="goPro">Go Pro
+                                                        </button>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-
-                                <input type="radio" name="product" value="desktop">
                             </div>
-                            <button id="StudioProSelected" name="StudioPro" class="startButtons btn btn-lg btn-primary btn-block"
-                                    type="submit" data-localize="goPro">Go Pro
-                            </button>
-                            <div class="clear"></div>
+                            <div class="panel panel-default">
+                                <div class="prodSelectAcc panel-heading">
+                                    <h4 class="panel-title">
+                                        <a id="accordionPlayer" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <span class="fa fa-arrow-circle-right ">
+                                            </span>
+                                            SignagePlayer - Download
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="accordion-body panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="container">
+                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner">
+
+                                                    <div class="item active">
+                                                        <img src="http://placehold.it/1200x400/cccccc/ffffff">
+                                                        <div class="carousel-caption">
+                                                            <h3>Headline</h3>
+                                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
+                                                        </div>
+                                                    </div><!-- End Item -->
+
+                                                    <div class="item">
+                                                        <img src="http://placehold.it/1200x400/999999/cccccc">
+                                                        <div class="carousel-caption">
+                                                            <h3>Headline</h3>
+                                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
+                                                        </div>
+                                                    </div><!-- End Item -->
+
+                                                    <div class="item">
+                                                        <img src="http://placehold.it/1200x400/dddddd/333333">
+                                                        <div class="carousel-caption">
+                                                            <h3>Headline</h3>
+                                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
+                                                        </div>
+                                                    </div><!-- End Item -->
+
+                                                    <div class="item">
+                                                        <img src="http://placehold.it/1200x400/999999/cccccc">
+                                                        <div class="carousel-caption">
+                                                            <h3>Headline</h3>
+                                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                                        </div>
+                                                    </div><!-- End Item -->
+
+                                                    <div class="item">
+                                                        <img src="http://placehold.it/1200x400/999999/cccccc">
+                                                        <div class="carousel-caption">
+                                                            <h3>aaaaaaaaaaaaa</h3>
+                                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                                        </div>
+                                                    </div><!-- End Item -->
+
+                                                </div><!-- End Carousel Inner -->
+
+
+                                                <ul id="carouselItems" class="nav nav-pills nav-justified">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#"><i class="fa fa-windows"></i>Windows<small>Lorem ipsum dolor sit</small></a></li>
+                                                    <li data-target="#myCarousel" data-slide-to="1"><a href="#"><i class="fa fa-android"></i>Android<small>Lorem ipsum dolor sit</small></a></li>
+                                                    <li data-target="#myCarousel" data-slide-to="2"><a href="#"><i class="fa fa-apple"></i>Apple OSX<small>Lorem ipsum dolor sit</small></a></li>
+                                                    <li data-target="#myCarousel" data-slide-to="3"><a href="#"><i class="fa fa-apple"></i>Apple iOS<small>Lorem ipsum dolor sit</small></a></li>
+                                                    <li data-target="#myCarousel" data-slide-to="4"><a href="#"><i class="fa fa-code"></i>Embedded<small>Lorem ipsum dolor sit</small></a></li>
+                                                </ul>
+
+
+                                            </div><!-- End Carousel -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div id="studioLiteView" style="display: none">
             <a href="#"><i class="back fa fa-times-circle-o"></i></a>

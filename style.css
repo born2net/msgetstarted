@@ -1347,7 +1347,7 @@ ul.c-controls li a:hover {
 }
 
 .startButtons {
-    padding: 20px;
+    padding: 10px;
     font-size: 1.6em;
 }
 
@@ -1385,6 +1385,10 @@ manual installation of StudioPro / AIR
 
 .airIconGlyphicon {
        font-size: 2em;
+}
+
+.prodSelectAcc {
+    background-color: #7eb4d3 !important;
 }
 
 /************************************
@@ -1445,4 +1449,23 @@ div.product-chooser div.product-chooser-item input {
     left: 0;
     top: 0;
     visibility: hidden;
+}
+
+/************************************
+Studio / Player carousel
+************************************/
+
+#myCarousel .nav a small {
+    display:block;
+}
+#myCarousel .nav {
+    background:#eee;
+}
+#myCarousel .nav a {
+    border-radius:0px;
+}
+
+#carouselItems i {
+    padding: 10px;
+    font-size: 1.5em;
 }

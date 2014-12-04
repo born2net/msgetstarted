@@ -58,7 +58,43 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             });
         },
 
-        getStudioTypeSelected: function(){
+        showAccordionStudioPlayer: function (i_id) {
+            var self = this;
+            switch (i_id) {
+
+                case '0':
+                {
+                    self.$('div.accordion-body.in').collapse('hide');
+                    break;
+                }
+                case '1':
+                {
+                    // open studio
+                    self.$('div.accordion-body.in').collapse('hide');
+                    $('#accordionStudio').trigger('click');
+                    break;
+                }
+                case '2':
+                {
+                    // open player
+                    self.$('div.accordion-body.in').collapse('hide');
+                    $('#accordionPlayer').trigger('click');
+                    break;
+                }
+                case '3':
+                {
+                    // open sudio delayed
+                    self.$('div.accordion-body.in').collapse('hide');
+                    setTimeout(function(){
+                        $('#accordionStudio').trigger('click');
+                    },1000);
+
+                    break;
+                }
+            }
+        },
+
+        getStudioTypeSelected: function () {
             var self = this;
             return self.m_selectedStudioType;
         }
