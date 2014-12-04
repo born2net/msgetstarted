@@ -1388,7 +1388,7 @@ manual installation of StudioPro / AIR
 }
 
 .prodSelectAcc {
-    background-color: #7eb4d3 !important;
+    background-color: #428bca !important;
 }
 
 /************************************
@@ -1468,4 +1468,19 @@ Studio / Player carousel
 #carouselItems i {
     padding: 10px;
     font-size: 1.5em;
+}
+
+.carousel  *{
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translateZ(0);
+}
+
+.carouselLargeHeader {
+    font-size: 3em !important;
+}
+
+.carouselLargeHeader2 {
+    font-size: 1.5em !important;
 }

@@ -74,7 +74,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             }
 
             $('#myCarousel').carousel({
-                interval: 4000
+                interval: false
             });
 
             var clickEvent = false;
