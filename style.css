@@ -11,10 +11,25 @@
     src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf) format('truetype');
 }
 
+
+
+@media (min-width: 1000px) {
+    #studioIcon1 {
+        padding:100px;
+    }
+    #studioIcon2 {
+        padding:100px;
+    }
+}
+
 html,
 body {
     height: 100%;
     background-color: #ffffff;
+}
+
+.minPaddingProdSelector {
+    padding:1px;
 }
 
 .btn {
@@ -1470,6 +1485,10 @@ Studio / Player carousel
     font-size: 1.5em;
 }
 
+.item {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 .carousel  *{
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;

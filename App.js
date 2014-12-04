@@ -94,8 +94,6 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 }
                 clickEvent = false;
             });
-
-
         }
     });
     return App;
