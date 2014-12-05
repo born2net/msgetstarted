@@ -1406,6 +1406,13 @@ manual installation of StudioPro / AIR
     background-color: #428bca !important;
 }
 
+.faHeader {
+    padding: 5px;
+}
+
+.panel-body {
+    background-color: #e5e5e5;
+}
 /************************************
 product selector
 ************************************/

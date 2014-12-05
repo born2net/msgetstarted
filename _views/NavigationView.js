@@ -23,6 +23,13 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 self._closeMobileNavigation();
             });
 
+
+
+            $(Elements.DOWNLOAD_SIGNAGE_PLAYER).on('click', function () {
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('studioSelectView/2', {trigger: true});
+                self._closeMobileNavigation();
+            });
+
             $(Elements.LANGUAGE_PROMPT).on('click', function () {
                 require(['LanguageSelectorView'], function (LanguageSelectorView) {
                     var uniqueID = _.uniqueId('languagePrompt')

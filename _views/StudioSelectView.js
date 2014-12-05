@@ -57,23 +57,6 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             });
         },
 
-        /*
-        _listenStudioSelection: function () {
-            var self = this;
-            $(Elements.STUDIO_LITE_SELECTION).on('click', function (e) {
-                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectStudioLite', {trigger: true});
-                self.m_selectedStudioType = 'StudioLite';
-            });
-            $(Elements.STUDIO_PRO_SELECTED).on('click', function (e) {
-                if (self._checkCompatibility() == 0) {
-                    return;
-                }
-                self.m_selectedStudioType = 'StudioPro';
-                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectStudioPro', {trigger: true});
-            });
-        },
-        */
-
         showAccordionStudioPlayer: function (i_id) {
             var self = this;
             switch (i_id) {
@@ -93,17 +76,19 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 case '2':
                 {
                     // open player
+                    if ($('#collapseTwo').hasClass('in'))
+                        return;
                     self.$('div.accordion-body.in').collapse('hide');
                     $('#accordionPlayer').trigger('click');
                     break;
                 }
                 case '3':
                 {
-                    // open sudio delayed
+                    // open studio delayed
                     self.$('div.accordion-body.in').collapse('hide');
                     setTimeout(function(){
                         $('#accordionStudio').trigger('click');
-                    },1000);
+                    },500);
 
                     break;
                 }

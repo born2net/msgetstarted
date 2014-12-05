@@ -24,6 +24,7 @@ Elements.CREATE_ACCOUNT_BUTTON = '#createAccountButton';
 Elements.CREATE_ACCOUNT_INFO_BUTTON = '#createAccountInfoButton';
 Elements.STUDIO_LITE_SELECTION = '#StudioLiteSelection';
 Elements.STUDIO_PRO_SELECTED = '#StudioProSelected';
+Elements.DOWNLOAD_SIGNAGE_PLAYER = '#downloadSignagePlayer';
 Elements.LOGIN_BUTTON = '#loginButton';
 Elements.FORGOT_PASSWORD = '#forgotPassword';
 Elements.CHANGE_PASSWORD = '#changePassword';
