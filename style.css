@@ -1422,7 +1422,7 @@ div.product-chooser.disabled div.product-chooser-item {
     zoom: 1;
     filter: alpha(opacity=60);
     opacity: 0.6;
-    cursor: default;
+    cursor: pointer;
 }
 
 div.product-chooser div.product-chooser-item {
