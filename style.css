@@ -11,14 +11,13 @@
     src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf) format('truetype');
 }
 
-
-
 @media (min-width: 1000px) {
     #studioIcon1 {
-        padding:100px;
+        padding: 100px;
     }
+
     #studioIcon2 {
-        padding:100px;
+        padding: 100px;
     }
 }
 
@@ -29,7 +28,7 @@ body {
 }
 
 .minPaddingProdSelector {
-    padding:1px;
+    padding: 1px;
 }
 
 .btn {
@@ -1349,7 +1348,7 @@ ul.c-controls li a:hover {
     font-size: 1.25em;
 }
 
-.back {
+.back i {
     padding-top: 160px;
     color: #c1c1c1;
     padding-top: 20px;
@@ -1357,8 +1356,20 @@ ul.c-controls li a:hover {
     font-size: 4em !important;
 }
 
+.backText {
+    font-size: 1.2em;
+    color: #bebebe;
+    position: relative;
+    top: -12px;
+    left: -11px;
+}
+
+.back {
+    opacity: 0.7;
+}
+
 .back:hover {
-    color: #9e9e9e;
+    opacity: 1;
 }
 
 .startButtons {
@@ -1399,7 +1410,7 @@ manual installation of StudioPro / AIR
 }
 
 .airIconGlyphicon {
-       font-size: 2em;
+    font-size: 2em;
 }
 
 .prodSelectAcc {
@@ -1413,6 +1424,7 @@ manual installation of StudioPro / AIR
 .panel-body {
     background-color: #e5e5e5;
 }
+
 /************************************
 product selector
 ************************************/
@@ -1478,13 +1490,15 @@ Studio / Player carousel
 ************************************/
 
 #myCarousel .nav a small {
-    display:block;
+    display: block;
 }
+
 #myCarousel .nav {
-    background:#eee;
+    background: #eee;
 }
+
 #myCarousel .nav a {
-    border-radius:0px;
+    border-radius: 0px;
 }
 
 #carouselItems i {
@@ -1496,10 +1510,11 @@ Studio / Player carousel
     padding-top: 50px;
     padding-bottom: 50px;
 }
-.carousel  *{
+
+.carousel * {
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
-    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
     -webkit-transform: translateZ(0);
 }
 
