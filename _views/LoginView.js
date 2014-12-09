@@ -12,6 +12,8 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
          Constructor
          @method initialize
          **/
+
+
         initialize: function () {
             $(Elements.LOGIN_BUTTON).on('click', function () {
                 if ($(Elements.USER_NAME).val().length > 0 && $(Elements.USER_PASS).val().length > 0) {

@@ -1414,7 +1414,17 @@ manual installation of StudioPro / AIR
 }
 
 .prodSelectAcc {
-    background-color: #428bca !important;
+    background-color: #818181 !important;
+    cursor: pointer;
+    color: #ffffff !important;
+}
+
+.selectSignageStudio {
+    color: #07141e !important;
+}
+
+.selectSignageStudio:hover {
+    color: #d9d9d9 !important;
 }
 
 .faHeader {

@@ -29,8 +29,20 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             self._render();
             self._listenPreview();
             self._listenSelection();
+            self._listenFilterList();
         },
 
+        _listenFilterList: function () {
+            var self = this;
+            $(Elements.CLASS_FILTER_SAMPLE, self.el).on('keyup', function () {
+                var rex = new RegExp($(this).val(), 'i');
+                self.$('.sampleItem').hide();
+                self.$('.sampleItem').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
+            });
+
+        },
         _listenPreview: function () {
             var self = this;
             $(Elements.CLASS_SAMPLE_PREVIEW, self.el).on('click', function () {
@@ -68,10 +80,10 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             for (var i = 0; i < 10; i++) {
                 snippet += self.m_sampleSnippet;
             }
-            self.$el.append(snippet);
+            self.$('ul').append(snippet);
 
             // no flash support so remove preview capabilities
-            if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH){
+            if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH) {
                 $(Elements.CLASS_SAMPLE_PREVIEW).hide();
             }
         }

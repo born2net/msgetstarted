@@ -125,6 +125,7 @@ Elements.MSG_BOOTBOX_NO_PRO_ON_MOBILE = '#bootboxNoProbOnMobile'
 Elements.LANGUAGE_SELECTOR_TEMPLATE = '#languageSelector';
 
 // classes
+Elements.CLASS_FILTER_SAMPLE = '.filterSample';
 Elements.CLASS_CAMPIGN_LIST_ITEM = '.selectCampaignListItem';
 Elements.CLASS_OPEN_PROPS_BUTTON = '.openPropsButton';
 Elements.CLASS_CAMPAIG_MANAGER_WASP = '.campaignManagerWasp';
