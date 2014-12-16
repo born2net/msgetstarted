@@ -13,22 +13,23 @@ define(['jquery', 'backbone'], function ($, Backbone) {
          **/
         initialize: function () {
             var self = this;
+
+            //self.m_sampleSnippet += '       <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>';
+
             self.m_sampleSnippet = '<li class="sampleItem list-group-item">';
             self.m_sampleSnippet += '   <div class="col-xs-12 col-sm-3">';
-            self.m_sampleSnippet += '       <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>';
+            self.m_sampleSnippet += '       <img src=":ICON:" class="sampleIcon img-responsive img-circle"/>';
             self.m_sampleSnippet += '   </div>';
             self.m_sampleSnippet += '   <div class="col-xs-12 col-sm-9">';
-            self.m_sampleSnippet += '       <span class="name">International Pro Airport</span><br/>';
-            self.m_sampleSnippet += '       <div class="samplePreview">';
+            self.m_sampleSnippet += '       <span class="name">:NAME:</span><br/>';
+            self.m_sampleSnippet += '       <div class="samplePreview" name=":PREVIEW:">';
             self.m_sampleSnippet += '           <span style="font-size: 2em; position: relative; top: 5px; left: -3px" class="fa fa-play-circle-o text-muted c-info" data-toggle="tooltip"></span>';
-            self.m_sampleSnippet += '        <h4 style="display: inline; position: relative; left: -9px; color: #939393">preview</h4>';
-            self.m_sampleSnippet += '    </div>';
+            self.m_sampleSnippet += '           <h4 style="display: inline; position: relative; left: -9px; color: #939393">preview</h4>';
+            self.m_sampleSnippet += '       </div>';
             self.m_sampleSnippet += '</div>';
             self.m_sampleSnippet += '<div class="clearfix"></div>';
             self.m_sampleSnippet += '</li>';
             self._render();
-            self._listenPreview();
-            self._listenSelection();
             self._listenFilterList();
         },
 
@@ -43,10 +44,12 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             });
 
         },
+
         _listenPreview: function () {
             var self = this;
             $(Elements.CLASS_SAMPLE_PREVIEW, self.el).on('click', function () {
-                alert('launch preview');
+                var url = $(this).attr('name');
+                window.open(url, '_blank');
                 return false;
             });
         },
@@ -61,31 +64,45 @@ define(['jquery', 'backbone'], function ($, Backbone) {
 
         _render: function () {
             var self = this;
-
+            var accountType;
             switch (self.options.studioType) {
                 case BB.CONSTS.STUDIO_PRO:
                 {
-                    log('get Pro data from server');
+                    accountType = 0;
                     break;
                 }
                 case BB.CONSTS.STUDIO_LITE:
                 {
-                    log('get Lite data from server');
+                    accountType = 1;
                     break;
                 }
             }
 
-            // fake data
-            var snippet = '';
-            for (var i = 0; i < 10; i++) {
-                snippet += self.m_sampleSnippet;
-            }
-            self.$('ul').append(snippet);
+            BB.Pepper.getSampleList(function (data) {
+                for (var i in data['templates']) {
+                    var sample = data['templates'][i];
+                    var sampleType =sample.lite;
+                    if (accountType != sampleType)
+                        continue;
+                    var name = data['templates'][i].name;
+                    var preview = data['templates'][i].previewUrl;
+                    var businessId = data['templates'][i].businessId;
+                    var icon = 'http://galaxy.signage.me/Resources/Images/lite_html/' + businessId + '.png';
+                    var sampleSnippet = self.m_sampleSnippet.replace(':ICON:',icon);
+                    sampleSnippet = sampleSnippet.replace(':NAME:',name);
+                    sampleSnippet = sampleSnippet.replace(':PREVIEW:',preview);
+                    self.$('ul').append(sampleSnippet);
+                }
+            });
+
+            setTimeout(function(){
+                self._listenSelection();
+                self._listenPreview();
+            },400);
 
             // no flash support so remove preview capabilities
-            if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH) {
+            if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH)
                 $(Elements.CLASS_SAMPLE_PREVIEW).hide();
-            }
         }
     });
 

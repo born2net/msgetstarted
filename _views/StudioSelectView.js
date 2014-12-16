@@ -21,6 +21,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('unauthenticated', {trigger: true});
             });
             self._listenStudioSelection();
+            self._listenPanelHeaderSelection();
         },
 
         _checkCompatibility: function () {
@@ -57,6 +58,23 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             });
         },
 
+        /**
+         A workaround for IE 9 to allow opening and closing of accordion
+         @method _listenPanelHeaderSelection
+         **/
+        _listenPanelHeaderSelection: function(){
+            var self = this;
+            $(Elements.ACCORDION_STUDIO).on('click',function(){
+                var e = $('.prodSelectAcc',self.el)[0];
+                $(e).trigger('click');
+            });
+
+            $(Elements.ACCORDION_PLAYER).on('click',function(){
+                var e = $('.prodSelectAcc',self.el)[1];
+                $(e).trigger('click');
+            });
+        },
+
         showAccordionStudioPlayer: function (i_id) {
             var self = this;
             switch (i_id) {
@@ -70,7 +88,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 {
                     // open studio
                     self.$('div.accordion-body.in').collapse('hide');
-                    $('#accordionStudio').trigger('click');
+                    $(Elements.ACCORDION_STUDIO).trigger('click');
                     break;
                 }
                 case '2':
@@ -79,7 +97,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                     if ($('#collapseTwo').hasClass('in'))
                         return;
                     self.$('div.accordion-body.in').collapse('hide');
-                    $('#accordionPlayer').trigger('click');
+                    $(Elements.ACCORDION_PLAYER).trigger('click');
                     break;
                 }
                 case '3':
@@ -87,7 +105,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                     // open studio delayed
                     self.$('div.accordion-body.in').collapse('hide');
                     setTimeout(function(){
-                        $('#accordionStudio').trigger('click');
+                        $(Elements.ACCORDION_STUDIO).trigger('click');
                     },500);
 
                     break;

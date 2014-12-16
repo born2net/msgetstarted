@@ -308,6 +308,21 @@ Pepper.prototype = {
     },
 
     /**
+     Get list of all create account samples, both lite and pro
+     @method getSampleList
+     @param {Function} i_callBack
+     **/
+    getSampleList: function (i_callBack) {
+        //todo: fix domain inject from link
+        window.g_protocol = 'http://';
+        window.g_masterDomain = 'galaxy.signage.me';
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/getResellerTemplates.ashx?callback=?';
+        $.getJSON(url, function (data) {
+            i_callBack(data);
+        });
+    },
+
+    /**
      Push an event to remote station
      @method sendEvent
      @param {String} i_eventName
@@ -1021,7 +1036,10 @@ Pepper.prototype = {
         chanel.chanel_name = "CH";
         chanel.campaign_timeline_id = i_campaign_timeline_id;
         chanels.addRecord(chanel);
-        pepper.fire(Pepper['NEW_CHANNEL_ADDED'], self, null, {chanel: chanel['campaign_timeline_chanel_id'], campaign_timeline_id: i_campaign_timeline_id});
+        pepper.fire(Pepper['NEW_CHANNEL_ADDED'], self, null, {
+            chanel: chanel['campaign_timeline_chanel_id'],
+            campaign_timeline_id: i_campaign_timeline_id
+        });
         return chanel['campaign_timeline_chanel_id'];
     },
 

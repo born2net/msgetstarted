@@ -29,11 +29,13 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.lib = new Lib();
             BB.Pepper = new Pepper();
             _.extend(BB.Pepper, BB.comBroker);
+            //BB.Pepper.setServerAddress();
             BB.lib.addBackboneViewOptions();
             BB.comBroker = new ComBroker();
             BB.comBroker.name = 'AppBroker';
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
+
 
             // define applications
 
