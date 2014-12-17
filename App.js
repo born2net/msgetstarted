@@ -36,6 +36,9 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
 
+            BB.Pepper.createAccount(function(data){
+               log(data);
+            });
 
             // define applications
 

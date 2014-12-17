@@ -276,6 +276,16 @@ Pepper.prototype = {
     },
 
     /**
+     Create a new mediaCLOUD account
+     @method createAccount
+     @param {Function} i_callBack
+     **/
+    createAccount: function (i_callBack) {
+        var url = 'http://galaxy.signage.me/WebService/createNewAccount.ashx?command=CreateCustomerAccount&businessName=MediaSignage&userName=x1482@ms.com&password=123123&templateBusinessId=1021&resellerId=1&firstName=Sean&lastName=Levy&contactEmail=x147@ms.com&workPhone=5551212&cellPhone=818555454&address=loma&city=wh&state=ca&contry=USA&zipcode=91301&callback=?';
+        $.getJSON(url, i_callBack);
+    },
+
+    /**
      Push a command to remote station
      @method sendCommand
      @param {String} i_command
