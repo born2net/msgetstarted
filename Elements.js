@@ -4,7 +4,9 @@ Elements.WAITS_SCREEN_ENTRY_APP = '#waitScreenEntryApp';
 Elements.APP_LOGIN = '#appLogin';
 Elements.APP_LOGOUT = '#appLogout';
 Elements.APP_SELECTOR = '#appSelector';
-
+Elements.APP_REDIRECT = '#appRedirect';
+Elements.LOGOUT = '#logout';
+Elements.LOGOUT_HEADER = '#logoutHeader';
 Elements.SIGNAGE_PLAYER_VIEW = '#signagePlayerView';
 Elements.CREATE_ACC_VIEW = '#createAccView';
 Elements.RENAME_VIEW = '#renameView';
@@ -122,6 +124,7 @@ Elements.MSG_BOOTBOX_CANCEL = '#bootBoxCancel';
 Elements.MSG_BOOTBOX_OK = '#bootBoxOk';
 Elements.MSG_BOOTBOX_RESTART_STATIONS = '#bootBoxRestartStations';
 Elements.MSG_BOOTBOX_STUDIO_LITE_ACC = '#bootBoxStudioLiteAcc';
+Elements.MSG_BOOTBOX_LOGIN_FAILED = '#loginFailed';
 Elements.MSG_BOOTBOX_NO_PRO_ON_MOBILE = '#bootboxNoProbOnMobile'
 
 // templates

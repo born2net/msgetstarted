@@ -6,7 +6,7 @@
  **/
 define(['jquery', 'backbone'], function ($, Backbone) {
 
-    BB.SERVICES.NAVIGATION_VIEW = 'NavigationWaspView';
+    BB.SERVICES.NAVIGATION_WASP_VIEW = 'NavigationWaspView';
 
     var NavigationWaspView = BB.View.extend({
 

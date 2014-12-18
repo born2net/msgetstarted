@@ -6,7 +6,7 @@
  **/
 define(['jquery', 'backbone'], function ($, Backbone) {
 
-    BB.SERVICES.NAVIGATION_VIEW = 'NavigationViewEverNodes';
+    BB.SERVICES.NAVIGATION_EVER_VIEW = 'NavigationViewEverNodes';
 
     var NavigationViewEverNodes = BB.View.extend({
 

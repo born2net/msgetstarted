@@ -4,7 +4,7 @@
  @constructor
  @return {Object} instantiated AppAuth
  **/
-define(['jquery', 'backbone', 'Cookie', 'RC4'], function ($, Backbone, Cookie) {
+define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone, Cookie, RC4, bootbox) {
 
     BB.SERVICES.APP_AUTH = 'AppAuth';
 
@@ -65,15 +65,15 @@ define(['jquery', 'backbone', 'Cookie', 'RC4'], function ($, Backbone, Cookie) {
             var passedCredentials = self._loadPassedCredentials();
             var cookieCredentials = $.cookie('boilerplateappcookie') == undefined ? undefined : $.cookie('boilerplateappcookie').split(' ')[0];
 
-            if (passedCredentials) {
+            if (i_user.length > 1 && i_pass.length > 1) {
+                self._authServer(i_user, i_pass, self.AUTH_USER_PASS);
+
+            } else if (passedCredentials) {
                 self._authServer(passedCredentials.user, passedCredentials.pass, self.AUTH_PARAMS);
 
             } else if (cookieCredentials) {
                 var credentials = self._breakCookie(cookieCredentials);
                 self._authServer(credentials.user, credentials.pass, self.AUTH_COOKIE);
-
-            } else if (i_user.length > 1 && i_pass.length > 1) {
-                self._authServer(i_user, i_pass, self.AUTH_USER_PASS);
 
             } else {
                 BB.comBroker.getService(BB.SERVICES['LAYOUT_ROUTER']).navigate('unauthenticated', {trigger: true});
@@ -89,12 +89,14 @@ define(['jquery', 'backbone', 'Cookie', 'RC4'], function ($, Backbone, Cookie) {
          **/
         _authServer: function (i_user, i_pass, i_authMode) {
             var self = this;
-            // always login
-            if (1) {
-                self._authPassed(i_user, i_pass, i_authMode);
-            } else {
-                self._authFailed(i_authMode);
-            }
+            BB.Pepper.GetBusinessUserInfo(i_user, i_pass, function (data) {
+                if (data.result == -1) {
+                    self._authFailed(i_authMode);
+                } else {
+                    self._authPassed(i_user, i_pass, i_authMode);
+                }
+            });
+
         },
 
         /**
@@ -124,14 +126,14 @@ define(['jquery', 'backbone', 'Cookie', 'RC4'], function ($, Backbone, Cookie) {
 
             // if cookie exists, delete it because obviously it didn't do the job
             if (i_authMode == self.AUTH_COOKIE) {
-                $.removeCookie('boilerplateappcookie', { path: '/' });
-                $.removeCookie('boilerplateappcookie', { path: '/_studiolite' });
-                $.removeCookie('boilerplateappcookie', { path: '/_studiolite-dev' });
-                $.removeCookie('boilerplateappcookie', { path: '/_studiolite-dist' });
+                $.removeCookie('boilerplateappcookie', {path: '/'});
+                $.removeCookie('boilerplateappcookie', {path: '/_studiolite'});
+                $.removeCookie('boilerplateappcookie', {path: '/_studiolite-dev'});
+                $.removeCookie('boilerplateappcookie', {path: '/_studiolite-dist'});
             }
 
             bootbox.dialog({
-                message: $(Elements.MSG_BOOTBOX_STUDIO_LITE_ACC).text(),
+                message: $(Elements.MSG_BOOTBOX_LOGIN_FAILED).text(),
                 buttons: {
                     info: {
                         label: $(Elements.MSG_BOOTBOX_OK).text(),
@@ -154,7 +156,7 @@ define(['jquery', 'backbone', 'Cookie', 'RC4'], function ($, Backbone, Cookie) {
             var rc4 = new RC4(BB.globs['RC4KEY']);
             var crumb = i_user + ':SignageStudioLite:' + i_pass + ':' + ' USER'
             crumb = rc4.doEncrypt(crumb);
-            $.cookie('boilerplateappcookie', crumb, { expires: 300 });
+            $.cookie('boilerplateappcookie', crumb, {expires: 300});
         },
 
         /**
@@ -179,7 +181,7 @@ define(['jquery', 'backbone', 'Cookie', 'RC4'], function ($, Backbone, Cookie) {
          **/
         logout: function () {
             $.removeCookie('boilerplateappcookie', {path: '/'});
-            $.cookie('boilerplateappcookie', '', { expires: -300 });
+            $.cookie('boilerplateappcookie', '', {expires: -300});
         }
     });
 

@@ -16,14 +16,14 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
          **/
         initialize: function () {
             var self = this;
+
+            BB.comBroker.setService(BB.SERVICES.NAVIGATION_VIEW, self);
             this._render();
 
             $(Elements.LIVE_CHAT).on('click', function () {
                 var pop = window.open('http://www.digitalsignage.com/_html/live_chat.html', '_blank');
                 self._closeMobileNavigation();
             });
-
-
 
             $(Elements.DOWNLOAD_SIGNAGE_PLAYER).on('click', function () {
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('studioSelectView/2', {trigger: true});
@@ -86,7 +86,16 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             $('.navbar-nav').css({
                 display: 'block'
             })
-        }
+        },
+
+        enableLogout: function () {
+            $(Elements.LOGOUT_HEADER).fadeIn();
+            $(Elements.LOGOUT).on('click', function () {
+                var appEntryFaderView = BB.comBroker.getService(BB.SERVICES['APP_ENTRY_FADER_VIEW']);
+                appEntryFaderView.selectView(Elements.APP_LOGOUT);
+                BB.comBroker.getService(BB.SERVICES['APP_AUTH']).logout();
+            });
+        },
     });
 
     return NavigationView;

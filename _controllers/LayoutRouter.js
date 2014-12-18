@@ -132,18 +132,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              @method authenticationFailed
              **/
             _routeAuthenticationFailed: function () {
-                Bootbox.dialog({
-                    message: $(Elements.MSG_BOOTBOX_WRONG_USER_PASS).text(),
-                    title: $(Elements.MSG_BOOTBOX_PROBLEM).text(),
-                    buttons: {
-                        danger: {
-                            label: $(Elements.MSG_BOOTBOX_OK).text(),
-                            className: "btn-danger",
-                            callback: function () {
-                            }
-                        }
-                    }
-                });
                 this.m_appEntryFaderView.selectView(this.m_loginView);
             },
 
@@ -198,6 +186,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 }
                 // this._disableBack();
                 this.m_appEntryFaderView.selectView(this.m_appSelectorView);
+                BB.comBroker.getService(BB.SERVICES.NAVIGATION_VIEW).enableLogout();
             },
 
             /**
@@ -270,7 +259,8 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 });
 
                 this.m_appSelectorView = new AppSelectorView({
-                    el: Elements.APP_SELECTOR,
+                    //el: Elements.APP_SELECTOR,
+                    el: Elements.APP_REDIRECT,
                     duration: 650
                 });
 

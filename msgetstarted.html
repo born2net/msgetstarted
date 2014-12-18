@@ -61,12 +61,18 @@
                 </li>
             </ul>
             <ul style="font-size: 1.0em" class="nav navbar-nav navbar-right">
+                <li id="logoutHeader" style="display: none"><a id="logout" href="#"> <i style="font-size: 15px"
+                                                               class="faHeader fa fa-power-off "></i><span
+                        data-localize="logout"> logout </span> </a></li>
+
                 <li><a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px"
                                                                class="faHeader fa fa-download"></i><span
-                        data-localize="getSignagePlayer"> Get SignagePlayer </span> </a></li>
+                        data-localize="getSignagePlayer"> SignagePlayer </span> </a></li>
+
+
                 <li><a id="languagePrompt" href="#"> <i style="font-size: 15px" class="faHeader fa fa-globe"></i><span
                         data-localize="setLanguage"> Language </span></a></li>
-                <li><a id="liveChat" ata-localize="liveChat" href="#"> <i style="font-size: 15px"
+                <li><a id="liveChat" href="#"> <i style="font-size: 15px"
                                                                           class="faHeader fa fa-comment"></i><span
                         data-localize="chat"> Chat</span></a></li>
                 <!-- <li><a id="dashboard" href="#">Dashboard &nbsp;</a></li> -->
@@ -760,6 +766,14 @@
                         data-localize="none"></span></button>
             </div>
         </div>
+
+        <div id="appRedirect" class="noScroll container" style="display: none">
+            <div align="center" style="padding-top: 100px">
+                <h1 data-localize="loadingStudio">please wait, loading studio...</h1>
+            </div>
+        </div>
+
+
         <div id="appMailWaspContent" class="noScroll container" style="display: none">
         </div>
         <div id="appEverNodesContent" class="noScroll container" style="display: none">
@@ -900,6 +914,8 @@
 
 <!-- Messages used for bootbox and localization inside bootbox -->
 <p style="display: none" id="bootBoxSaveRemoteSrv" data-localize="bootBoxSaveRemoteSrv">Save work to remote server</p>
+
+<p style="display: none" id="loginFailed" data-localize="loginFailed">Sorry but Login failed</p>
 
 <p style="display: none" id="bootBoxSaveAndRestart" data-localize="bootBoxSaveAndRestart">Save & restart stations</p>
 

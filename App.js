@@ -36,15 +36,34 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
 
-            BB.Pepper.createAccount(function(data){
-               log(data);
-            });
-
             // define applications
-
             BB.CONSTS.MAILWASP = 'mailWasp';
             BB.CONSTS.EVERNODES = 'everNodes';
 
+            //todo: fix domain inject from link
+            window.g_protocol = 'http://';
+            window.g_masterDomain = 'galaxy.signage.me';
+
+            /*
+            BB.Pepper.createAccount(function (data) {
+                log(data);
+            });
+            BB.Pepper.GetBusinessUserInfo(function (data) {
+                log(data);
+            });
+            BB.Pepper.GetAccountStatus(function (data) {
+              log(data);
+            });
+            //BB.Pepper.ResetPassword(function (data) {
+            //   log(data);
+            //});
+            //BB.Pepper.ChangePassword(function (data) {
+            //    log(data);
+            //});
+            BB.Pepper.ChangeBusinessName(function (data) {
+                log(data);
+            });
+            */
 
             require(['localizer'], function () {
                 var lang = "en";

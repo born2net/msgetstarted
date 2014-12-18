@@ -313,10 +313,58 @@ Pepper.prototype = {
      @param {Function} i_callBack
      **/
     createAccount: function (i_callBack) {
-        //todo: fix domain inject from link
-        window.g_protocol = 'http://';
-        window.g_masterDomain = 'galaxy.signage.me';
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount&businessName=MediaSignage&userName=x1482@ms.com&password=123123&templateBusinessId=1021&resellerId=1&firstName=Sean&lastName=Levy&contactEmail=x147@ms.com&workPhone=5551212&cellPhone=818555454&address=loma&city=wh&state=ca&contry=USA&zipcode=91301&callback=?';
+        $.getJSON(url, i_callBack);
+    },
+
+    /**
+     Get business user info
+     @method GetBusinessUserInfo
+     @param {Function} i_callBack
+     **/
+    GetAccountStatus: function (i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetAccountStatus&businessId=315268&callback=?';
+        $.getJSON(url, i_callBack);
+    },
+
+    /**
+     Get business user info
+     @method GetBusinessUserInfo
+     @param {Function} i_callBack
+     **/
+    ResetPassword: function (i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ResetPassword&userName=born2net@gmail.com&callback=?';
+        $.getJSON(url, i_callBack);
+    },
+
+    /**
+     Get business user info
+     @method ChangePassword
+     @param {Function} i_callBack
+     **/
+    ChangePassword: function (i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangePassword&userName=d16@ms.com&oldPassword=123123&newPassword=333333&callback=?';
+        $.getJSON(url, i_callBack);
+    },
+
+    /**
+     Get business user info
+     @method ChangeBusinessName
+     @param {Function} i_callBack
+     **/
+    ChangeBusinessName: function (i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=d20@ms.com&password=123123&"new busnessName"=MyNewBus&callback=?';
+        $.getJSON(url, i_callBack);
+    },
+
+    /**
+     Get business user info
+     @method GetBusinessUserInfo
+     @param {Function} i_callBack
+     **/
+    GetBusinessUserInfo: function (i_user, i_pass, i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetBusinessUserInfo&userName=' + i_user + '&password=' + i_pass + '&callback=?';
+        log(url);
         $.getJSON(url, i_callBack);
     },
 
@@ -326,9 +374,6 @@ Pepper.prototype = {
      @param {Function} i_callBack
      **/
     getSampleList: function (i_callBack) {
-        //todo: fix domain inject from link
-        window.g_protocol = 'http://';
-        window.g_masterDomain = 'galaxy.signage.me';
         var url = window.g_protocol + window.g_masterDomain + '/WebService/getResellerTemplates.ashx?callback=?';
         $.getJSON(url, function (data) {
             i_callBack(data);

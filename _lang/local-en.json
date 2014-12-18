@@ -50,14 +50,17 @@
     "downloadSignagePlayerOSX1": "1. First download Adobe AIR",
     "downloadSignagePlayerOSX2": "2. Next download SignagePlayer",
     "downloadSignagePlayerIOS": "Get SignagePlayer from App store",
-    "getSignagePlayer": " Get SignagePlayer ",
+    "getSignagePlayer": " SignagePlayer ",
     "setLanguage": " Language",
+    "loadingStudio": "please wait, loading studio...",
     "playerIOSMsg": "Get SignagePlayer from App store",
     "embedded": "Embedded",
     "embedMsg": "Use an HTML snippet to embed your presentation as part of a web page.",
     "downloadPlayerIOSX": "Run the SignagePlayer Mobile version on iPads and iPhones. Install it from the App store.",
     "playerEmbed": "Embed the SignagePlayer in a web page",
     "close": "close",
+    "loginFailed": "Sorry but login has failed...",
+    "logout": "logout",
     "saveChanges": "save changes",
     "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead..."
 }

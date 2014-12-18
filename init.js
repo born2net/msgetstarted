@@ -15,6 +15,7 @@ require.config({
         'backbone': '_common/_js/backbone/backbone',
         'text': '_common/_js/requirejs/text',
         'backbone.controller': '_common/_js/backbone-controller/backbone.controller',
+        'backbone.stickit': '_common/_js/backbone-stickit/backbone.stickit',
         'Lib': '_libs/Lib',
         'bootbox': '_common/_js/bootbox/bootbox',
         'platform': '_common/_js/platform/platform',
