@@ -98,6 +98,7 @@ Elements.CAMPAIGN_SELECTOR_EVER = '#campaignSelector';
 Elements.CAMPAIGN_SELECTOR_WASP = '#campaignSelectorWasp';
 Elements.CAMPAIGN_MANAGER_EVER_VIEW = '#campaignManagerWasp';
 Elements.CAMPAIGN_MANAGER_WASP_VIEW = '#campaignManagerViewWasp';
+Elements.FOOTER = '#footer';
 
 
 Elements.CAMPAIGN_SLIDER = '#campaignSlider';
@@ -144,6 +145,7 @@ Elements.CLASS_HELP_LINKS = '.helpLinks';
 Elements.CLASS_APP_HEIGHT = '.appHeight';
 Elements.CLASS_SAMPLE_PREVIEW = '.samplePreview';
 Elements.CLASS_SAMPLE_ITEM = '.sampleItem';
+Elements.CLASS_PROD_SELECT_ACC = '.prodSelectAcc';
 
 /**
  List of all Elements / Classes of elements used in the DOM

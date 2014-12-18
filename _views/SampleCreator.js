@@ -89,7 +89,7 @@ define(['jquery', 'backbone', 'text!_templates/_templateSampleItem.html'], funct
             BB.lib.setIntervalTimes(function(){
                 self._listenSelection();
                 self._listenPreview();
-            },400,5);
+            },400,10);
 
             // no flash support so remove preview capabilities
             if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH)

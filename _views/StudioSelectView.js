@@ -39,13 +39,15 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 $('input[type="radio"]').prop("checked", true);
             });
             $elem.on('click', function (e) {
-                switch ($(this).attr('name')){
-                    case 'StudioLite': {
+                switch ($(this).attr('name')) {
+                    case 'StudioLite':
+                    {
                         self.m_selectedStudioType = 'StudioLite';
                         Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectStudioLite', {trigger: true});
                         break;
                     }
-                    case 'StudioPro': {
+                    case 'StudioPro':
+                    {
                         if (self._checkCompatibility() == 0) {
                             bootbox.alert($(Elements.MSG_BOOTBOX_NO_PRO_ON_MOBILE).text());
                             return;
@@ -62,16 +64,22 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
          A workaround for IE 9 to allow opening and closing of accordion
          @method _listenPanelHeaderSelection
          **/
-        _listenPanelHeaderSelection: function(){
+        _listenPanelHeaderSelection: function () {
             var self = this;
-            $(Elements.ACCORDION_STUDIO).on('click',function(){
-                var e = $('.prodSelectAcc',self.el)[0];
+            $(Elements.ACCORDION_STUDIO).on('click', function () {
+                var e = $(Elements.CLASS_PROD_SELECT_ACC, self.el)[0];
                 $(e).trigger('click');
             });
 
-            $(Elements.ACCORDION_PLAYER).on('click',function(){
-                var e = $('.prodSelectAcc',self.el)[1];
+            $(Elements.ACCORDION_PLAYER).on('click', function () {
+                var e = $(Elements.CLASS_PROD_SELECT_ACC, self.el)[1];
                 $(e).trigger('click');
+            });
+
+            $(Elements.CLASS_PROD_SELECT_ACC + ',' + Elements.ACCORDION_PLAYER, self.el).on('click', function () {
+                $('html, body').animate({
+                    scrollTop: $(Elements.FOOTER).offset().top
+                }, 'slow');
             });
         },
 
@@ -104,9 +112,9 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 {
                     // open studio delayed
                     self.$('div.accordion-body.in').collapse('hide');
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $(Elements.ACCORDION_STUDIO).trigger('click');
-                    },500);
+                    }, 500);
 
                     break;
                 }
