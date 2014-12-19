@@ -58,14 +58,24 @@ define(['jquery', 'backbone', 'platform'], function ($, Backbone, platform) {
             }
         },
 
+        validateAlphaNumeric: function (input) {
+            var regex = new RegExp(/^[0-9a-zA-Z]+$/);
+            var valid = regex.test(input);
+            if (!valid) {
+                return false;
+            } else {
+                return true;
+            }
+        },
+
         /**
          Get OS (windows / osx / ios / android ...)
          @method getOS
          @return {String} lower cases os
          **/
-        getOS:function(){
+        getOS: function () {
             var os = platform.os;
-            var family = os.family.replace(/ /g,'');
+            var family = os.family.replace(/ /g, '');
             family = family.toLowerCase();
             if (family.match('windows'))
                 family = 'windows';

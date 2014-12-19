@@ -171,26 +171,25 @@
 
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassUser" type="text" class="form-control" name="username" value="" required autofocus
                            data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassPassword" type="password" type="text" class="form-control" name="username" value="" required autofocus
                            data-localize="oldPassword" placeholder="old password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassNewPassword" type="password" type="text" class="form-control" name="username" value="" required autofocus
                            data-localize="newPassword" placeholder="new password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="verifyNewPassword" placeholder="verify new password">
+                    <input id="changePassVerifyPassword" class="form-control" name="username" value="" required autofocus
+                           data-localize="verifyNewPassword" type="password" placeholder="verify new password">
                 </div>
-                <button id="changePass" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="changePassword">
+                <button id="changePassButton" class="btn btn-lg btn-primary btn-block" data-localize="changePassword">
                     change password
                 </button>
             </form>
@@ -230,20 +229,19 @@
 
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="newBusinessEmail" type="text" class="form-control" name="username" value="" required autofocus
                            data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           placeholder="password">
+                    <input id="newBusinessPassword" type="password" class="form-control" name="username" value="" required autofocus placeholder="password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="newBusinessName" type="text" class="form-control" name="username" value="" required autofocus
                            data-localize="newBusinessName" placeholder="new business name">
                 </div>
-                <button id="renameBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
+                <button id="newBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
                         data-localize="renameBusiness">
                     rename business
                 </button>
@@ -914,9 +912,23 @@
 <!-- Messages used for bootbox and localization inside bootbox -->
 <p style="display: none" id="bootBoxSaveRemoteSrv" data-localize="bootBoxSaveRemoteSrv">Save work to remote server</p>
 
+<p style="display: none" id="bootBoxBusinessNameTooShort" data-localize="bootBoxBusinessNameTooShort">Business name is too short</p>
+
+<p style="display: none" id="bootBoxAlphaNumeric" data-localize="bootBoxAlphaNumeric">Only A - Z and 0 - 9 are allowed for password</p>
+
 <p style="display: none" id="bootBoxEnterEmail" data-localize="bootBoxEnterEmail">Please enter your email address</p>
 
+<p style="display: none" id="bootBoxInvalidEmail" data-localize="bootBoxInvalidEmail">The e-mail entered is invalid</p>
+
+<p style="display: none" id="bootBoxPasswordTooShort" data-localize="bootBoxPasswordTooShort">Password too short</p>
+
+<p style="display: none" id="bootBoxPasswordNoMatch" data-localize="bootBoxPasswordNoMatch">Passwords do not match</p>
+
 <p style="display: none" id="bootBoxCheckEmail" data-localize="bootBoxCheckEmail">Please check your email</p>
+
+<p style="display: none" id="bootBoxCanNotAuthenticate" data-localize="bootBoxCanNotAuthenticate">Sorry, can not authenticate with your user or password</p>
+
+<p style="display: none" id="bootBoxCompleted" data-localize="bootBoxCompleted">Completed successfully...</p>
 
 <p style="display: none" id="loginFailed" data-localize="loginFailed">Sorry but Login failed</p>
 
@@ -930,7 +942,7 @@
 
 <p style="display: none" id="loadingStudioText" data-localize="loadingStudioText">please wait, loading </p>
 
-<p style="display: none" id="bootboxNoProbOnMobile" data-localize="bootboxNoProbOnMobile">StudioPro is suupported on
+<p style="display: none" id="bootboxNoProbOnMobile" data-localize="bootboxNoProbOnMobile">StudioPro is supported on
     Windows and Mac only (non mobile)</p>
 
 <p style="display: none" id="bootBoxRestartStations" data-localize="bootBoxRestartStations">Restart connected stations

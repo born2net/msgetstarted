@@ -51,10 +51,18 @@
     "downloadSignagePlayerOSX2": "2. Next download SignagePlayer",
     "downloadSignagePlayerIOS": "Get SignagePlayer from App store",
     "bootBoxEnterEmail": "Please enter a valid email address...",
+    "bootBoxPasswordNoMatch": "Passwords do not match",
+    "bootBoxPasswordTooShort": "Password is too short",
+    "bootBoxBusinessNameTooShort": "Business name is too short",
+    "bootBoxCanNotAuthenticate": "Sorry, can not authenticate your user or password",
+    "bootBoxCompleted": "Completed...",
+    "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead..."
+    "bootBoxAlphaNumeric": "Only A - Z and 0 - 9 are allowed for password selection",
     "getSignagePlayer": " SignagePlayer ",
     "setLanguage": " Language",
     "loadingStudio": "please wait, loading ",
     "bootBoxCheckEmail": "e-mail sent, please check your email now...",
+    "bootBoxInvalidEmail": "The e-mail entered is invalid, please fix and try again",
     "playerIOSMsg": "Get SignagePlayer from App store",
     "embedded": "Embedded",
     "embedMsg": "Use an HTML snippet to embed your presentation as part of a web page.",
@@ -63,8 +71,8 @@
     "close": "close",
     "loginFailed": "Sorry but login has failed...",
     "logout": "logout",
-    "saveChanges": "save changes",
-    "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead..."
+    "saveChanges": "save changes"
+
 }
 
 

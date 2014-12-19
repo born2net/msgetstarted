@@ -291,12 +291,28 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.RENAME_VIEW
                 });
 
+                this.m_changePassModel = new BB.Model({
+                    changePassUser: '',
+                    changePassPassword: '',
+                    changePassNewPassword: '',
+                    changePassVerifyPassword: ''
+
+                });
                 this.m_changePassView = new ChangePassView({
-                    el: Elements.CHANGE_PASS_VIEW
+                    el: Elements.CHANGE_PASS_VIEW,
+                    model: this.m_changePassModel
                 });
 
+                this.m_changeBuisnessNameModel = new BB.Model({
+                    changePassUser: '',
+                    changePassPassword: '',
+                    changePassNewPassword: '',
+                    changePassVerifyPassword: ''
+
+                });
                 this.m_changeBusinessView = new ChangeBusinessView({
-                    el: Elements.CHANGE_BUSINESS_VIEW
+                    el: Elements.CHANGE_BUSINESS_VIEW,
+                    model: this.m_changeBuisnessNameModel
                 });
 
                 this.m_forgetPassView = new ForgetPassView({

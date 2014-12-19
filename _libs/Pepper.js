@@ -333,7 +333,7 @@ Pepper.prototype = {
      @param {Function} i_callBack
      **/
     ResetPassword: function (i_email, i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ResetPassword&userName='+i_email+'&callback=?';
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ResetPassword&userName=' + i_email + '&callback=?';
         $.getJSON(url, i_callBack);
     },
 
@@ -342,8 +342,8 @@ Pepper.prototype = {
      @method ChangePassword
      @param {Function} i_callBack
      **/
-    ChangePassword: function (i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangePassword&userName=d16@ms.com&oldPassword=123123&newPassword=333333&callback=?';
+    ChangePassword: function (i_email, i_oldPassword, i_newPassword, i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangePassword&userName=' + i_email + '&oldPassword=' + i_oldPassword + '&newPassword=' + i_newPassword + '&callback=?';
         $.getJSON(url, i_callBack);
     },
 
@@ -352,8 +352,8 @@ Pepper.prototype = {
      @method ChangeBusinessName
      @param {Function} i_callBack
      **/
-    ChangeBusinessName: function (i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=d20@ms.com&password=123123&"new busnessName"=MyNewBus&callback=?';
+    ChangeBusinessName: function (i_email, i_password, i_businessName, i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=' + i_email + '&password='+ i_password + '&busnessName=' + i_businessName + '&callback=?';
         $.getJSON(url, i_callBack);
     },
 
