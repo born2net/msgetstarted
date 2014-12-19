@@ -5,8 +5,12 @@ Elements.APP_LOGIN = '#appLogin';
 Elements.APP_LOGOUT = '#appLogout';
 Elements.APP_SELECTOR = '#appSelector';
 Elements.APP_REDIRECT = '#appRedirect';
+Elements.LOADING_STUDIO = '#loadingStudio';
+Elements.LOADING_STUDIO_TEXT = '#loadingStudioText';
 Elements.LOGOUT = '#logout';
 Elements.LOGOUT_HEADER = '#logoutHeader';
+Elements.FORGET_PASS_BUTTON = '#forgetPassButton';
+Elements.RESET_PASS_INPUT = '#resetPassInput';
 Elements.SIGNAGE_PLAYER_VIEW = '#signagePlayerView';
 Elements.CREATE_ACC_VIEW = '#createAccView';
 Elements.RENAME_VIEW = '#renameView';
@@ -126,6 +130,8 @@ Elements.MSG_BOOTBOX_RESTART_STATIONS = '#bootBoxRestartStations';
 Elements.MSG_BOOTBOX_STUDIO_LITE_ACC = '#bootBoxStudioLiteAcc';
 Elements.MSG_BOOTBOX_LOGIN_FAILED = '#loginFailed';
 Elements.MSG_BOOTBOX_NO_PRO_ON_MOBILE = '#bootboxNoProbOnMobile'
+Elements.MSG_BOOTBOX_ENTER_EMAIL = '#bootBoxEnterEmail';
+Elements.MSG_BOOTBOX_CHECK_EMAIL = '#bootBoxCheckEmail';
 
 // templates
 Elements.LANGUAGE_SELECTOR_TEMPLATE = '#languageSelector';

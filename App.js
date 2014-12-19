@@ -22,7 +22,10 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.CONSTS.OS_FLASH = 1;
             BB.CONSTS.OS_DESK_NO_FLASH = 2;
             BB.CONSTS.OS_MOBILE = 3;
+            BB.CONSTS.STUDIO_LITE = 0;
+            BB.CONSTS.STUDIO_PRO = 1;
             BB.APPS_SUPPORT = BB.CONSTS.OS_UNKNOWN;
+            BB.STUDIO_TYPE = -1;
 
             BB.globs['UNIQUE_COUNTER'] = 0;
             BB.globs['RC4KEY'] = '226a3a42f34ddd778ed2c3ba56644315';

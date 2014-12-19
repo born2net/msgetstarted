@@ -93,6 +93,7 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
                 if (data.result == -1) {
                     self._authFailed(i_authMode);
                 } else {
+                    BB.STUDIO_TYPE = data.lite == 1 ? BB.CONSTS.STUDIO_LITE : BB.CONSTS.STUDIO_PRO;
                     self._authPassed(i_user, i_pass, i_authMode);
                 }
             });

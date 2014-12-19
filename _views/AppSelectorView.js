@@ -19,8 +19,42 @@ define(['jquery', 'backbone', 'StackView'], function ($, Backbone, StackView) {
             self.m_navigationCreated = false;
             Backbone.StackView.ViewPort.prototype.initialize.call(this);
             BB.comBroker.setService(BB.SERVICES.APP_SELECTOR,self);
+            self._listenSelection();
         },
 
+        _listenSelection: function(){
+            var self = this;
+            self.listenTo(self.options.stackView, BB.EVENTS.SELECTED_STACK_VIEW, function (e) {
+                if (e != self) return;
+                self._render();
+            });
+        },
+
+        _render: function(){
+            var self = this;
+            var msg = $(Elements.LOADING_STUDIO_TEXT).text();
+            switch (BB.STUDIO_TYPE){
+                case BB.CONSTS.STUDIO_LITE: {
+                    msg = msg + 'StudioLite...';
+                    break;
+                }
+                case BB.CONSTS.STUDIO_PRO: {
+                    msg = msg + 'StudioPro...';
+                    break;
+                }
+            }
+            $(Elements.LOADING_STUDIO).text(msg);
+            log('loading app');
+        },
+
+        ////////////////////////////////////
+        // all the code below is currently
+        // not being used since we are using
+        // just a simple redirect to StudioLite / Pro
+        // instead of app selector.
+        // using: Elements.APP_REDIRECT,
+        // not using: Elements.APP_SELECTOR,
+        ////////////////////////////////////
         events: {
             'click button': function(e){
                 var self = this;

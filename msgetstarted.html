@@ -212,8 +212,7 @@
                     <input id="resetPassInput" type="text" class="form-control" data-localize="email" name="username"
                            value="" required autofocus placeholder="email">
                 </div>
-                <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="resetPassword">reset password
+                <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" data-localize="resetPassword">reset password
                 </button>
             </form>
         </div>
@@ -769,7 +768,7 @@
 
         <div id="appRedirect" class="noScroll container" style="display: none">
             <div align="center" style="padding-top: 100px">
-                <h1 data-localize="loadingStudio">please wait, loading studio...</h1>
+                <h1 id="loadingStudio" data-localize="loadingStudio"></h1>
             </div>
         </div>
 
@@ -915,6 +914,10 @@
 <!-- Messages used for bootbox and localization inside bootbox -->
 <p style="display: none" id="bootBoxSaveRemoteSrv" data-localize="bootBoxSaveRemoteSrv">Save work to remote server</p>
 
+<p style="display: none" id="bootBoxEnterEmail" data-localize="bootBoxEnterEmail">Please enter your email address</p>
+
+<p style="display: none" id="bootBoxCheckEmail" data-localize="bootBoxCheckEmail">Please check your email</p>
+
 <p style="display: none" id="loginFailed" data-localize="loginFailed">Sorry but Login failed</p>
 
 <p style="display: none" id="bootBoxSaveAndRestart" data-localize="bootBoxSaveAndRestart">Save & restart stations</p>
@@ -924,6 +927,8 @@
 <p style="display: none" id="bootBoxCancel" data-localize="bootBoxCancel">Cancel</p>
 
 <p style="display: none" id="bootBoxOk" data-localize="bootBoxOk">OK</p>
+
+<p style="display: none" id="loadingStudioText" data-localize="loadingStudioText">please wait, loading </p>
 
 <p style="display: none" id="bootboxNoProbOnMobile" data-localize="bootboxNoProbOnMobile">StudioPro is suupported on
     Windows and Mac only (non mobile)</p>

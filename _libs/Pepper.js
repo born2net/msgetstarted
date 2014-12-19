@@ -332,8 +332,8 @@ Pepper.prototype = {
      @method GetBusinessUserInfo
      @param {Function} i_callBack
      **/
-    ResetPassword: function (i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ResetPassword&userName=born2net@gmail.com&callback=?';
+    ResetPassword: function (i_email, i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ResetPassword&userName='+i_email+'&callback=?';
         $.getJSON(url, i_callBack);
     },
 
@@ -364,7 +364,6 @@ Pepper.prototype = {
      **/
     GetBusinessUserInfo: function (i_user, i_pass, i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetBusinessUserInfo&userName=' + i_user + '&password=' + i_pass + '&callback=?';
-        log(url);
         $.getJSON(url, i_callBack);
     },
 

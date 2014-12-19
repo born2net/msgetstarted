@@ -261,6 +261,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appSelectorView = new AppSelectorView({
                     //el: Elements.APP_SELECTOR,
                     el: Elements.APP_REDIRECT,
+                    stackView: this.m_appEntryFaderView,
                     duration: 650
                 });
 
