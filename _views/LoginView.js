@@ -4,7 +4,7 @@
  @constructor
  @return {Object} instantiated LoginView
  **/
-define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
+define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
 
     var LoginView = Backbone.View.extend({
 
@@ -20,6 +20,8 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, Bootbox) {
                     var user = $(Elements.USER_NAME).val();
                     var pass = $(Elements.USER_PASS).val();
                     Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('authenticate/' + user + '/' + pass, {trigger: true});
+                } else {
+                    bootbox.alert($(Elements.MSG_BOOTBOX_ENTER_USER_PASS).text());
                 }
                 return false;
             });

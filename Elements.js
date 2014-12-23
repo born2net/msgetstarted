@@ -141,6 +141,7 @@ Elements.MSG_BOOTBOX_SAVE_RESTART = '#bootBoxSaveAndRestart';
 Elements.MSG_BOOTBOX_SAVE = '#bootBoxSave';
 Elements.MSG_BOOTBOX_CANCEL = '#bootBoxCancel';
 Elements.MSG_BOOTBOX_OK = '#bootBoxOk';
+Elements.MSG_BOOTBOX_ENTER_USER_PASS = '#bootBoxEnterUserPass';
 Elements.MSG_BOOTBOX_RESTART_STATIONS = '#bootBoxRestartStations';
 Elements.MSG_BOOTBOX_STUDIO_LITE_ACC = '#bootBoxStudioLiteAcc';
 Elements.MSG_BOOTBOX_LOGIN_FAILED = '#loginFailed';
@@ -155,6 +156,9 @@ Elements.MSG_BOOTBOX_BUSINESS_NAME_TOO_SHORT = '#bootBoxBusinessNameTooShort';
 Elements.MSG_BOOTBOX_PASSWORD_NO_MATCH = '#bootBoxPasswordNoMatch'
 Elements.MSG_BOOTBOX_ALPHANUMERIC = '#bootBoxAlphaNumeric'
 Elements.MSG_BOOTBOX_ACCOUNT_EXISTS = '#msgBoxAccountExists';
+Elements.MSG_BOOTBOX_LOAD_LITE = '#msgBoxLoadLite';
+
+
 
 // templates
 Elements.LANGUAGE_SELECTOR_TEMPLATE = '#languageSelector';

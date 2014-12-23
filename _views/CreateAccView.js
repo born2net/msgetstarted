@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated CreateAccountView
  **/
-define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backbone, backbonestickit, bootbox) {
+define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Base64'], function ($, Backbone, backbonestickit, bootbox, Base64) {
 
     var CreateAccountView = Backbone.View.extend({
 
@@ -24,7 +24,11 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
 
         _listenForgotPassword: function(){
             var self = this;
-            Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('forgetPassword', {trigger: true});
+            $(Elements.CREATE_ACCOUNT_FORGOT_PASS_BUTTON).on('click',function(e){
+                e.preventDefault();
+                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('forgetPassword', {trigger: true});
+                return false;
+            });
         },
 
         _listenCreateAccount: function () {
@@ -87,7 +91,13 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             switch (studioSelectView) {
                 case 'StudioLite':
                 {
-                    bootbox.alert('redirecting to studiolite');
+                    bootbox.alert($(Elements.MSG_BOOTBOX_LOAD_LITE).text());
+                    setTimeout(function(){
+                        var credentials = 'user=' + self.m_businessModel.get('contactEmail')+ ',pass=' + self.m_businessModel.get('newAccPassword');
+                        credentials = $.base64.encode(credentials);
+                        $(location).attr('href','https://galaxy.signage.me/_studiolite-dist/studiolite.html?param=' + credentials);
+                    },2000);
+
                     break;
                 }
                 case 'StudioPro':
