@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated CreateAccountView
  **/
-define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Base64'], function ($, Backbone, backbonestickit, bootbox, Base64) {
+define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backbone, backbonestickit, bootbox) {
 
     var CreateAccountView = Backbone.View.extend({
 
@@ -78,39 +78,16 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Base64'], function
             Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('verifyEmail', {trigger: true});
             self.m_accStatusHandler = setInterval(function () {
                 BB.Pepper.getAccountStatus(self.m_businessModel.get('businessId'), function (data) {
-                    if (data.result>0)
-                        self._loadStudio();
+                    if (data.result>0) {
+                        window.clearInterval(self.m_accStatusHandler);
+                        //BB.comBroker.getService(BB.SERVICES['LAYOUT_ROUTER']).navigate('authenticated', {trigger: true});
+                        var user  = self.m_businessModel.get('contactEmail');
+                        var pass = self.m_businessModel.get('newAccPassword');
+                        BB.comBroker.getService(BB.SERVICES.APP_AUTH).authenticate(user, pass);
+                    }
+
                 });
             }, 3000);
-        },
-
-        _loadStudio: function () {
-            var self = this;
-            window.clearInterval(self.m_accStatusHandler);
-            var studioSelectView = BB.comBroker.getService(BB.SERVICES.STUDIO_SELECT_VIEW).getStudioTypeSelected();
-            switch (studioSelectView) {
-                case 'StudioLite':
-                {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_LOAD_LITE).text());
-                    setTimeout(function(){
-                        var credentials = 'user=' + self.m_businessModel.get('contactEmail')+ ',pass=' + self.m_businessModel.get('newAccPassword');
-                        credentials = $.base64.encode(credentials);
-                        $(location).attr('href','https://galaxy.signage.me/_studiolite-dist/studiolite.html?param=' + credentials);
-                    },2000);
-
-                    break;
-                }
-                case 'StudioPro':
-                {
-                    if (BB.APPS_SUPPORT == BB.CONSTS.OS_FLASH) {
-                        // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
-                        Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
-                    } else {
-                        Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
-                    }
-                    break;
-                }
-            }
         },
 
         _bindings: function () {

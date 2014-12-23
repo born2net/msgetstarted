@@ -16,10 +16,13 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
          @return {} Unique clientId.
          **/
         initialize: function () {
-            this.authenticated = false;
-            this.AUTH_USER_PASS = 0;
-            this.AUTH_COOKIE = 1;
-            this.AUTH_PARAMS = 2;
+            var self = this;
+            BB.comBroker.setService(self, BB.SERVICES.APP_AUTH);
+            self.m_businessModel = BB.comBroker.getService(BB.SERVICES.BUSINESS_MODEL);
+            self.authenticated = false;
+            self.AUTH_USER_PASS = 0;
+            self.AUTH_COOKIE = 1;
+            self.AUTH_PARAMS = 2;
         },
 
         /**
@@ -94,6 +97,10 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
                     self._authFailed(i_authMode);
                 } else {
                     BB.STUDIO_TYPE = data.lite == 1 ? BB.CONSTS.STUDIO_LITE : BB.CONSTS.STUDIO_PRO;
+                    self.m_businessModel.set({
+                        contactEmail: i_user,
+                        newAccPassword: i_pass
+                    });
                     self._authPassed(i_user, i_pass, i_authMode);
                 }
             });
