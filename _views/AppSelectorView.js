@@ -50,8 +50,10 @@ define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, Sta
                 {
                     msg = msg + 'StudioPro...';
                     if (BB.APPS_SUPPORT == BB.CONSTS.OS_FLASH) {
-                        // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
-                        Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+                        setTimeout(function(){
+                            // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                            Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+                        },2000);
                     } else {
                         Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
                     }
