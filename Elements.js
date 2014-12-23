@@ -80,6 +80,7 @@ Elements.FILE_REMOVE = '#fileRemove';
 Elements.RESOURCE_LIB_LIST = '#resourceLibList';
 Elements.ABOUT_US = '#aboutUS';
 Elements.STACK_WAIT_MODAL_VIEW = '#stackWaitModalView';
+Elements.CREATE_ACCOUNT_FORGOT_PASS_BUTTON = '#createAccountForgotPassButton';
 Elements.BS_MODAL = '#bsModal';
 Elements.TOGGLE_PANEL = '#togglePanel';
 Elements.SHOW_BACKGROUND = '#showBackground';
@@ -153,6 +154,7 @@ Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT = '#bootBoxPasswordTooShort';
 Elements.MSG_BOOTBOX_BUSINESS_NAME_TOO_SHORT = '#bootBoxBusinessNameTooShort';
 Elements.MSG_BOOTBOX_PASSWORD_NO_MATCH = '#bootBoxPasswordNoMatch'
 Elements.MSG_BOOTBOX_ALPHANUMERIC = '#bootBoxAlphaNumeric'
+Elements.MSG_BOOTBOX_ACCOUNT_EXISTS = '#msgBoxAccountExists';
 
 // templates
 Elements.LANGUAGE_SELECTOR_TEMPLATE = '#languageSelector';

@@ -185,6 +185,12 @@
                         data-localize="createAccount">
                     create account
                 </button>
+
+                <button id="createAccountForgotPassButton" style="display: none" class="btn btn-lg btn-warning btn-block" type="submit"
+                        data-localize="forgotPassword">
+                    create account
+                </button>
+
             </form>
         </div>
         <div id="renameView" style="display: none">
@@ -656,7 +662,11 @@
                 <i class="fa fa-angle-double-left"></i>
                 <span class="backText">GO BACK</span>
             </a>
-            <h4 style="text-align: center" data-localize="pleaseCheckEamil">please check your email inbox</h4>
+            <h4 style="text-align: center" data-localize="pleaseCheckEmail">please check your email inbox</h4>
+            <div style="width: 100%; text-align: center">
+                <br/><br/>
+                <img class="center" src="./_assets/preload3.gif">
+            </div>
         </div>
 
         <div id="webDeskSelectNoFlashView" style="display: none">
@@ -920,6 +930,8 @@
 
 <!-- Messages used for bootbox and localization inside bootbox -->
 <p style="display: none" id="bootBoxSaveRemoteSrv" data-localize="bootBoxSaveRemoteSrv">Save work to remote server</p>
+
+<p style="display: none" id="msgBoxAccountExists" data-localize="msgBoxAccountExists">Account with this name already exists, please use a different email address or select forgot password to reset account credentials</p>
 
 <p style="display: none" id="bootBoxBusinessNameTooShort" data-localize="bootBoxBusinessNameTooShort">Business name is
     too short</p>

@@ -312,9 +312,26 @@ Pepper.prototype = {
      @method createAccount
      @param {Function} i_callBack
      **/
-    createAccount: function (i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount&businessName=MediaSignage&userName=x1482@ms.com&password=123123&templateBusinessId=1021&resellerId=1&firstName=Sean&lastName=Levy&contactEmail=x147@ms.com&workPhone=5551212&cellPhone=818555454&address=loma&city=wh&state=ca&contry=USA&zipcode=91301&callback=?';
-        $.getJSON(url, i_callBack);
+    createAccount: function (i_businessName, i_userName, i_password, i_templateBusinessId, i_resellerId, i_firstName, i_lastName, i_contactEmail, i_workPhone, i_cellPhone, i_address, i_city, i_state, i_contry, i_zipcode, i_callback) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount'
+        url += '&businessName=' + i_businessName;
+        url += '&userName=' + i_userName;
+        url += '&password=' + i_password;
+        url += '&templateBusinessId=' + i_templateBusinessId;
+        url += '&resellerId=' + i_resellerId;
+        url += '&firstName=' + i_firstName;
+        url += '&lastName=' + i_lastName;
+        url += '&contactEmail=' + i_contactEmail;
+        url += '&workPhone=' + i_workPhone;
+        url += '&cellPhone=' + i_cellPhone;
+        url += '&address=' + i_address;
+        url += '&city=' + i_city;
+        url += '&state=' + i_state;
+        url += '&contry=' + i_contry;
+        url += '&zipcode=' + i_zipcode;
+        url += '&callback=?';
+        log(url);
+        $.getJSON(url, i_callback);
     },
 
     /**
@@ -322,8 +339,8 @@ Pepper.prototype = {
      @method GetBusinessUserInfo
      @param {Function} i_callBack
      **/
-    getAccountStatus: function (i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetAccountStatus&businessId=315268&callback=?';
+    getAccountStatus: function (i_businessId, i_callBack) {
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetAccountStatus&businessId=' + i_businessId + '&callback=?';
         $.getJSON(url, i_callBack);
     },
 

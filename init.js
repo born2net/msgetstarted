@@ -88,6 +88,7 @@ require.config({
         'ResourcesWaspView': '_views/_orders/ResourcesWaspView',
         'ScreenLayoutSelectorWaspView': '_views/_orders/ScreenLayoutSelectorWaspView',
         'LogoutWaspView': '_views/_orders/LogoutWaspView',
+        'BusinessModel': '_models/BusinessModel',
         'Pepper': '_libs/Pepper'
     },
 

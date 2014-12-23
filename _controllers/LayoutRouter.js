@@ -341,6 +341,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     newAccPasswordConfirm: '',
                     newAccPhone: ''
                 });
+
                 this.m_createAccView = new CreateAccView({
                     el: Elements.CREATE_ACC_VIEW,
                     model: this.m_createAccountModel

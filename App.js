@@ -5,7 +5,7 @@
  @constructor
  @return {Object} instantiated App
  **/
-define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder) {
+define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder', 'BusinessModel'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder, BusinessModel) {
     var App = Backbone.Controller.extend({
 
         // app init
@@ -48,25 +48,25 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.g_masterDomain = 'galaxy.signage.me';
 
             /*
-            BB.Pepper.createAccount(function (data) {
-                log(data);
-            });
-            BB.Pepper.GetBusinessUserInfo(function (data) {
-                log(data);
-            });
-            BB.Pepper.GetAccountStatus(function (data) {
-              log(data);
-            });
-            //BB.Pepper.ResetPassword(function (data) {
-            //   log(data);
-            //});
-            //BB.Pepper.ChangePassword(function (data) {
-            //    log(data);
-            //});
-            BB.Pepper.ChangeBusinessName(function (data) {
-                log(data);
-            });
-            */
+             BB.Pepper.createAccount(function (data) {
+             log(data);
+             });
+             BB.Pepper.GetBusinessUserInfo(function (data) {
+             log(data);
+             });
+             BB.Pepper.GetAccountStatus(function (data) {
+             log(data);
+             });
+             //BB.Pepper.ResetPassword(function (data) {
+             //   log(data);
+             //});
+             //BB.Pepper.ChangePassword(function (data) {
+             //    log(data);
+             //});
+             BB.Pepper.ChangeBusinessName(function (data) {
+             log(data);
+             });
+             */
 
             require(['localizer'], function () {
                 var lang = "en";
@@ -78,6 +78,8 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             //require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
             //    new LanguageSelectorView({appendTo: Elements.LANGUAGE_SELECTION_LOGIN});
             //});
+
+            var businessModel = new BusinessModel();
 
             // router init
             require(['LayoutRouter'], function (LayoutRouter) {

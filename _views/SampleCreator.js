@@ -13,8 +13,6 @@ define(['jquery', 'backbone', 'text!_templates/_templateSampleItem.html'], funct
          **/
         initialize: function () {
             var self = this;
-            //self.m_sampleSnippet += '       <img src="_assets/icon.png" class="sampleIcon img-responsive img-circle"/>';
-
             self.m_sampleTemplate = _.template(templateSampleItem);
             self._render();
             self._listenFilterList();
@@ -29,7 +27,6 @@ define(['jquery', 'backbone', 'text!_templates/_templateSampleItem.html'], funct
                     return rex.test($(this).text());
                 }).show();
             });
-
         },
 
         _listenPreview: function () {
@@ -46,6 +43,8 @@ define(['jquery', 'backbone', 'text!_templates/_templateSampleItem.html'], funct
             var self = this;
             $(Elements.CLASS_SAMPLE_ITEM, self.el).off('click');
             $(Elements.CLASS_SAMPLE_ITEM, self.el).on('click',function () {
+                var templateBusinessId = $(this).find(Elements.CLASS_SAMPLE_PREVIEW).attr('data-templateBusinessId');
+                BB.comBroker.getService(BB.SERVICES.BUSINESS_MODEL).set('templateBusinessId',templateBusinessId);
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('createAcc', {trigger: true});
                 return false;
             });
@@ -75,10 +74,11 @@ define(['jquery', 'backbone', 'text!_templates/_templateSampleItem.html'], funct
                     var sampleType =sample.lite;
                     if (accountType != sampleType)
                         continue;
-                    var businessId = data['templates'][i].businessId;
+                    var templateBusinessId = data['templates'][i].businessId;
                     var sampleItem = {
+                        templateBusinessId: templateBusinessId,
                         name: data['templates'][i].name,
-                        icon: 'http://galaxy.signage.me/Resources/Images/lite_html/' + businessId + '.png',
+                        icon: 'http://galaxy.signage.me/Resources/Images/lite_html/' + templateBusinessId + '.png',
                         preview: data['templates'][i].previewUrl
                     };
                     $ul.append(self.m_sampleTemplate(sampleItem));
