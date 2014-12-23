@@ -322,7 +322,7 @@ Pepper.prototype = {
      @method GetBusinessUserInfo
      @param {Function} i_callBack
      **/
-    GetAccountStatus: function (i_callBack) {
+    getAccountStatus: function (i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetAccountStatus&businessId=315268&callback=?';
         $.getJSON(url, i_callBack);
     },
@@ -332,7 +332,7 @@ Pepper.prototype = {
      @method GetBusinessUserInfo
      @param {Function} i_callBack
      **/
-    ResetPassword: function (i_email, i_callBack) {
+    resetPassword: function (i_email, i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ResetPassword&userName=' + i_email + '&callback=?';
         $.getJSON(url, i_callBack);
     },
@@ -342,7 +342,7 @@ Pepper.prototype = {
      @method ChangePassword
      @param {Function} i_callBack
      **/
-    ChangePassword: function (i_email, i_oldPassword, i_newPassword, i_callBack) {
+    changePassword: function (i_email, i_oldPassword, i_newPassword, i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangePassword&userName=' + i_email + '&oldPassword=' + i_oldPassword + '&newPassword=' + i_newPassword + '&callback=?';
         $.getJSON(url, i_callBack);
     },
@@ -352,7 +352,7 @@ Pepper.prototype = {
      @method ChangeBusinessName
      @param {Function} i_callBack
      **/
-    ChangeBusinessName: function (i_email, i_password, i_businessName, i_callBack) {
+    changeBusinessName: function (i_email, i_password, i_businessName, i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=' + i_email + '&password='+ i_password + '&busnessName=' + i_businessName + '&callback=?';
         $.getJSON(url, i_callBack);
     },
@@ -362,7 +362,7 @@ Pepper.prototype = {
      @method GetBusinessUserInfo
      @param {Function} i_callBack
      **/
-    GetBusinessUserInfo: function (i_user, i_pass, i_callBack) {
+    getBusinessUserInfo: function (i_user, i_pass, i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=GetBusinessUserInfo&userName=' + i_user + '&password=' + i_pass + '&callback=?';
         $.getJSON(url, i_callBack);
     },

@@ -51,7 +51,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
                     return false;
                 }
 
-                BB.Pepper.ChangePassword(self.model.get('changePassUser'), self.model.get('changePassPassword'), self.model.get('changePassNewPassword'), function (data) {
+                BB.Pepper.changePassword(self.model.get('changePassUser'), self.model.get('changePassPassword'), self.model.get('changePassNewPassword'), function (data) {
                     if (data.result == -1) {
                         bootbox.alert($(Elements.MSG_BOOTBOX_COULD_NOT_AUTHENTICATE).text());
                         return;

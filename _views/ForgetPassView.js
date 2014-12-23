@@ -36,7 +36,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                     });
                     return false;
                 }
-                BB.Pepper.ResetPassword(i_email, function (data) {
+                BB.Pepper.resetPassword(i_email, function (data) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_CHECK_EMAIL).text());
                     BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).navigate('unauthenticated', {trigger: true});
                 });

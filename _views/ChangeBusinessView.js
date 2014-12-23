@@ -37,7 +37,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
                     bootbox.alert($(Elements.MSG_BOOTBOX_BUSINESS_NAME_TOO_SHORT).text());
                     return false;
                 }
-                BB.Pepper.ChangeBusinessName(self.model.get('newBusinessEmail'), self.model.get('newBusinessPassword'), self.model.get('newBusinessName'), function (data) {
+                BB.Pepper.changeBusinessName(self.model.get('newBusinessEmail'), self.model.get('newBusinessPassword'), self.model.get('newBusinessName'), function (data) {
                     if (data.result == 0) {
                         bootbox.alert($(Elements.MSG_BOOTBOX_COULD_NOT_AUTHENTICATE).text());
                         return;
@@ -55,7 +55,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             self.addBinding(self.model, Elements.NEW_BUSINESS_NAME, 'newBusinessName');
             self.stickit();
         }
-    })
+    });
 
     return ChangeBusinessView;
 

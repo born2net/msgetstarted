@@ -89,7 +89,7 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
          **/
         _authServer: function (i_user, i_pass, i_authMode) {
             var self = this;
-            BB.Pepper.GetBusinessUserInfo(i_user, i_pass, function (data) {
+            BB.Pepper.getBusinessUserInfo(i_user, i_pass, function (data) {
                 if (data.result == -1) {
                     self._authFailed(i_authMode);
                 } else {

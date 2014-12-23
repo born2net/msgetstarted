@@ -96,7 +96,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             _routeCreateAcc: function () {
-                this.m_appEntryFaderView.selectView(this.m_accountView);
+                this.m_appEntryFaderView.selectView(this.m_createAccView);
             },
 
             _routeStudioSelectView: function (i_id) {
@@ -283,10 +283,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.SIGNAGE_PLAYER_VIEW
                 });
 
-                this.m_createAccView = new CreateAccView({
-                    el: Elements.CREATE_ACC_VIEW
-                });
-
                 this.m_renameView = new RenameView({
                     el: Elements.RENAME_VIEW
                 });
@@ -296,8 +292,8 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     changePassPassword: '',
                     changePassNewPassword: '',
                     changePassVerifyPassword: ''
-
                 });
+
                 this.m_changePassView = new ChangePassView({
                     el: Elements.CHANGE_PASS_VIEW,
                     model: this.m_changePassModel
@@ -310,6 +306,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     changePassVerifyPassword: ''
 
                 });
+
                 this.m_changeBusinessView = new ChangeBusinessView({
                     el: Elements.CHANGE_BUSINESS_VIEW,
                     model: this.m_changeBuisnessNameModel
@@ -335,6 +332,18 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
                 this.m_accountView = new AccountView({
                     el: Elements.ACCOUNT_VIEW
+                });
+
+                this.m_createAccountModel = new BB.Model({
+                    newAccBusinessName: '',
+                    newAccEmail: '',
+                    newAccPassword: '',
+                    newAccPasswordConfirm: '',
+                    newAccPhone: ''
+                });
+                this.m_createAccView = new CreateAccView({
+                    el: Elements.CREATE_ACC_VIEW,
+                    model: this.m_createAccountModel
                 });
 
                 this.m_webDeskSelectView = new WebDeskSelectView({

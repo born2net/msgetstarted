@@ -62,7 +62,7 @@
             </ul>
             <ul style="font-size: 1.0em" class="nav navbar-nav navbar-right">
                 <li id="logoutHeader" style="display: none"><a id="logout" href="#"> <i style="font-size: 15px"
-                                                               class="faHeader fa fa-power-off "></i><span
+                                                                                        class="faHeader fa fa-power-off "></i><span
                         data-localize="logout"> logout </span> </a></li>
 
                 <li><a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px"
@@ -73,7 +73,7 @@
                 <li><a id="languagePrompt" href="#"> <i style="font-size: 15px" class="faHeader fa fa-globe"></i><span
                         data-localize="setLanguage"> Language </span></a></li>
                 <li><a id="liveChat" href="#"> <i style="font-size: 15px"
-                                                                          class="faHeader fa fa-comment"></i><span
+                                                  class="faHeader fa fa-comment"></i><span
                         data-localize="chat"> Chat</span></a></li>
                 <!-- <li><a id="dashboard" href="#">Dashboard &nbsp;</a></li> -->
             </ul>
@@ -92,7 +92,7 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="userNameEmail" placeholder="username or email">
+                           data-localize="userNameEmail" placeholder="username or email aaassaaa">
                 </div>
 
                 <div style="margin-bottom: 3px" class="input-group">
@@ -144,11 +144,48 @@
             </a>
         </div>
         <div id="createAccView" style="display: none">
-            <h1>CreateAccView</h1>
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
                 <span class="backText">GO BACK</span>
             </a>
+
+            <form class="form-signin" role="form">
+                <br/>
+                <br/>
+
+                <h2 class="form-signin-heading"></h2>
+
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
+                    <input id="newAccBusinessName" type="text" class="form-control" name="username" value="" required autofocus
+                           data-localize="businessNameOpt" placeholder="business name (optional)">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    <input id="newAccEmail" type="text" class="form-control" name="username" value="" required autofocus
+                           data-localize="email" placeholder="email">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input id="newAccPassword" type="password" class="form-control" name="username" value="" required autofocus
+                           data-localize="password" placeholder="password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                    <input id="newAccPasswordConfirm" type="password" class="form-control" name="username" value="" required autofocus
+                           data-localize="confirmPassword" placeholder="confirm password">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
+                    <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                    <input id="newAccPhone" type="text" class="form-control" name="username" value="" required autofocus
+                           data-localize="enterPhone" placeholder="enter your phone [optional]">
+                </div>
+
+                <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit"
+                        data-localize="createAccount">
+                    create account
+                </button>
+            </form>
         </div>
         <div id="renameView" style="display: none">
             <h1>RenameView</h1>
@@ -171,22 +208,26 @@
 
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="changePassUser" type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassUser" type="text" class="form-control" name="username" value="" required
+                           autofocus
                            data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="changePassPassword" type="password" type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassPassword" type="password" type="text" class="form-control" name="username"
+                           value="" required autofocus
                            data-localize="oldPassword" placeholder="old password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="changePassNewPassword" type="password" type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassNewPassword" type="password" type="text" class="form-control" name="username"
+                           value="" required autofocus
                            data-localize="newPassword" placeholder="new password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="changePassVerifyPassword" class="form-control" name="username" value="" required autofocus
+                    <input id="changePassVerifyPassword" class="form-control" name="username" value="" required
+                           autofocus
                            data-localize="verifyNewPassword" type="password" placeholder="verify new password">
                 </div>
                 <button id="changePassButton" class="btn btn-lg btn-primary btn-block" data-localize="changePassword">
@@ -211,7 +252,8 @@
                     <input id="resetPassInput" type="text" class="form-control" data-localize="email" name="username"
                            value="" required autofocus placeholder="email">
                 </div>
-                <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" data-localize="resetPassword">reset password
+                <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" data-localize="resetPassword">
+                    reset password
                 </button>
             </form>
         </div>
@@ -229,16 +271,19 @@
 
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="newBusinessEmail" type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="newBusinessEmail" type="text" class="form-control" name="username" value="" required
+                           autofocus
                            data-localize="email" placeholder="email">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="newBusinessPassword" type="password" class="form-control" name="username" value="" required autofocus placeholder="password">
+                    <input id="newBusinessPassword" type="password" class="form-control" name="username" value=""
+                           required autofocus placeholder="password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input id="newBusinessName" type="text" class="form-control" name="username" value="" required autofocus
+                    <input id="newBusinessName" type="text" class="form-control" name="username" value="" required
+                           autofocus
                            data-localize="newBusinessName" placeholder="new business name">
                 </div>
                 <button id="newBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
@@ -529,13 +574,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="sampleListLite" >
+                        <div id="sampleListLite">
                             <form action="#" method="get">
                                 <div class="input-group">
                                     <input class="filterSample form-control" name="q" placeholder="Search for"
                                            required>
                                 <span class="input-group-btn">
-                                    <button type="submit" disabled="disabled" style="height: 34px" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
+                                    <button type="submit" disabled="disabled" style="height: 34px"
+                                            class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
                                     </button>
                                 </span>
                                 </div>
@@ -585,7 +631,8 @@
                                 <div class="input-group">
                                     <input class="form-control filterSample" name="q" placeholder="Search for" required>
                                 <span class="input-group-btn">
-                                    <button disabled="disabled" type="submit" style="height: 34px" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
+                                    <button disabled="disabled" type="submit" style="height: 34px"
+                                            class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
                                     </button>
                                 </span>
                                 </div>
@@ -603,44 +650,6 @@
                 <i class="fa fa-angle-double-left"></i>
                 <span class="backText">GO BACK</span>
             </a>
-
-            <form class="form-signin" role="form">
-                <br/>
-                <br/>
-
-                <h2 class="form-signin-heading"></h2>
-
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="businessName" placeholder="business name">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="email" placeholder="email">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="password" placeholder="password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="confirmPassword" placeholder="confirm password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
-                    <input type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="enterPhone" placeholder="enter your phone (optional)">
-                </div>
-
-                <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="createAccount">
-                    create account
-                </button>
-            </form>
         </div>
         <div id="verifyEmailView" style="display: none">
             <a class="back" href="#">
@@ -912,9 +921,11 @@
 <!-- Messages used for bootbox and localization inside bootbox -->
 <p style="display: none" id="bootBoxSaveRemoteSrv" data-localize="bootBoxSaveRemoteSrv">Save work to remote server</p>
 
-<p style="display: none" id="bootBoxBusinessNameTooShort" data-localize="bootBoxBusinessNameTooShort">Business name is too short</p>
+<p style="display: none" id="bootBoxBusinessNameTooShort" data-localize="bootBoxBusinessNameTooShort">Business name is
+    too short</p>
 
-<p style="display: none" id="bootBoxAlphaNumeric" data-localize="bootBoxAlphaNumeric">Only A - Z and 0 - 9 are allowed for password</p>
+<p style="display: none" id="bootBoxAlphaNumeric" data-localize="bootBoxAlphaNumeric">Only A - Z and 0 - 9 are allowed
+    for password</p>
 
 <p style="display: none" id="bootBoxEnterEmail" data-localize="bootBoxEnterEmail">Please enter your email address</p>
 
@@ -926,7 +937,8 @@
 
 <p style="display: none" id="bootBoxCheckEmail" data-localize="bootBoxCheckEmail">Please check your email</p>
 
-<p style="display: none" id="bootBoxCanNotAuthenticate" data-localize="bootBoxCanNotAuthenticate">Sorry, can not authenticate with your user or password</p>
+<p style="display: none" id="bootBoxCanNotAuthenticate" data-localize="bootBoxCanNotAuthenticate">Sorry, can not
+    authenticate with your user or password</p>
 
 <p style="display: none" id="bootBoxCompleted" data-localize="bootBoxCompleted">Completed successfully...</p>
 

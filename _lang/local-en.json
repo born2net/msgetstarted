@@ -11,6 +11,7 @@
     "forgotPassword": "forgot password",
     "changePassword": "change password",
     "changeBusiness": "change business name",
+    "businessNameOpt": "business name (optional)",
     "fromUs": "Direct download",
     "fromGoogle": "From Google Play",
     "fromAppStore": "From App Store",
@@ -33,7 +34,6 @@
     "moreToLearn": "more to learn",
     "packedFeatures": "packed with advanced features",
     "buildPowerful": "build a powerful presentation",
-    "businessName": "business name",
     "confirmPassword": "confirm password",
     "enterPhone": "enter your phone (optional)",
     "pleaseCheckEamil": "please check your email inbox",
@@ -56,7 +56,7 @@
     "bootBoxBusinessNameTooShort": "Business name is too short",
     "bootBoxCanNotAuthenticate": "Sorry, can not authenticate your user or password",
     "bootBoxCompleted": "Completed...",
-    "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead..."
+    "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead...",
     "bootBoxAlphaNumeric": "Only A - Z and 0 - 9 are allowed for password selection",
     "getSignagePlayer": " SignagePlayer ",
     "setLanguage": " Language",
@@ -72,7 +72,6 @@
     "loginFailed": "Sorry but login has failed...",
     "logout": "logout",
     "saveChanges": "save changes"
-
 }
 
 
