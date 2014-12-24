@@ -308,6 +308,28 @@ Pepper.prototype = {
     },
 
     /**
+     Return the url address of StudioLite
+     @method getStudioLiteURL
+     @return {String} url address
+     **/
+    getStudioLiteURL: function () {
+        var protocol =  window.g_protocol;
+        if (window.g_masterDomain == 'galaxy.signage.me')
+            protocol = 'https://';
+        return protocol + window.g_masterDomain + '/_studiolite-dist/studiolite.html';
+    },
+
+    /**
+     Return the url address of StudioPro
+     @method getStudioProURL
+     @return {String} url address
+     **/
+    getStudioProURL: function () {
+        var protocol =  window.g_protocol;
+        return window.g_protocol + window.g_masterDomain + '/WebService/signagestudio_d.aspx';
+    },
+
+    /**
      Create a new mediaCLOUD account
      @method createAccount
      @param {Function} i_callBack
@@ -370,7 +392,7 @@ Pepper.prototype = {
      @param {Function} i_callBack
      **/
     changeBusinessName: function (i_email, i_password, i_businessName, i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=' + i_email + '&password='+ i_password + '&busnessName=' + i_businessName + '&callback=?';
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=' + i_email + '&password=' + i_password + '&busnessName=' + i_businessName + '&callback=?';
         $.getJSON(url, i_callBack);
     },
 

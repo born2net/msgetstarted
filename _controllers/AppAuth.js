@@ -7,6 +7,7 @@
 define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone, Cookie, RC4, bootbox) {
 
     BB.SERVICES.APP_AUTH = 'AppAuth';
+    BB.EVENTS.APP_LOGOUT = 'AppLogout';
 
     var AppAuth = BB.Controller.extend({
 
@@ -190,6 +191,8 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
         logout: function () {
             $.removeCookie('boilerplateappcookie', {path: '/'});
             $.cookie('boilerplateappcookie', '', {expires: -300});
+            BB.comBroker.fire(BB.EVENTS.APP_LOGOUT);
+
         }
     });
 

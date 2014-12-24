@@ -95,7 +95,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 appEntryFaderView.selectView(Elements.APP_LOGOUT);
                 BB.comBroker.getService(BB.SERVICES['APP_AUTH']).logout();
             });
-        },
+        }
     });
 
     return NavigationView;

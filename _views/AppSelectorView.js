@@ -20,7 +20,10 @@ define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, Sta
             Backbone.StackView.ViewPort.prototype.initialize.call(this);
             BB.comBroker.setService(BB.SERVICES.APP_SELECTOR, self);
             self.m_businessModel = BB.comBroker.getService(BB.SERVICES.BUSINESS_MODEL);
+            self.m_loggedOut = false;
+            self.m_loadTimer = 3000;
             self._listenSelection();
+            self._listenLoggedout();
         },
 
         _listenSelection: function () {
@@ -31,6 +34,13 @@ define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, Sta
             });
         },
 
+        _listenLoggedout: function () {
+            var self = this;
+            BB.comBroker.listen(BB.EVENTS.APP_LOGOUT, function (e) {
+                self.m_loggedOut = true;
+            })
+        },
+
         _render: function () {
             var self = this;
             var msg = $(Elements.LOADING_STUDIO_TEXT).text();
@@ -39,23 +49,34 @@ define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, Sta
                 {
                     msg = msg + 'StudioLite...';
                     setTimeout(function () {
+                        // if logged out during timer, don't redirect app
+                        if (self.m_loggedOut)
+                            return;
                         var credentials = 'user=' + self.m_businessModel.get('contactEmail') + ',pass=' + self.m_businessModel.get('newAccPassword');
                         credentials = $.base64.encode(credentials);
-                        var url = 'https://galaxy.signage.me/_studiolite-dist/studiolite.html?param=' + credentials;
+                        var url = BB.Pepper.getStudioLiteURL();
+                        url = url + '?param=' + credentials;
                         $(location).attr('href', url);
-                    }, 2000);
+                    }, self.m_loadTimer);
                     break;
                 }
                 case BB.CONSTS.STUDIO_PRO:
                 {
-                    msg = msg + 'StudioPro...';
+                    msg = msg + '...';
                     if (BB.APPS_SUPPORT == BB.CONSTS.OS_FLASH) {
-                        setTimeout(function(){
-                            // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                        setTimeout(function () {
+                            // if logged out during timer, don't redirect app
+                            if (self.m_loggedOut)
+                                return;
                             Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
-                        },2000);
+                        }, self.m_loadTimer);
                     } else {
-                        Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                        setTimeout(function () {
+                            // if logged out during timer, don't redirect app
+                            if (self.m_loggedOut)
+                                return;
+                            Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                        }, self.m_loadTimer);
                     }
                     break;
                 }
