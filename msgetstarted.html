@@ -65,9 +65,19 @@
                                                                                         class="faHeader fa fa-power-off "></i><span
                         data-localize="logout"> logout </span> </a></li>
 
-                <li><a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px"
-                                                               class="faHeader fa fa-download"></i><span
-                        data-localize="getSignagePlayer"> SignagePlayer </span> </a></li>
+                <!--
+                removed SignagePlayer
+                <li>
+                    <a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
+                    <span data-localize="getSignagePlayer"> SignagePlayer </span> </a>
+                </li>
+                -->
+
+                <li>
+                    <a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
+                        <span data-localize="getSignagePlayer"> SignagePlayer </span> </a>
+                </li>
+
 
 
                 <li><a id="languagePrompt" href="#"> <i style="font-size: 15px" class="faHeader fa fa-globe"></i><span
@@ -309,10 +319,18 @@
                     <div class="col-md-12">
                         <div class="panel-group" id="accordion">
                             <div class="panel panel-default">
+                                <!--
+                                removed SignagePlayer
                                 <div class="panel-heading prodSelectAcc" data-toggle="collapse"
+                                -->
+                                <div class="panel-heading prodSelectAcc"
                                      data-target="#collapseOne">
                                     <h4 class="panel-title">
+                                        <!--
+                                        removed SignagePlayer
                                         <a id="accordionStudio" data-toggle="collapse" data-parent="#accordion"
+                                        -->
+                                        <a id="accordionStudio" data-parent="#accordion"
                                            href="#collapseOne">
                                             <span class="selectSignageStudio fa fa-arrow-circle-right">
                                             </span>
@@ -321,7 +339,11 @@
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseOne" class="accordion-body panel-collapse collapse">
+                                <!--
+                                 removed SignagePlayer
+                                 <div id="collapseOne" class="accordion-body panel-collapse collapse">
+                                 -->
+                                <div id="collapseOne" class="accordion-body">
                                     <div class="panel-body">
                                         <div class="container"
                                              style="width: 100%; padding-left: 40px; padding-right: 50px">
@@ -387,7 +409,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <!--
+                            removed SignagePlayer
+                            <div  class="panel panel-default">
                                 <div class="prodSelectAcc panel-heading" data-toggle="collapse"
                                      data-target="#collapseTwo">
                                     <h4 class="panel-title">
@@ -539,11 +563,11 @@
                                                     </a></li>
                                                 </ul>
                                             </div>
-                                            <!-- End Carousel -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -561,11 +585,6 @@
                         <div class="panel-heading c-list">
                             <span class="title">Select starting sample</span>
                             <ul class="pull-right c-controls">
-                                <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top"
-                                       title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
-                                <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
-                                       data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a>
-                                </li>
                             </ul>
                         </div>
 
@@ -612,11 +631,6 @@
                         <div class="panel-heading c-list">
                             <span class="title">Select starting sample</span>
                             <ul class="pull-right c-controls">
-                                <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top"
-                                       title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
-                                <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
-                                       data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a>
-                                </li>
                             </ul>
                         </div>
 
@@ -663,6 +677,7 @@
                 <span class="backText">GO BACK</span>
             </a>
             <h4 style="text-align: center" data-localize="pleaseCheckEmail">please check your email inbox</h4>
+
             <div style="width: 100%; text-align: center">
                 <br/><br/>
                 <img class="center" src="./_assets/preload3.gif">

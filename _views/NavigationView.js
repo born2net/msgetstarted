@@ -26,8 +26,9 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             });
 
             $(Elements.DOWNLOAD_SIGNAGE_PLAYER).on('click', function () {
-                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('studioSelectView/2', {trigger: true});
-                self._closeMobileNavigation();
+                var pop = window.open('http://start.digitalsignage.com', '_blank');
+                //Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('studioSelectView/2', {trigger: true});
+                //self._closeMobileNavigation();
             });
 
             $(Elements.LANGUAGE_PROMPT).on('click', function () {

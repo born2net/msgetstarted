@@ -66,7 +66,12 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
          **/
         _listenPanelHeaderSelection: function () {
             var self = this;
-            $(Elements.ACCORDION_STUDIO).on('click', function () {
+            $(Elements.ACCORDION_STUDIO).on('click', function (e) {
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                return false;
+
+                return;
                 var e = $(Elements.CLASS_PROD_SELECT_ACC, self.el)[0];
                 $(e).trigger('click');
             });
@@ -76,7 +81,10 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
                 $(e).trigger('click');
             });
 
-            $(Elements.CLASS_PROD_SELECT_ACC + ',' + Elements.ACCORDION_PLAYER, self.el).on('click', function () {
+            $(Elements.CLASS_PROD_SELECT_ACC + ',' + Elements.ACCORDION_PLAYER, self.el).on('click', function (e) {
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                return false;
                 $('html, body').animate({
                     scrollTop: $(Elements.FOOTER).offset().top
                 }, 'slow');
