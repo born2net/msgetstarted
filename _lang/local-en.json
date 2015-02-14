@@ -2,6 +2,7 @@
     "appName": "The BoilerPlate App",
     "devBy": "&nbsp;By DigitalSignage.com &#169; | version 0.0.1 ",
     "signin": "login to account",
+    "signin2": "login to account",
     "saveConfig": "save",
     "liveChat": "live chat",
     "chat": " Chat ",
@@ -23,7 +24,7 @@
     "fromStudioPro": "From StudioPro",
     "or2": "or",
     "searchFor": "search for",
-    "selectStartingTemplate": "Select starting sample",
+    "selectStartingTemplate2": "Select starting sample",
     "createNewAccount": "create account",
     "email": "email",
     "oldPassword": "old password",
@@ -51,6 +52,7 @@
     "chooseBetween": "Choose between StudioPro <u>Web</u> or StudioPro <u>Desktop</u>",
     "webDeskText": "Both the Web and Desktop save your data to the cloud, it’s just that the Desktop version loads faster and has a few minor enhancements. <br/>Best of all both versions are 100% FREE, so you switch between the two at any time... so no big decisions here.",
     "haveNiceDay": "Have a nice day :)",
+    "haveANiceDay": "Have a nice day",
     "playerWinMsg": "Run the SignagePlayer on any version of Microsoft Windows and turn your personal computer into a dedicated Digital Signage Player",
     "playerAndMsg": "Run the SignagePlayer Mobile version on Android tablets and phones. Install it from the Android Market place.",
     "downloadSignagePlayer": " SignagePlayer - Download ",
@@ -80,6 +82,7 @@
     "close": "close",
     "loginFailed": "Sorry but login has failed...",
     "logout": "logout",
+    "logout2": "logout",
     "saveChanges": "save changes"
 }
 
