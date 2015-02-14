@@ -47,37 +47,16 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.g_protocol = 'http://';
             window.g_masterDomain = 'galaxy.signage.me';
 
-            /*
-             BB.Pepper.createAccount(function (data) {
-             log(data);
-             });
-             BB.Pepper.GetBusinessUserInfo(function (data) {
-             log(data);
-             });
-             BB.Pepper.GetAccountStatus(function (data) {
-             log(data);
-             });
-             //BB.Pepper.ResetPassword(function (data) {
-             //   log(data);
-             //});
-             //BB.Pepper.ChangePassword(function (data) {
-             //    log(data);
-             //});
-             BB.Pepper.ChangeBusinessName(function (data) {
-             log(data);
-             });
-             */
-
-            require(['localizer'], function () {
-                var lang = "en";
-                var opts = {language: lang, pathPrefix: "./_lang"};
-                $("[data-localize]").localize("local", opts);
-            });
+            //require(['localizer'], function () {
+            //    var lang = 'en'; // iw
+            //    var opts = {language: lang, pathPrefix: "./_lang"};
+            //    $("[data-localize]").localize("local", opts);
+            //});
 
             // localization
-            //require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
-            //    new LanguageSelectorView({appendTo: Elements.LANGUAGE_SELECTION_LOGIN});
-            //});
+            require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
+                new LanguageSelectorView({el: Elements.LANGUAGE_PROMPT});
+            });
 
             var businessModel = new BusinessModel();
 

@@ -192,6 +192,10 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
             $.removeCookie('boilerplateappcookie', {path: '/'});
             $.cookie('boilerplateappcookie', '', {expires: -300});
             BB.comBroker.fire(BB.EVENTS.APP_LOGOUT);
+            setTimeout(function(){
+                window.location.replace('http://www.digitalsignage.com');
+            },1500)
+
 
         }
     });

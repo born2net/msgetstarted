@@ -300,7 +300,9 @@ Pepper.prototype = {
             if (i_lang == 'zh')
                 i_lang = 'zh-CN';
             var local = data[i_lang];
-            var url = window.g_protocol + window.g_masterDomain + '/WebService/getResourceBundlesJson.ashx?local=' + local + '&bundleList=studiolite&callback=?';
+            //var url = window.g_protocol + window.g_masterDomain + '/WebService/getResourceBundlesJson.ashx?local=' + local + '&bundleList=studiolite&callback=?';
+            var url = window.g_protocol + window.g_masterDomain + '/WebService/getResourceBundlesJson.ashx?local=' + local + '&bundleList=msgetstarted&callback=?';
+            console.log(url);
             $.getJSON(url, function (data) {
                 i_callBack(data);
             });

@@ -56,10 +56,10 @@
         jsonCall = function(file, pkg, lang, level) {
 
             /* in distribution mode load through web service */
-            // if (1) { // enable to test localization in dev env
-            if (window.location.href.indexOf('dist') > -1) {
+            if (1) { // enable to test localization in dev env
+            //if (window.location.href.indexOf('dist') > -1) {
                 pepper.getLocalization(lang, function(e){
-                    var d = e['studiolite'];
+                    var d = e['msgetstarted'];
                     $.extend(intermediateLangData, d);
                     notifyDelegateLanguageLoaded(intermediateLangData);
                     return loadLanguage(pkg, lang, level + 1);

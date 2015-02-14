@@ -102,13 +102,13 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="userNameEmail" placeholder="username or email aaassaaa">
+                           data-localize="userName" placeholder="username or email">
                 </div>
 
                 <div style="margin-bottom: 3px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input id="userPass" type="password" class="form-control" name="password" required autofocus
-                           data-localize="password" placeholder="password">
+                           data-localize="userPassword" placeholder="password">
                 </div>
 
                 <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin">
@@ -118,7 +118,7 @@
                 <label id="rememberMeLabel" class="checkbox">
                     <input id="rememberMe" style="position: relative; top: -2px" type="checkbox" checked
                            value="remember-me">
-                    <span data-localize="rememberMe"> Remember me </span></label>
+                    <span data-localize="rememberMe2"> Remember me </span></label>
 
 
                 <div id="loginExtras">
@@ -132,13 +132,12 @@
                 <div style="clear: both">
                     <hr class="hrThin" style="position: relative; top: 10px"/>
                     <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
-                        <span data-localize="or" id="or">or</span>
-
+                        <span data-localize="or2" id="or">or</span>
                         <div style="clear: both"></div>
                     </div>
 
                 </div>
-                <button id="createAccountButton" class="btn btn-lg btn-danger btn-block" data-localize="createAccount">
+                <button id="createAccountButton" class="btn btn-lg btn-danger btn-block" data-localize="createNewAccount">
                     create new account
                 </button>
                 <br/>
@@ -150,13 +149,13 @@
             <h1>SignagePlayerView</h1>
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
         </div>
         <div id="createAccView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <form class="form-signin" role="form">
@@ -178,7 +177,7 @@
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
                     <input id="newAccPassword" type="password" class="form-control" name="username" value="" required autofocus
-                           data-localize="password" placeholder="password">
+                           data-localize="userPassword" placeholder="password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
@@ -207,13 +206,13 @@
             <h1>RenameView</h1>
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
         </div>
         <div id="changePassView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <form class="form-signin" role="form">
@@ -254,7 +253,7 @@
         <div id="forgetPassView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <form class="form-signin" role="form">
@@ -276,7 +275,7 @@
         <div id="changeBusinessView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <form class="form-signin" role="form">
@@ -293,7 +292,7 @@
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="newBusinessPassword" type="password" class="form-control" name="username" value=""
+                    <input id="newBusinessPassword" type="password" class="form-control" name="username" value="" data-localize="userPassword"
                            required autofocus placeholder="password">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
@@ -311,7 +310,7 @@
         <div id="studioSelectView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <div class="container">
@@ -576,7 +575,7 @@
         <div id="studioLiteView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <div class="row">
@@ -602,7 +601,7 @@
                         <div id="sampleListLite">
                             <form action="#" method="get">
                                 <div class="input-group">
-                                    <input class="filterSample form-control" name="q" placeholder="Search for"
+                                    <input class="filterSample form-control" name="q" data-localize="searchFor" placeholder="Search for"
                                            required>
                                 <span class="input-group-btn">
                                     <button type="submit" disabled="disabled" style="height: 34px"
@@ -622,14 +621,14 @@
         <div id="studioProView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-offset-3 col-sm-6">
                     <div class="panel panel-default">
                         <div class="panel-heading c-list">
-                            <span class="title">Select starting sample</span>
+                            <span class="title" data-localize="selectStartingTemplate">Select starting sample</span>
                             <ul class="pull-right c-controls">
                             </ul>
                         </div>
@@ -668,13 +667,13 @@
         <div id="accountView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
         </div>
         <div id="verifyEmailView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
             <h4 style="text-align: center" data-localize="pleaseCheckEmail">please check your email inbox</h4>
 
@@ -687,7 +686,7 @@
         <div id="webDeskSelectNoFlashView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
 
             <div class="container">
@@ -719,7 +718,7 @@
         <div id="webDeskSelectView" style="display: none">
             <a class="back" href="#">
                 <i class="fa fa-angle-double-left"></i>
-                <span class="backText">GO BACK</span>
+                <span data-localize="goBack" class="backText">GO BACK</span>
             </a>
             <!--
             <h2 style="text-align: center; color: #428ac9" data-localize="congrats">Select how to access, Web or Desktop version?</h2> -->
