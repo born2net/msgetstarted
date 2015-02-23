@@ -89,12 +89,17 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             })
         },
 
+        logUserOut: function(){
+            var self = this;
+            var appEntryFaderView = BB.comBroker.getService(BB.SERVICES['APP_ENTRY_FADER_VIEW']);
+            appEntryFaderView.selectView(Elements.APP_LOGOUT);
+            BB.comBroker.getService(BB.SERVICES['APP_AUTH']).logout();
+        },
+
         enableLogout: function () {
             $(Elements.LOGOUT_HEADER).fadeIn();
             $(Elements.LOGOUT).on('click', function () {
-                var appEntryFaderView = BB.comBroker.getService(BB.SERVICES['APP_ENTRY_FADER_VIEW']);
-                appEntryFaderView.selectView(Elements.APP_LOGOUT);
-                BB.comBroker.getService(BB.SERVICES['APP_AUTH']).logout();
+                self.logUserOut();
             });
         }
     });

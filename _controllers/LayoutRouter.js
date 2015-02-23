@@ -62,7 +62,14 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "selectWebOrDesk": "_routeSelectWebOrDesktop",
                 'selectWebOrDeskNoFlash': "_routeSelectWebOrDesktopNoFlash",
                 "verifyEmail": "_routeVerifyEmail",
-                "start": "_routeStart"
+                "logout": "_logout",
+                "start": "_routeStart",
+                '*path':  '_routeStart'
+            },
+
+            _logout: function () {
+                var self = this;
+                BB.comBroker.getService(BB.SERVICES.NAVIGATION_VIEW).logUserOut();
             },
 
             _routeStart: function () {

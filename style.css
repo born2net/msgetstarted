@@ -35,6 +35,52 @@ body {
     font-size: 12px;
 }
 
+.roboHeader {
+    color: #555;
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 300;
+    font-family: Roboto  font-style: normal;
+    font-size: 2em;
+    text-align: center;
+}
+.roboHeadline {
+    color: #555;
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 400;
+    font-family: Roboto  font-style: normal;
+    font-size: 1.5em;
+}
+
+.robotoMini {
+    color: #555;
+    font: normal 12px "Roboto", arial, sans-serif;
+    font-weight: 400;
+    font-family: Roboto  font-style: normal;
+}
+
+.robotoMajotHeader {
+    color: #555;
+    font: normal 58px "Roboto";
+    font-weight: 100;
+    font-family: Roboto  font-style: normal;
+}
+
+.robotoMediumHeader {
+    color: #555;
+    font: normal 38px "Roboto";
+    font-weight: 100;
+    font-family: Roboto  font-style: normal;
+}
+
+
+.roboContent {
+    color: #555;
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 300;
+    font-family: Roboto  font-style: normal;
+    font-size: 0.9em;
+}
+
 * {
     border-radius: 0 !important;
     -moz-border-radius: 0 !important;
@@ -138,7 +184,7 @@ a {
 
 .logo_text h1 {
 
-    font-family: Roboto;
+    font: normal 15px "Roboto", arial, sans-serif;
     font-weight: 300;
     font-size: 18px;
     letter-spacing: 2px;
@@ -196,6 +242,10 @@ aside > aside > div > ul > li {
 }
 
 #forgetPassButton {
+    margin-top: 3px;
+}
+
+#newBusinessButton {
     margin-top: 3px;
 }
 
@@ -1364,8 +1414,8 @@ ul.c-controls li a:hover {
     font-size: 1.2em;
     color: #bebebe;
     position: relative;
-    top: -12px;
-    left: -11px;
+    top: -13px;
+    left: -6px;
 }
 
 .back {

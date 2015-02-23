@@ -80,7 +80,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                     BB.APPS_SUPPORT = BB.CONSTS.OS_MOBILE;
                 }
             }
-
+            /*
             $('#myCarousel').carousel({
                 interval: false
             });
@@ -102,6 +102,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 }
                 clickEvent = false;
             });
+            */
         }
     });
     return App;
