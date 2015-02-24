@@ -97,6 +97,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
         },
 
         enableLogout: function () {
+            var self = this;
             $(Elements.LOGOUT_HEADER).fadeIn();
             $(Elements.LOGOUT).on('click', function () {
                 self.logUserOut();

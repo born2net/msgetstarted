@@ -66,6 +66,12 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
             self.m_simpleStorage.set('languageSelected', i_language);
             var opts = { language: i_language, pathPrefix: "./_lang" };
             $("[data-localize]").localize("local", opts);
+
+            //require(['localizer'], function () {
+            //    var lang = 'en'; // iw
+            //    var opts = {language: lang, pathPrefix: "./_lang"};
+            //    $("[data-localize]").localize("local", opts);
+            //});
         },
 
         /**

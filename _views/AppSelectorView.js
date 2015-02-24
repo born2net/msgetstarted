@@ -47,7 +47,7 @@ define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, Sta
             switch (BB.STUDIO_TYPE) {
                 case BB.CONSTS.STUDIO_LITE:
                 {
-                    msg = msg + 'StudioLite...';
+                    msg = msg + ' StudioLite...';
                     setTimeout(function () {
                         // if logged out during timer, don't redirect app
                         if (self.m_loggedOut)

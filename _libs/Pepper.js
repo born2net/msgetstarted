@@ -342,7 +342,7 @@ Pepper.prototype = {
         url += '&userName=' + i_userName;
         url += '&password=' + i_password;
         url += '&templateBusinessId=' + i_templateBusinessId;
-        url += '&resellerId=' + i_resellerId;
+        url += '&resellerId=' + i_resellerId; // resellers can modify this value to associate with their own account
         url += '&firstName=' + i_firstName;
         url += '&lastName=' + i_lastName;
         url += '&contactEmail=' + i_contactEmail;
