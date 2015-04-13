@@ -327,8 +327,11 @@ Pepper.prototype = {
      @return {String} url address
      **/
     getStudioProURL: function () {
-        var protocol =  window.g_protocol;
-        return window.g_protocol + window.g_masterDomain + '/WebService/signagestudio_d.aspx';
+        if (window.g_masterDomain== 'galaxy.signage.me') {
+            return window.g_protocol + 'galaxy.mediasignage.com/WebService/';
+        } else {
+            return window.g_protocol + window.g_masterDomain + '/WebService/';
+        }
     },
 
     /**

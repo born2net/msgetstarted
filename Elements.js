@@ -1,4 +1,7 @@
 // elements
+Elements.DOM_ROOT = '#domRoot';
+Elements.IFRAME_STUDIOPRO = '#iFrameStudioPro';
+Elements.STUDIOPRO_INSERT = '#studioProInsert';
 Elements.APP_ENTRY = '#appEntry';
 Elements.WAITS_SCREEN_ENTRY_APP = '#waitScreenEntryApp';
 Elements.APP_LOGIN = '#appLogin';

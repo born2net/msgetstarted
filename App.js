@@ -29,6 +29,11 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
 
             BB.globs['UNIQUE_COUNTER'] = 0;
             BB.globs['RC4KEY'] = '226a3a42f34ddd778ed2c3ba56644315';
+
+            BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
+            BB.globs['PRO_MODULES'] = '4.33';
+            BB.globs['PRO_VERSION'] = '4';
+
             BB.lib = new Lib();
             BB.Pepper = new Pepper();
             _.extend(BB.Pepper, BB.comBroker);

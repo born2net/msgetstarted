@@ -78,7 +78,8 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('verifyEmail', {trigger: true});
             self.m_accStatusHandler = setInterval(function () {
                 BB.Pepper.getAccountStatus(self.m_businessModel.get('businessId'), function (data) {
-                    if (data.result>0) {
+                    // todo: dev mode
+                    if (data.result>0 || true) {
                         window.clearInterval(self.m_accStatusHandler);
                         //BB.comBroker.getService(BB.SERVICES['LAYOUT_ROUTER']).navigate('authenticated', {trigger: true});
                         var user  = self.m_businessModel.get('contactEmail');

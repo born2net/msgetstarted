@@ -6,6 +6,8 @@
  **/
 define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function ($, Backbone, simplestorage, bootbox, localizer) {
 
+    BB.SERVICES.LANGUAGE_SELECTOR = 'LANGUAGE_SELECTOR';
+
     var LanguageSelectorView = BB.View.extend({
 
         /**
@@ -14,7 +16,13 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
          **/
         initialize: function () {
             var self = this;
+            BB.comBroker.setService(BB.SERVICES.LANGUAGE_SELECTOR, self);
             self.m_simpleStorage = simplestorage;
+
+            // test, delete keys
+            // self.m_simpleStorage.deleteKey('languageSelected');
+            // self.m_simpleStorage.deleteKey('languageSelectedNative');
+
             self.$el = $(Elements.TEMPLATE_LANGUAGE_SELECTOR).clone();
             self.el = self.$el[0];
             $(self.options.appendTo).append(self.el).fadeIn();
@@ -37,10 +45,14 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
 
             $("dd ul li a", self.$el).click(function () {
                 var text = $(this).html();
+                var native = $(text + ':firstChild')[1].data;
                 $("dt a span", self.$el).html(text);
                 $("dd ul", self.$el).hide();
                 var language = self.$el.find("dt a span.value").html();
-                self.setLanguage(language);
+                self.setLanguage({
+                    lang: language,
+                    langNative: native
+                });
             });
         },
 
@@ -48,9 +60,11 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
          Load language
          @method _loadLang
          **/
-        _loadLang: function(){
+        _loadLang: function () {
             var self = this;
             var lang = self.getLanguage();
+            if (_.isUndefined(lang) || _.isUndefined(lang.lang) || _.isUndefined(lang.langNative))
+                return;
             if (lang)
                 self.setLanguage(lang);
         },
@@ -58,13 +72,14 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
         /**
          Set specified language and reload the application to apply selection
          @method setLanguage
-         @param {String} i_language
+         @param {Object} language code and native lang
          **/
         setLanguage: function (i_language) {
             var self = this;
-            i_language = self._cleanTags(i_language);
-            self.m_simpleStorage.set('languageSelected', i_language);
-            var opts = { language: i_language, pathPrefix: "./_lang" };
+            var language = self._cleanTags(i_language.lang);
+            self.m_simpleStorage.set('languageSelected', language);
+            self.m_simpleStorage.set('languageSelectedNative', i_language.langNative);
+            var opts = {language: language, pathPrefix: "./_lang"};
             $("[data-localize]").localize("local", opts);
 
             //require(['localizer'], function () {
@@ -80,17 +95,17 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
          @param {String} i_language
          @return {String} language code
          **/
-        _cleanTags: function(i_language){
+        _cleanTags: function (i_language) {
             if (_.isUndefined(i_language))
                 return 'en';
             // workaround for IE 10
             try {
-                i_language = i_language.replace(/<font>/gi,'');
-                i_language = i_language.replace(/<\/font>/gi,'');
+                i_language = i_language.replace(/<font>/gi, '');
+                i_language = i_language.replace(/<\/font>/gi, '');
                 if (i_language == 'in')
                     return 'en';
                 return i_language;
-            } catch (e){
+            } catch (e) {
                 return 'en';
             }
         },
@@ -103,7 +118,13 @@ define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function
         getLanguage: function () {
             var self = this;
             var lang = self.m_simpleStorage.get('languageSelected');
-            return self._cleanTags(lang);
+            var langNative = self.m_simpleStorage.get('languageSelectedNative');
+            if (_.isUndefined(langNative) || langNative == 'English')
+                langNative = 'en_US';
+            return {
+                lang: self._cleanTags(lang),
+                langNative: langNative
+            };
         }
     });
 

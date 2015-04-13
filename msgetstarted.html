@@ -17,7 +17,21 @@
     <script src="http://www.digitalsignage.com/_js/DownloadUtilsv2.js" language="javascript"></script>
     <script src="http://www.digitalsignage.com/_js/playerERI3.js" type="text/javascript"></script>
     <script src="http://www.digitalsignage.com/_js/flashdetect.js" type="text/javascript"></script>
+    <script>
+        function openPlayerWindow(i_businessUrl, i_eri, i_playerParams) {
+            url = "http://" + i_businessUrl + "/WebService/" + "SignagePlayerApp.html?eri=" + i_eri + "&playerParams=" + i_playerParams;
+            key = "signage_" + i_playerParams;
+            //alert(url);
+            newwindow = m_windowMap[key];
+            if (newwindow == null || newwindow.closed) {
+                m_windowMap[key] = window.open(url, key, 'height=400,width=500,resizable=1');
+            }
+        }
 
+        function setTitle(i_title) {
+            parent.document.title = i_title;
+        }
+    </script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -35,6 +49,10 @@
 
 </head>
 <body>
+<div style="display: none; width: 100%; height: 100%" id="iFrameStudioPro">
+    <IFRAME id="studioProInsert" style="width: 100%; height: 100%">
+    </IFRAME>
+</div>
 <div id="domRoot">
     <div id="headerPad"></div>
     <!-- Navigation -->
@@ -77,7 +95,6 @@
                     <a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
                         <span data-localize="getSignagePlayer"> SignagePlayer </span> </a>
                 </li>
-
 
 
                 <li><a id="languagePrompt" href="#"> <i style="font-size: 15px" class="faHeader fa fa-globe"></i><span
@@ -133,6 +150,7 @@
                     <hr class="hrThin" style="position: relative; top: 10px"/>
                     <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
                         <span data-localize="or2" id="or">or</span>
+
                         <div style="clear: both"></div>
                     </div>
 
@@ -784,6 +802,13 @@
                 cloud, it’s just that the Desktop version loads faster and has a few minor enhancements. <br/>Best of
                 all both versions are 100% FREE, so you switch between the two at any time... so no big decisions here.
             </h6>
+
+            <!--
+               <IFRAME id="studioProInsert" style="width: 800px; height: 800px" >
+            </IFRAME>
+
+            <div id="studioProInsert" style="width: 1500px; height: 1500px; background-color: red"></div>
+            -->
 
         </div>
 
