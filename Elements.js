@@ -153,6 +153,7 @@ Elements.MSG_BOOTBOX_LOGIN_FAILED = '#loginFailed';
 Elements.MSG_BOOTBOX_COULD_NOT_AUTHENTICATE = '#bootBoxCanNotAuthenticate';
 Elements.MSG_BOOTBOX_NO_PRO_ON_MOBILE = '#bootboxNoProbOnMobile'
 Elements.MSG_BOOTBOX_ENTER_EMAIL = '#bootBoxEnterEmail';
+Elements.MSG_BOOTBOX_OLD_BROWSER = '#bootBoxOldBrowser';
 Elements.MSG_BOOTBOX_CHECK_EMAIL = '#bootBoxCheckEmail';
 Elements.MSG_BOOTBOX_COMPLETED = '#bootBoxCompleted';
 Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL = '#bootBoxInvalidEmail';

@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated WebDeskSelectView
  **/
-define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
+define(['jquery', 'backbone', 'bootbox', 'platform'], function ($, Backbone, bootbox, platform) {
 
     var WebDeskSelectView = Backbone.View.extend({
 
@@ -16,7 +16,6 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
             self.$el.find('.back').on('click', function (e) {
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('appSelector', {trigger: true});
             });
-
             self._listenWebStudioLaunch();
         },
 
@@ -34,7 +33,20 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
                 var lang = BB.comBroker.getService(BB.SERVICES.LANGUAGE_SELECTOR).getLanguage();
                 var local = "&local=" + lang.langNative;
                 var u = BB.Pepper.getStudioProURL() + 'signagestudio.aspx?mode=login&v=' + BB.globs['PRO_VERSION'] + '&eri=' + BB.globs['ERI'] + credentials + local;
+                if (platform.name == 'IE' && platform.version < 10){
+                    bootbox.dialog({
+                        message: $(Elements.MSG_BOOTBOX_OLD_BROWSER).text(),
+                        buttons: {
+                            danger: {
+                                label: $(Elements.MSG_BOOTBOX_OK).text(),
+                                className: "btn-danger"
+                            }
+                        }
+                    });
+                    return;
+                }
                 $(Elements.STUDIOPRO_INSERT).attr('src', u)
+
             })
         }
     });

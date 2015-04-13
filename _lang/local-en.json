@@ -67,6 +67,7 @@
     "bootBoxBusinessNameTooShort": "Business name is too short",
     "bootBoxCanNotAuthenticate": "Sorry, can not authenticate your user or password",
     "bootBoxCompleted": "Completed...",
+    "bootBoxOldBrowser": "your browser is too old, please install StudioPro Desktop version or use google chrome",
     "bootboxNoProbOnMobile": "StudioPro is supported only on Windows and Mac. On mobile devices you can use StudioLite instead...",
     "bootBoxAlphaNumeric": "Only A - Z and 0 - 9 are allowed for password selection",
     "getSignagePlayer": " SignagePlayer ",
