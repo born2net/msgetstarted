@@ -37,6 +37,6 @@ Visit landing page: http://dev.digitalsignage.com
 
 License:
 ------------------------------------------------------------------------
-- GPU V3
+- GPL V3
 
 
