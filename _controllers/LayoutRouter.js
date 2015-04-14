@@ -44,7 +44,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              @method routes
              **/
             routes: {
-                "appMailWasp": "_routeAppMailWasp",
                 "appEverNodes": "_routeAppEverNodes",
                 "appSelector": "_routeAppSelector",
                 "authenticate/:user/:pass": "_routeAuthenticate",
