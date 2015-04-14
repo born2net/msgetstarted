@@ -15,7 +15,7 @@ The wizard consists of:
  - Forgot password
  - User authentication
  - Bootstrap Progressive layout
- - Developed Backbone.js  
+ - Developed with Backbone.js  
  
 
 Config
