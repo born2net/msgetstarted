@@ -33,7 +33,7 @@ To retrieve your ERI so you can paste it onto BB.globs['ERI'], be sure yo login 
   
 In addition, in order to properly associate sub accounts created under your Enterprise account, be sure to edit Pepper.js in function:
   
-  ```
+```
   /**
        Create a new mediaCLOUD account
        @method createAccount
@@ -60,7 +60,7 @@ In addition, in order to properly associate sub accounts created under your Ente
           log(url);
           $.getJSON(url, i_callback);
       },
-      ```
+```
       
 and edit  ```url += '&resellerId=' + i_resellerId;``` to your reseller id  
 
