@@ -97,7 +97,15 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
                 if (data.result == -1) {
                     self._authFailed(i_authMode);
                 } else {
-                    BB.STUDIO_TYPE = data.lite == 1 ? BB.CONSTS.STUDIO_LITE : BB.CONSTS.STUDIO_PRO;
+
+                    if (data.enterprise == 0) {
+                        // Check if Pro or Lite account
+                        BB.STUDIO_TYPE = data.lite == 1 ? BB.CONSTS.STUDIO_LITE : BB.CONSTS.STUDIO_PRO;
+                    } else {
+                        // Use ProStudio since this is either Enterprise or Pro account
+                        BB.STUDIO_TYPE = BB.CONSTS.STUDIO_PRO;
+                    }
+
                     self.m_businessModel.set({
                         contactEmail: i_user,
                         newAccPassword: i_pass
@@ -192,9 +200,9 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
             $.removeCookie('boilerplateappcookie', {path: '/'});
             $.cookie('boilerplateappcookie', '', {expires: -300});
             BB.comBroker.fire(BB.EVENTS.APP_LOGOUT);
-            setTimeout(function(){
+            setTimeout(function () {
                 window.location.replace('http://www.digitalsignage.com');
-            },1500)
+            }, 1500)
 
 
         }
