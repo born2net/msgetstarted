@@ -397,7 +397,7 @@ Pepper.prototype = {
      @param {Function} i_callBack
      **/
     changeBusinessName: function (i_email, i_password, i_businessName, i_callBack) {
-        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=' + i_email + '&password=' + i_password + '&busnessName=' + i_businessName + '&callback=?';
+        var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=ChangeBusinessName&userName=' + i_email + '&password=' + i_password + '&newBusnessName=' + i_businessName + '&callback=?';
         $.getJSON(url, i_callBack);
     },
 

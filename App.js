@@ -44,6 +44,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
 
+
             // BB.CONSTS.MAILWASP = 'mailWasp';
             // BB.CONSTS.EVERNODES = 'everNodes';
 

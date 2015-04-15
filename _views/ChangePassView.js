@@ -25,18 +25,18 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             var self = this;
             $(Elements.CHANGE_PASS_BUTTON).on('click', function (e) {
                 e.preventDefault();
-                if (!BB.lib.validateEmail(self.model.get('changePassUser'))) {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL).text());
-                    return false;
-                }
-                if ((_.size(self.model.get('changePassPassword')) < 4)) {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
-                    return false;
-                }
-                if ((_.size(self.model.get('changePassNewPassword')) < 4)) {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
-                    return false;
-                }
+                //if (!BB.lib.validateEmail(self.model.get('changePassUser'))) {
+                //    bootbox.alert($(Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL).text());
+                //    return false;
+                //}
+                //if ((_.size(self.model.get('changePassPassword')) < 4)) {
+                //    bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
+                //    return false;
+                //}
+                //if ((_.size(self.model.get('changePassNewPassword')) < 4)) {
+                //    bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
+                //    return false;
+                //}
                 if ((_.size(self.model.get('changePassVerifyPassword')) < 4)) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
                     return false;

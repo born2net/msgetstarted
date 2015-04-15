@@ -16,9 +16,9 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
          **/
         initialize: function () {
             var self = this;
-
             BB.comBroker.setService(BB.SERVICES.NAVIGATION_VIEW, self);
-            this._render();
+            self._render();
+            self._listenToiFrameEvents();
 
             $(Elements.LIVE_CHAT).on('click', function () {
                 var pop = window.open('http://www.digitalsignage.com/_html/live_chat.html', '_blank');
@@ -87,6 +87,26 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             $('.navbar-nav').css({
                 display: 'block'
             })
+        },
+
+        _listenToiFrameEvents: function(){
+            var self = this;
+            var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            var eventer = window[eventMethod];
+            var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+            eventer(messageEvent, function (e) {
+                //alert('parent received message!:  ' + e.data.param);
+                switch(e.data.command){
+                    case 'setTitle': {
+                        parent.document.title = e.data.param;
+                        break;
+                    }
+                    case 'logout': {
+                        self.logUserOut();
+                        break;
+                    }
+                }
+            }, false);
         },
 
         logUserOut: function(){

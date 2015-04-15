@@ -25,14 +25,14 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             var self = this;
             $(Elements.NEW_BUSINESS_BUTTON).on('click', function (e) {
                 e.preventDefault();
-                if (!BB.lib.validateEmail(self.model.get('newBusinessEmail'))) {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL).text());
-                    return false;
-                }
-                if ((_.size(self.model.get('newBusinessPassword')) < 4)) {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
-                    return false;
-                }
+                //if (!BB.lib.validateEmail(self.model.get('newBusinessEmail'))) {
+                //    bootbox.alert($(Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL).text());
+                //    return false;
+                //}
+                //if ((_.size(self.model.get('newBusinessPassword')) < 4)) {
+                //    bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
+                //    return false;
+                //}
                 if ((_.size(self.model.get('newBusinessName')) < 3)) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_BUSINESS_NAME_TOO_SHORT).text());
                     return false;
