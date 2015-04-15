@@ -30,6 +30,39 @@ To retrieve your ERI so you can paste it onto BB.globs['ERI'], be sure yo login 
   ```
   airApplicationArguments = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
   ```
+  
+In addition, in order to properly associate sub accounts created under your Enterprise account, be sure to edit Pepper.js in function:
+  
+  ```
+  /**
+       Create a new mediaCLOUD account
+       @method createAccount
+       @param {Function} i_callBack
+       **/
+      createAccount: function (i_businessName, i_userName, i_password, i_templateBusinessId, i_resellerId, i_firstName, i_lastName, i_contactEmail, i_workPhone, i_cellPhone, i_address, i_city, i_state, i_contry, i_zipcode, i_callback) {
+          var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount'
+          url += '&businessName=' + i_businessName;
+          url += '&userName=' + i_userName;
+          url += '&password=' + i_password;
+          url += '&templateBusinessId=' + i_templateBusinessId;
+          url += '&resellerId=' + i_resellerId; // resellers can modify this value to associate with their own account
+          url += '&firstName=' + i_firstName;
+          url += '&lastName=' + i_lastName;
+          url += '&contactEmail=' + i_contactEmail;
+          url += '&workPhone=' + i_workPhone;
+          url += '&cellPhone=' + i_cellPhone;
+          url += '&address=' + i_address;
+          url += '&city=' + i_city;
+          url += '&state=' + i_state;
+          url += '&contry=' + i_contry;
+          url += '&zipcode=' + i_zipcode;
+          url += '&callback=?';
+          log(url);
+          $.getJSON(url, i_callback);
+      },
+      ```
+      
+and edit  ```url += '&resellerId=' + i_resellerId;``` to your reseller id  
 
 Links
 -------------------------
