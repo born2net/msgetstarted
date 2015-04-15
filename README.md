@@ -62,7 +62,7 @@ In addition, in order to properly associate sub accounts created under your Ente
       },
 ```
       
-and edit  ```url += '&resellerId=' + i_resellerId;``` to your reseller id  
+and edit  ```url += '&resellerId=' + i_resellerId;``` to your reseller id value
 
 Links
 -------------------------
