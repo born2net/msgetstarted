@@ -18,6 +18,7 @@
     "changePassword": "change password",
     "changeBusiness": "change business name",
     "businessNameOpt": "business name (optional)",
+    "fullName": "full name",
     "fromUs": "Direct download",
     "fromGoogle": "From Google Play",
     "fromAppStore": "From App Store",

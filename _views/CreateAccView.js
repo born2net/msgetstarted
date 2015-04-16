@@ -22,9 +22,9 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             self._bindings();
         },
 
-        _listenForgotPassword: function(){
+        _listenForgotPassword: function () {
             var self = this;
-            $(Elements.CREATE_ACCOUNT_FORGOT_PASS_BUTTON).on('click',function(e){
+            $(Elements.CREATE_ACCOUNT_FORGOT_PASS_BUTTON).on('click', function (e) {
                 e.preventDefault();
                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('forgetPassword', {trigger: true});
                 return false;
@@ -37,8 +37,10 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
 
                 e.preventDefault();
 
-                log(self.m_businessModel);
-
+                if ((_.size(self.m_businessModel.get('firstName')) < 4)) {
+                    bootbox.alert($(Elements.MSG_BOOTBOX_NO_FULL_NAME_PROVIDED).text());
+                    return false;
+                }
                 if (!BB.lib.validateEmail(self.m_businessModel.get('contactEmail'))) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL).text());
                     return false;
@@ -78,11 +80,10 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('verifyEmail', {trigger: true});
             self.m_accStatusHandler = setInterval(function () {
                 BB.Pepper.getAccountStatus(self.m_businessModel.get('businessId'), function (data) {
-                    // todo: dev mode
-                    if (data.result>0 || true) {
+                    if (data.result > 0) {
                         window.clearInterval(self.m_accStatusHandler);
                         //BB.comBroker.getService(BB.SERVICES['LAYOUT_ROUTER']).navigate('authenticated', {trigger: true});
-                        var user  = self.m_businessModel.get('contactEmail');
+                        var user = self.m_businessModel.get('contactEmail');
                         var pass = self.m_businessModel.get('newAccPassword');
                         BB.comBroker.getService(BB.SERVICES.APP_AUTH).authenticate(user, pass);
                     }
@@ -96,6 +97,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
 
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_BUSINESS_NAME, 'businessName');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_EMAIL, 'contactEmail');
+            self.addBinding(self.m_businessModel, Elements.NEW_ACC_FULLNAME_NAME, 'firstName');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_PASSWORD, 'newAccPassword');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_PASSWORDCONFIRM, 'newAccPasswordConfirm');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_PHONE, 'workPhone');

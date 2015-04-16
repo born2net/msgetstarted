@@ -172,6 +172,11 @@
                            data-localize="businessNameOpt" placeholder="business name (optional)">
                 </div>
                 <div style="margin-bottom: 0px" class="input-group">
+                    <span style="padding-left: 18px" class="input-group-addon"><i class="fa fa-male"></i></span>
+                    <input id="newAccFullNameName" type="text" class="form-control" name="username" value="" autofocus
+                           data-localize="fullName" placeholder="full name">
+                </div>
+                <div style="margin-bottom: 0px" class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
                     <input id="newAccEmail" type="text" class="form-control" name="username" value="" required autofocus
                            data-localize="email" placeholder="email">
@@ -979,6 +984,8 @@
 <p style="display: none" id="bootBoxInvalidEmail" data-localize="bootBoxInvalidEmail">The e-mail entered is invalid</p>
 
 <p style="display: none" id="bootBoxPasswordTooShort" data-localize="bootBoxPasswordTooShort">Password too short</p>
+
+<p style="display: none" id="bootBoxNoFullNameProvided" data-localize="bootBoxNoFullNameProvided">Please provide full name</p>
 
 <p style="display: none" id="bootBoxPasswordNoMatch" data-localize="bootBoxPasswordNoMatch">Passwords do not match</p>
 
