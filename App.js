@@ -12,6 +12,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
         initialize: function () {
 
             window.BB = Backbone;
+
             BB.globs = {};
             BB.SERVICES = {};
             BB.EVENTS = {};

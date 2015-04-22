@@ -89,19 +89,22 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             })
         },
 
-        _listenToiFrameEvents: function(){
+        _listenToiFrameEvents: function () {
             var self = this;
             var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
             var eventer = window[eventMethod];
             var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
             eventer(messageEvent, function (e) {
-                //alert('parent received message!:  ' + e.data.param);
-                switch(e.data.command){
-                    case 'setTitle': {
+                // alert('parent received message!:  ' + e.data.param);
+                // console.log('zzzzzzzzzzzzzzzzzzzzzzzz' + e.data.command);
+                switch (e.data.command) {
+                    case 'setTitle':
+                    {
                         parent.document.title = e.data.param;
                         break;
                     }
-                    case 'logout': {
+                    case 'logout':
+                    {
                         self.logUserOut();
                         break;
                     }
@@ -109,7 +112,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             }, false);
         },
 
-        logUserOut: function(){
+        logUserOut: function () {
             var self = this;
             var appEntryFaderView = BB.comBroker.getService(BB.SERVICES['APP_ENTRY_FADER_VIEW']);
             appEntryFaderView.selectView(Elements.APP_LOGOUT);
