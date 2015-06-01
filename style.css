@@ -27,6 +27,13 @@ body {
     background-color: #ffffff;
 }
 
+iframe {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 99% !important;
+}
+
 .minPaddingProdSelector {
     padding: 1px;
 }
