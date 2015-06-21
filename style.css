@@ -137,6 +137,7 @@ a {
 
 #myCarousel .item {
     margin-left: 50px;
+    height: 300px;
 }
 
 .sampleItem:hover {
@@ -164,6 +165,16 @@ a {
     float: left;
     height: auto;
     margin-top: 7px;
+}
+
+.carouseItemIcon {
+    color: #0086b3;
+    font-size: 1.5em !important;
+}
+
+.carouselHeaderContainer {
+    position: relative;
+    top: -20px;
 }
 
 #logo {
