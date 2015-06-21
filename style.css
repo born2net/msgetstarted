@@ -135,6 +135,10 @@ a {
     cursor: pointer;
 }
 
+#myCarousel .item {
+    margin-left: 50px;
+}
+
 .sampleItem:hover {
     background-color: #e7e7e7;
 }

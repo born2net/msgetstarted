@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'VerifyEmailView', 'NavigationView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, VerifyEmailView, NavigationView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'VerifyEmailView', 'NavigationView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, VerifyEmailView, NavigationView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -51,6 +51,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "forgetPassword": "_routeForgetPassword",
                 "createAcc": "_routeCreateAcc",
                 "studioSelectView/:id": "_routeStudioSelectView",
+                "directDownload": "_routeDirectDownload",
                 "changePassword": "_routeChangePassword",
                 "changeBusiness": "_routeChangeBusiness",
                 "authenticated": "_routeAuthenticated",
@@ -103,6 +104,10 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
             _routeCreateAcc: function () {
                 this.m_appEntryFaderView.selectView(this.m_createAccView);
+            },
+
+            _routeDirectDownload: function () {
+                this.m_appEntryFaderView.selectView(this.m_directDownloadView);
             },
 
             _routeStudioSelectView: function (i_id) {
@@ -353,6 +358,11 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     model: this.m_createAccountModel
                 });
 
+                this.m_directDownloadView = new DirectDownloadView({
+                    el: Elements.DIRECT_DOWNLOAD_VIEW,
+                    model: this.m_createAccountModel
+                });
+
                 this.m_webDeskSelectView = new WebDeskSelectView({
                     el: Elements.WEB_DESK_SELECT_VIEW
                 });
@@ -377,6 +387,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.addView(this.m_appSelectorView);
                 this.m_appEntryFaderView.addView(this.m_signagePlayerView);
                 this.m_appEntryFaderView.addView(this.m_createAccView);
+                this.m_appEntryFaderView.addView(this.m_directDownloadView);
                 this.m_appEntryFaderView.addView(this.m_renameView);
                 this.m_appEntryFaderView.addView(this.m_changePassView);
                 this.m_appEntryFaderView.addView(this.m_changeBusinessView);

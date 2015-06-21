@@ -48,6 +48,7 @@ require.config({
         'SignagePlayerView': '_views/SignagePlayerView',
         'NavigationView': '_views/NavigationView',
         'CreateAccView': '_views/CreateAccView',
+        'DirectDownloadView': '_views/DirectDownloadView',
         'PortalView': '_views/PortalView',
         'BillingView': '_views/BillingView',
         'OrdersView': '_views/OrdersView',

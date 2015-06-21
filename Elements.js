@@ -16,6 +16,7 @@ Elements.FORGET_PASS_BUTTON = '#forgetPassButton';
 Elements.RESET_PASS_INPUT = '#resetPassInput';
 Elements.SIGNAGE_PLAYER_VIEW = '#signagePlayerView';
 Elements.CREATE_ACC_VIEW = '#createAccView';
+Elements.DIRECT_DOWNLOAD_VIEW = '#directDownloadView';
 Elements.RENAME_VIEW = '#renameView';
 Elements.CHANGE_PASS_VIEW = '#changePassView';
 Elements.CHANGE_PASS_USER = '#changePassUser';
