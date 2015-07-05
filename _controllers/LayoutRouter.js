@@ -5,8 +5,8 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'VerifyEmailView', 'NavigationView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, VerifyEmailView, NavigationView) {
+define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'WebDeskSelectNoFlashWinView', 'VerifyEmailView', 'NavigationView'],
+    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, WebDeskSelectNoFlashWinView, VerifyEmailView, NavigationView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -61,6 +61,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "selectStudioPro": "_routeSelectStudioPro",
                 "selectWebOrDesk": "_routeSelectWebOrDesktop",
                 'selectWebOrDeskNoFlash': "_routeSelectWebOrDesktopNoFlash",
+                'selectWebOrDeskNoFlashWin': "_routeSelectWebOrDesktopNoFlashWin",
                 "verifyEmail": "_routeVerifyEmail",
                 "logout": "_logout",
                 "start": "_routeStart",
@@ -120,7 +121,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.selectView(this.m_changeBusinessView);
             },
 
-
             /**
              Authentication passed, load app page route
              @method authenticating
@@ -171,11 +171,19 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             /**
-             Route selected Web or Desktop view
+             Route selected no flash and not windows
              @method _routeSelectWebOrDesktopNoFlash
              **/
             _routeSelectWebOrDesktopNoFlash: function () {
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectNoFlashView);
+            },
+
+            /**
+             Route selected no flash and is windows PC
+             @method _routeSelectWebOrDesktopNoFlash
+             **/
+            _routeSelectWebOrDesktopNoFlashWin: function(){
+                this.m_appEntryFaderView.selectView(this.m_webDeskSelectNoFlashWinView);
             },
 
             /**
@@ -371,6 +379,10 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     el: Elements.WEB_DESK_SELECT_NO_FLASH_VIEW
                 });
 
+                this.m_webDeskSelectNoFlashWinView = new WebDeskSelectNoFlashWinView({
+                    el: Elements.WEB_DESK_SELECT_NO_FLASH_WIN_VIEW
+                });
+
                 this.m_verifyEmailView = new VerifyEmailView({
                     el: Elements.VERIFY_EMAIL_VIEW
                 });
@@ -398,6 +410,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 this.m_appEntryFaderView.addView(this.m_accountView);
                 this.m_appEntryFaderView.addView(this.m_webDeskSelectView);
                 this.m_appEntryFaderView.addView(this.m_webDeskSelectNoFlashView);
+                this.m_appEntryFaderView.addView(this.m_webDeskSelectNoFlashWinView);
                 this.m_appEntryFaderView.addView(this.m_verifyEmailView);
                 this.m_appEntryFaderView.addView(this.m_loginView);
                 this.m_appEntryFaderView.addView(this.m_logoutView);

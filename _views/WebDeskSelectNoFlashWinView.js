@@ -1,11 +1,11 @@
 /**
- @class WebDeskSelectNoFlashView for Web or AIR Desktop loaders no flash and not a PC
+ @class WebDeskSelectNoFlashWinView for Web or AIR Desktop loaders no flash and is a PC
  @constructor
- @return {Object} instantiated WebDeskSelectNoFlashView
+ @return {Object} instantiated WebDeskSelectNoFlashWinView
  **/
 define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
 
-    var WebDeskSelectNoFlashView = Backbone.View.extend({
+    var WebDeskSelectNoFlashWinView = Backbone.View.extend({
 
         /**
          Constructor
@@ -19,7 +19,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone) {
         }
     });
 
-    return WebDeskSelectNoFlashView;
+    return WebDeskSelectNoFlashWinView;
 
 });
 

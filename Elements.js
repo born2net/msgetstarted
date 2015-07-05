@@ -38,6 +38,7 @@ Elements.OPEN_STUDIO_PRO_WEB = '#openStudioProWeb';
 Elements.WEB_DESK_SELECT_VIEW = '#webDeskSelectView';
 Elements.STUDIO_PRO_WEB = '#studioProWeb';
 Elements.WEB_DESK_SELECT_NO_FLASH_VIEW = '#webDeskSelectNoFlashView';
+Elements.WEB_DESK_SELECT_NO_FLASH_WIN_VIEW = '#webDeskSelectNoFlashWinView';
 Elements.VERIFY_EMAIL_VIEW = '#verifyEmailView';
 Elements.CREATE_ACCOUNT_BUTTON = '#createAccountButton';
 Elements.CREATE_ACCOUNT_INFO_BUTTON = '#createAccountInfoButton';

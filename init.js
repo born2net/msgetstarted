@@ -62,6 +62,7 @@ require.config({
         'AccountView': '_views/AccountView',
         'WebDeskSelectView': '_views/WebDeskSelectView',
         'WebDeskSelectNoFlashView': '_views/WebDeskSelectNoFlashView',
+        'WebDeskSelectNoFlashWinView': '_views/WebDeskSelectNoFlashWinView',
         'VerifyEmailView': '_views/VerifyEmailView',
         'WaitView': '_views/WaitView',
         'PropertiesView': '_views/_billing/PropertiesView',

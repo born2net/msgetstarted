@@ -4,7 +4,7 @@
  @constructor
  @return {object} instantiated AppSelectorView
  **/
-define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, StackView, Base64) {
+define(['jquery', 'backbone', 'StackView', 'Base64', 'platform'], function ($, Backbone, StackView, Base64, platform) {
 
     BB.SERVICES.APP_SELECTOR = 'AppSelectorView';
 
@@ -75,7 +75,15 @@ define(['jquery', 'backbone', 'StackView', 'Base64'], function ($, Backbone, Sta
                             // if logged out during timer, don't redirect app
                             if (self.m_loggedOut)
                                 return;
-                            Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                            var os = platform.os.family;
+                            var re = os.match(new RegExp('windows', "ig"));
+                            if (_.isNull(re)){
+                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                            } else {
+                                // todo: change with exe when released for windows
+                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                                // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlashWin', {trigger: true});
+                            }
                         }, self.m_loadTimer);
                     }
                     break;
