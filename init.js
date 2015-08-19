@@ -8,7 +8,7 @@
  **/
 
 require.config({
-    waitSeconds: 45,
+    waitSeconds: 75,
     baseUrl: '/msgetstarted',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',

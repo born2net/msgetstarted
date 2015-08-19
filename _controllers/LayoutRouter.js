@@ -421,6 +421,8 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 BB.comBroker.setService(BB.SERVICES['APP_AUTH'], this.m_appAuth);
                 BB.comBroker.setService(BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW, this.m_appContentMailWaspFaderView);
                 BB.comBroker.setService(BB.SERVICES.APP_CONTENT_EVERNODES_FADER_VIEW, this.m_appContentEverNodesFaderView);
+
+                $(Elements.APP_LOADING).remove();
             },
 
             /**

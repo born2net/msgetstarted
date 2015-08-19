@@ -80,9 +80,8 @@ define(['jquery', 'backbone', 'StackView', 'Base64', 'platform'], function ($, B
                             if (_.isNull(re)){
                                 Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
                             } else {
-                                // todo: change with exe when released for windows
-                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
-                                // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlashWin', {trigger: true});
+                                // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlashWin', {trigger: true});
                             }
                         }, self.m_loadTimer);
                     }
