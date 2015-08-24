@@ -31,7 +31,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.globs['RC4KEY'] = '226a3a42f34ddd778ed2c3ba56644315';
 
             BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
-            BB.globs['PRO_MODULES'] = '4.33';
+            BB.globs['PRO_MODULES'] = '4.34';
             BB.globs['PRO_VERSION'] = '4';
 
             BB.lib = new Lib();
@@ -60,10 +60,16 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                  modify the following lines when you are hosting the entire project
                  on your own web server (resellers / enterprise).
                  you can retrieve your reseller id by logging to the Enterprise Studio
-                 and selecting Help > About
+                 and selecting Help > About.
+
+                 To retrieve your ERI so you can paste it onto BB.globs['ERI'],
+                 be sure yo login to your enterprise / reseller Account
+                 and select Tools > Branding and look for
+
                  **/
-                BB.CONSTS.REDIRECT = 'digitalsignage.com';  //'http://www.gsignage.com';
-                BB.CONSTS.RESELLER = 1;                     //300762;
+                BB.CONSTS.REDIRECT = 'digitalsignage.com';
+                BB.CONSTS.RESELLER = 1;
+                BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
 
                 new BusinessModel();
                 var LayoutRouter = new LayoutRouter();
