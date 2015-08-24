@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="digitalsignage.com">
+  <component name="PublishConfigData" autoUpload="Always">
+    <serverData>
+      <paths name="www.digitalsignage.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/var/www/sites/mediasignage.com/htdocs/msgetstarted-debug" local="$PROJECT_DIR$" web="http://www.digitalsignage.com/msgetstarted-debug/msgetstarted.html" />
+            <mapping local="" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
