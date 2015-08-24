@@ -17,6 +17,8 @@ The wizard consists of:
  - Bootstrap Progressive layout
  - Developed with Backbone.js  
 
+video tutorial
+--------------------
  Be sure to watch this video tutorial which will walk you through on how to host the entire "Get Started" app on your own web server: http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=msgetstarted
 
 
