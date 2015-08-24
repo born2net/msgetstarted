@@ -5,12 +5,11 @@
  @constructor
  @return {Object} instantiated App
  **/
-define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder', 'BusinessModel'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder, BusinessModel) {
+define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder) {
     var App = Backbone.Controller.extend({
 
         // app init
         initialize: function () {
-
             window.BB = Backbone;
 
             BB.globs = {};
@@ -45,11 +44,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
 
-
-            // BB.CONSTS.MAILWASP = 'mailWasp';
-            // BB.CONSTS.EVERNODES = 'everNodes';
-
-            //for private / hybrid mediaSERVER change links below
+            // modify only for private / hybrid mediaSERVER change links below
             window.g_protocol = 'http://';
             window.g_masterDomain = 'galaxy.signage.me';
 
@@ -58,10 +53,19 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 new LanguageSelectorView({el: Elements.LANGUAGE_PROMPT});
             });
 
-            new BusinessModel();
-
             // router init
-            require(['LayoutRouter'], function (LayoutRouter) {
+            require(['LayoutRouter', 'BusinessModel'], function (LayoutRouter, BusinessModel) {
+
+                /**
+                 modify the following lines when you are hosting the entire project
+                 on your own web server (resellers / enterprise).
+                 you can retrieve your reseller id by logging to the Enterprise Studio
+                 and selecting Help > About
+                 **/
+                BB.CONSTS.REDIRECT = 'digitalsignage.com';  //'http://www.gsignage.com';
+                BB.CONSTS.RESELLER = 1;                     //300762;
+
+                new BusinessModel();
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);

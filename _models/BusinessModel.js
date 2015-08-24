@@ -23,7 +23,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             'userName': '',
             'password': '',
             'templateBusinessId': '',
-            'resellerId': '1',
+            'resellerId': BB.CONSTS.RESELLER,
             'firstName': '',
             'lastName': '',
             'contactEmail': '',
