@@ -5,7 +5,7 @@
  @constructor
  @return {Object} instantiated App
  **/
-define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder) {
+define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder', 'BusinessModel'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder, BusinessModel) {
     var App = Backbone.Controller.extend({
 
         // app init
@@ -48,13 +48,15 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.g_protocol = 'http://';
             window.g_masterDomain = 'galaxy.signage.me';
 
+            self.m_buinessModel = new BusinessModel();
+
             // localization
             require(['LanguageSelectorView', 'Elements'], function (LanguageSelectorView, Elements) {
                 new LanguageSelectorView({el: Elements.LANGUAGE_PROMPT});
             });
 
             // router init
-            require(['LayoutRouter', 'BusinessModel'], function (LayoutRouter, BusinessModel) {
+            require(['LayoutRouter'], function (LayoutRouter) {
 
                 /**
                  modify the following lines when you are hosting the entire project
@@ -66,16 +68,24 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                  be sure yo login to your enterprise / reseller Account
                  and select Tools > Branding and look for
 
+                 // EXAMPLE
+                 BB.CONSTS.REDIRECT = 'gsignage.com';
+                 BB.CONSTS.RESELLER = 300762;
+                 BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6143324f0ab3ea';
                  **/
+
                 BB.CONSTS.REDIRECT = 'digitalsignage.com';
                 BB.CONSTS.RESELLER = 1;
                 BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
 
-                new BusinessModel();
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);
                 // LayoutRouter.navigate('authenticate/_/_', {trigger: true});
+
+                if (BB.CONSTS.RESELLER != 1)
+                    self.m_buinessModel.set({resellerId: BB.CONSTS.RESELLER});
+
             });
 
             // debug platforms
