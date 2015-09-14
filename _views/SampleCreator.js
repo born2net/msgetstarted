@@ -49,12 +49,11 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 videoName = self.m_fakeVideos.shift();
                 self.m_videoPlayer.pause();
                 //self.m_videoIntro.find('video:nth-child(1)').attr("src", videoUrl);
-                self.m_videoIntro.find('video:nth-child(1)').find('source').remove();
+                self._emptyVideos();
                 self.m_videoIntro.find('video:nth-child(1)').append('<source src="' + videoName + '.mp4" type="video/mp4"><source src="' + videoName + '.webm" type="video/webm">');
                 self.m_videoPlayer.load();
                 self.m_videoIntro.width('768').height('432');
                 $('#videoModal').modal('show');
-                self._listenStopVideo();
                 self.m_videoPlayer.play();
                 return false;
             });
@@ -78,6 +77,11 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             });
         },
 
+        _emptyVideos: function(){
+            var self = this;
+            self.m_videoIntro.find('video:nth-child(1)').find('source').remove();
+        },
+
         /**
          Listen to stop video clicks
          @method _listenAutoPopup
@@ -86,7 +90,8 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             var self = this;
             var stopVideo = function () {
                 self.m_videoPlayer.pause();
-                //self.m_videoPlayer.load();
+                self._emptyVideos();
+                // self.m_videoPlayer.load();
             };
             $('.close').on('click', function () {
                 stopVideo();
