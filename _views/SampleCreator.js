@@ -43,8 +43,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 //var url = $(this).attr('name');
                 //window.open(url, '_blank');
 
-                // video popup preview
-                // release
+                // video popup preview, release
                 var videoName = $(this).attr('data-video');
                 // test
                 videoName = self.m_fakeVideos.shift();
