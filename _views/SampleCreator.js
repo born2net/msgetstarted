@@ -19,6 +19,8 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             self._render();
             self._listenFilterList();
             self._listenStopVideo();
+
+            self.m_fakeVideos = [1,2,3,4];
         },
 
         _listenFilterList: function () {
@@ -36,16 +38,21 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             var self = this;
             $(Elements.CLASS_SAMPLE_PREVIEW, self.el).off('click');
             $(Elements.CLASS_SAMPLE_PREVIEW, self.el).on('click', function () {
-                // old url preview
+
+                // old url preview, will open in new browser full screen
                 //var url = $(this).attr('name');
                 //window.open(url, '_blank');
 
                 // video popup preview
+                // release
                 var videoName = $(this).attr('data-video');
+                // test
+                videoName = self.m_fakeVideos.shift();
+                self.m_videoPlayer.pause();
                 //self.m_videoIntro.find('video:nth-child(1)').attr("src", videoUrl);
+                self.m_videoIntro.find('video:nth-child(1)').find('source').remove();
                 self.m_videoIntro.find('video:nth-child(1)').append('<source src="' + videoName + '.mp4" type="video/mp4"><source src="' + videoName + '.webm" type="video/webm">');
-                var w = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppWidth() - 100;
-                var h = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppHeight() - 200;
+                self.m_videoPlayer.load();
                 self.m_videoIntro.width('768').height('432');
                 $('#videoModal').modal('show');
                 self._listenStopVideo();
@@ -62,14 +69,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             var self = this;
             videojs(BB.lib.unhash('#videoIntro')).ready(function () {
                 self.m_videoPlayer = this;
-                //var w = $(Elements.VIDEO_MODAL).width();
-                //var h = $(Elements.VIDEO_MODAL).height() - 100;
-                //var w = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppWidth() - 100;
-                //var h = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppHeight() - 200;
-                //$('#videoIntro').width(w).height(h);
-                //self.m_videoPlayer.play();
                 self.m_videoPlayer.load();
-
 
                 BB.comBroker.listen(BB.EVENTS.APP_SIZED, function () {
                     var w = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppWidth() - 100;
