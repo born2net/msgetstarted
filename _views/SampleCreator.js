@@ -43,7 +43,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 // video popup preview
                 var videoName = $(this).attr('data-video');
                 //self.m_videoIntro.find('video:nth-child(1)').attr("src", videoUrl);
-                self.m_videoIntro.find('video:nth-child(1)').append('<source src="ballet.mp4" type="video/mp4"><source src="ballet.webm" type="video/webm">');
+                self.m_videoIntro.find('video:nth-child(1)').append('<source src="' + videoName + '.mp4" type="video/mp4"><source src="' + videoName + '.webm" type="video/webm">');
                 var w = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppWidth() - 100;
                 var h = BB.comBroker.getService(BB.SERVICES.LAYOUT_ROUTER).getAppHeight() - 200;
                 self.m_videoIntro.width('768').height('432');
@@ -87,7 +87,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             var self = this;
             var stopVideo = function () {
                 self.m_videoPlayer.pause();
-                self.m_videoPlayer.load();
+                //self.m_videoPlayer.load();
             };
             $('.close').on('click', function () {
                 stopVideo();
@@ -142,7 +142,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                         preview: data['templates'][i].previewUrl
                     };
                     $ul.append(self.m_sampleTemplate(sampleItem));
-                }      //ballet.webm  LiteSeqVsSched.mp4'
+                }
 
             });
 
