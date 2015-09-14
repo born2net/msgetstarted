@@ -1611,3 +1611,16 @@ Studio / Player carousel
 .carouselLargeHeader2 {
     font-size: 1.5em !important;
 }
+
+#videoModal .modal-dialog {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    background-color: black !important;
+}
+
+#videoModal .modal-content {
+    height: 100% !important;
+    border-radius: 0 !important;
+    background-color: black;
+}

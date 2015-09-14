@@ -8,8 +8,9 @@
 
 require.config({
     waitSeconds: 75,
-    baseUrl: '/msgetstarted',
-    // baseUrl: '/',
+    // REMEMBER: to change path when debugging and swap back in release
+    //baseUrl: '/msgetstarted',
+    baseUrl: '/',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',
@@ -19,6 +20,7 @@ require.config({
         'Lib': '_libs/Lib',
         'bootbox': '_common/_js/bootbox/bootbox',
         'platform': '_common/_js/platform/platform',
+        'video': '_common/_js/video/video.dev',
         'nouislider': '_common/_js/nouislider/jquery.nouislider',
         'placeholder': '_common/_js/placeholder/placeholder',
         'Cookie': '_common/_js/cookie/jquery.cookie',
