@@ -156,9 +156,10 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 self._listenPreview();
             }, 400, 10);
 
+            // no longer the case since we don't rely on flash anymore
             // no flash support so remove preview capabilities
-            if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH)
-                $(Elements.CLASS_SAMPLE_PREVIEW).hide();
+            // if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH)
+            //    $(Elements.CLASS_SAMPLE_PREVIEW).hide();
         }
     });
 
