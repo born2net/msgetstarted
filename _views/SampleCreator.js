@@ -13,14 +13,14 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
          **/
         initialize: function () {
             var self = this;
+            self.m_oldMode = true;
             self.m_sampleTemplate = _.template(templateSampleItem);
             self.m_videoIntro = $('#videoIntro');
             self._initVideo();
             self._render();
             self._listenFilterList();
             self._listenStopVideo();
-
-            self.m_fakeVideos = [1,2,3,4];
+            self.m_fakeVideos = [1, 2, 3, 4];
         },
 
         _listenFilterList: function () {
@@ -39,9 +39,12 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             $(Elements.CLASS_SAMPLE_PREVIEW, self.el).off('click');
             $(Elements.CLASS_SAMPLE_PREVIEW, self.el).on('click', function () {
 
-                // old url preview, will open in new browser full screen
-                //var url = $(this).attr('name');
-                //window.open(url, '_blank');
+                if (self.m_oldMode){
+                    // old url preview, will open in new browser full screen
+                    var url = $(this).attr('name');
+                    window.open(url, '_blank');
+                    return;
+                }
 
                 // video popup preview, release
                 var videoName = $(this).attr('data-video');
@@ -77,7 +80,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             });
         },
 
-        _emptyVideos: function(){
+        _emptyVideos: function () {
             var self = this;
             self.m_videoIntro.find('video:nth-child(1)').find('source').remove();
         },
@@ -156,10 +159,11 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 self._listenPreview();
             }, 400, 10);
 
-            // no longer the case since we don't rely on flash anymore
-            // no flash support so remove preview capabilities
-            // if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH)
-            //    $(Elements.CLASS_SAMPLE_PREVIEW).hide();
+            if (self.m_oldMode) {
+                if (BB.APPS_SUPPORT != BB.CONSTS.OS_FLASH)
+                    $(Elements.CLASS_SAMPLE_PREVIEW).hide();
+            }
+
         }
     });
 

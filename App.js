@@ -91,6 +91,9 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             // debug platforms
             // console.log('name: ' + platform.name + ' version: ' + platform.version + ' product: ' + platform.product + ' os: ' + platform.os);
 
+            $(Elements.CLASS_SAMPLE_PREVIEW).hide();
+
+
             if (FlashDetect.installed || FlashDetect.versionAtLeast(13)) {
                 BB.APPS_SUPPORT = BB.CONSTS.OS_FLASH;
             } else {

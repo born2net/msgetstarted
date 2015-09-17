@@ -9,8 +9,8 @@
 require.config({
     waitSeconds: 75,
     // REMEMBER: to change path when debugging and swap back in release
-    //baseUrl: '/msgetstarted',
-    baseUrl: '/',
+    baseUrl: '/msgetstarted',
+    // baseUrl: '/',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',
