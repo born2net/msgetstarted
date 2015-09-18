@@ -9,7 +9,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="msgetstarted">
+      <paths name="msgetstarted (dont use, cp instead)">
         <serverdata>
           <mappings>
             <mapping deploy="/var/www/sites/mediasignage.com/htdocs/msgetstarted" local="$PROJECT_DIR$" web="http://www.digitalsignage.com/msgetstarted/msgetstarted.html" />
