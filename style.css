@@ -1624,3 +1624,59 @@ Studio / Player carousel
     border-radius: 0 !important;
     background-color: black;
 }
+
+.navbar-logo {
+    float: left;
+    font-family: 'Audiowide', cursive;
+    font-size: 23px;
+    /* letter-spacing: 2px;*/
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    line-height:18px;
+    padding-left: 66px;
+    position: relative;
+}
+
+.navbar-logo:before {
+    content: "";
+    background-image: url(../_images/logo.png);
+    width: 60px;
+    height: 39px;
+    background-size: 60px 39px;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+a.navbar-logo {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-logo .logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight:500;
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0.2px;
+    margin-bottom: 0px;
+    /* padding-top: 1px; */
+    word-spacing:3px;
+}
+
+.navbar-logo .logo span {
+    color: #ff0000;
+}
+
+
+.di{
+    color:#5f87e0;
+}
+.si{
+    color:#e17d1c;}
+.co{
+    color: #727272;
+    font-size: 12px;
+    margin-left: -3px;
+}
