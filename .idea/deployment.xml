@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="msgetstarted (dont use, cp instead)">
+  <component name="PublishConfigData" autoUpload="Always" serverName="msgetstarted relesae">
     <serverData>
       <paths name="gsignage.com (msGetStarted Debug)">
         <serverdata>
@@ -9,10 +9,10 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="msgetstarted (dont use, cp instead)">
+      <paths name="msgetstarted relesae">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/sites/mediasignage.com/htdocs/msgetstarted" local="$PROJECT_DIR$" web="http://www.digitalsignage.com/msgetstarted/msgetstarted.html" />
+            <mapping deploy="/var/www/sites/mediasignage.com/htdocs/msgetstarted/" local="$PROJECT_DIR$" web="" />
           </mappings>
         </serverdata>
       </paths>
