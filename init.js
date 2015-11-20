@@ -26,6 +26,7 @@ require.config({
         'placeholder': '_common/_js/placeholder/placeholder',
         'Cookie': '_common/_js/cookie/jquery.cookie',
         'Base64': '_common/_js/base64/jquery.base64',
+        'validator': '_common/_js/validator/validator',
         'RC4': '_common/_js/rc4/RC4',
         'RC4V2': '_common/_js/rc4/RC4V2',
         'ComBroker': '_controllers/ComBroker',

@@ -4,7 +4,7 @@
  @constructor
  @return {Object} instantiated Lib
  **/
-define(['jquery', 'backbone', 'platform'], function ($, Backbone, platform) {
+define(['jquery', 'backbone', 'platform', 'validator'], function ($, Backbone, platform, validator) {
     var Lib = function (type) {
         this.type = type;
     };
@@ -49,13 +49,7 @@ define(['jquery', 'backbone', 'platform'], function ($, Backbone, platform) {
          @return {Boolean}
          **/
         validateEmail: function (emailAddress) {
-            var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
-            var valid = emailRegex.test(emailAddress);
-            if (!valid) {
-                return false;
-            } else {
-                return true;
-            }
+            return validator.isEmail(emailAddress);
         },
 
         validateAlphaNumeric: function (input) {
