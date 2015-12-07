@@ -11,7 +11,7 @@ require.config({
     /* release */
     baseUrl: '/msgetstarted',
     /* debug */
-    // baseUrl: '/',
+    //baseUrl: '/',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',

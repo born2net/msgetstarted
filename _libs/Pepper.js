@@ -315,6 +315,12 @@ Pepper.prototype = {
      @return {String} url address
      **/
     getStudioLiteURL: function () {
+        var origin = window.location.toString();
+        var re = new RegExp(/^(https|http)(:\/\/)(.*?)\//);
+        //var protocol = origin.match(re)[1];
+        var server = origin.match(re)[3];
+        if (server == 'gsignage.com' || server.match(/digitalsignage.com/i))
+            return 'https://secure.digitalsignage.com/_studiolite-dist/studiolite.html';
         var protocol =  window.g_protocol;
         if (window.g_masterDomain == 'galaxy.signage.me')
             protocol = 'https://';

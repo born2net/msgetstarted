@@ -1,5 +1,6 @@
 @import url("_common/_js/bootstrap/css/bootstrap-glyphicons.css");
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+
 
 /************************************
  StudioLite CSS tags styling
@@ -8,7 +9,7 @@
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
-    src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf) format('truetype');
+    src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url("https://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf") format('truetype');
 }
 
 @media (min-width: 1000px) {
@@ -161,10 +162,10 @@ a {
 }
 
 .logo_holder {
-    width: 330px;
     float: left;
     height: auto;
     margin-top: 7px;
+    padding: 0;
 }
 
 .carouseItemIcon {
@@ -1629,12 +1630,10 @@ Studio / Player carousel
     float: left;
     font-family: 'Audiowide', cursive;
     font-size: 23px;
-    /* letter-spacing: 2px;*/
     color: white;
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 5px;
     line-height:18px;
-    padding-left: 66px;
     position: relative;
 }
 

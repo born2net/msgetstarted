@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="msgetstarted relesae">
+  <component name="PublishConfigData" autoUpload="Always" serverName="msgetstarted">
     <serverData>
       <paths name="gsignage.com (msGetStarted Debug)">
         <serverdata>
@@ -9,10 +9,38 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="msgetstarted relesae">
+      <paths name="msgetstarted">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/sites/mediasignage.com/htdocs/msgetstarted/" local="$PROJECT_DIR$" web="" />
+            <mapping deploy="/var/www/sites/mediasignage.com/htdocs/msgetstarted" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="node">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="raspberry">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="studiolite">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="videos">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
