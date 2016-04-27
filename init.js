@@ -1,17 +1,14 @@
 /**
  Require js initialization module definition file for GetStarted
  @class Require init js
-
- Office pc path:
- baseUrl: '/msgetstarted',
  **/
 
 require.config({
-    waitSeconds: 75,
-    /* release */
+    waitSeconds: 115,
+    /** release **/
     baseUrl: '/msgetstarted',
-    /* debug */
-    //baseUrl: '/',
+    /** enable to debug gsignage.com **/
+    // baseUrl: '/',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',

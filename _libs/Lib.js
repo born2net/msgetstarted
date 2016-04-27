@@ -107,6 +107,34 @@ define(['jquery', 'backbone', 'platform', 'validator'], function ($, Backbone, p
             return value;
         },
 
+        /**
+         Simplify a string to basic character set
+         @method cleanChar
+         @param {String} value
+         @return {String} cleaned string
+         **/
+        cleanCharExtended: function (value) {
+            if (value == null)
+                value = '';
+            if ($.isNumeric(value))
+                return value;
+            value = value.replace(/\}/g, ' ');
+            value = value.replace(/%/g, ' ');
+            value = value.replace(/{/g, ' ');
+            value = value.replace(/"/g, '`');
+            value = value.replace(/'/g, '`');
+            value = value.replace(/&/g, 'and');
+            value = value.replace(/>/g, ' ');
+            value = value.replace(/</g, ' ');
+            value = value.replace(/\[/g, ' ');
+            value = value.replace(/]/g, ' ');
+            value = value.replace(/#/g, ' ');
+            value = value.replace(/\$/g, ' ');
+            value = value.replace(/\^/g, ' ');
+            value = value.replace(/;/g, ' ');
+            return value;
+        },
+
         unclass: function (value) {
             return value.replace(/\./g, '');
         },

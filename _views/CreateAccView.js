@@ -62,15 +62,31 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
                     return false;
                 }
 
-                BB.Pepper.createAccount(self.m_businessModel.get('businessName'), self.m_businessModel.get('contactEmail'), self.m_businessModel.get('newAccPassword'), self.m_businessModel.get('templateBusinessId'), self.m_businessModel.get('resellerId'), self.m_businessModel.get('firstName'), self.m_businessModel.get('lastName'), self.m_businessModel.get('contactEmail'), self.m_businessModel.get('workPhone'), self.m_businessModel.get('cellPhone'), self.m_businessModel.get('address'), self.m_businessModel.get('city'), self.m_businessModel.get('state'), self.m_businessModel.get('contry'), self.m_businessModel.get('zipcode'), function (data) {
-                    if (data.result == -1) {
-                        bootbox.alert($(Elements.MSG_BOOTBOX_ACCOUNT_EXISTS).text());
-                        $(Elements.CREATE_ACCOUNT_FORGOT_PASS_BUTTON).fadeIn('slow');
-                    } else {
-                        self.m_businessModel.set('businessId', data.result);
-                        self._verifyEmail();
-                    }
-                });
+                BB.Pepper.createAccount(
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('businessName')),
+                    self.m_businessModel.get('contactEmail'),
+                    self.m_businessModel.get('newAccPassword'),
+                    self.m_businessModel.get('templateBusinessId'),
+                    self.m_businessModel.get('resellerId'),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('firstName')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('lastName')),
+                    self.m_businessModel.get('contactEmail'),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('workPhone')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('cellPhone')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('address')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('city')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('state')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('contry')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('zipcode')),
+                    function (data) {
+                        if (data.result == -1) {
+                            bootbox.alert($(Elements.MSG_BOOTBOX_ACCOUNT_EXISTS).text());
+                            $(Elements.CREATE_ACCOUNT_FORGOT_PASS_BUTTON).fadeIn('slow');
+                        } else {
+                            self.m_businessModel.set('businessId', data.result);
+                            self._verifyEmail();
+                        }
+                    });
                 return false;
             });
         },
