@@ -33,6 +33,7 @@ define(['jquery', 'backbone', 'bootbox', 'platform'], function ($, Backbone, boo
                 var lang = BB.comBroker.getService(BB.SERVICES.LANGUAGE_SELECTOR).getLanguage();
                 var local = "&local=" + lang.langNative;
                 var u = BB.Pepper.getStudioProURL() + 'signagestudio.aspx?mode=login&v=' + BB.globs['PRO_VERSION'] + '&eri=' + BB.globs['ERI'] + credentials + local;
+                u = u.replace('https','http');
                 if (platform.name == 'IE' && platform.version < 10){
                     bootbox.dialog({
                         message: $(Elements.MSG_BOOTBOX_OLD_BROWSER).text(),

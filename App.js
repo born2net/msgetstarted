@@ -45,7 +45,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.pepper = BB.Pepper;
 
             // modify only for private / hybrid mediaSERVER change links below
-            window.g_protocol = 'http://';
+            window.g_protocol = 'https://';
             window.g_masterDomain = 'galaxy.signage.me';
 
             self.m_buinessModel = new BusinessModel();
