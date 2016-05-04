@@ -345,7 +345,7 @@ Pepper.prototype = {
      @method createAccount
      @param {Function} i_callBack
      **/
-    createAccount: function (i_businessName, i_userName, i_password, i_templateBusinessId, i_resellerId, i_firstName, i_lastName, i_contactEmail, i_workPhone, i_cellPhone, i_address, i_city, i_state, i_contry, i_zipcode, i_callback) {
+    createAccount: function (i_businessName, i_userName, i_password, i_templateBusinessId, i_resellerId, i_firstName, i_lastName, i_contactEmail, i_workPhone, i_cellPhone, i_address, i_city, i_state, i_contry, i_zipcode, i_newEmailUpdates, i_callback) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount'
         url += '&businessName=' + i_businessName;
         url += '&userName=' + i_userName;
@@ -362,6 +362,7 @@ Pepper.prototype = {
         url += '&state=' + i_state;
         url += '&contry=' + i_contry;
         url += '&zipcode=' + i_zipcode;
+        url += '&emailUpdates=' + i_newEmailUpdates;
         url += '&callback=?';
         log(url);
         $.getJSON(url, i_callback);

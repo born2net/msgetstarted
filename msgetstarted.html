@@ -1,988 +1,1012 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FREE Digital Signage http://www.digitalsignage.com">
-    <meta name="author" content="digitalsignage.com">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>digitalsignage.com</title>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-    <link href="_common/_js/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="_common/_js/video/video-js.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <script data-main="init" src="_common/_js/requirejs/require.js" type="text/javascript"></script>
-    <script src="http://www.digitalsignage.com/_js/swfobject.js" language="javascript"></script>
-    <script src="http://www.digitalsignage.com/_js/AC_RunActiveContent.js" language="javascript"></script>
-    <script src="http://www.digitalsignage.com/_js/DownloadUtilsv2.js" language="javascript"></script>
-    <script src="http://www.digitalsignage.com/_js/playerERI3.js" type="text/javascript"></script>
-    <script src="http://www.digitalsignage.com/_js/flashdetect.js" type="text/javascript"></script>
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FREE Digital Signage http://www.digitalsignage.com">
+  <meta name="author" content="digitalsignage.com">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>digitalsignage.com</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+  <link href="_common/_js/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="_common/_js/video/video-js.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script data-main="init" src="_common/_js/requirejs/require.js" type="text/javascript"></script>
+  <script src="http://www.digitalsignage.com/_js/swfobject.js" language="javascript"></script>
+  <script src="http://www.digitalsignage.com/_js/AC_RunActiveContent.js" language="javascript"></script>
+  <script src="http://www.digitalsignage.com/_js/DownloadUtilsv2.js" language="javascript"></script>
+  <script src="http://www.digitalsignage.com/_js/playerERI3.js" type="text/javascript"></script>
+  <script src="http://www.digitalsignage.com/_js/flashdetect.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
 
 
-    <script type="text/javascript">
-        var origin = window.location.origin;
-        var re = new RegExp(/^(https|http):\/\/(.*)/);
-        var protocol = origin.match(re)[1];
-        var server = origin.match(re)[2];
-        window.g_protocol = protocol + "://";
-        window.g_masterDomain = server;
-    </script>
+  <script type="text/javascript">
+	 var origin = window.location.origin;
+	 var re = new RegExp(/^(https|http):\/\/(.*)/);
+	 var protocol = origin.match(re)[1];
+	 var server = origin.match(re)[2];
+	 window.g_protocol = protocol + "://";
+	 window.g_masterDomain = server;
+  </script>
 
 </head>
 <body>
 <div style="display: none; width: 100%; height: 100%" id="iFrameStudioPro">
-    <IFRAME id="studioProInsert" style="width: 100%; height: 100%">
-    </IFRAME>
+  <IFRAME id="studioProInsert" style="width: 100%; height: 100%">
+  </IFRAME>
 </div>
 
 
-
 <div class="modal modal-dialog_black fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true" style="background-color: black">
-    <div id="videoModalDialog" class="modal-dialog">
-        <div id="videoModalContent" class="modal-content modal-content_black">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span
-                        aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <video id="videoIntro"
-                       class="centerElement vjs-big-play-centered video-js vjs-default-skin"
-                       preload="auto"
-                       data-setup='{"controls": false, "autoplay": true}'>
-                </video>
-            </div>
-            <div class="modal-footer">
-                <button id="closeModal" type="button" class="btn-lg btn-danger center-block" data-dismiss="modal" style="width: 100px">
-                    <i style="font-size: 20px" class="fa fa-power-off "></i>
-                </button>
-                <br/>
-            </div>
-        </div>
-    </div>
+	  aria-hidden="true" style="background-color: black">
+  <div id="videoModalDialog" class="modal-dialog">
+	 <div id="videoModalContent" class="modal-content modal-content_black">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal"><span
+			 aria-hidden="true">&times;</span><span
+			 class="sr-only">Close</span></button>
+		</div>
+		<div class="modal-body">
+		  <video id="videoIntro"
+					class="centerElement vjs-big-play-centered video-js vjs-default-skin"
+					preload="auto"
+					data-setup='{"controls": false, "autoplay": true}'>
+		  </video>
+		</div>
+		<div class="modal-footer">
+		  <button id="closeModal" type="button" class="btn-lg btn-danger center-block" data-dismiss="modal" style="width: 100px">
+			 <i style="font-size: 20px" class="fa fa-power-off "></i>
+		  </button>
+		  <br/>
+		</div>
+	 </div>
+  </div>
 </div>
 
 
 <div id="domRoot">
-    <div id="headerPad"></div>
-    <!-- Navigation -->
-    <nav id="fileMenu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+  <div id="headerPad"></div>
+  <!-- Navigation -->
+  <nav id="fileMenu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	 <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+				  data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
+		  class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
 
-            <a href="index.html" class="pull-left navbar-logo"><span class="di">Digital</span><span class="si">Signage</span><span class="co">.com</span>
-                <div class="logo"><i><u>FREE</u> Digital Signage for everyone</i></div>
-            </a>
+		<a href="index.html" class="pull-left navbar-logo">
+		  <div style="position: relative; left: 62px; top: 2px">
+			 <span class="di">Digital</span>
+			 <span class="si">Signage</span>
+			 <span class="co">.com</span>
+			 <div class="logo">
+				<i><u>FREE</u> Digital Signage for everyone</i>
+			 </div>
+		  </div>
+		</a>
+	 </div>
+	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+		  <li id="commonFileMenu" class="hidden-lg" dropdown>
+			 <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigatior<b class="caret"></b></a> -->
+		  </li>
+		</ul>
+		<ul style="font-size: 1.0em" class="nav navbar-nav navbar-right">
+		  <li id="logoutHeader" style="display: none"><a id="logout" href="#"> <i style="font-size: 15px"
+																										  class="faHeader fa fa-power-off "></i><span
+			 data-localize="logout2"> logout </span> </a></li>
 
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li id="commonFileMenu" class="hidden-lg" dropdown>
-                    <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigatior<b class="caret"></b></a> -->
-                </li>
-            </ul>
-            <ul style="font-size: 1.0em" class="nav navbar-nav navbar-right">
-                <li id="logoutHeader" style="display: none"><a id="logout" href="#"> <i style="font-size: 15px"
-                                                                                        class="faHeader fa fa-power-off "></i><span
-                        data-localize="logout2"> logout </span> </a></li>
+		  <!--
+		  removed SignagePlayer
+		  <li>
+				<a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
+				<span data-localize="getSignagePlayer"> SignagePlayer </span> </a>
+		  </li>
+		  -->
 
-                <!--
-                removed SignagePlayer
-                <li>
-                    <a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
-                    <span data-localize="getSignagePlayer"> SignagePlayer </span> </a>
-                </li>
-                -->
-
-                <li>
-                    <a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
-                        <span data-localize="directDownload">Direct download</span> </a>
-                </li>
-
-
-                <li><a id="languagePrompt" href="#"> <i style="font-size: 15px" class="faHeader fa fa-globe"></i><span
-                        data-localize="setLanguage"> Language </span></a></li>
-                <li><a id="liveChat" href="#"> <i style="font-size: 15px"
-                                                  class="faHeader fa fa-comment"></i><span
-                        data-localize="chat"> Chat</span></a></li>
-                <!-- <li><a id="dashboard" href="#">Dashboard &nbsp;</a></li> -->
-            </ul>
-            <div></div>
-        </div>
-    </nav>
-
-    <div id="appEntry">
-        <div class="row">
-            <div id="appLoading">
-                <div class="col-xs-4">
-                </div>
-                <div class="col-xs-4" style="position: relative; top: 100px">
-                    <center>
-                        <img src="./_assets/preload5.gif">
-                        <h1>[ loading ]</h1>
-                    </center>
-                </div>
-                <div class="col-xs-4">
-                </div>
-            </div>
-        </div>
-        <div id="appLogin" style="display: none">
-            <form class="form-signin" role="form">
-                <br/>
-                <br/>
-
-                <h2 class="form-signin-heading"></h2>
-                <!-- <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required autofocus> -->
-
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="userName" placeholder="username or email">
-                </div>
-
-                <div style="margin-bottom: 3px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="userPass" type="password" class="form-control" name="password" required autofocus
-                           data-localize="userPassword" placeholder="password">
-                </div>
-
-                <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin2">
-                    Sign in
-                </button>
-
-                <label id="rememberMeLabel" class="checkbox">
-                    <input id="rememberMe" style="position: relative; top: -2px" type="checkbox" checked
-                           value="remember-me">
-                    <span data-localize="rememberMe2"> Remember me </span></label>
+		  <li>
+			 <a id="downloadSignagePlayer" href="#"> <i style="font-size: 15px" class="faHeader fa fa-download"></i>
+				<span data-localize="directDownload">Direct download</span> </a>
+		  </li>
 
 
-                <div id="loginExtras">
-                    <a id="forgotPassword" data-localize="forgotPassword" href="#">forgot password</a>
-                    <br/>
-                    <a id="changePassword" data-localize="changePassword" href="#">change password</a>
-                    <br/>
-                    <a id="changeBusiness" data-localize="changeBusiness" href="#">change business name</a>
-                </div>
+		  <li><a id="languagePrompt" href="#"> <i style="font-size: 15px" class="faHeader fa fa-globe"></i><span
+			 data-localize="setLanguage"> Language </span></a></li>
+		  <li><a id="liveChat" href="#"> <i style="font-size: 15px"
+														class="faHeader fa fa-comment"></i><span
+			 data-localize="chat"> Chat</span></a></li>
+		  <!-- <li><a id="dashboard" href="#">Dashboard &nbsp;</a></li> -->
+		</ul>
+		<div></div>
+	 </div>
+  </nav>
 
-                <div style="clear: both">
-                    <hr class="hrThin" style="position: relative; top: 10px"/>
-                    <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
-                        <span data-localize="or2" id="or">or</span>
+  <div id="appEntry">
+	 <div class="row">
+		<div id="appLoading">
+		  <div class="col-xs-4">
+		  </div>
+		  <div class="col-xs-4" style="position: relative; top: 100px">
+			 <center>
+				<img src="./_assets/preload5.gif">
+				<h1>[ loading ]</h1>
+			 </center>
+		  </div>
+		  <div class="col-xs-4">
+		  </div>
+		</div>
+	 </div>
+	 <div id="appLogin" style="display: none">
+		<form class="form-signin" role="form">
+		  <br/>
+		  <br/>
 
-                        <div style="clear: both"></div>
-                    </div>
+		  <h2 class="form-signin-heading"></h2>
+		  <!-- <input id="userName" type="text" class="form-control" data-localize="username" placeholder="User name" required autofocus> -->
 
-                </div>
-                <button id="createAccountButton" class="btn btn-lg btn-danger btn-block" data-localize="createNewAccount">
-                    create new account
-                </button>
-                <br/>
-                <hr class="hrThin"/>
-                <div id="languageSelectionLogin"></div>
-            </form>
-        </div>
-        <div id="signagePlayerView" style="display: none">
-            <h1>SignagePlayerView</h1>
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
-        </div>
-        <div id="directDownloadView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
-            <section class="content">
-                <div style="margin-left: 50px">
-                    <h3 data-localize="directDownload">direct download</h3>
-                    <h5 data-localize="directDownloadtxt1">You can download here the binaries of both StudioPro and SignagePlayer directly if you prefer, instead of going through the standard setup procedure.</h5>
-                    <br/><br/>
-                </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+			 <input id="userName" type="text" class="form-control" name="username" value="" required autofocus
+					  data-localize="userName" placeholder="username or email">
+		  </div>
 
-                <div class="panel panel-default">
-                    <div>
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div style="width: 100%">
-                                        <div class="carouselHeaderContainer">
-                                            <i class="carouselLargeHeader fa fa-laptop"></i>
-                                            <span class="carouselLargeHeader" style="font-size: 3em">StudioPro</span>
-                                        </div>
-                                        <br/>
-                                        <div>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-windows"></i>
-                                                <strong><a HREF="http://galaxy.signage.me/code/install/exe/CloudSignageStudioSetup.exe" class="text-info">Get StudioPro.exe for Microsoft Windows</a></strong>
-                                            </li>
+		  <div style="margin-bottom: 3px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="userPass" type="password" class="form-control" name="password" required autofocus
+					  data-localize="userPassword" placeholder="password">
+		  </div>
 
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-apple"></i>
-                                                <strong><a HREF="http://get.adobe.com/air/" class="text-info">Get AIR installer for StudioPro</a></strong>
-                                                & continue with installing
-                                                <strong><a HREF="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air" class="text-info">StudioPro for Mac</a></strong>
-                                            </li>
-                                        </div>
-                                    </div>
-                                </div>
+		  <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" data-localize="signin2">
+			 Sign in
+		  </button>
 
-                                <div class="item">
-                                    <div style="width: 100%">
-                                        <div class="carouselHeaderContainer">
-                                            <i class="carouselLargeHeader fa fa-desktop"></i>
-                                            <span class="carouselLargeHeader" style="font-size: 3em">SignagePlayer</span>
-                                        </div>
-                                        <br/>
-                                        <div>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-apple"></i>
-                                                <i class="carouseItemIcon fa fa-windows"></i>
-                                                <strong><a HREF="http://get.adobe.com/air/" class="text-info">Get AIR installer for SignagePlayer</a></strong>
-                                                & continue with installing
-                                                <strong><a HREF="http://galaxy.signage.me/Code/Install/air/CloudSignagePlayer.air" class="text-info">SignagePlayer</a></strong>
-                                            </li>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-windows"></i>
-                                                <strong><a HREF="http://galaxy.signage.me/Code/install/exe/CloudSignagePlayerSetup.exe" class="text-info">SignagePlayer.exe for Windows with installer</a></strong>
-                                            </li>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-android"></i>
-                                                <strong><a HREF="http://galaxy.signage.me/Code/Install/apk/CloudSignagePlayer.apk" class="text-info">SignagePlayer.apk for Android (direct)</a></strong>
-                                            </li>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-android"></i>
-                                                <strong><a HREF="http://android.digitalsignage.com" class="text-info">SignagePlayer.apk for Android (Google PlayStore)</a></strong>
-                                            </li>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-apple"></i>
-                                                <strong><a HREF="http://ios.digitalsignage.com" class="text-info">SignagePlayer for iOS (Apple AppStore)</a></strong>
-                                            </li>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-linux"></i>
-                                                <strong><a HREF="http://galaxy.mediasignage.com/Code/mediaServerSignagePlayer.air" class="text-info">SignagePlayer.air 3.0 for Linux (deprecated)</a></strong>
-                                            </li>
-                                        </div>
-                                    </div>
-                                </div>
+		  <label id="rememberMeLabel" class="checkbox">
+			 <input id="rememberMe" style="position: relative; top: -2px" type="checkbox" checked
+					  value="remember-me">
+			 <span data-localize="rememberMe2"> Remember me </span></label>
 
 
-                                <div class="item">
-                                    <div style="width: 100%">
-                                        <div class="carouselHeaderContainer">
-                                            <i class="carouselLargeHeader fa fa-spinner"></i>
-                                            <span class="carouselLargeHeader" style="font-size: 3em">AIR Installer</span>
-                                        </div>
-                                        <br/>
-                                        <div>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-apple"></i>
-                                                <i class="carouseItemIcon fa fa-windows"></i>
-                                                <strong><a HREF="http://get.adobe.com/air/" class="text-info">Get latest AIR installer for Windows and Mac</a></strong>
-                                            </li>
-                                            <li>
-                                                <i class="carouseItemIcon fa fa-linux"></i>
-                                                <strong><a HREF="http://www.digitalsignage.com/files/AdobeAIRInstaller2.6.0_Linux.bin" class="text-info">Get AIR installer for Linux (deprecated)</a></strong>
-                                            </li>
-                                        </div>
-                                    </div>
-                                </div>
+		  <div id="loginExtras">
+			 <a id="forgotPassword" data-localize="forgotPassword" href="#">forgot password</a>
+			 <br/>
+			 <a id="changePassword" data-localize="changePassword" href="#">change password</a>
+			 <br/>
+			 <a id="changeBusiness" data-localize="changeBusiness" href="#">change business name</a>
+		  </div>
 
-                            </div>
-                            <ul id="carouselItems" class="nav nav-pills nav-justified"
-                                style="border: 1px solid #9c9c9c">
-                                <li data-target="#myCarousel" data-slide-to="0"><a
-                                        href="#"><i class="fa fa-laptop"></i>StudioPro
-                                </a></li>
-                                <li data-target="#myCarousel" data-slide-to="1"><a href="#"><i
-                                        class="fa fa-desktop"></i>SignagePlayer
-                                </a></li>
-                                <li data-target="#myCarousel" data-slide-to="2"><a href="#"><i
-                                        class="fa fa-spinner"></i>AIR
-                                </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+		  <div style="clear: both">
+			 <hr class="hrThin" style="position: relative; top: 10px"/>
+			 <div style="background-color: white; width: 40px; position: relative; padding: 0; margin: 0; text-align: center; top: -10px; left: 130px">
+				<span data-localize="or2" id="or">or</span>
 
-        <div id="createAccView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+				<div style="clear: both"></div>
+			 </div>
 
-            <form class="form-signin" role="form">
-                <br/>
-                <br/>
+		  </div>
+		  <button id="createAccountButton" class="btn btn-lg btn-danger btn-block" data-localize="createNewAccount">
+			 create new account
+		  </button>
+		  <br/>
+		  <hr class="hrThin"/>
+		  <div id="languageSelectionLogin"></div>
+		</form>
+	 </div>
+	 <div id="signagePlayerView" style="display: none">
+		<h1>SignagePlayerView</h1>
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+	 </div>
+	 <div id="directDownloadView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+		<section class="content">
+		  <div style="margin-left: 50px">
+			 <h3 data-localize="directDownload">direct download</h3>
+			 <h5 data-localize="directDownloadtxt1">You can download here the binaries of both StudioPro and SignagePlayer
+				directly if you prefer, instead of going through the standard setup procedure.</h5>
+			 <br/><br/>
+		  </div>
 
-                <h2 class="form-signin-heading"></h2>
+		  <div class="panel panel-default">
+			 <div>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+				  <div class="carousel-inner">
+					 <div class="item active">
+						<div style="width: 100%">
+						  <div class="carouselHeaderContainer">
+							 <i class="carouselLargeHeader fa fa-laptop"></i>
+							 <span class="carouselLargeHeader" style="font-size: 3em">StudioPro</span>
+						  </div>
+						  <br/>
+						  <div>
+							 <li>
+								<i class="carouseItemIcon fa fa-windows"></i>
+								<strong><a HREF="http://galaxy.signage.me/code/install/exe/CloudSignageStudioSetup.exe" class="text-info">Get
+								  StudioPro.exe for Microsoft Windows</a></strong>
+							 </li>
 
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
-                    <input id="newAccBusinessName" type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="businessNameOpt" placeholder="business name (optional)">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span style="padding-left: 18px" class="input-group-addon"><i class="fa fa-male"></i></span>
-                    <input id="newAccFullNameName" type="text" class="form-control" name="username" value="" autofocus
-                           data-localize="fullName" placeholder="full name">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="newAccEmail" type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="email" placeholder="email">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="newAccPassword" type="password" class="form-control" name="username" value="" required autofocus
-                           data-localize="userPassword" placeholder="password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="newAccPasswordConfirm" type="password" class="form-control" name="username" value="" required autofocus
-                           data-localize="confirmPassword" placeholder="confirm password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
-                    <input id="newAccPhone" type="text" class="form-control" name="username" value="" required autofocus
-                           data-localize="enterPhone" placeholder="enter your phone [optional]">
-                </div>
+							 <li>
+								<i class="carouseItemIcon fa fa-apple"></i>
+								<strong><a HREF="http://get.adobe.com/air/" class="text-info">Get AIR installer for
+								  StudioPro</a></strong>
+								& continue with installing
+								<strong><a HREF="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air" class="text-info">StudioPro
+								  for Mac</a></strong>
+							 </li>
+						  </div>
+						</div>
+					 </div>
 
-                <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="createAccount">
-                    create account
-                </button>
+					 <div class="item">
+						<div style="width: 100%">
+						  <div class="carouselHeaderContainer">
+							 <i class="carouselLargeHeader fa fa-desktop"></i>
+							 <span class="carouselLargeHeader" style="font-size: 3em">SignagePlayer</span>
+						  </div>
+						  <br/>
+						  <div>
+							 <li>
+								<i class="carouseItemIcon fa fa-apple"></i>
+								<i class="carouseItemIcon fa fa-windows"></i>
+								<strong><a HREF="http://get.adobe.com/air/" class="text-info">Get AIR installer for
+								  SignagePlayer</a></strong>
+								& continue with installing
+								<strong><a HREF="http://galaxy.signage.me/Code/Install/air/CloudSignagePlayer.air" class="text-info">SignagePlayer</a></strong>
+							 </li>
+							 <li>
+								<i class="carouseItemIcon fa fa-windows"></i>
+								<strong><a HREF="http://galaxy.signage.me/Code/install/exe/CloudSignagePlayerSetup.exe" class="text-info">SignagePlayer.exe
+								  for Windows with installer</a></strong>
+							 </li>
+							 <li>
+								<i class="carouseItemIcon fa fa-android"></i>
+								<strong><a HREF="http://galaxy.signage.me/Code/Install/apk/CloudSignagePlayer.apk" class="text-info">SignagePlayer.apk
+								  for Android (direct)</a></strong>
+							 </li>
+							 <li>
+								<i class="carouseItemIcon fa fa-android"></i>
+								<strong><a HREF="http://android.digitalsignage.com" class="text-info">SignagePlayer.apk for
+								  Android (Google PlayStore)</a></strong>
+							 </li>
+							 <li>
+								<i class="carouseItemIcon fa fa-apple"></i>
+								<strong><a HREF="http://ios.digitalsignage.com" class="text-info">SignagePlayer for iOS (Apple
+								  AppStore)</a></strong>
+							 </li>
+							 <li>
+								<i class="carouseItemIcon fa fa-linux"></i>
+								<strong><a HREF="http://galaxy.mediasignage.com/Code/mediaServerSignagePlayer.air" class="text-info">SignagePlayer.air
+								  3.0 for Linux (deprecated)</a></strong>
+							 </li>
+						  </div>
+						</div>
+					 </div>
 
-                <button id="createAccountForgotPassButton" style="display: none" class="btn btn-lg btn-warning btn-block" type="submit"
-                        data-localize="forgotPassword">
-                    create account
-                </button>
 
-            </form>
-        </div>
-        <div id="renameView" style="display: none">
-            <h1>RenameView</h1>
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
-        </div>
-        <div id="changePassView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+					 <div class="item">
+						<div style="width: 100%">
+						  <div class="carouselHeaderContainer">
+							 <i class="carouselLargeHeader fa fa-spinner"></i>
+							 <span class="carouselLargeHeader" style="font-size: 3em">AIR Installer</span>
+						  </div>
+						  <br/>
+						  <div>
+							 <li>
+								<i class="carouseItemIcon fa fa-apple"></i>
+								<i class="carouseItemIcon fa fa-windows"></i>
+								<strong><a HREF="http://get.adobe.com/air/" class="text-info">Get latest AIR installer for
+								  Windows and Mac</a></strong>
+							 </li>
+							 <li>
+								<i class="carouseItemIcon fa fa-linux"></i>
+								<strong><a HREF="http://www.digitalsignage.com/files/AdobeAIRInstaller2.6.0_Linux.bin" class="text-info">Get
+								  AIR installer for Linux (deprecated)</a></strong>
+							 </li>
+						  </div>
+						</div>
+					 </div>
 
-            <form class="form-signin" role="form">
-                <br/>
-                <br/>
+				  </div>
+				  <ul id="carouselItems" class="nav nav-pills nav-justified"
+						style="border: 1px solid #9c9c9c">
+					 <li data-target="#myCarousel" data-slide-to="0"><a
+						href="#"><i class="fa fa-laptop"></i>StudioPro
+					 </a></li>
+					 <li data-target="#myCarousel" data-slide-to="1"><a href="#"><i
+						class="fa fa-desktop"></i>SignagePlayer
+					 </a></li>
+					 <li data-target="#myCarousel" data-slide-to="2"><a href="#"><i
+						class="fa fa-spinner"></i>AIR
+					 </a></li>
+				  </ul>
+				</div>
+			 </div>
+		  </div>
+		</section>
+	 </div>
 
-                <h2 class="form-signin-heading"></h2>
+	 <div id="createAccView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
 
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="changePassUser" type="text" class="form-control" name="username" value="" required
-                           autofocus
-                           data-localize="userNameEmail" placeholder="userNameEmail">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="changePassPassword" type="password" type="text" class="form-control" name="username"
-                           value="" required autofocus
-                           data-localize="oldPassword" placeholder="old password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="changePassNewPassword" type="password" type="text" class="form-control" name="username"
-                           value="" required autofocus
-                           data-localize="newPassword" placeholder="new password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="changePassVerifyPassword" class="form-control" name="username" value="" required
-                           autofocus
-                           data-localize="verifyNewPassword" type="password" placeholder="verify new password">
-                </div>
-                <button id="changePassButton" class="btn btn-lg btn-primary btn-block" data-localize="changePassword">
-                    change password
-                </button>
-            </form>
-        </div>
-        <div id="forgetPassView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+		<form class="form-signin" role="form">
+		  <br/>
+		  <br/>
 
-            <form class="form-signin" role="form">
-                <br/>
-                <br/>
+		  <h2 class="form-signin-heading"></h2>
 
-                <h2 class="form-signin-heading"></h2>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="fa fa-suitcase"></i></span>
+			 <input id="newAccBusinessName" type="text" class="form-control" name="username" value="" required autofocus
+					  data-localize="businessNameOpt" placeholder="business name (optional)">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span style="padding-left: 18px" class="input-group-addon"><i class="fa fa-male"></i></span>
+			 <input id="newAccFullNameName" type="text" class="form-control" name="username" value="" autofocus
+					  data-localize="fullName" placeholder="full name">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+			 <input id="newAccEmail" type="text" class="form-control" name="username" value="" required autofocus
+					  data-localize="email" placeholder="email">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="newAccPassword" type="password" class="form-control" name="username" value="" required autofocus
+					  data-localize="userPassword" placeholder="password">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="newAccPasswordConfirm" type="password" class="form-control" name="username" value="" required autofocus
+					  data-localize="confirmPassword" placeholder="confirm password">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span style="padding-left: 14px" class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+			 <input id="newAccPhone" type="text" class="form-control" name="username" value="" required autofocus
+					  data-localize="enterPhone" placeholder="enter your phone [optional]">
+		  </div>
 
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="resetPassInput" type="text" class="form-control" data-localize="email" name="username"
-                           value="" required autofocus placeholder="email">
-                </div>
-                <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" data-localize="resetPassword">
-                    reset password
-                </button>
-            </form>
-        </div>
-        <div id="changeBusinessView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+		  <button id="createAccountInfoButton" class="btn btn-lg btn-primary btn-block" type="submit"
+					 data-localize="createAccount">
+			 create account
+		  </button>
 
-            <form class="form-signin" role="form">
-                <br/>
-                <br/>
+		  <button id="createAccountForgotPassButton" style="display: none" class="btn btn-lg btn-warning btn-block" type="submit"
+					 data-localize="forgotPassword">
+			 create account
+		  </button>
+		  <br/>
+		  <small>keep me updated on news and announcements</small>
+		  <div class="material-switch pull-right">
+			 <input id="newEmailUpdates" checked name="someSwitchOption001" type="checkbox"/>
+			 <label for="newEmailUpdates" class="label-primary"></label>
+		  </div>
 
-                <h2 class="form-signin-heading"></h2>
+		</form>
+	 </div>
+	 <div id="renameView" style="display: none">
+		<h1>RenameView</h1>
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+	 </div>
+	 <div id="changePassView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
 
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <input id="newBusinessEmail" type="text" class="form-control" name="username" value="" required
-                           autofocus
-                           data-localize="userNameEmail" placeholder="userNameEmail">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                    <input id="newBusinessPassword" type="password" class="form-control" name="username" value="" data-localize="userPassword"
-                           required autofocus placeholder="password">
-                </div>
-                <div style="margin-bottom: 0px" class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input id="newBusinessName" type="text" class="form-control" name="username" value="" required
-                           autofocus
-                           data-localize="newBusinessName" placeholder="new business name">
-                </div>
-                <button id="newBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
-                        data-localize="renameBusiness">
-                    rename business
-                </button>
-            </form>
-        </div>
-        <div id="studioSelectView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+		<form class="form-signin" role="form">
+		  <br/>
+		  <br/>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel-group" id="accordion">
-                            <div class="panel panel-default">
-                                <!--
-                                removed SignagePlayer
-                                <div class="panel-heading prodSelectAcc" data-toggle="collapse"
-                                -->
-                                <div class="panel-heading prodSelectAcc"
-                                     data-target="#collapseOne">
-                                    <h4 class="panel-title">
-                                        <!--
-                                        removed SignagePlayer
-                                        <a id="accordionStudio" data-toggle="collapse" data-parent="#accordion"
-                                        -->
-                                        <a id="accordionStudio" data-parent="#accordion"
-                                           href="#collapseOne">
+		  <h2 class="form-signin-heading"></h2>
+
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+			 <input id="changePassUser" type="text" class="form-control" name="username" value="" required
+					  autofocus
+					  data-localize="userNameEmail" placeholder="userNameEmail">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="changePassPassword" type="password" type="text" class="form-control" name="username"
+					  value="" required autofocus
+					  data-localize="oldPassword" placeholder="old password">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="changePassNewPassword" type="password" type="text" class="form-control" name="username"
+					  value="" required autofocus
+					  data-localize="newPassword" placeholder="new password">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="changePassVerifyPassword" class="form-control" name="username" value="" required
+					  autofocus
+					  data-localize="verifyNewPassword" type="password" placeholder="verify new password">
+		  </div>
+		  <button id="changePassButton" class="btn btn-lg btn-primary btn-block" data-localize="changePassword">
+			 change password
+		  </button>
+		</form>
+	 </div>
+	 <div id="forgetPassView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+
+		<form class="form-signin" role="form">
+		  <br/>
+		  <br/>
+
+		  <h2 class="form-signin-heading"></h2>
+
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+			 <input id="resetPassInput" type="text" class="form-control" data-localize="email" name="username"
+					  value="" required autofocus placeholder="email">
+		  </div>
+		  <button id="forgetPassButton" class="btn btn-lg btn-primary btn-block" data-localize="resetPassword">
+			 reset password
+		  </button>
+		</form>
+	 </div>
+	 <div id="changeBusinessView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+
+		<form class="form-signin" role="form">
+		  <br/>
+		  <br/>
+
+		  <h2 class="form-signin-heading"></h2>
+
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+			 <input id="newBusinessEmail" type="text" class="form-control" name="username" value="" required
+					  autofocus
+					  data-localize="userNameEmail" placeholder="userNameEmail">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+			 <input id="newBusinessPassword" type="password" class="form-control" name="username" value="" data-localize="userPassword"
+					  required autofocus placeholder="password">
+		  </div>
+		  <div style="margin-bottom: 0px" class="input-group">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+			 <input id="newBusinessName" type="text" class="form-control" name="username" value="" required
+					  autofocus
+					  data-localize="newBusinessName" placeholder="new business name">
+		  </div>
+		  <button id="newBusinessButton" class="btn btn-lg btn-primary btn-block" type="submit"
+					 data-localize="renameBusiness">
+			 rename business
+		  </button>
+		</form>
+	 </div>
+	 <div id="studioSelectView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+
+		<div class="container">
+		  <div class="row">
+			 <div class="col-md-12">
+				<div class="panel-group" id="accordion">
+				  <div class="panel panel-default">
+					 <!--
+					 removed SignagePlayer
+					 <div class="panel-heading prodSelectAcc" data-toggle="collapse"
+					 -->
+					 <div class="panel-heading prodSelectAcc"
+							data-target="#collapseOne">
+						<h4 class="panel-title">
+						  <!--
+						  removed SignagePlayer
+						  <a id="accordionStudio" data-toggle="collapse" data-parent="#accordion"
+						  -->
+						  <a id="accordionStudio" data-parent="#accordion"
+							  href="#collapseOne">
                                             <span class="selectSignageStudio fa fa-arrow-circle-right">
                                             </span>
-                                            <span class="selectSignageStudio" data-localize="selectSignageStudio"> SignageStudio - Lite / Pro </span>
+							 <span class="selectSignageStudio" data-localize="selectSignageStudio"> SignageStudio - Lite / Pro </span>
 
-                                        </a>
-                                    </h4>
-                                </div>
-                                <!--
-                                 removed SignagePlayer
-                                 <div id="collapseOne" class="accordion-body panel-collapse collapse">
-                                 -->
-                                <div id="collapseOne" class="accordion-body">
-                                    <div class="panel-body">
-                                        <div class="container"
-                                             style="width: 100%; padding-left: 40px; padding-right: 50px">
-                                            <div class="row form-group product-chooser disabled">
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <div name="StudioLite" class="product-chooser-item selected">
-                                                        <img src="./_assets/LiteIcon.png" id="studioIcon1"
-                                                             class="minPaddingProdSelector img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
-                                                             alt="Desktop">
+						  </a>
+						</h4>
+					 </div>
+					 <!--
+					  removed SignagePlayer
+					  <div id="collapseOne" class="accordion-body panel-collapse collapse">
+					  -->
+					 <div id="collapseOne" class="accordion-body">
+						<div class="panel-body">
+						  <div class="container"
+								 style="width: 100%; padding-left: 40px; padding-right: 50px">
+							 <div class="row form-group product-chooser disabled">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								  <div name="StudioLite" class="product-chooser-item selected">
+									 <img src="./_assets/LiteIcon.png" id="studioIcon1"
+											class="minPaddingProdSelector img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
+											alt="Desktop">
 
-                                                        <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                                            <div>
-                                                                <p class="roboHeader">StudioLite - 100% FREE</p>
-                                                                <ul>
-                                                                    <li data-localize="simpleToLearn">simple to learn
-                                                                    </li>
-                                                                    <li data-localize="easyToUse">easy to use</li>
-                                                                    <li data-localize="convertAnytime">convert to Pro
-                                                                        anytime
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <input type="radio" name="product" value="desktop">
-                                                        </div>
-                                                        <button id="StudioLiteSelection" name="StudioLite"
-                                                                class="startButtons btn btn-lg btn-primary btn-block"
-                                                                type="submit" data-localize="goLite">Go Lite
-                                                        </button>
-                                                        <div class="clear"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <div name="StudioPro" class="product-chooser-item disabled">
-                                                        <img src="./_assets/ProIcon.png" id="studioIcon2"
-                                                             class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
-                                                             alt="Desktop">
+									 <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+										<div>
+										  <p class="roboHeader">StudioLite - 100% FREE</p>
+										  <ul>
+											 <li data-localize="simpleToLearn">simple to learn
+											 </li>
+											 <li data-localize="easyToUse">easy to use</li>
+											 <li data-localize="convertAnytime">convert to Pro
+												anytime
+											 </li>
+										  </ul>
+										</div>
+										<input type="radio" name="product" value="desktop">
+									 </div>
+									 <button id="StudioLiteSelection" name="StudioLite"
+												class="startButtons btn btn-lg btn-primary btn-block"
+												type="submit" data-localize="goLite">Go Lite
+									 </button>
+									 <div class="clear"></div>
+								  </div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								  <div name="StudioPro" class="product-chooser-item disabled">
+									 <img src="./_assets/ProIcon.png" id="studioIcon2"
+											class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12"
+											alt="Desktop">
 
-                                                        <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                                            <div>
-                                                                <p class="roboHeader">StudioPro - 100% FREE</p>
-                                                                <ul>
-                                                                    <li data-localize="moreToLearn">more to learn</li>
-                                                                    <li data-localize="packedFeatures">packed with
-                                                                        advanced features
-                                                                    </li>
-                                                                    <li data-localize="buildPowerful">build a powerful
-                                                                        presentation
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
+									 <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+										<div>
+										  <p class="roboHeader">StudioPro - 100% FREE</p>
+										  <ul>
+											 <li data-localize="moreToLearn">more to learn</li>
+											 <li data-localize="packedFeatures">packed with
+												advanced features
+											 </li>
+											 <li data-localize="buildPowerful">build a powerful
+												presentation
+											 </li>
+										  </ul>
+										</div>
 
-                                                            <input type="radio" name="product" value="desktop">
-                                                        </div>
-                                                        <button id="StudioProSelected" name="StudioPro"
-                                                                class="startButtons btn btn-lg btn-primary btn-block"
-                                                                type="submit" data-localize="goPro">Go Pro
-                                                        </button>
-                                                        <div class="clear"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="studioLiteView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+										<input type="radio" name="product" value="desktop">
+									 </div>
+									 <button id="StudioProSelected" name="StudioPro"
+												class="startButtons btn btn-lg btn-primary btn-block"
+												type="submit" data-localize="goPro">Go Pro
+									 </button>
+									 <div class="clear"></div>
+								  </div>
+								</div>
+							 </div>
+						  </div>
+						</div>
+					 </div>
+				  </div>
+				</div>
+			 </div>
+		  </div>
+		</div>
+	 </div>
+	 <div id="studioLiteView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading c-list">
-                            <span data-localize="selectStartingTemplate2" class="title">Select starting sample</span>
-                            <ul class="pull-right c-controls">
-                            </ul>
-                        </div>
+		<div class="row">
+		  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+			 <div class="panel panel-default">
+				<div class="panel-heading c-list">
+				  <span data-localize="selectStartingTemplate2" class="title">Select starting sample</span>
+				  <ul class="pull-right c-controls">
+				  </ul>
+				</div>
 
-                        <div class="row" style="display: none;">
-                            <div class="col-xs-12">
-                                <div class="input-group c-search">
-                                    <input type="text" class="form-control">
+				<div class="row" style="display: none;">
+				  <div class="col-xs-12">
+					 <div class="input-group c-search">
+						<input type="text" class="form-control">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><span
-                                        class="glyphicon glyphicon-search text-muted"></span></button>
+											 class="glyphicon glyphicon-search text-muted"></span></button>
                             </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="sampleListLite">
-                            <form action="#" method="get">
-                                <div class="input-group">
-                                    <input class="filterSample form-control" name="q" data-localize="searchFor" placeholder="Search for"
-                                           required>
+					 </div>
+				  </div>
+				</div>
+				<div id="sampleListLite">
+				  <form action="#" method="get">
+					 <div class="input-group">
+						<input class="filterSample form-control" name="q" data-localize="searchFor" placeholder="Search for"
+								 required>
                                 <span class="input-group-btn">
                                     <button type="submit" disabled="disabled" style="height: 34px"
-                                            class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
+														  class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
                                     </button>
                                 </span>
-                                </div>
-                            </form>
-                            <ul class="list-group">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+					 </div>
+				  </form>
+				  <ul class="list-group">
+				  </ul>
+				</div>
+			 </div>
+		  </div>
+		</div>
+	 </div>
 
-        <div id="studioProView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+	 <div id="studioProView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading c-list">
-                            <span class="title" data-localize="selectStartingTemplate2">Select starting sample</span>
-                            <ul class="pull-right c-controls">
-                            </ul>
-                        </div>
+		<div class="row">
+		  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+			 <div class="panel panel-default">
+				<div class="panel-heading c-list">
+				  <span class="title" data-localize="selectStartingTemplate2">Select starting sample</span>
+				  <ul class="pull-right c-controls">
+				  </ul>
+				</div>
 
-                        <div class="row" style="display: none;">
-                            <div class="col-xs-12">
-                                <div class="input-group c-search">
-                                    <input type="text" class="form-control">
+				<div class="row" style="display: none;">
+				  <div class="col-xs-12">
+					 <div class="input-group c-search">
+						<input type="text" class="form-control">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><span
-                                        class="glyphicon glyphicon-search text-muted"></span></button>
+											 class="glyphicon glyphicon-search text-muted"></span></button>
                             </span>
-                                </div>
-                            </div>
-                        </div>
+					 </div>
+				  </div>
+				</div>
 
-                        <div id="sampleListPro">
-                            <form action="#" method="get">
-                                <div class="input-group">
-                                    <input class="form-control filterSample" name="q" placeholder="Search for" required>
+				<div id="sampleListPro">
+				  <form action="#" method="get">
+					 <div class="input-group">
+						<input class="form-control filterSample" name="q" placeholder="Search for" required>
                                 <span class="input-group-btn">
                                     <button disabled="disabled" type="submit" style="height: 34px"
-                                            class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
+														  class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
                                     </button>
                                 </span>
-                                </div>
-                            </form>
-                            <ul class="list-group">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+					 </div>
+				  </form>
+				  <ul class="list-group">
+				  </ul>
+				</div>
+			 </div>
+		  </div>
+		</div>
+	 </div>
 
-        <div id="accountView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
-        </div>
-        <div id="verifyEmailView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
-            <h4 style="text-align: center" data-localize="pleaseCheckEmail">please check your email inbox</h4>
+	 <div id="accountView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+	 </div>
+	 <div id="verifyEmailView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+		<h4 style="text-align: center" data-localize="pleaseCheckEmail">please check your email inbox</h4>
 
-            <div style="width: 100%; text-align: center">
-                <br/><br/>
-                <img class="center" src="./_assets/preload3.gif">
-            </div>
-        </div>
+		<div style="width: 100%; text-align: center">
+		  <br/><br/>
+		  <img class="center" src="./_assets/preload3.gif">
+		</div>
+	 </div>
 
-        <div id="webDeskSelectNoFlashView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+	 <div id="webDeskSelectNoFlashView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
 
-            <div class="container">
-                <div class="row">
-                    <div class="center-block placeholder">
-                        <!-- <h2 style="text-align: center">Install StudioPro</h2> -->
-                        <br/><br/><br/>
-                        <ul class="ds-btn" style="width: 300px; padding: 0; margin: auto">
-                            <li>
-                                <a class="btn btn-lg btn-primary" href="http://get.adobe.com/air/" target="_blank">
-                                    <i class="airIconGlyphicon fa fa-circle-o  pull-left"></i><span>1. Install Adobe AIR</span></a>
-                            </li>
-                            <li>
-                                <a class="btn btn-lg btn-primary"
-                                   href="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air">
-                                    <i class="airIconGlyphicon fa fa-dot-circle-o pull-left"></i><span>2. Install StudioPro</span></a>
-                            </li>
-                            <li>
-                                <a class="btn btn-lg btn-primary" href="http://www.digitalsignage.com/_html/signage_video.html">
-                                    <i class="airIconGlyphicon fa fa-circle pull-left"></i><span>3. Build your presentation</span></a>
-                            </li>
-                        </ul>
+		<div class="container">
+		  <div class="row">
+			 <div class="center-block placeholder">
+				<!-- <h2 style="text-align: center">Install StudioPro</h2> -->
+				<br/><br/><br/>
+				<ul class="ds-btn" style="width: 300px; padding: 0; margin: auto">
+				  <li>
+					 <a class="btn btn-lg btn-primary" href="http://get.adobe.com/air/" target="_blank">
+						<i class="airIconGlyphicon fa fa-circle-o  pull-left"></i><span>1. Install Adobe AIR</span></a>
+				  </li>
+				  <li>
+					 <a class="btn btn-lg btn-primary"
+						 href="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air">
+						<i class="airIconGlyphicon fa fa-dot-circle-o pull-left"></i><span>2. Install StudioPro</span></a>
+				  </li>
+				  <li>
+					 <a class="btn btn-lg btn-primary" href="http://www.digitalsignage.com/_html/signage_video.html">
+						<i class="airIconGlyphicon fa fa-circle pull-left"></i><span>3. Build your presentation</span></a>
+				  </li>
+				</ul>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+			 </div>
+		  </div>
+		</div>
+	 </div>
 
-        <div id="webDeskSelectNoFlashWinView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
+	 <div id="webDeskSelectNoFlashWinView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
 
-            <div class="container">
-                <div class="row">
-                    <div class="center-block placeholder">
-                        <!-- <h2 style="text-align: center">Install StudioPro</h2> -->
-                        <br/><br/><br/>
-                        <ul class="ds-btn" style="width: 300px; padding: 0; margin: auto">
-                            <li>
-                                <a class="btn btn-lg btn-primary" style="width: 440px; padding-top: 30px; padding-bottom: 40px" href="http://galaxy.signage.me/code/install/exe/CloudSignageStudioSetup.exe" target="_blank">
-                                    <i style="font-size: 3.0em; position: relative; top: 5px" class="airIconGlyphicon fa fa-windows">
-                                    </i><span>Download StudioPro for Windows</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<div class="container">
+		  <div class="row">
+			 <div class="center-block placeholder">
+				<!-- <h2 style="text-align: center">Install StudioPro</h2> -->
+				<br/><br/><br/>
+				<ul class="ds-btn" style="width: 300px; padding: 0; margin: auto">
+				  <li>
+					 <a class="btn btn-lg btn-primary" style="width: 440px; padding-top: 30px; padding-bottom: 40px" href="http://galaxy.signage.me/code/install/exe/CloudSignageStudioSetup.exe" target="_blank">
+						<i style="font-size: 3.0em; position: relative; top: 5px" class="airIconGlyphicon fa fa-windows">
+						</i><span>Download StudioPro for Windows</span>
+					 </a>
+				  </li>
+				</ul>
+			 </div>
+		  </div>
+		</div>
+	 </div>
 
-        <div id="webDeskSelectView" style="display: none">
-            <a class="back" href="#">
-                <i class="fa fa-angle-double-left"></i>
-                <span data-localize="goBack" class="backText">GO BACK</span>
-            </a>
-            <!--
-            <h2 style="text-align: center; color: #428ac9" data-localize="congrats">Select how to access, Web or Desktop version?</h2> -->
-            <br/>
+	 <div id="webDeskSelectView" style="display: none">
+		<a class="back" href="#">
+		  <i class="fa fa-angle-double-left"></i>
+		  <span data-localize="goBack" class="backText">GO BACK</span>
+		</a>
+		<!--
+		<h2 style="text-align: center; color: #428ac9" data-localize="congrats">Select how to access, Web or Desktop version?</h2> -->
+		<br/>
 
-            <div class="container">
-                <div class="row form-group">
-                    <div style="padding-bottom: 30px" class="col-xs-12 col-sm-offset-2 col-sm-4">
-                        <div>
-                            <a id="openStudioProWeb">
-                                <img id="studioProWeb" class="img-responsive img-center" height="133" width="217"
-                                     src="http://www.digitalsignage.com/_images/WebOpenv3.png" border="0">
-                            </a>
-                            <!-- legacy version, opening StudioWeb with passing of ERI  -->
-                            <!--
-                            <a href="javascript:openLoginApp('trial', 'http://galaxy.mediasignage.com/WebService/', airApplicationArguments)"
-                               id="openWebAccount">
-                                <img id="studioProWeb" class="img-responsive img-center" height="133" width="217"
-                                     src="http://www.digitalsignage.com/_images/WebOpenv3.png" border="0">
-                            </a>
-                            -->
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="col-xs-12 col-sm-offset-0 col-sm-4 col-sm-offset-2">
-                        <div>
-                            <div>
-                                <div id="flashContent">
-                                    <script language="JavaScript" type="text/javascript">
-                                        var airApplicationURL = "http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air&buttoncolor=222222&messagecolor=000000";
-                                        var airApplicationName = "Air Studio";
-                                        var airApplicationImage = "http://mediasignage.com/assets/images/AirStudiov6.jpg";
-                                    </script>
+		<div class="container">
+		  <div class="row form-group">
+			 <div style="padding-bottom: 30px" class="col-xs-12 col-sm-offset-2 col-sm-4">
+				<div>
+				  <a id="openStudioProWeb">
+					 <img id="studioProWeb" class="img-responsive img-center" height="133" width="217"
+							src="http://www.digitalsignage.com/_images/WebOpenv3.png" border="0">
+				  </a>
+				  <!-- legacy version, opening StudioWeb with passing of ERI  -->
+				  <!--
+				  <a href="javascript:openLoginApp('trial', 'http://galaxy.mediasignage.com/WebService/', airApplicationArguments)"
+					  id="openWebAccount">
+						<img id="studioProWeb" class="img-responsive img-center" height="133" width="217"
+							  src="http://www.digitalsignage.com/_images/WebOpenv3.png" border="0">
+				  </a>
+				  -->
+				</div>
+				<div class="clear"></div>
+			 </div>
+			 <div class="col-xs-12 col-sm-offset-0 col-sm-4 col-sm-offset-2">
+				<div>
+				  <div>
+					 <div id="flashContent">
+						<script language="JavaScript" type="text/javascript">
+						  var airApplicationURL = "http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air&buttoncolor=222222&messagecolor=000000";
+						  var airApplicationName = "Air Studio";
+						  var airApplicationImage = "http://mediasignage.com/assets/images/AirStudiov6.jpg";
+						</script>
 
-                                    <!-- <script src="http://www.digitalsignage.com/_js/InstallBadge.js" language="javascript"></script> -->
-                                    <div>
-                                        <embed width="217" height="180" class="img-resp img-center"
-                                               src="http://www.digitalsignage.com/_html/badge.swf" quality="high"
-                                               bgcolor="#FFFFFF" name="badge" allowscriptaccess="all"
-                                               pluginspage="http://www.macromedia.com/go/getflashplayer"
-                                               flashvars="appname=Air%20Studio&amp;appurl=http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air&amp;buttoncolor=222222&amp;messagecolor=000000&amp;airversion=3.0&amp;imageurl=http://mediasignage.com/assets/images/AirStudiov6.jpg&amp;buttoncolor=E00000&amp;messagecolor=000000&amp;arguments=f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141"
-                                               type="application/x-shockwave-flash">
-                                            <noscript>
-                                                &lt;div id="AIRDownloadMessageTable"&gt; Download &lt;a
-                                                href="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air"&gt;SignageStudio&lt;/a&gt;&lt;br
-                                                /&gt;
-                                                &lt;span id="AIRDownloadMessageRuntime"&gt; This application
-                                                requires Adobe Flash/AIR to be installed. &lt;a
-                                                href="http://www.adobe.com/go/getair/"&gt;Download here&lt;/a&gt;&lt;/span&gt;
-                                                &lt;/div&gt;
-                                            </noscript>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h3 style="text-align: center" data-localize="chooseBetween">Choose between <u>Web</u> or <u>Desktop</u>
-                version</h3>
-            <h6 style="text-align: center" data-localize="webDeskText">Both the Web and Desktop save your data to the
-                cloud, it’s just that the Desktop version loads faster and has a few minor enhancements. <br/>Best of
-                all both versions are 100% FREE, so you switch between the two at any time... so no big decisions here.
-            </h6>
+						<!-- <script src="http://www.digitalsignage.com/_js/InstallBadge.js" language="javascript"></script> -->
+						<div>
+						  <embed width="217" height="180" class="img-resp img-center"
+									src="http://www.digitalsignage.com/_html/badge.swf" quality="high"
+									bgcolor="#FFFFFF" name="badge" allowscriptaccess="all"
+									pluginspage="http://www.macromedia.com/go/getflashplayer"
+									flashvars="appname=Air%20Studio&amp;appurl=http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air&amp;buttoncolor=222222&amp;messagecolor=000000&amp;airversion=3.0&amp;imageurl=http://mediasignage.com/assets/images/AirStudiov6.jpg&amp;buttoncolor=E00000&amp;messagecolor=000000&amp;arguments=f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141"
+									type="application/x-shockwave-flash">
+							 <noscript>
+								&lt;div id="AIRDownloadMessageTable"&gt; Download &lt;a
+								href="http://galaxy.signage.me/Code/Install/air/CloudSignageStudio.air"&gt;SignageStudio&lt;/a&gt;&lt;br
+								/&gt;
+								&lt;span id="AIRDownloadMessageRuntime"&gt; This application
+								requires Adobe Flash/AIR to be installed. &lt;a
+								href="http://www.adobe.com/go/getair/"&gt;Download here&lt;/a&gt;&lt;/span&gt;
+								&lt;/div&gt;
+							 </noscript>
+						</div>
+					 </div>
+				  </div>
+				  <div class="clear"></div>
+				</div>
+			 </div>
+		  </div>
+		</div>
+		<h3 style="text-align: center" data-localize="chooseBetween">Choose between <u>Web</u> or <u>Desktop</u>
+		  version</h3>
+		<h6 style="text-align: center" data-localize="webDeskText">Both the Web and Desktop save your data to the
+		  cloud, it’s just that the Desktop version loads faster and has a few minor enhancements. <br/>Best of
+		  all both versions are 100% FREE, so you switch between the two at any time... so no big decisions here.
+		</h6>
 
-            <!--
-               <IFRAME id="studioProInsert" style="width: 800px; height: 800px" >
-            </IFRAME>
+		<!--
+			<IFRAME id="studioProInsert" style="width: 800px; height: 800px" >
+		</IFRAME>
 
-            <div id="studioProInsert" style="width: 1500px; height: 1500px; background-color: red"></div>
-            -->
+		<div id="studioProInsert" style="width: 1500px; height: 1500px; background-color: red"></div>
+		-->
 
-        </div>
+	 </div>
 
-        <div id="waitScreenEntryApp" style="display: none"><span style="position: absolute; left: 45%; top: 20%">
+	 <div id="waitScreenEntryApp" style="display: none"><span style="position: absolute; left: 45%; top: 20%">
     <img src="./_assets/preload5.gif"> </span></div>
-        <div id="appLogout" style="display: none"> <span style="position: absolute; left: 40%; top: 20%">
+	 <div id="appLogout" style="display: none"> <span style="position: absolute; left: 40%; top: 20%">
       <h3 data-localize="haveANiceDay">Have a nice day :)</h3>
       </span></div>
-        <div id="appSelector" class="noScroll container" style="display: none">
-            <div align="center" style="padding-top: 100px">
-                <button type="button" name="mailWasp" class="btn btn-default"><i
-                        style="margin: 20px; padding: 20px; font-size: 5em" class="fa fa-envelope"></i> <span
-                        data-localize="none"></span></button>
-                <button type="button" name="everNodes" class="btn btn-default"><i
-                        style="margin: 20px; padding: 20px ; font-size: 5em" class="fa fa-sitemap"></i> <span
-                        data-localize="none"></span></button>
-            </div>
-        </div>
+	 <div id="appSelector" class="noScroll container" style="display: none">
+		<div align="center" style="padding-top: 100px">
+		  <button type="button" name="mailWasp" class="btn btn-default"><i
+			 style="margin: 20px; padding: 20px; font-size: 5em" class="fa fa-envelope"></i> <span
+			 data-localize="none"></span></button>
+		  <button type="button" name="everNodes" class="btn btn-default"><i
+			 style="margin: 20px; padding: 20px ; font-size: 5em" class="fa fa-sitemap"></i> <span
+			 data-localize="none"></span></button>
+		</div>
+	 </div>
 
-        <div id="appRedirect" class="noScroll container" style="display: none">
-            <div align="center" style="padding-top: 100px">
-                <h1 id="loadingStudio" data-localize="loadingStudio"></h1>
-            </div>
-        </div>
+	 <div id="appRedirect" class="noScroll container" style="display: none">
+		<div align="center" style="padding-top: 100px">
+		  <h1 id="loadingStudio" data-localize="loadingStudio"></h1>
+		</div>
+	 </div>
 
 
-        <div id="appMailWaspContent" class="noScroll container" style="display: none">
-        </div>
-        <div id="appEverNodesContent" class="noScroll container" style="display: none">
-        </div>
-    </div>
+	 <div id="appMailWaspContent" class="noScroll container" style="display: none">
+	 </div>
+	 <div id="appEverNodesContent" class="noScroll container" style="display: none">
+	 </div>
+  </div>
 </div>
 <div id="footer" style="display: none"><br>
-    <span id="footerText">&nbsp;MediaSignage Inc &#169; | version 0.9.27 </span></div>
+  <span id="footerText">&nbsp;MediaSignage Inc &#169; | version 0.9.27 </span></div>
 
 <!-- Modal -->
 <div class="modal modal-static fade" id="bsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button id="toggleProperties" type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel" data-localize="ModalTitle">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <h3 data-localize="someContent">some content</h3>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" data-localize="close">Close</button>
-                <button type="button" class="btn btn-primary" data-localize="saveChanges">Save changes</button>
-            </div>
-        </div>
-    </div>
+	  aria-hidden="true">
+  <div class="modal-dialog">
+	 <div class="modal-content">
+		<div class="modal-header">
+		  <button id="toggleProperties" type="button" class="close" data-dismiss="modal"
+					 aria-hidden="true">&times;</button>
+		  <h4 class="modal-title" id="myModalLabel" data-localize="ModalTitle">Modal title</h4>
+		</div>
+		<div class="modal-body">
+		  <h3 data-localize="someContent">some content</h3>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal" data-localize="close">Close</button>
+		  <button type="button" class="btn btn-primary" data-localize="saveChanges">Save changes</button>
+		</div>
+	 </div>
+  </div>
 </div>
 <div id="popModal" style="display: none"></div>
 <div id="popupProperties" style="display: none">
-    <button style="float: right; margin: 20px" type="button" class="btn btn-default btn-sm modal_close"
-            data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+  <button style="float: right; margin: 20px" type="button" class="btn btn-default btn-sm modal_close"
+			 data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
 </div>
 <div id="aboutUS" style="display: none">
-    <h1 data-localize="aboutUs">StackView Rocks, this is a sample StackView Popup</h1>
-    <button type="button" class="btn btn-primary modal_close" data-dismiss="modal" data-localize="colse">Close</button>
+  <h1 data-localize="aboutUs">StackView Rocks, this is a sample StackView Popup</h1>
+  <button type="button" class="btn btn-primary modal_close" data-dismiss="modal" data-localize="colse">Close</button>
 </div>
 
 
 <!-- Language selection template -->
 
 <div id="languageSelector" class="dropdownlang" style="display: none">
-    <dt><a href="#"><span>Select language</span></a></dt>
-    <dd>
-        <ul>
-            <li><a href="#"><img class="flag" src="_assets/flags/en.png" alt=""/>English<span
-                    class="value">en</span></a></li>
-            <hr/>
-            <li><a href="#"><img class="flag" src="_assets/flags/ar.png" alt=""/>Arabic<span class="value">ar</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/bg.png" alt=""/>Bulgarian<span class="value">bg</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/sq.png" alt=""/>Albanian<span
-                    class="value">sq</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/ca.png" alt=""/>Catalan<span
-                    class="value">ca</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/zh.png" alt=""/>Chinese Simplified<span class="value">zh</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/hr.png" alt=""/>Croatian<span
-                    class="value">hr</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/cs.png" alt=""/>Czech<span class="value">cs</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/da.png" alt=""/>Danish<span class="value">da</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/nl.png" alt=""/>Dutch<span class="value">nl</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/en.png" alt=""/>English<span
-                    class="value">en</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/et.png" alt=""/>Estonian<span
-                    class="value">et</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/tl.png" alt=""/>Filipino<span
-                    class="value">tl</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/fi.png" alt=""/>Finnish<span
-                    class="value">fi</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/fr.png" alt=""/>French<span class="value">fr</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/gl.png" alt=""/>Galician<span
-                    class="value">gl</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/de.png" alt=""/>German<span class="value">de</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/el.png" alt=""/>Greek<span class="value">el</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/iw.png" alt=""/>Hebrew<span class="value">iw</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/hi.png" alt=""/>Hindi<span class="value">hi</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/hu.png" alt=""/>Hungarian<span class="value">hu</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/id.png" alt=""/>Indonesian<span class="value">id</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/it.png" alt=""/>Italian<span
-                    class="value">it</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/ja.png" alt=""/>Japanese<span
-                    class="value">ja</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/ko.png" alt=""/>Korean<span class="value">ko</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/lv.png" alt=""/>Latvian<span
-                    class="value">lv</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/lt.png" alt=""/>Lithuanian<span class="value">lt</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/mt.png" alt=""/>Maltese<span
-                    class="value">mt</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/no.png" alt=""/>Norwegian<span class="value">no</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/pl.png" alt=""/>Polish<span class="value">pl</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/pt.png" alt=""/>Portuguese<span class="value">pt</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/ro.png" alt=""/>Romanian<span
-                    class="value">ro</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/ru.png" alt=""/>Russian<span
-                    class="value">ru</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/sr.png" alt=""/>Serbian<span
-                    class="value">sr</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/sk.png" alt=""/>Slovak<span class="value">sk</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/sl.png" alt=""/>Slovenian<span class="value">sl</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/es.png" alt=""/>Spanish<span
-                    class="value">es</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/sv.png" alt=""/>Swedish<span
-                    class="value">sv</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/th.png" alt=""/>Thai<span class="value">th</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/tr.png" alt=""/>Turkish<span
-                    class="value">tr</span></a></li>
-            <li><a href="#"><img class="flag" src="_assets/flags/uk.png" alt=""/>Ukrainian<span class="value">uk</span></a>
-            </li>
-            <li><a href="#"><img class="flag" src="_assets/flags/vi.png" alt=""/>Vietnamese<span class="value">vi</span></a>
-            </li>
-        </ul>
-    </dd>
+  <dt><a href="#"><span>Select language</span></a></dt>
+  <dd>
+	 <ul>
+		<li><a href="#"><img class="flag" src="_assets/flags/en.png" alt=""/>English<span
+		  class="value">en</span></a></li>
+		<hr/>
+		<li><a href="#"><img class="flag" src="_assets/flags/ar.png" alt=""/>Arabic<span class="value">ar</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/bg.png" alt=""/>Bulgarian<span class="value">bg</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/sq.png" alt=""/>Albanian<span
+		  class="value">sq</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/ca.png" alt=""/>Catalan<span
+		  class="value">ca</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/zh.png" alt=""/>Chinese
+		  Simplified<span class="value">zh</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/hr.png" alt=""/>Croatian<span
+		  class="value">hr</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/cs.png" alt=""/>Czech<span class="value">cs</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/da.png" alt=""/>Danish<span class="value">da</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/nl.png" alt=""/>Dutch<span class="value">nl</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/en.png" alt=""/>English<span
+		  class="value">en</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/et.png" alt=""/>Estonian<span
+		  class="value">et</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/tl.png" alt=""/>Filipino<span
+		  class="value">tl</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/fi.png" alt=""/>Finnish<span
+		  class="value">fi</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/fr.png" alt=""/>French<span class="value">fr</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/gl.png" alt=""/>Galician<span
+		  class="value">gl</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/de.png" alt=""/>German<span class="value">de</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/el.png" alt=""/>Greek<span class="value">el</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/iw.png" alt=""/>Hebrew<span class="value">iw</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/hi.png" alt=""/>Hindi<span class="value">hi</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/hu.png" alt=""/>Hungarian<span class="value">hu</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/id.png" alt=""/>Indonesian<span class="value">id</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/it.png" alt=""/>Italian<span
+		  class="value">it</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/ja.png" alt=""/>Japanese<span
+		  class="value">ja</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/ko.png" alt=""/>Korean<span class="value">ko</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/lv.png" alt=""/>Latvian<span
+		  class="value">lv</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/lt.png" alt=""/>Lithuanian<span class="value">lt</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/mt.png" alt=""/>Maltese<span
+		  class="value">mt</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/no.png" alt=""/>Norwegian<span class="value">no</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/pl.png" alt=""/>Polish<span class="value">pl</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/pt.png" alt=""/>Portuguese<span class="value">pt</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/ro.png" alt=""/>Romanian<span
+		  class="value">ro</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/ru.png" alt=""/>Russian<span
+		  class="value">ru</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/sr.png" alt=""/>Serbian<span
+		  class="value">sr</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/sk.png" alt=""/>Slovak<span class="value">sk</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/sl.png" alt=""/>Slovenian<span class="value">sl</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/es.png" alt=""/>Spanish<span
+		  class="value">es</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/sv.png" alt=""/>Swedish<span
+		  class="value">sv</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/th.png" alt=""/>Thai<span class="value">th</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/tr.png" alt=""/>Turkish<span
+		  class="value">tr</span></a></li>
+		<li><a href="#"><img class="flag" src="_assets/flags/uk.png" alt=""/>Ukrainian<span class="value">uk</span></a>
+		</li>
+		<li><a href="#"><img class="flag" src="_assets/flags/vi.png" alt=""/>Vietnamese<span class="value">vi</span></a>
+		</li>
+	 </ul>
+  </dd>
 </div>
 
 
@@ -995,30 +1019,33 @@
 
 <p style="display: none" id="msgBoxLoadLite" data-localize="msgBoxLoadLite">Please wait... loading StudioLite</p>
 
-<p style="display: none" id="msgBoxAccountExists" data-localize="msgBoxAccountExists">Account with this name already exists, please use a different email address or select forgot password to reset account credentials</p>
+<p style="display: none" id="msgBoxAccountExists" data-localize="msgBoxAccountExists">Account with this name already
+  exists, please use a different email address or select forgot password to reset account credentials</p>
 
 <p style="display: none" id="bootBoxBusinessNameTooShort" data-localize="bootBoxBusinessNameTooShort">Business name is
-    too short</p>
+  too short</p>
 
 <p style="display: none" id="bootBoxAlphaNumeric" data-localize="bootBoxAlphaNumeric">Only A - Z and 0 - 9 are allowed
-    for password</p>
+  for password</p>
 
 <p style="display: none" id="bootBoxEnterEmail" data-localize="bootBoxEnterEmail">Please enter your email address</p>
 
-<p style="display: none" id="bootBoxOldBrowser" data-localize="bootBoxOldBrowser">your browser is too old, please install StudioPro Desktop version or use google chrome</p>
+<p style="display: none" id="bootBoxOldBrowser" data-localize="bootBoxOldBrowser">your browser is too old, please
+  install StudioPro Desktop version or use google chrome</p>
 
 <p style="display: none" id="bootBoxInvalidEmail" data-localize="bootBoxInvalidEmail">The e-mail entered is invalid</p>
 
 <p style="display: none" id="bootBoxPasswordTooShort" data-localize="bootBoxPasswordTooShort">Password too short</p>
 
-<p style="display: none" id="bootBoxNoFullNameProvided" data-localize="bootBoxNoFullNameProvided">Please provide full name</p>
+<p style="display: none" id="bootBoxNoFullNameProvided" data-localize="bootBoxNoFullNameProvided">Please provide full
+  name</p>
 
 <p style="display: none" id="bootBoxPasswordNoMatch" data-localize="bootBoxPasswordNoMatch">Passwords do not match</p>
 
 <p style="display: none" id="bootBoxCheckEmail" data-localize="bootBoxCheckEmail">Please check your email</p>
 
 <p style="display: none" id="bootBoxCanNotAuthenticate" data-localize="bootBoxCanNotAuthenticate">Sorry, can not
-    authenticate with your user or password</p>
+  authenticate with your user or password</p>
 
 <p style="display: none" id="bootBoxCompleted" data-localize="bootBoxCompleted">Completed successfully...</p>
 
@@ -1035,38 +1062,38 @@
 <p style="display: none" id="loadingStudioText" data-localize="loadingStudioText">please wait, loading </p>
 
 <p style="display: none" id="bootboxNoProbOnMobile" data-localize="bootboxNoProbOnMobile">StudioPro is supported on
-    Windows and Mac only (non mobile)</p>
+  Windows and Mac only (non mobile)</p>
 
 <p style="display: none" id="bootBoxRestartStations" data-localize="bootBoxRestartStations">Restart connected stations
-    and apply your saved work?</p>
+  and apply your saved work?</p>
 
 <p style="display: none" id="bootBoxStudioLiteAcc" data-localize="bootBoxStudioLiteAcc">You must login with a StudioLite
-    account and not a Pro account</p>
+  account and not a Pro account</p>
 
 <!-- file menu navigation per application -->
 
 <ul id="fileNavEver" class="dropdown-menu" style="display: none;">
-    <li><a data-localize="navCampaign" class="campaignManagerEver" href="#">Campaign</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navResources" class="resourcesPanelEver" href="#">Resources</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navStation" class="stationsPanelEver" href="#">Stations</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navSettings" class="settingsPanelEver" href="#">Settings</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navStudioPanel" class="proStudioPanelEver" href="#">Pro (ZZZZZ)</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navHelpPanel" class="helpPanelEver" href="#">Help</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navLogout" class="logoutPanel" href="#">Logout</a></li>
+  <li><a data-localize="navCampaign" class="campaignManagerEver" href="#">Campaign</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navResources" class="resourcesPanelEver" href="#">Resources</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navStation" class="stationsPanelEver" href="#">Stations</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navSettings" class="settingsPanelEver" href="#">Settings</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navStudioPanel" class="proStudioPanelEver" href="#">Pro (ZZZZZ)</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navHelpPanel" class="helpPanelEver" href="#">Help</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navLogout" class="logoutPanel" href="#">Logout</a></li>
 </ul>
 
 <ul id="fileNavWasp" class="dropdown-menu" style="display: none;">
-    <li><a data-localize="navCampaign" class="campaignManagerWasp" href="#">Campaign</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navResources" class="resourcesPanelWasp" href="#">Resources XXX</a></li>
-    <li class="divider"></li>
-    <li><a data-localize="navLogout" class="logoutPanel" href="#">Logout</a></li>
+  <li><a data-localize="navCampaign" class="campaignManagerWasp" href="#">Campaign</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navResources" class="resourcesPanelWasp" href="#">Resources XXX</a></li>
+  <li class="divider"></li>
+  <li><a data-localize="navLogout" class="logoutPanel" href="#">Logout</a></li>
 </ul>
 
 

@@ -59,6 +59,7 @@ Elements.SAVE_CONFIG = '#saveConfig';
 Elements.LIVE_CHAT = '#liveChat';
 Elements.REMEMBER_ME = '#rememberMe';
 Elements.NEW_ACC_BUSINESS_NAME = '#newAccBusinessName',
+Elements.NEW_EMAIL_UPDATES = '#newEmailUpdates',
 Elements.NEW_ACC_EMAIL = '#newAccEmail',
 Elements.NEW_ACC_FULLNAME_NAME = '#newAccFullNameName',
 Elements.NEW_ACC_PASSWORD = '#newAccPassword',

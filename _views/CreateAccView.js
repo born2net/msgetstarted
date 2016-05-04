@@ -78,6 +78,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
                     BB.lib.cleanCharExtended(self.m_businessModel.get('state')),
                     BB.lib.cleanCharExtended(self.m_businessModel.get('contry')),
                     BB.lib.cleanCharExtended(self.m_businessModel.get('zipcode')),
+                    BB.lib.cleanCharExtended(self.m_businessModel.get('newEmailUpdates')),
                     function (data) {
                         if (data.result == -1) {
                             bootbox.alert($(Elements.MSG_BOOTBOX_ACCOUNT_EXISTS).text());
@@ -112,6 +113,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
             var self = this;
 
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_BUSINESS_NAME, 'businessName');
+            self.addBinding(self.m_businessModel, Elements.NEW_EMAIL_UPDATES, 'emailUpdates');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_EMAIL, 'contactEmail');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_FULLNAME_NAME, 'firstName');
             self.addBinding(self.m_businessModel, Elements.NEW_ACC_PASSWORD, 'newAccPassword');
