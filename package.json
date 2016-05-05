@@ -1,22 +1,22 @@
 {
   "name": "msGetStarted",
-  "version": "1.1.2",
+  "version": "1.1.10",
   "description": "DigitalSignage.com branded get started app",
   "repository": {
     "url": "https://github.com/born2net/msgetstarted"
   },
   "scripts": {
-    "docs": "typedoc --options typedoc.json src/app/app.ts",
-    "postinstall": "cd msgetstarted ; node ./express.js"
+    "postinstall": "node ./express.js"
   },
   "author": "Sean Levy",
   "license": "GPL V3 modified",
   "devDependencies": {
-    "express": "~4.13.1",
-    "live-server": "^0.9.0"
+    "browser-sync": "^2.12.5",
+    "express": "~4.13.1"
   },
   "dependencies": {
     "express": "^4.13.4",
-    "live-server": "^1.0.0"
+    "live-server": "^1.0.0",
+    "opn": "^4.0.1"
   }
 }

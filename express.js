@@ -7,9 +7,11 @@
 //
 ////////////////////////////////////////
 
+console.log('Enter enterprise user name:');
+console.log('Enter password:');
+
 var http = require('http');
-var fs = require('fs');
-// var _ = require('underscore');
+var opn = require('opn');
 
 var globs = {};
 globs.IPLISTEN = '127.0.0.1';
@@ -18,13 +20,10 @@ globs.PORT_LISTEN_DIST = 8080;
 var express = require('express');
 var app = express();
 
-app.listen(80, function () {
-    console.log('Example app listening on port 80!');
-});
-
 var express = require('express');
 var app = express();
 app.use('/src', express.static(__dirname));
-app.listen(8080, function () {
-    console.log('Example app listening on port 80!');
+app.listen(globs.PORT_LISTEN_DIST, function () {
+    console.log('Now open your browser to  http://localhost:8080/src/msgetstarted.html');
 });
+opn('http://localhost:8080/src/msgetstarted.html');
