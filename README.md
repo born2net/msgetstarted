@@ -28,7 +28,7 @@ installing via npm:
 2. cd node_modules/msGetStarted
 3. edit init.js
 4. change the base url directive to: baseUrl: '/src/,
-5. run local server node ./express.js
+5. run local server: node ./express.js
 ```
 
 Config
