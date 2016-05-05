@@ -24,9 +24,11 @@ video tutorial
 installing via npm:
 --------------------
 ```
-npm install msGetStarted
-cd node_modules
-node ./express.js
+1. npm install msGetStarted
+2. cd node_modules/msGetStarted
+3. edit init.js
+4. change the base url directive to: baseUrl: '/src/,
+5. run local server node ./express.js
 ```
 
 Config
