@@ -97,8 +97,6 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             var eventer = window[eventMethod];
             var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
             eventer(messageEvent, function (e) {
-                // alert('parent received message!:  ' + e.data.param);
-                // console.log('zzzzzzzzzzzzzzzzzzzzzzzz' + e.data.command);
                 switch (e.data.command) {
                     case 'setTitle':
                     {

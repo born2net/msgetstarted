@@ -5,7 +5,7 @@
 
 require.config({
     waitSeconds: 115,
-    /** release **/
+    /** release or local host  **/
     baseUrl: '/msgetstarted',
     /** enable to debug gsignage.com **/
     // baseUrl: '/',
