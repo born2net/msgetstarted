@@ -10,14 +10,13 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
 
         // app init
         initialize: function () {
+            console.log('msGetStarted version 2.1');
             window.BB = Backbone;
-
             BB.globs = {};
             BB.SERVICES = {};
             BB.EVENTS = {};
             BB.LOADING = {};
             BB.CONSTS = {};
-
             BB.CONSTS.OS_UNKNOWN = 0;
             BB.CONSTS.OS_FLASH = 1;
             BB.CONSTS.OS_DESK_NO_FLASH = 2;
@@ -26,14 +25,12 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             BB.CONSTS.STUDIO_PRO = 1;
             BB.APPS_SUPPORT = BB.CONSTS.OS_UNKNOWN;
             BB.STUDIO_TYPE = -1;
-
             BB.globs['UNIQUE_COUNTER'] = 0;
             BB.globs['RC4KEY'] = '226a3a42f34ddd778ed2c3ba56644315';
-
-            BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
-            BB.globs['PRO_MODULES'] = '4.34';
-            BB.globs['PRO_VERSION'] = '4';
-
+            BB.globs['ERI'] = '';
+            // BB.globs['PRO_MODULES'] = '4.34';
+            // BB.globs['PRO_VERSION'] = '4';
+            BB.globs['MEDIA_CLOUD'] = true;
             BB.lib = new Lib();
             BB.Pepper = new Pepper();
             _.extend(BB.Pepper, BB.comBroker);
@@ -44,7 +41,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
 
-            // modify only for private / hybrid mediaSERVER change links below
+            // modify only for private or hybrid mediaSERVER, change links below
             window.g_protocol = 'https://';
             window.g_masterDomain = 'galaxy.signage.me';
 
@@ -71,12 +68,16 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                  // EXAMPLE
                  BB.CONSTS.REDIRECT = 'gsignage.com';
                  BB.CONSTS.RESELLER = 300762;
-                 BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6143324f0ab3ea';
+                 BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
+                 BB.globs['MEDIA_CLOUD'] = true;
                  **/
 
                 BB.CONSTS.REDIRECT = 'digitalsignage.com';
+                // BB.CONSTS.RESELLER = 300762;
                 BB.CONSTS.RESELLER = 1;
-                BB.globs['ERI'] = 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141';
+                // BB.globs['ERI'] = 'f7bee07a7e79c8f1d7951b4d24de4713c22f140f5eb8667f';
+                BB.globs['ERI'] = '';
+                BB.globs['MEDIA_CLOUD'] = true;
 
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});

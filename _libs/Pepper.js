@@ -315,29 +315,34 @@ Pepper.prototype = {
      @return {String} url address
      **/
     getStudioLiteURL: function () {
-        var origin = window.location.toString();
-        var re = new RegExp(/^(https|http)(:\/\/)(.*?)\//);
-        //var protocol = origin.match(re)[1];
-        var server = origin.match(re)[3];
-        if (server == 'gsignage.com' || server.match(/digitalsignage.com/i))
+        if (BB.globs['MEDIA_CLOUD']) {
             return 'https://secure.digitalsignage.com/_studiolite-dist/studiolite.html';
-        var protocol =  window.g_protocol;
-        if (window.g_masterDomain == 'galaxy.signage.me')
-            protocol = 'https://';
-        return protocol + window.g_masterDomain + '/_studiolite-dist/studiolite.html';
+        } else {
+            return window.g_protocol + window.g_masterDomain + '/_studiolite-dist/studiolite.html';
+        }
     },
 
     /**
-     Return the url address of StudioPro
+     Return the url address of StudioPro depending if running in cloud, hybrid or private
      @method getStudioProURL
      @return {String} url address
      **/
-    getStudioProURL: function () {
-        if (window.g_masterDomain== 'galaxy.signage.me') {
-            return window.g_protocol + 'galaxy.mediasignage.com/WebService/';
+    getStudioProURL: function (i_user, i_pass, i_mediaCloud, i_cb) {
+        var url = '';
+        var eri = '';
+        var lang = BB.comBroker.getService(BB.SERVICES.LANGUAGE_SELECTOR).getLanguage();
+        var local = "&local=" + lang.langNative;
+        if (i_mediaCloud) {
+            url = 'https://galaxy.signage.me/WebService/ResellerService.ashx?command=GetLoginUrl&customerUserName=' + i_user + '&customerPassword=' + i_pass;
         } else {
-            return window.g_protocol + window.g_masterDomain + '/WebService/';
+            url = window.g_protocol + window.g_masterDomain + '/WebService/' + 'ResellerService.ashx?command=GetLoginUrl&customerUserName=' + i_user + '&customerPassword=' + i_pass;
         }
+        $.get(url, function (redirectUrl) {
+            if (BB.globs['ERI'].length > 0)
+                eri = '&eri=' + BB.globs['ERI'];
+            var newRedirectUrl = redirectUrl + local + eri;
+            i_cb(newRedirectUrl);
+        });
     },
 
     /**
@@ -645,52 +650,8 @@ Pepper.prototype = {
      @return {String}
      **/
     ieFixEscaped: function (escapedHTML) {
-        return escapedHTML.replace(/xmlns="http:\/\/www.w3.org\/1999\/xhtml"/g, '').
-            replace(/&lt;/g, '<').
-            replace(/&gt;/g, '>').
-            replace(/&amp;/g, '&').
-            replace(/<rss/gi, '<Rss').replace(/rss>/g, 'Rss>').
-            replace(/<background/gi, '<Background').replace(/background>/gi, 'Background>').
-            replace(/<appearance/gi, '<Appearance').replace(/appearance>/gi, 'Appearance>').
-            replace(/<gradientpoints/gi, '<GradientPoints').replace(/gradientpoints>/gi, 'GradientPoints>').
-            replace(/<aspectratio/gi, '<AspectRatio').replace(/aspectratio>/gi, 'AspectRatio>').
-            replace(/<layout/gi, '<Layout').replace(/layout>/gi, 'Layout>').
-            replace(/<title/gi, '<Title').replace(/title>/gi, 'Title>').
-            replace(/<description/gi, '<Description').replace(/description>/gi, 'Description>').
-            replace(/<data/gi, '<Data').replace(/data>/gi, 'Data>').
-            replace(/<player/gi, '<Player').replace(/player>/gi, 'Player>').
-            replace(/<players/gi, '<Players').replace(/players>/gi, 'Players>').
-            replace(/<text/gi, '<Text').replace(/text>/gi, 'Text>').
-            replace(/<eventCommands/gi, '<EventCommands').replace(/eventCommands>/gi, 'EventCommands>').
-            replace(/<border/gi, '<Border').replace(/border>/gi, 'Border>').
-            replace(/<scene/gi, '<Scene').replace(/scene>/gi, 'Scene>').
-            replace(/<clock/gi, '<Clock').replace(/clock>/gi, 'Clock>').
-            replace(/<point/gi, '<Point').replace(/point>/gi, 'Point>').
-            replace(/<video/gi, '<Video').replace(/video>/gi, 'Video>').
-            replace(/<image/gi, '<Image').replace(/image>/gi, 'Image>').
-            replace(/<label/gi, '<Label').replace(/label>/gi, 'Label>').
-            replace(/<font/gi, '<Font').replace(/font>/gi, 'Font>').
-            replace(/fontsize/gi, 'fontSize').
-            replace(/fontcolor/gi, 'fontColor').
-            replace(/fontfamily/gi, 'fontFamily').
-            replace(/fontweight/gi, 'fontWeight').
-            replace(/fontstyle/gi, 'fontStyle').
-            replace(/bordercolor/gi, 'borderColor').
-            replace(/borderthickness/gi, 'borderThickness').
-            replace(/cornerradius/gi, 'cornerRadius').
-            replace(/textdecoration/gi, 'textDecoration').
-            replace(/textalign/gi, 'textAlign').
-            replace(/minrefreshtime/gi, 'minRefreshTime').
-            replace(/gradienttype/gi, 'gradientType').
-            replace(/autorewind/gi, 'autoRewind').
-            replace(/clockformat/gi, 'clockFormat').
-            replace(/clockmask/gi, 'clockMask').
-            replace(/hresource/gi, 'hResource').
-            replace(/videoidlist/gi, 'VideoIdList').
-            replace(/maintainaspectratio/gi, 'maintainAspectRatio').
-            replace(/<resource/gi, '<Resource').replace(/resource>/g, 'Resource>').
-            // replace(/<htdata/gi, '<htData').replace(/htdata>/gi, 'htData>').
-            replace(/<link/gi, '<LINK').replace(/link>/g, 'LINK>');
+        return escapedHTML.replace(/xmlns="http:\/\/www.w3.org\/1999\/xhtml"/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/<rss/gi, '<Rss').replace(/rss>/g, 'Rss>').replace(/<background/gi, '<Background').replace(/background>/gi, 'Background>').replace(/<appearance/gi, '<Appearance').replace(/appearance>/gi, 'Appearance>').replace(/<gradientpoints/gi, '<GradientPoints').replace(/gradientpoints>/gi, 'GradientPoints>').replace(/<aspectratio/gi, '<AspectRatio').replace(/aspectratio>/gi, 'AspectRatio>').replace(/<layout/gi, '<Layout').replace(/layout>/gi, 'Layout>').replace(/<title/gi, '<Title').replace(/title>/gi, 'Title>').replace(/<description/gi, '<Description').replace(/description>/gi, 'Description>').replace(/<data/gi, '<Data').replace(/data>/gi, 'Data>').replace(/<player/gi, '<Player').replace(/player>/gi, 'Player>').replace(/<players/gi, '<Players').replace(/players>/gi, 'Players>').replace(/<text/gi, '<Text').replace(/text>/gi, 'Text>').replace(/<eventCommands/gi, '<EventCommands').replace(/eventCommands>/gi, 'EventCommands>').replace(/<border/gi, '<Border').replace(/border>/gi, 'Border>').replace(/<scene/gi, '<Scene').replace(/scene>/gi, 'Scene>').replace(/<clock/gi, '<Clock').replace(/clock>/gi, 'Clock>').replace(/<point/gi, '<Point').replace(/point>/gi, 'Point>').replace(/<video/gi, '<Video').replace(/video>/gi, 'Video>').replace(/<image/gi, '<Image').replace(/image>/gi, 'Image>').replace(/<label/gi, '<Label').replace(/label>/gi, 'Label>').replace(/<font/gi, '<Font').replace(/font>/gi, 'Font>').replace(/fontsize/gi, 'fontSize').replace(/fontcolor/gi, 'fontColor').replace(/fontfamily/gi, 'fontFamily').replace(/fontweight/gi, 'fontWeight').replace(/fontstyle/gi, 'fontStyle').replace(/bordercolor/gi, 'borderColor').replace(/borderthickness/gi, 'borderThickness').replace(/cornerradius/gi, 'cornerRadius').replace(/textdecoration/gi, 'textDecoration').replace(/textalign/gi, 'textAlign').replace(/minrefreshtime/gi, 'minRefreshTime').replace(/gradienttype/gi, 'gradientType').replace(/autorewind/gi, 'autoRewind').replace(/clockformat/gi, 'clockFormat').replace(/clockmask/gi, 'clockMask').replace(/hresource/gi, 'hResource').replace(/videoidlist/gi, 'VideoIdList').replace(/maintainaspectratio/gi, 'maintainAspectRatio').replace(/<resource/gi, '<Resource').replace(/resource>/g, 'Resource>').// replace(/<htdata/gi, '<htData').replace(/htdata>/gi, 'htData>').
+        replace(/<link/gi, '<LINK').replace(/link>/g, 'LINK>');
 
     },
 
