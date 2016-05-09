@@ -23,20 +23,34 @@ define(['jquery', 'backbone', 'bootbox', 'platform'], function ($, Backbone, boo
          Listen to launch of StudioPro and build the appropriate url loader
          @method _listenWebStudioLaunch
          **/
+        // _listenWebStudioLaunch: function () {
+        //     var self = this;
+        //     $(Elements.OPEN_STUDIO_PRO_WEB).on('click', function () {
+        //         self.m_businessModel = BB.comBroker.getService(BB.SERVICES.BUSINESS_MODEL);
+        //         $(Elements.DOM_ROOT).fadeOut();
+        //         $(Elements.IFRAME_STUDIOPRO).fadeIn();
+        //
+        //         var user = self.m_businessModel.get('contactEmail');
+        //         var pass = self.m_businessModel.get('newAccPassword');
+        //
+        //         BB.Pepper.getStudioProURL(user, pass, BB.globs['MEDIA_CLOUD'], function (newRedirectUrl) {
+        //             $(Elements.STUDIOPRO_INSERT).attr('src', newRedirectUrl);
+        //         });
+        //     })
+        // }
+
+        // old version
         _listenWebStudioLaunch: function () {
             var self = this;
             $(Elements.OPEN_STUDIO_PRO_WEB).on('click', function () {
-
                 self.m_businessModel = BB.comBroker.getService(BB.SERVICES.BUSINESS_MODEL);
                 $(Elements.DOM_ROOT).fadeOut();
                 $(Elements.IFRAME_STUDIOPRO).fadeIn();
-
-                var user = self.m_businessModel.get('contactEmail');
-                var pass = self.m_businessModel.get('newAccPassword');
-
-                BB.Pepper.getStudioProURL(user, pass, BB.globs['MEDIA_CLOUD'], function (newRedirectUrl) {
-                    $(Elements.STUDIOPRO_INSERT).attr('src', newRedirectUrl);
-                });
+                var credentials = '&user=' + self.m_businessModel.get('contactEmail') + '&pass=' + self.m_businessModel.get('newAccPassword');
+                var lang = BB.comBroker.getService(BB.SERVICES.LANGUAGE_SELECTOR).getLanguage();
+                var local = "&local=" + lang.langNative;
+                var u =  'http://galaxy.mediasignage.com/WebService/signagestudio.aspx?mode=login&v=' + '4' + '&eri=' + 'f7bee07a7e79c8efdb961c4d30d20e10c66442110de03d6141' + credentials + local;
+                $(Elements.STUDIOPRO_INSERT).attr('src', u)
             })
         }
     });

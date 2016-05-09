@@ -15,35 +15,39 @@ var opn = require('opn');
 var fetch = require('node-fetch');
 var colors = require('colors');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
 
 
 var authUser = () => {
     console.log('enter your enterprise login name?'.green);
-    rl.question('', (answer) => {
-        console.log('enter your enterprise password?'.green);
-        rl.question('', (answer) => {
-            console.log('connecting to mediaCLOUD...'.green);
+    var user = readlineSync.question('');
+    user = 'reseller@ms.com'
 
-            fetch('https://api.github.com/users/github')
-                .then(function(res) {
-                    return res.json();
-                }).then(function(json) {
+    console.log('enter your enterprise password?'.green);
+    var pass = readlineSync.question('');
+    pass = '123123';
 
-                if (true) {
-                    console.log('installing credentials'.magenta)
-                    console.log('start server'.magenta)
-                    rl.close();
-                    initServer();
-                } else {
-                    console.log('Error: user could not be authenticated'.red);
-                    authUser();
-                }
-            });
-        });
+    fetch(`https://galaxy.signage.me/WebService/ResellerService.ashx?command=GetEri&resellerUserName=${user}&resellerPassword=${pass}`)
+        .then(function (res) {
+            return res.json();
+        }, function(){
+            console.log('\nthere was a problem contacting the remote server\n'.red);
+        }).then(function (json) {
+        if (json && json.eri){
+            console.log('pass');
+        } else {
+            console.log('fail');
+        }
+        if (true) {
+            console.log('installing credentials'.magenta)
+            console.log('start server'.magenta)
+            initServer();
+        } else {
+            console.log('Error: user could not be authenticated'.red);
+            authUser();
+        }
+    },function () {
+        console.log('\nUser name or password did not match for the given enterprise user...\n'.red);
+        process.exit();
     });
 }
 
@@ -61,7 +65,7 @@ var initServer = ()=> {
     app.listen(globs.PORT_LISTEN_DIST, function () {
         console.log('Now opening your browser to http://localhost:8080/msgetstarted/msgetstarted.html'.yellow);
     });
-    opn('http://localhost:8080/msgetstarted/msgetstarted.html');
+    //opn('http://localhost:8080/msgetstarted/msgetstarted.html');
 
 }
 
