@@ -15,12 +15,14 @@
     "express": "~4.13.1"
   },
   "dependencies": {
+    "cheerio": "^0.20.0",
     "colors": "^1.1.2",
     "express": "^4.13.4",
     "live-server": "^1.0.0",
     "node-fetch": "^1.5.1",
     "opn": "^4.0.1",
     "readline-sync": "^1.4.2",
-    "replace": "^0.3.0"
+    "replace": "^0.3.0",
+    "request": "^2.72.0"
   }
 }
