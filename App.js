@@ -10,7 +10,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
 
         // app init
         initialize: function () {
-            console.log('msGetStarted version 2.12');
+            console.log('msGetStarted version 2.13');
             window.BB = Backbone;
             BB.globs = {};
             BB.SERVICES = {};
@@ -55,10 +55,21 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             // router init
             require(['LayoutRouter'], function (LayoutRouter) {
 
+                // START_REDIRECT
                 BB.CONSTS.REDIRECT = 'digitalsignage.com';
+                // END_REDIRECT
+
+                // START_RESELLER
                 BB.CONSTS.RESELLER = 1;
+                // END_RESELLER
+
+                // START_ERI
                 BB.globs['ERI'] = '';
-                BB.globs['MEDIA_CLOUD'] = true;
+                // END_ERI
+
+                // START_CLOUD
+                BB.globs['CLOUD'] = true;
+                // END_CLOUD
 
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});
@@ -88,7 +99,5 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             }
         }
     });
-
     return App;
-
 });

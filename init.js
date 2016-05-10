@@ -2,6 +2,7 @@
  Require js initialization module definition file for GetStarted
  @class Require init js
  **/
+
 require.config({
     waitSeconds: 115,
     /** release or local host  **/
