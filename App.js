@@ -79,6 +79,10 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 BB.globs['CHAT'] = 'http://www.digitalsignage.com/_html/live_chat.html';
                 // END_CHAT
 
+                // START_COMPANY
+                BB.globs['COMPANY'] = 'DigitalSignage.com';
+                // END_COMPANY
+
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], LayoutRouter);

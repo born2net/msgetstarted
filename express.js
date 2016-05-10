@@ -22,6 +22,7 @@ var whiteLabel = {
     eri: '',
     resellerId: '',
     mediaCloud: '',
+    company: '',
     chatLink: '',
     domain: 'galaxy.signage.me',
     protocol: 'https://'
@@ -61,9 +62,6 @@ var authUser = () => {
     } else {
         whiteLabel.mediaCloud = true;
     }
-
-    user = 'reseller@ms.com'
-    pass = '123123';
 
     fetch(`https://galaxy.signage.me/WebService/ResellerService.ashx?command=GetEri&resellerUserName=${user}&resellerPassword=${pass}`)
         .then(function (res) {
@@ -111,6 +109,9 @@ var loadResellerInfo = (i_resellerId) => {
             });
             $('Chat').each(function (i, o) {
                 whiteLabel['chatLink'] = o.attribs.link;
+            });
+            $('BusinessInfo').each(function (i, o) {
+                whiteLabel['company'] = o.attribs.name;
             });
             $('Command').each(function (i, o) {
                 if (o.attribs.label == '' && o.attribs.id == 'help2') {
@@ -165,6 +166,14 @@ var injectBranding = ()=> {
     replace({
         regex: "\/\/ START_CHAT[^]+\/\/ END_CHAT",
         replacement: `\/\/ START_CHAT\n\t\t\t\t BB.globs\['CHAT'\] = '${whiteLabel['chatLink']}' \n\t\t\t\t\/\/ END_CHAT`,
+        paths: ['App.js'],
+        recursive: false,
+        silent: false
+    });
+
+    replace({
+        regex: "\/\/ START_COMPANY[^]+\/\/ END_COMPANY",
+        replacement: `\/\/ START_COMPANY\n\t\t\t\t BB.globs\['COMPANY'\] = '${whiteLabel['company']}' \n\t\t\t\t\/\/ END_COMPANY`,
         paths: ['App.js'],
         recursive: false,
         silent: false

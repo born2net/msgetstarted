@@ -267,7 +267,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 var logoLink = 'http://galaxy.signage.me/Resources/Resellers/' + BB.CONSTS.RESELLER + '/Logo.jpg';
                 $(Elements.ENTERPRISE_LOGO).find('img').attr('src', logoLink);
                 $(Elements.ENTERPRISE_LOGO).fadeIn();
-                $('#enterpriseName').text(BB.CONSTS.REDIRECT);
+                $('#enterpriseName').text(BB.globs['COMPANY']);
 
             },
 
