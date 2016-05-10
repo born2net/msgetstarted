@@ -1,6 +1,7 @@
 DigitalSignage.com custom Get Started
 ====================================
 modify and brand the entire account creation process for DigitalSignage.com enterprise / resellers
+<h6>version 2.24</h6>
 
 Details
 -----------------------------------------------------------------------------------------
