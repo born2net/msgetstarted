@@ -2,9 +2,8 @@
  Require js initialization module definition file for GetStarted
  @class Require init js
  **/
-
 require.config({
-    waitSeconds: 165,
+    waitSeconds: 115,
     /** release or local host  **/
     baseUrl: '/msgetstarted',
     /** enable to debug gsignage.com **/

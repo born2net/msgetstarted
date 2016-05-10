@@ -257,7 +257,6 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 }
             },
 
-
             _initBranding(){
                 if (BB.CONSTS.RESELLER == 1) {
                     $(Elements.DEFAULT_LOGO).fadeIn();

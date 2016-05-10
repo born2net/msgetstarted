@@ -24,58 +24,33 @@ video tutorial
 installing via npm:
 --------------------
 ```
-1. npm install msGetStarted
-2. cd node_modules/msGetStarted
-3. edit init.js
-4. change the base url directive to: baseUrl: '/src/,
-5. run local server: node ./express.js
+npm install msGetStarted
 ```
+
+if you wish to run the setup a second time you can use:
+```
+. cd node_modules/msGetStarted
+. run local server: node ./express.js
+``
 
 Config
 -------------------------
-Be sure to change the ERI (Enterprise / Reseller ID) to your value in App.js via value of:
+The entire enterprise configuration is generated and saved inside of:
+```
+App.js
+```
 
+You can use any editor to change branding info manually:
 ```
- BB.globs['ERI'] = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+ BB.globs['COMPANY'] = 'YOUR_COMPANY_NAME';
+ BB.CONSTS.REDIRECT = 'YOUR_DOMAIN';
+ BB.CONSTS.RESELLER = 'YOUR_RESELLER_ID_HERE';
+ BB.globs['ERI'] = 'YOUR_ERI';
+ BB.globs['CLOUD'] = true; // false if hosting in private server or hybrid server
+ BB.globs['CHAT'] = 'URL_FOR_CHAT_SUPPORT';
 ```
-To retrieve your ERI so you can paste it onto BB.globs['ERI'], be sure yo login to your enterprise / reseller Account and select Tools > Branding and look for 
-  
-  ```
-  airApplicationArguments = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
-  ```
-  
-In addition, in order to properly associate sub accounts created under your Enterprise account, be sure to edit Pepper.js in function:
-  
-```
-  /**
-       Create a new mediaCLOUD account
-       @method createAccount
-       @param {Function} i_callBack
-       **/
-      createAccount: function (i_businessName, i_userName, i_password, i_templateBusinessId, i_resellerId, i_firstName, i_lastName, i_contactEmail, i_workPhone, i_cellPhone, i_address, i_city, i_state, i_contry, i_zipcode, i_callback) {
-          var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount'
-          url += '&businessName=' + i_businessName;
-          url += '&userName=' + i_userName;
-          url += '&password=' + i_password;
-          url += '&templateBusinessId=' + i_templateBusinessId;
-          url += '&resellerId=' + i_resellerId; // resellers can modify this value to associate with their own account
-          url += '&firstName=' + i_firstName;
-          url += '&lastName=' + i_lastName;
-          url += '&contactEmail=' + i_contactEmail;
-          url += '&workPhone=' + i_workPhone;
-          url += '&cellPhone=' + i_cellPhone;
-          url += '&address=' + i_address;
-          url += '&city=' + i_city;
-          url += '&state=' + i_state;
-          url += '&contry=' + i_contry;
-          url += '&zipcode=' + i_zipcode;
-          url += '&callback=?';
-          log(url);
-          $.getJSON(url, i_callback);
-      },
-```
-      
-and edit  ```url += '&resellerId=' + i_resellerId;``` to your reseller id value
+note that all of the above info will automatically popilate for you once you run the installtion and provide your crdentails
+
 
 Links
 -------------------------
