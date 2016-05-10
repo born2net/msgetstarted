@@ -24,7 +24,8 @@ video tutorial
 installing via npm:
 --------------------
 ```
-npm install msGetStarted
+1. download and install node.js via: https://nodejs.org/en/
+2. run from the command line: npm install msGetStarted
 ```
 
 if you wish to run the setup a second time you can use:
