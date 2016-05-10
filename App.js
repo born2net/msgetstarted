@@ -41,9 +41,13 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             window.log = BB.lib.log;
             window.pepper = BB.Pepper;
 
-            // modify only for private or hybrid mediaSERVER, change links below
+            // START_PROTOCOL
             window.g_protocol = 'https://';
+            // END_PROTOCOL
+
+            // START_MASTER
             window.g_masterDomain = 'galaxy.signage.me';
+            // END_MASTER
 
             self.m_buinessModel = new BusinessModel();
 
@@ -70,6 +74,10 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
                 // START_CLOUD
                 BB.globs['CLOUD'] = true;
                 // END_CLOUD
+
+                // START_CHAT
+                BB.globs['CHAT'] = 'http://www.digitalsignage.com/_html/live_chat.html';
+                // END_CHAT
 
                 var LayoutRouter = new LayoutRouter();
                 Backbone.history.start({root: '/msgetstarted/'});

@@ -21,7 +21,10 @@ var whiteLabel = {
     logoToolTip: '',
     eri: '',
     resellerId: '',
-    mediaCloud: ''
+    mediaCloud: '',
+    chatLink: '',
+    domain: 'galaxy.signage.me',
+    protocol: 'https://'
 }
 
 var init = ()=> {
@@ -50,6 +53,11 @@ var authUser = () => {
     console.log('will this be hosted on the default mediaCloud?[Y/n]'.green);
     if (readlineSync.question('') == 'n') {
         whiteLabel.mediaCloud = false;
+
+        console.log('will this be hosted on the default mediaCloud?[Y/n]'.green);
+        if (readlineSync.question('') == 'n') {
+
+        }
     } else {
         whiteLabel.mediaCloud = true;
     }
@@ -101,6 +109,9 @@ var loadResellerInfo = (i_resellerId) => {
                 whiteLabel.logoFileName = o.attribs.filename;
                 whiteLabel.logoFullLink = 'http://galaxy.signage.me/Resources/Resellers/' + whiteLabel.resellerId + '/' + o.attribs.filename;
             });
+            $('Chat').each(function (i, o) {
+                whiteLabel['chatLink'] = o.attribs.link;
+            });
             $('Command').each(function (i, o) {
                 if (o.attribs.label == '' && o.attribs.id == 'help2') {
                     whiteLabel['videos'] = o.attribs.href;
@@ -146,6 +157,31 @@ var injectBranding = ()=> {
     replace({
         regex: "\/\/ START_CLOUD[^]+\/\/ END_CLOUD",
         replacement: `\/\/ START_CLOUD\n\t\t\t\t BB.globs\['CLOUD'\] = ${whiteLabel['mediaCloud']} \n\t\t\t\t\/\/ END_CLOUD`,
+        paths: ['App.js'],
+        recursive: false,
+        silent: false
+    });
+
+    replace({
+        regex: "\/\/ START_CHAT[^]+\/\/ END_CHAT",
+        replacement: `\/\/ START_CHAT\n\t\t\t\t BB.globs\['CHAT'\] = '${whiteLabel['chatLink']}' \n\t\t\t\t\/\/ END_CHAT`,
+        paths: ['App.js'],
+        recursive: false,
+        silent: false
+    });
+
+    //todo: 5-10-2016 future support for private and hybrid servers
+    replace({
+        regex: "\/\/ START_PROTOCOL[^]+\/\/ END_PROTOCOL",
+        replacement: `\/\/ START_PROTOCOL\n\t\t\t window\.g_protocol =  '${whiteLabel['protocol']}' \n\t\t\t\/\/ END_PROTOCOL`,
+        paths: ['App.js'],
+        recursive: false,
+        silent: false
+    });
+
+    replace({
+        regex: "\/\/ START_MASTER[^]+\/\/ END_MASTER",
+        replacement: `\/\/ START_MASTER\n\t\t\t window\.g_masterDomain =  '${whiteLabel['domain']}' \n\t\t\t\/\/ END_MASTER`,
         paths: ['App.js'],
         recursive: false,
         silent: false

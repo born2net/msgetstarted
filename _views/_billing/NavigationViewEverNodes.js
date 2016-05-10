@@ -81,7 +81,7 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             });
 
             $(Elements.LIVE_CHAT).on('click', function () {
-                window.open('http://www.digitalsignage.com/_html/live_chat.html', '_blank');
+                window.open('http://www.digitalsignage.com/_html/live_chat2.html', '_blank');
             });
 
             $(Elements.LANGUAGE_PROMPT).on('click', function (e) {

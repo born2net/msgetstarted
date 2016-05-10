@@ -32,6 +32,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 BB.comBroker.setService('XDATE', new XDate());
 
                 self._initLoginPage();
+                self._initBranding();
                 self._listenLoadAppSelector();
                 self._listenSizeChanges();
 
@@ -65,7 +66,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "verifyEmail": "_routeVerifyEmail",
                 "logout": "_logout",
                 "start": "_routeStart",
-                '*path':  '_routeStart'
+                '*path': '_routeStart'
             },
 
             _logout: function () {
@@ -182,7 +183,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              Route selected no flash and is windows PC
              @method _routeSelectWebOrDesktopNoFlash
              **/
-            _routeSelectWebOrDesktopNoFlashWin: function(){
+            _routeSelectWebOrDesktopNoFlashWin: function () {
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectNoFlashWinView);
             },
 
@@ -255,6 +256,21 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                     self._updateLayout();
                 }
             },
+
+
+            _initBranding(){
+                if (BB.CONSTS.RESELLER == 1) {
+                    $(Elements.DEFAULT_LOGO).fadeIn();
+                    return;
+                }
+                $(Elements.DEFAULT_LOGO).remove();
+                var logoLink = 'http://galaxy.signage.me/Resources/Resellers/' + BB.CONSTS.RESELLER + '/Logo.jpg';
+                $(Elements.ENTERPRISE_LOGO).find('img').attr('src', logoLink);
+                $(Elements.ENTERPRISE_LOGO).fadeIn();
+                $('#enterpriseName').text(BB.CONSTS.REDIRECT);
+
+            },
+
 
             /**
              Create two StackView views: AppEntryFaderView and AppContentFaderView

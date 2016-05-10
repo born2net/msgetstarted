@@ -21,7 +21,7 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
             self._listenToiFrameEvents();
 
             $(Elements.LIVE_CHAT).on('click', function () {
-                var pop = window.open('http://www.digitalsignage.com/_html/live_chat.html', '_blank');
+                var pop = window.open(BB.globs['CHAT'], '_blank');
                 self._closeMobileNavigation();
             });
 

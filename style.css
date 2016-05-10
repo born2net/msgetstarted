@@ -1639,7 +1639,7 @@ Studio / Player carousel
 
 .navbar-logo:before {
     content: "";
-    background-image: url(../_images/logo.png);
+    background-image: url('http://www.digitalsignage.com/_images/logo.png');
     width: 60px;
     height: 39px;
     background-size: 60px 39px;
