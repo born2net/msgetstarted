@@ -257,7 +257,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 }
             },
 
-            _initBranding(){
+            _initBranding: function () {
                 if (BB.CONSTS.RESELLER == 1) {
                     $(Elements.DEFAULT_LOGO).fadeIn();
                     return;
@@ -267,9 +267,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 $(Elements.ENTERPRISE_LOGO).find('img').attr('src', logoLink);
                 $(Elements.ENTERPRISE_LOGO).fadeIn();
                 $('#enterpriseName').text(BB.globs['COMPANY']);
-
             },
-
 
             /**
              Create two StackView views: AppEntryFaderView and AppContentFaderView

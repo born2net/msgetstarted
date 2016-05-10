@@ -1,8 +1,8 @@
-Account Wizard 
+DigitalSignage.com custom Get Started
 ====================================
-modify the account creation process for digitalsignage.com enterprise / resellers
+modify and brand the entire account creation process for DigitalSignage.com enterprise / resellers
 
-Get started pages
+Details
 -----------------------------------------------------------------------------------------
 Enterprise / Resellers can have full control on how new users open and manage accounts on their own web site. The "GetStarted" wizard allows any JavaScript developer to change Studio, Template and Player selections during account creation as well as completely modify the open account process.
 The wizard consists of:

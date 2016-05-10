@@ -173,6 +173,6 @@ _.forEach(data,function(line,busID){
     if (found == false) {
         console.log('\tdid not find ' + name);
     } else {
-        console.log(`name ${name} ${busID} ${lite}`);
+        // console.log(`name ${name} ${busID} ${lite}`);
     }
 });
