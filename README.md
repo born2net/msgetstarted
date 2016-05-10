@@ -31,7 +31,7 @@ if you wish to run the setup a second time you can use:
 ```
 . cd node_modules/msGetStarted
 . run local server: node ./express.js
-``
+```
 
 Config
 -------------------------
