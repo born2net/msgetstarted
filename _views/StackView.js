@@ -92,7 +92,7 @@ define(['jquery', 'backbone', 'StackView'], function ($, Backbone, StackView) {
 
         _notifySubscribers: function(i_view){
             var view = this._parseView(i_view);
-            log('view: '+ view.el.id);
+            //log('view: '+ view.el.id);
             this.trigger(BB.EVENTS.SELECTED_STACK_VIEW, view);
             if (BB.comBroker)
                 BB.comBroker.fire(BB.EVENTS.SELECTED_STACK_VIEW, view);
