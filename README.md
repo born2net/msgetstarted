@@ -26,6 +26,7 @@ installing via npm:
 ```
 1. download and install node.js via: https://nodejs.org/en/
 2. run from the command line: npm install msGetStarted
+3. follow wizard questions
 ```
 
 if you wish to run the setup a second time you can use:
