@@ -9,8 +9,8 @@ Enterprise / Resellers can have full control on how new users open and manage ac
 The wizard consists of:
 
  - Studio Selection (Lite / Pro)   
- - Player Installer (air/flash/html/direct download)
- - Create account
+ - Player Installer (HTML5, executables, direct download, AIR and Flash)
+ - Create account process (branded to your enterprise account)
  - Change user password
  - Change business name
  - Forgot password
@@ -20,7 +20,7 @@ The wizard consists of:
 
 video tutorial
 --------------------
- Be sure to watch this video tutorial which will walk you through on how to host the entire "Get Started" app on your own web server: http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=msgetstarted
+- Be sure to watch this video tutorial which will walk you through on how to host the entire "Get Started" app on your own web server: http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=msgetstarted
 
 installing via npm:
 --------------------
@@ -30,10 +30,11 @@ installing via npm:
 3. follow wizard questions
 ```
 
-if you wish to run the setup a second time you can use:
+to run the setup a second time or just re-launch the local test server:
 ```
 . cd node_modules/msGetStarted
-. run local server: node ./express.js
+. run local server via: node ./express.js
+. answer (n) when asked if to install branding
 ```
 
 Config
