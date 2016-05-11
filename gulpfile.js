@@ -13,10 +13,12 @@ gulp.task('release', function (done) {
     runSequence('x_clean','x_generate_release', 'x_replaceInitRoot', 'x_upload', done);
 });
 
+//destination: 'Sean@digitalsignage.com:/var/www/sites/mediasignage.com/htdocs/msgetv2',
+
 gulp.task('x_upload', function () {
     var rsync = Rsync.build({
         source: '/cygdrive/c/msweb/msgetstarted/_dist/',
-        destination: 'Sean@digitalsignage.com:/var/www/sites/mediasignage.com/htdocs/msgetv2',
+        destination: 'Sean@digitalsignage.com:/var/www/sites/mediasignage.com/htdocs/msgetstarted',
         exclude: ['*.bat', '*.iml', '.gitignore', 'gulpfile.js', '.git', '.idea', '.idea/', '_util']
     });
     rsync.set('progress');
