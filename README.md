@@ -59,9 +59,9 @@ Development
 -------------------------
 This project is powered by the amazing gulp: https://github.com/gulpjs/gulp
 this means you can use gulp to run pre-compiled commands such as:
-gulp local_server_dev
-gulp local_server_dist
-and you can add your own gulp commands to automate update etc
+- gulp local_server_dev
+- gulp local_server_dist
+- and you can add your own gulp commands to automate updates etc
 
 Links
 -------------------------
