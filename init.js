@@ -5,9 +5,9 @@
 require.config({
     waitSeconds: 115,
     /** release or local host  **/
-    baseUrl: '/msgetstarted',
+    // baseUrl: '/msgetstarted',
     /** enable to debug gsignage.com **/
-    // baseUrl: '/',
+    baseUrl: '/',
     paths: {
         'jquery': '_common/_jquery/std/jq1.9.1/jquery-1.9.1',
         'backbone': '_common/_js/backbone/backbone',

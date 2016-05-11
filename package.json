@@ -1,6 +1,6 @@
 {
   "name": "msGetStarted",
-  "version": "1.2.1",
+  "version": "1.2.6",
   "description": "DigitalSignage.com branded get started app",
   "repository": {
     "url": "https://github.com/born2net/msgetstarted"
@@ -11,8 +11,14 @@
   "author": "Sean Levy",
   "license": "GPL V3 modified",
   "devDependencies": {
-    "browser-sync": "^2.12.5",
-    "express": "~4.13.1"
+    "browser-sync": "^2.12.7",
+    "express": "~4.13.1",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.1.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-util": "^3.0.7",
+    "opn": "^4.0.1",
+    "rsync": "^0.4.0"
   },
   "dependencies": {
     "cheerio": "^0.20.0",

@@ -202,16 +202,16 @@ var injectBranding = ()=> {
 var initServer = ()=> {
     var globs = {};
     globs.IPLISTEN = '127.0.0.1';
-    globs.PORT_LISTEN_DIST = 8080;
+    globs.PORT_LISTEN_DIST = 8085;
     var express = require('express');
     var app = express();
     var express = require('express');
     var app = express();
-    app.use('/msgetstarted', express.static(__dirname));
+    app.use('/', express.static(__dirname));
     app.listen(globs.PORT_LISTEN_DIST, function () {
-        console.log('Now opening your browser to http://localhost:8080/msgetstarted/msgetstarted.html'.yellow);
+        console.log('Now opening your browser to http://localhost:8085/msgetstarted.html'.yellow);
     });
-    opn('http://localhost:8080/msgetstarted/msgetstarted.html');
+    opn('http://localhost:8085/msgetstarted.html');
 }
 
 init();
