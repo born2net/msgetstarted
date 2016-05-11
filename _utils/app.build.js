@@ -5,7 +5,8 @@
     baseUrl: "../",
     dir: "../_dist",
     mainConfigFile: "../init.js",
-    optimizeCss: "standard"
+    optimizeCss: "standard",
+    fileExclusionRegExp: /^node_modules$/
 
     //optimize: "none",
 
