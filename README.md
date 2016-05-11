@@ -55,6 +55,13 @@ You can use any editor to change branding info manually:
 ```
 note that all of the above info will automatically popilate for you once you run the installtion and provide your crdentails
 
+Development
+-------------------------
+This project is powered by the amazing gulp: https://github.com/gulpjs/gulp
+this means you can use gulp to run pre-compiled commands such as:
+gulp local_server_dev
+gulp local_server_dist
+and you can add your own gulp commands to automate update etc
 
 Links
 -------------------------
