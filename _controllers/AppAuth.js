@@ -4,6 +4,7 @@
  @constructor
  @return {Object} instantiated AppAuth
  **/
+
 define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone, Cookie, RC4, bootbox) {
 
     BB.SERVICES.APP_AUTH = 'AppAuth';
@@ -102,8 +103,8 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
                         // Check if Pro or Lite account
                         BB.STUDIO_TYPE = data.lite == 1 ? BB.CONSTS.STUDIO_LITE : BB.CONSTS.STUDIO_PRO;
                     } else {
-                        // Use ProStudio since this is either Enterprise or Pro account
-                        BB.STUDIO_TYPE = BB.CONSTS.STUDIO_PRO;
+                        // Enterprise account
+                        BB.STUDIO_TYPE = BB.CONSTS.STUDIO_DASH;
                     }
 
                     self.m_businessModel.set({

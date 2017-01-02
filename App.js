@@ -10,7 +10,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
 
         // app init
         initialize: function () {
-            console.log('msGetStarted version 2.50');
+            console.log('msGetStarted version 2.60');
             window.BB = Backbone;
             BB.globs = {};
             BB.SERVICES = {};

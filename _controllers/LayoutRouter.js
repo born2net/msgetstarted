@@ -61,6 +61,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 "selectStudioLite": "_routeSelectStudioLite",
                 "selectStudioPro": "_routeSelectStudioPro",
                 "selectWebOrDesk": "_routeSelectWebOrDesktop",
+                "selectStudioDashboard": "_routeSelectStudioDashboard",
                 'selectWebOrDeskNoFlash': "_routeSelectWebOrDesktopNoFlash",
                 'selectWebOrDeskNoFlashWin': "_routeSelectWebOrDesktopNoFlashWin",
                 "verifyEmail": "_routeVerifyEmail",
@@ -168,6 +169,14 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              @method _routeSelectWebOrDesktop
              **/
             _routeSelectWebOrDesktop: function () {
+                this.m_appEntryFaderView.selectView(this.m_webDeskSelectView);
+            },
+
+            /**
+             Route selected StudioDashboard
+             @method _routeSelectStudioDashboard
+             **/
+            _routeSelectStudioDashboard: function () {
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectView);
             },
 

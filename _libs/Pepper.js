@@ -327,6 +327,18 @@ Pepper.prototype = {
      @method getStudioProURL
      @return {String} url address
      **/
+    getStudioDashURL: function (credentials) {
+        var lang = BB.comBroker.getService(BB.SERVICES.LANGUAGE_SELECTOR).getLanguage();
+        var local = "&local=" + lang.langNative;
+        return 'https://secure.digitalsignage.com/dash/index.html?id=' + credentials + local;
+    },
+
+
+    /**
+     Return the url address of StudioPro depending if running in cloud, hybrid or private
+     @method getStudioProURL
+     @return {String} url address
+     **/
     getStudioProURL: function (i_user, i_pass, i_mediaCloud, i_cb) {
         var url = '';
         var eri = '';

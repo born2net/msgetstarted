@@ -7,6 +7,7 @@ define(['jquery', 'backbone', 'SampleCreator'], function ($, Backbone, SampleCre
 
     BB.CONSTS.STUDIO_LITE = 'STUDIO_LITE';
     BB.CONSTS.STUDIO_PRO = 'STUDIO_PRO';
+    BB.CONSTS.STUDIO_DASH = 'STUDIO_DASH';
 
     var StudioListView = Backbone.View.extend({
 

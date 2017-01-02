@@ -45,10 +45,10 @@ define(['jquery', 'backbone', 'StackView', 'Base64', 'platform'], function ($, B
             var self = this;
             var msg = $(Elements.LOADING_STUDIO_TEXT).text();
             switch (BB.STUDIO_TYPE) {
+
                 case BB.CONSTS.STUDIO_LITE:
                 {
                     msg = msg + ' StudioLite...';
-
                     setTimeout(function () {
                         // if logged out during timer, don't redirect app
                         if (self.m_loggedOut)
@@ -61,6 +61,55 @@ define(['jquery', 'backbone', 'StackView', 'Base64', 'platform'], function ($, B
                     }, self.m_loadTimer);
                     break;
                 }
+
+                case BB.CONSTS.STUDIO_DASH:
+                {
+                    // in cloud use StudioDashboard
+                    if (BB.globs['MEDIA_CLOUD']){
+                        msg = msg + ' StudioDashboard...';
+                        setTimeout(function () {
+                            // if logged out during timer don't redirect app
+                            if (self.m_loggedOut)
+                                return;
+                            var credentials = 'user=' + self.m_businessModel.get('contactEmail') + ',pass=' + self.m_businessModel.get('newAccPassword');
+                            credentials = $.base64.encode(credentials);
+                            credentials = credentials.replace(/=/,'');
+                            var url = BB.Pepper.getStudioDashURL(credentials);
+                            $(location).attr('href', url);
+                        }, self.m_loadTimer);
+                        break;
+
+                    } else {
+
+                        // in private server / hybrid servers use StudioEnterprise
+                        msg = msg + '...';
+                        if (BB.APPS_SUPPORT == BB.CONSTS.OS_FLASH) {
+                            setTimeout(function () {
+                                // if logged out during timer, don't redirect app
+                                if (self.m_loggedOut)
+                                    return;
+                                Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDesk', {trigger: true});
+                            }, self.m_loadTimer);
+                        } else {
+                            setTimeout(function () {
+                                // if logged out during timer, don't redirect app
+                                if (self.m_loggedOut)
+                                    return;
+                                var os = platform.os.family;
+                                var re = os.match(new RegExp('windows', "ig"));
+                                if (_.isNull(re)){
+                                    Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                                } else {
+                                    // Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlash', {trigger: true});
+                                    Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectWebOrDeskNoFlashWin', {trigger: true});
+                                }
+                            }, self.m_loadTimer);
+                        }
+                        break;
+                    }
+                    break;
+                }
+
                 case BB.CONSTS.STUDIO_PRO:
                 {
                     msg = msg + '...';
