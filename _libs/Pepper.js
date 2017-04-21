@@ -316,7 +316,7 @@ Pepper.prototype = {
      **/
     getStudioLiteURL: function () {
         if (BB.globs['MEDIA_CLOUD']) {
-            // legacy version 'https://secure.digitalsignage.com/_studiolite-dist/studiolite.html'; 
+            // return 'https://secure.digitalsignage.com/_studiolite-dist/studiolite.html';
             return 'https://secure.digitalsignage.com/studioweb/index.html';
         } else {
             return window.g_protocol + window.g_masterDomain + '/_studiolite-dist/studiolite.html';

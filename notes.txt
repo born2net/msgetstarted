@@ -10,4 +10,8 @@ msGetStarted local
 ftp dev:
 	C:\msweb\msgetstarted > /var/www/sites/gsignage.com/htdocs3
 	http://gsignage.com/
+
+release:
+    gulp release
+
 	
