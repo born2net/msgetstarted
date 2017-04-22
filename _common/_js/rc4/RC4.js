@@ -160,6 +160,4 @@ RC4.prototype = {
         }
     }
 }
-
-
-
+module.exports = RC4;

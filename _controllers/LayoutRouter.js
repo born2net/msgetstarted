@@ -5,8 +5,9 @@
  @constructor
  @return {Object} instantiated AppRouter
  **/
-define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'WebDeskSelectNoFlashWinView', 'VerifyEmailView', 'NavigationView'],
-    function (_, $, Backbone, text, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, WebDeskSelectNoFlashWinView, VerifyEmailView, NavigationView) {
+
+define(['underscore', 'jquery', 'backbone', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'WebDeskSelectNoFlashWinView', 'VerifyEmailView', 'NavigationView'],
+    function (_, $, Backbone, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, WebDeskSelectNoFlashWinView, VerifyEmailView, NavigationView) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -27,6 +28,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              @method initialize
              **/
             initialize: function () {
+
                 var self = this;
                 BB.comBroker.setService(BB.SERVICES['LAYOUT_ROUTER'], self);
                 BB.comBroker.setService('XDATE', new XDate());
@@ -71,11 +73,13 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             },
 
             _logout: function () {
+
                 var self = this;
                 BB.comBroker.getService(BB.SERVICES.NAVIGATION_VIEW).logUserOut();
             },
 
             _routeStart: function () {
+
                 this.navigate('authenticate/_/_', {trigger: true});
             },
 
@@ -86,6 +90,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              @param {String} i_pass
              **/
             _routeAuthenticate: function (i_user, i_pass) {
+
                 this.m_appAuth.authenticate(i_user, i_pass);
             },
 
@@ -137,6 +142,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
              **/
             _routeUnauthenticated: function () {
                 var self = this;
+
                 self.m_appEntryFaderView.selectView(this.m_loginView);
             },
 
@@ -290,6 +296,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
                 this.m_appAuth = new AppAuth();
 
+
                 this.m_appEntryFaderView = new AppEntryFaderView({
                     el: Elements.APP_ENTRY,
                     duration: 500
@@ -301,10 +308,11 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
 
                 this.m_appSelectorView = new AppSelectorView({
                     //el: Elements.APP_SELECTOR,
-                    el: Elements.APP_REDIRECT,
+                    el: '#appRedirect',
                     stackView: this.m_appEntryFaderView,
                     duration: 650
                 });
+
 
                 this.m_appContentMailWaspFaderView = new AppContentFaderView({
                     el: Elements.APP_MAILWASP_CONTENT,
@@ -419,6 +427,7 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
                 });
 
                 this.m_appEntryFaderView.addView(this.m_appSelectorView);
+
                 this.m_appEntryFaderView.addView(this.m_signagePlayerView);
                 this.m_appEntryFaderView.addView(this.m_createAccView);
                 this.m_appEntryFaderView.addView(this.m_directDownloadView);
@@ -475,10 +484,11 @@ define(['underscore', 'jquery', 'backbone', 'text', 'AppAuth', 'AppEntryFaderVie
             _updateLayout: function () {
                 var self = BB.comBroker.getService(BB.SERVICES['LAYOUT_ROUTER']);
                 var b = $('body');
+
+
                 self._appHeight = parseInt(b.css('height').replace('px', ''));
                 self._appWidth = parseInt(b.css('width').replace('px', ''));
                 var h = self._appHeight - 115; // reduce footer
-
                 $(Elements.CLASS_APP_HEIGHT).height(h);
                 $(Elements.PROP_PANEL_WRAP).height(h);
                 $(Elements.MAIN_PANEL_WRAP).height(h);

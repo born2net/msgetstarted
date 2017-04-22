@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated ChangeBusinessView
  **/
-define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backbone, backbonestickit, bootbox) {
+define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], function ($, Backbone, backbonestickit, bootbox, Elements) {
 
     var ChangeBusinessView = Backbone.View.extend({
 
@@ -60,4 +60,3 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
     return ChangeBusinessView;
 
 });
-

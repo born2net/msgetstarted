@@ -63,6 +63,13 @@ this means you can use gulp to run pre-compiled commands such as:
 - gulp local_server_dist
 - and you can add your own gulp commands to automate updates etc
 
+
+Development With WebpackV2.2.0
+----------------------------------------
+The webpack Dev is in development you can run it using
+- npm run build
+- npm run dev 
+
 Links
 -------------------------
 Visit landing page: http://dev.digitalsignage.com
@@ -70,5 +77,3 @@ Visit landing page: http://dev.digitalsignage.com
 License:
 ------------------------------------------------------------------------
 - GPL V3
-
-

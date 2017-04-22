@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated CreateAccountView
  **/
-define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backbone, backbonestickit, bootbox) {
+define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], function ($, Backbone, backbonestickit, bootbox, Elements) {
 
     var CreateAccountView = Backbone.View.extend({
 
@@ -127,4 +127,3 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox'], function ($, Backb
     return CreateAccountView;
 
 });
-

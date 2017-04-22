@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated ForgetPassView
  **/
-define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
+define(['jquery', 'backbone', 'bootbox', 'Elements'], function ($, Backbone, bootbox, Elements) {
 
     var ForgetPassView = Backbone.View.extend({
 
@@ -48,4 +48,3 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
     return ForgetPassView;
 
 });
-

@@ -1,4 +1,5 @@
 // elements
+var Elements={};
 Elements.DOM_ROOT = '#domRoot';
 Elements.IFRAME_STUDIOPRO = '#iFrameStudioPro';
 Elements.STUDIOPRO_INSERT = '#studioProInsert';
@@ -198,12 +199,10 @@ Elements.CLASS_SAMPLE_PREVIEW = '.samplePreview';
 Elements.CLASS_SAMPLE_ITEM = '.sampleItem';
 Elements.CLASS_PROD_SELECT_ACC = '.prodSelectAcc';
 
-/**
- List of all Elements / Classes of elements used in the DOM
- @class Elements
- @constructor
- **/
-function Elements() {
-};
-
-
+// /**
+//  List of all Elements / Classes of elements used in the DOM
+//  @class Elements
+//  @constructor
+//  **/
+// function Elements() {
+// };

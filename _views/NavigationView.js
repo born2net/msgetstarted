@@ -4,7 +4,7 @@
  @constructor
  @return {Object} instantiated FileMenu
  **/
-define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
+define(['jquery', 'backbone', 'bootbox', 'Elements'], function ($, Backbone, bootbox, Elements) {
 
     BB.SERVICES.NAVIGATION_VIEW = 'NavigationView';
 
@@ -130,4 +130,3 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
 
     return NavigationView;
 });
-

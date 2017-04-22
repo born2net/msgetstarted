@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated WebDeskSelectView
  **/
-define(['jquery', 'backbone', 'bootbox', 'platform'], function ($, Backbone, bootbox, platform) {
+define(['jquery', 'backbone', 'bootbox', 'platform', 'Elements'], function ($, Backbone, bootbox, platform, Elements) {
 
     var WebDeskSelectView = Backbone.View.extend({
 
