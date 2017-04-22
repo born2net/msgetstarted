@@ -33,8 +33,8 @@ module.exports = {
         ],
         alias: {
             'backbone': path.resolve(__dirname, '_common/_js/backbone/backbone.js'),
-            'backbone-controller': path.resolve(__dirname, '_common/_js/backbone-controller/backbone.controller.js'),
-            'backbone-stickit': path.resolve(__dirname, '_common/_js/backbone-stickit/backbone.stickit.js'),
+            'backbone.controller': path.resolve(__dirname, '_common/_js/backbone-controller/backbone.controller.js'),
+            'backbone.stickit': path.resolve(__dirname, '_common/_js/backbone-stickit/backbone.stickit.js'),
             'bootstrap': path.resolve(__dirname, '_common/_js/bootstrap/js/bootstrap'),
             'Lib': path.resolve(__dirname, '_libs/Lib'),
             'bootbox': path.resolve(__dirname, '_common/_js/bootbox/bootbox'),
