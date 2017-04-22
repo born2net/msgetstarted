@@ -32,6 +32,7 @@ module.exports = {
             'node_modules', '.'
         ],
         alias: {
+
             'backbone': path.resolve(__dirname, '_common/_js/backbone/backbone.js'),
             'backbone.controller': path.resolve(__dirname, '_common/_js/backbone-controller/backbone.controller.js'),
             'backbone.stickit': path.resolve(__dirname, '_common/_js/backbone-stickit/backbone.stickit.js'),
