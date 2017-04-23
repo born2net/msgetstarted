@@ -155,6 +155,7 @@ var injectBranding = ()=> {
         silent: false
     });
 
+    
     replace({
         regex: "\/\/ START_CLOUD[^]+\/\/ END_CLOUD",
         replacement: `\/\/ START_CLOUD\n\t\t\t\t BB.globs\['CLOUD'\] = ${whiteLabel['mediaCloud']} \n\t\t\t\t\/\/ END_CLOUD`,
