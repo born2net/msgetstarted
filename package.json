@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "node ./express.js",
-    "build": "webpack -p && node express.js",
+    "build": "rimraf _dist && webpack -p && cp -R _assets _dist && cp -R _common _dist && cp -R _templates _dist && cp style.css _dist && node express.js",
     "dev": "webpack-dev-server --debug --devtool source-map --progress --colors --open"
   },
   "author": "Sean Levy",
@@ -25,6 +25,7 @@
     "gulp-bump": "^2.1.0",
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.7",
+    "html-webpack-plugin": "^2.28.0",
     "imports-loader": "^0.7.1",
     "null-loader": "^0.1.1",
     "opn": "^4.0.1",

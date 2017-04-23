@@ -1,0 +1,1729 @@
+@import url("_common/_js/bootstrap/css/bootstrap-glyphicons.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+/************************************
+ StudioLite CSS tags styling
+ ************************************/
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url("https://fonts.gstatic.com/s/robotocondensed/v12/Zd2E9abXLFGSr9G3YK2MsDR-eWpsHSw83BRsAQElGgc.ttf") format('truetype');
+}
+
+@media (min-width: 1000px) {
+    #studioIcon1 {
+        padding: 100px;
+    }
+
+    #studioIcon2 {
+        padding: 100px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #ffffff;
+}
+
+iframe {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 99% !important;
+}
+
+.minPaddingProdSelector {
+    padding: 1px;
+}
+
+.btn {
+    font-size: 12px;
+}
+
+.roboHeader {
+    color: #555;
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 300;
+    font-family: Roboto  font-style: normal;
+    font-size: 2em;
+    text-align: center;
+}
+.roboHeadline {
+    color: #555;
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 400;
+    font-family: Roboto  font-style: normal;
+    font-size: 1.5em;
+}
+
+.robotoMini {
+    color: #555;
+    font: normal 12px "Roboto", arial, sans-serif;
+    font-weight: 400;
+    font-family: Roboto  font-style: normal;
+}
+
+.robotoMajotHeader {
+    color: #555;
+    font: normal 58px "Roboto";
+    font-weight: 100;
+    font-family: Roboto  font-style: normal;
+}
+
+.robotoMediumHeader {
+    color: #555;
+    font: normal 38px "Roboto";
+    font-weight: 100;
+    font-family: Roboto  font-style: normal;
+}
+
+
+.roboContent {
+    color: #555;
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 300;
+    font-family: Roboto  font-style: normal;
+    font-size: 0.9em;
+}
+
+* {
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+i.fa {
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: 'Jolly Lodger';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Jolly Lodger'), local('JollyLodger'), url(https://themes.googleusercontent.com/static/fonts/jollylodger/v1/RX8HnkBgaEKQSHQyP9itiaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Lobster Two';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Lobster Two'), local('LobsterTwo'), url(https://themes.googleusercontent.com/static/fonts/lobstertwo/v5/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.navbar-inverse {
+    background-color: #333333;
+}
+
+.studioSelect {
+    border: solid 1px gray;
+    text-align: center;
+    height: 100px;
+    cursor: pointer;
+    background-color: #e3e3e3;
+}
+
+.studioSelect:hover {
+    background-color: #d8d8d8;
+}
+
+.sampleItem {
+    cursor: pointer;
+}
+
+#myCarousel .item {
+    margin-left: 50px;
+    height: 300px;
+}
+
+.sampleItem:hover {
+    background-color: #e7e7e7;
+}
+
+.samplePreview {
+    /* background-color: red; */
+    opacity: 0.7;
+    width: 130px;
+    padding: 0;
+    margin: 0;
+}
+
+.samplePreview:hover {
+    opacity: 1;
+}
+
+.sampleIcon {
+    opacity: 0.65;
+}
+
+.logo_holder {
+    float: left;
+    height: auto;
+    margin-top: 7px;
+    padding: 0;
+}
+
+.carouseItemIcon {
+    color: #0086b3;
+    font-size: 1.5em !important;
+}
+
+.carouselHeaderContainer {
+    position: relative;
+    top: -20px;
+}
+
+#logo {
+    float: left;
+    /*width: 170px;*/
+    width: 60px;
+    /*height:66px;*/
+    height: 50px;
+    /*padding-top:15px;*/
+    padding-top: 3px;
+    margin-left: 6px;
+    margin-right: 2px;
+}
+
+#logo p {
+    font-size: 10px;
+    color: #FFF;
+}
+
+#logo p span {
+    color: #F00;
+}
+
+.logo_text {
+    float: left;
+    position: relative;
+    top: -12px;
+}
+
+.logo_text h1 {
+
+    font: normal 15px "Roboto", arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 0px;
+    line-height: 28px;
+
+    /*font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size:22px;
+    letter-spacing: -1px;
+    color:white;
+    margin-bottom:0px;
+    line-height:28px;*/
+}
+
+.logo_text p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0.2px;
+    margin-bottom: 0px;
+}
+
+.logo_text p span {
+    color: #ff0000;
+    font-size: 12px;
+}
+
+aside > aside > div > ul > li {
+    display: block;
+    width: 100px;
+    list-style: none;
+    height: 60px;
+    float: left;
+    background: #E2E2E2;
+    border: 1px solid #666;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#openStudioProWeb {
+    cursor: pointer;
+}
+
+#rememberMeLabel {
+    float: left;
+    font-size: 11px;
+}
+
+#loginButton {
+    width: 300px;
+    height: 44px;
+}
+
+#forgetPassButton {
+    margin-top: 3px;
+}
+
+#newBusinessButton {
+    margin-top: 3px;
+}
+
+#changePassButton {
+    margin-top: 3px;
+}
+
+#renameBusinessButton {
+    margin-top: 3px;
+}
+
+#createAccountInfoButton {
+    margin-top: 3px;
+}
+
+#or {
+    font-size: 16px;
+    color: #939393;
+    font-weight: bold;
+}
+
+#loginExtras {
+    float: right;
+    font-size: 11px;
+    opacity: 0.4;
+    text-align: right;
+    position: relative;
+    right: -3px;
+    top: 3px;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.img-resp {
+    display: block;
+}
+
+#studioProWeb:hover {
+    opacity: 0.9;
+}
+
+/************************************
+ StudioLite CSS element styling
+ ************************************/
+
+/* Wrapper for page content to push down footer */
+#domRoot {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px; /* respective of footer */
+    padding: 0 0 60px; /* respective of footer */
+}
+
+/* Wrapper to push down from header */
+#headerPad {
+    background-color: #428bca;
+    min-height: 55px;
+}
+
+#mainPanelWrap {
+    border-right: 2px solid #aaaaaa;
+    /* background-color: darksalmon; */
+}
+
+#propPanel, #mainPanelWrap {
+    height: 200px;
+    /* border-left: 1px #808080 solid; */
+    -webkit-transition: width 0.1s ease, margin 0.1s ease;
+    -moz-transition: width 0.1s ease, margin 0.1s ease;
+    -o-transition: width 0.1s ease, margin 0.1s ease;
+    transition: width 0.1s ease, margin 0.1s ease;
+}
+
+#campaignPanel {
+    overflow-y: scroll;
+    height: auto;
+    /* background-color: orange; */
+}
+
+#resolutionSelector {
+    overflow-y: scroll;
+}
+
+#propPanel {
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 15px;
+    /* overflow-y: scroll; */
+    width: 250px; /* properties panel width we have to work with to display all app props */
+    /* background-color: #fff5ba; */
+}
+
+#appEverNodesContent {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    /* background-color: pink; */
+}
+
+#footer {
+    height: 60px; /* respective of footer */
+    background-color: #222222;
+}
+
+#footerText {
+    color: #808080;
+    padding: 0px;
+    margin: 0px;
+}
+
+#appNavigatorEver {
+    padding: 0px;
+    margin: 0px;
+    border-right: 1px solid #dddddd;
+}
+
+#appNavigatorEver li {
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 0px;
+}
+
+#appNavigatorEver li:hover {
+    /*bootstrap theme color*/;
+    background-color: #428bca;
+    color: white;
+}
+
+#appNavigatorEver {
+    padding: 0px;
+    margin: 0px;
+    border-right: 1px solid #dddddd;
+}
+
+#appNavigatorEver li {
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 0px;
+}
+
+#appNavigatorEver li:hover {
+    /*bootstrap theme color*/;
+    background-color: #428bca;
+    color: white;
+}
+
+#appNavigatorWasp {
+    padding: 0px;
+    margin: 0px;
+    border-right: 1px solid #dddddd;
+}
+
+#appNavigatorWasp li {
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 0px;
+}
+
+#appNavigatorWasp li:hover {
+    /*bootstrap theme color*/;
+    background-color: #428bca;
+    color: white;
+}
+
+#appNavigatorWasp {
+    padding: 0px;
+    margin: 0px;
+    border-right: 1px solid #dddddd;
+}
+
+#appNavigatorWasp li {
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 0px;
+}
+
+#appNavigatorWasp li:hover {
+    /*bootstrap theme color*/;
+    background-color: #428bca;
+    color: white;
+}
+
+#waitScreenMainPanel span {
+    position: relative;
+    left: 45%;
+    top: 40%;
+}
+
+#screenLayoutList {
+    overflow-y: scroll;
+    height: 80%;
+}
+
+#popModal {
+    padding: 20px;
+}
+
+#openPopupProperties {
+    float: right;
+}
+
+#togglePanel {
+    position: absolute;
+    margin: 10px;
+    right: -5px;
+    top: -5px;
+    z-index: 1050;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 11px;
+    border-radius: 15px !important;
+}
+
+#campaignSelectionButtons {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#campaignProperties {
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#imgHorizontal {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#imgVertical {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#resourcesListView {
+    padding: 10px;
+}
+
+#fileRemove {
+    float: left;
+    margin-right: 30px;
+}
+
+#stationListView {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#stationRemove {
+    margin-top: 10px;
+}
+
+#stationAlert {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#stationPollSliderContainer {
+    padding-top: 30px;
+}
+
+#stationPollSliderText {
+    float: left;
+}
+
+#stationPollSliderWrap {
+    padding-left: 180px;
+    padding-right: 70px;
+}
+
+#stationPollLabel {
+    float: right;
+    position: relative;
+    top: -20px;
+}
+
+/************************************
+         Mail Wasp elements
+************************************/
+
+#mainPanelWrapWasp {
+    border-right: 2px solid #aaaaaa;
+    /* background-color: darksalmon; */
+}
+
+#propPanelWasp, #mainPanelWrapWasp {
+    height: 200px;
+    /* border-left: 1px #808080 solid; */
+    -webkit-transition: width 0.1s ease, margin 0.1s ease;
+    -moz-transition: width 0.1s ease, margin 0.1s ease;
+    -o-transition: width 0.1s ease, margin 0.1s ease;
+    transition: width 0.1s ease, margin 0.1s ease;
+}
+
+#resolutionSelectorWasp {
+    overflow-y: scroll;
+}
+
+#appMailWaspContent {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    /* background-color: pink; */
+}
+
+#screenLayoutListWasp {
+    overflow-y: scroll;
+    height: 80%;
+}
+
+#togglePanelWasp {
+    position: absolute;
+    margin: 10px;
+    width: 35px;
+    right: 30px;
+    top: 15px;
+    z-index: 110;
+}
+
+#campaignPropertiesWasp {
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#campaignSelectionButtonsWasp {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#imgHorizontalWasp {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#imgVerticalWasp {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#resourcesListViewWasp {
+    padding: 10px;
+}
+
+#stationListViewWasp {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#stationRemoveWasp {
+    margin-top: 10px;
+}
+
+#stationAlertWasp {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#stationPollSliderTextWasp {
+    float: left;
+}
+
+#stationPollSliderContainerWasp {
+    padding-top: 30px;
+}
+
+#stationPollSliderWrapWasp {
+    padding-left: 180px;
+    padding-right: 70px;
+}
+
+#stationPollLabelWasp {
+    float: right;
+    position: relative;
+    top: -20px;
+}
+
+.noScroll {
+    overflow: hidden;
+}
+
+.headerPropIcon {
+    position: fixed !important;
+    top: 0px !important;
+    color: #f5f5f5;
+    right: 50px !important;
+    z-index: 1500;
+    background-color: #151515;
+    float: right;
+    border: black;
+}
+
+.noTopBorder {
+    border-top: none;
+!important;
+}
+
+.yScroll {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.pushToTopButton {
+    margin-top: 30px;
+    width: 150px;
+}
+
+.appList {
+    padding-right: 10px;
+}
+
+.appList .openProps {
+    float: right;
+    position: relative;
+    top: -45px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.screenResolutionLabel {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.centerElement {
+    margin: 0 auto;
+}
+
+.navbar-nav {
+    display: block;
+}
+
+.centerElement {
+    margin: 0 auto;
+}
+
+.propControlWidth {
+    width: 180px;
+}
+
+.channelListItems {
+    cursor: pointer;
+}
+
+.alignTextLeft {
+    text-align: left;
+}
+
+.alignTextCenter {
+    text-align: center;
+}
+
+.navicons {
+    font-size: 1.2em;
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+}
+
+.gencons {
+    font-size: 1.2em;
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+}
+
+.activated {
+    background-color: #428bca;
+    color: white;
+}
+
+.whiteFont {
+    color: white;
+}
+
+.pricingContainer {
+    padding-top: 40px;
+}
+
+.price {
+    font-size: 25px;
+    float: left;
+}
+
+.pricing_header1 {
+    background: none repeat scroll 0% 0% rgb(0, 181, 255);
+    border-radius: 5px 5px 0px 0px;
+}
+
+.pricing_header2 {
+    background: none repeat scroll 0% 0% rgb(0, 121, 171);
+    border-radius: 5px 5px 0px 0px;
+}
+
+.pricing_header3 {
+    background: none repeat scroll 0% 0% rgb(0, 81, 115);
+    border-radius: 5px 5px 0px 0px;
+}
+
+.pricing_headerh2 {
+    text-align: center;
+    line-height: 25px;
+    padding: 15px 0px;
+    margin: 0px;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: white;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.btnPrice {
+    float: right;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+}
+
+.off {
+    text-decoration: line-through;
+    color: rgb(86, 86, 86);
+}
+
+.space {
+    height: 2px;
+    background-color: #75b1ae;
+}
+
+.tooltip-inner {
+    min-width: 150px;
+}
+
+/************************************
+ StackView styling
+ ************************************/
+
+.campaignSlider {
+    position: absolute;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    position: absolute;
+    padding: 12px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/************************************
+   StackView sliders
+/************************************
+
+/************************************
+ Hardware accelerated horizontal
+/************************************
+
+/*
+.page.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+.page.center {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.page.right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+.page.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+}
+*/
+
+/************************************
+ Software accelerated horizontal
+/************************************
+*/
+
+.page.left {
+    left: -100%;
+}
+
+.page.center {
+    left: 0;
+}
+
+.page.right {
+    left: 100%;
+}
+
+.page.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+}
+
+/************************************
+Software accelerated vertical
+/************************************
+
+/*
+.page.left {
+    top: -100%;
+}
+.page.center {
+    top: 0;
+}
+.page.right {
+    top: 100%;
+}
+.page.transition {
+    -webkit-transition-duration: 3.25s;
+    transition-duration: 0.65s;
+}
+*/
+
+/************************************
+ Hardware accelerated vertical
+/************************************
+
+/*
+.page.left {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+.page.center {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.page.right {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+.page.transition {
+    -webkit-transition-duration: 3.25s;
+    transition-duration: 3.25s;
+}
+*/
+
+/************************************
+ No UI Slider
+ ************************************/
+
+.noUi-target,
+.noUi-target * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-touch-action: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.noUi-base {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.noUi-origin {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.noUi-handle {
+    position: relative;
+    z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+    /* This class is applied to the lower origin when
+       its values is > 50%. */
+    z-index: 10;
+}
+
+.noUi-stacking + .noUi-origin {
+    /* Fix stacking order in IE7, which incorrectly
+       creates a new context for the origins. */
+    *z-index: -1;
+}
+
+.noUi-state-tap .noUi-origin {
+    -webkit-transition: left 0.3s, top 0.3s;
+    transition: left 0.3s, top 0.3s;
+}
+
+.noUi-state-drag * {
+    cursor: inherit !important;
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+    height: 18px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 34px;
+    height: 28px;
+    left: -17px;
+    top: -6px;
+}
+
+.noUi-horizontal.noUi-extended {
+    padding: 0 15px;
+}
+
+.noUi-horizontal.noUi-extended .noUi-origin {
+    right: -15px;
+}
+
+.noUi-vertical {
+    width: 18px;
+}
+
+.noUi-vertical .noUi-handle {
+    width: 28px;
+    height: 34px;
+    left: -6px;
+    top: -17px;
+}
+
+.noUi-vertical.noUi-extended {
+    padding: 15px 0;
+}
+
+.noUi-vertical.noUi-extended .noUi-origin {
+    bottom: -15px;
+}
+
+/* Styling;
+ */
+.noUi-background {
+    background: #428bca;
+    box-shadow: inset 0 1px 1px #f0f0f0;
+}
+
+.noUi-connect {
+    background: #3FB8AF;
+    box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+    -webkit-transition: background 450ms;
+    transition: background 450ms;
+}
+
+.noUi-origin {
+    border-radius: 2px;
+}
+
+.noUi-target {
+    border-radius: 4px;
+    border: 1px solid #D3D3D3;
+    box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+
+.noUi-target.noUi-connect {
+    box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB;
+}
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+    cursor: w-resize;
+}
+
+.noUi-vertical .noUi-dragable {
+    cursor: n-resize;
+}
+
+.noUi-handle {
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    background: #FFF;
+    cursor: default;
+    box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
+}
+
+.noUi-active {
+    box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 14px;
+    width: 1px;
+    background: #E8E7E6;
+    left: 14px;
+    top: 6px;
+}
+
+.noUi-handle:after {
+    left: 17px;
+}
+
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+    width: 14px;
+    height: 1px;
+    left: 6px;
+    top: 14px;
+}
+
+.noUi-vertical .noUi-handle:after {
+    top: 17px;
+}
+
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+    background: #B8B8B8;
+}
+
+[disabled] .noUi-handle {
+    cursor: not-allowed;
+}
+
+/* Blocked state;  */
+.noUi-state-blocked.noUi-connect,
+.noUi-state-blocked .noUi-connect {
+    background: #4FDACF;
+}
+
+.clearFloat {
+    clear: both;
+}
+
+.floatLeftWidth {
+    float: left;
+    width: 60px;
+}
+
+.hrThin {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/************************************
+ Font Selector / Formatter
+ ************************************/
+
+.fontFormatter {
+    float: left;
+    margin-left: 5px;
+}
+
+.fontAlignment {
+    float: left;
+    margin-left: 4px;
+    width: 33px;
+    position: relative;
+    top: -2px;
+    left: -15px;
+}
+
+.divPadding {
+    padding: 5px;
+}
+
+/************************************
+ fuelux
+ ************************************/
+
+.spinner .btn {
+    position: relative;
+    width: 20px;
+    height: 14px;
+    padding-top: 0;
+    padding-right: 9px;
+    padding-left: 9px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+!important;
+    border-bottom-left-radius: 0;
+!important;
+}
+
+.spinner .btn.disabled {
+    cursor: not-allowed;
+}
+
+i .spinner-buttons {
+    font-size: 0.9em;
+}
+
+.spinner .spinner-buttons {
+    position: relative;
+    left: -22px;
+    float: left;
+    width: 20px;
+    height: 28px;
+}
+
+.spinner .spinner-up {
+    top: 1px;
+    left: 1px;
+    padding: 0 0 4px 1px;
+}
+
+.spinner .spinner-up i {
+    position: relative;
+    top: -4px;
+}
+
+.spinner .spinner-down {
+    top: -1px;
+    height: 13px;
+    left: 1px;
+    padding: 0 0 4px 1px;
+}
+
+.spinner .spinner-down i {
+    position: relative;
+    top: -5px;
+}
+
+.input-mini {
+    width: 60px;
+    height: 26px;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px
+}
+
+.spinner input {
+    float: left;
+    width: 180px;
+}
+
+/************************************
+Language selector
+************************************/
+.dropdownlang dd, .dropdownlang dt, .dropdownlang ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdownlang dd {
+    position: relative;
+}
+
+.dropdownlang a, .dropdownlang a:visited {
+    color: #816c5b;
+    text-decoration: none;
+    outline: none;
+}
+
+.dropdownlang a:hover {
+    color: #5d4617;
+}
+
+.dropdownlang dt a:hover {
+    color: #5d4617;
+    border: 1px solid #d0c9af;
+}
+
+.dropdownlang dt a {
+    background: #e4dfcb url(_assets/arrow.png) no-repeat scroll right center;
+    display: block;
+    padding-right: 20px;
+    border: 1px solid #d4ca9a;
+    width: 300px;
+}
+
+.dropdownlang dt a span {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+}
+
+.dropdownlang dd ul {
+    background: #e4dfcb none repeat scroll 0 0;
+    border: 1px solid #d4ca9a;
+    color: #C5C0B0;
+    display: none;
+    left: 0px;
+    padding: 5px 0px;
+    position: absolute;
+    top: 2px;
+    width: auto;
+    min-width: 300px;
+    list-style: none;
+}
+
+.dropdownlang span.value {
+    display: none;
+}
+
+.dropdownlang dd ul li a {
+    padding: 5px;
+    display: block;
+}
+
+.dropdownlang dd ul li a:hover {
+    background-color: #d0c9af;
+}
+
+.dropdownlang img.flag {
+    border: none;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/************************************
+sample selector
+************************************/
+
+.panel > .list-group .list-group-item:first-child {
+    /*border-top: 1px solid rgb(204, 204, 204);*/
+}
+
+@media (max-width: 767px) {
+    .visible-xs {
+        display: inline-block !important;
+    }
+
+    .block {
+        display: block !important;
+        width: 100%;
+        height: 1px !important;
+    }
+}
+
+#back-to-bootsnipp {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.c-search > .form-control {
+    border-radius: 0px;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    font-size: 1.3em;
+    padding: 12px 12px;
+    height: 44px;
+    outline: none !important;
+}
+
+.c-search > .form-control:focus {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none;
+}
+
+.c-search > .input-group-btn .btn {
+    border-radius: 0px;
+    border-width: 0px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    height: 44px;
+}
+
+.c-list {
+    padding: 0px;
+    min-height: 44px;
+}
+
+.title {
+    display: inline-block;
+    font-size: 1.7em;
+    padding: 5px 15px;
+}
+
+ul.c-controls {
+    list-style: none;
+    margin: 0px;
+    min-height: 44px;
+}
+
+ul.c-controls li {
+    margin-top: 8px;
+    float: left;
+}
+
+ul.c-controls li a {
+    font-size: 1.7em;
+    padding: 11px 10px 6px;
+}
+
+ul.c-controls li a i {
+    min-width: 24px;
+    text-align: center;
+}
+
+ul.c-controls li a:hover {
+    background-color: rgba(51, 51, 51, 0.2);
+}
+
+.c-toggle {
+    font-size: 1.7em;
+}
+
+.name {
+    font-size: 1.6em;
+    font-weight: 100;
+    padding-left: 11px;
+}
+
+.c-info {
+    padding: 5px 10px;
+    font-size: 1.25em;
+}
+
+.back i {
+    padding-top: 160px;
+    color: #c1c1c1;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 4em !important;
+}
+
+.backText {
+    font-size: 1.2em;
+    color: #bebebe;
+    position: relative;
+    top: -13px;
+    left: -6px;
+}
+
+.back {
+    opacity: 0.7;
+}
+
+.back:hover {
+    opacity: 1;
+}
+
+.startButtons {
+    padding: 10px;
+    font-size: 1.6em;
+}
+
+/************************************
+manual installation of StudioPro / AIR
+************************************/
+
+.ds-btn li {
+    list-style: none;
+    padding: 20px;
+}
+
+.ds-btn li a {
+    width: 300px;
+}
+
+.ds-btn li a i {
+    font-size: 2em;
+}
+
+.ds-btn li a span {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.6em;
+}
+
+.ds-btn li a span small {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+.airIconGlyphicon {
+    font-size: 2em;
+}
+
+.prodSelectAcc {
+    background-color: #818181 !important;
+    cursor: pointer;
+    color: #ffffff !important;
+}
+
+.selectSignageStudio {
+    color: #07141e !important;
+}
+
+.selectSignageStudio:hover {
+    color: #d9d9d9 !important;
+}
+
+.faHeader {
+    padding-right: 6px;
+}
+
+.panel-body {
+    background-color: #e5e5e5;
+}
+
+/************************************
+product selector
+************************************/
+
+div.clear {
+    clear: both;
+}
+
+div.product-chooser {
+
+}
+
+div.product-chooser.disabled div.product-chooser-item {
+    zoom: 1;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+div.product-chooser div.product-chooser-item {
+    padding: 11px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #efefef;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10x;
+}
+
+div.product-chooser div.product-chooser-item.selected {
+    border: 4px solid #428bca;
+    background: #efefef;
+    padding: 8px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+div.product-chooser div.product-chooser-item img {
+    padding: 0;
+}
+
+div.product-chooser div.product-chooser-item span.title {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+div.product-chooser div.product-chooser-item span.description {
+    font-size: 12px;
+}
+
+div.product-chooser div.product-chooser-item input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+}
+
+/************************************
+Studio / Player carousel
+************************************/
+
+#myCarousel .nav a small {
+    display: block;
+}
+
+#myCarousel .nav {
+    background: #eee;
+}
+
+#myCarousel .nav a {
+    border-radius: 0px;
+}
+
+#carouselItems i {
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.item {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.carousel * {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+}
+
+.carouselLargeHeader {
+    font-size: 3em !important;
+}
+
+.carouselLargeHeader2 {
+    font-size: 1.5em !important;
+}
+
+#videoModal .modal-dialog {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    background-color: black !important;
+}
+
+#videoModal .modal-content {
+    height: 100% !important;
+    border-radius: 0 !important;
+    background-color: black;
+}
+
+.navbar-logo {
+    float: left;
+    font-family: 'Audiowide', Roboto;
+    font-size: 23px;
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    line-height:18px;
+    position: relative;
+}
+
+.navbar-logo:before {
+    content: "";
+    background-image: url('http://www.digitalsignage.com/_images/logo.png');
+    width: 60px;
+    height: 39px;
+    background-size: 60px 39px;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+a.navbar-logo {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-logo .logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight:500;
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0px;
+    margin-bottom: 0px;
+    /* padding-top: 1px; */
+    word-spacing:0px;
+}
+
+.navbar-logo .logo span {
+    color: #ff0000;
+}
+
+
+.di {
+    color:#5f87e0;
+}
+.si{
+    color:#e17d1c;
+    margin-left: -8px;
+}
+.co{
+    color: #727272;
+    font-size: 12px;
+    margin-left: -8px;
+}
+
+.material-switch > input[type="checkbox"] {
+    display: none;
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative;
+    width: 40px;
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+

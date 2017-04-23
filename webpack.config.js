@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
+var HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, '.'),
@@ -15,10 +16,13 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({'$': 'jquery', 'jQuery': 'jquery', "window.jQuery": "jquery", 'jquery': 'jquery'}),
         new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),
-        new CompressionPlugin({asset: "[path].gz[query]", algorithm: "gzip", test: /\.js$|\.css$|\.html$/, threshold: 10240, minRatio: 0.8})
+        new CompressionPlugin({asset: "[path].gz[query]", algorithm: "gzip", test: /\.js$|\.css$|\.html$/, threshold: 10240, minRatio: 0.8}),
+        new HTMLWebpackPlugin({
+      template:'msgetstarted.html'
+    }),
     ],
     output: {
-        path: path.resolve(__dirname, 'bundleFiles'),
+        path: path.resolve(__dirname, '_dist'),
         filename: '[name].js'
     },
     resolveLoader: {

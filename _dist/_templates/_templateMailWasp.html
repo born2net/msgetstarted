@@ -1,0 +1,85 @@
+<div class="row">
+<div id="appNavigatorWasp" class="appHeight hidden-xs hidden-sm hidden-md col-lg-1">
+    <ul class="list-group">
+        <li class="campaignManagerWasp list-group-item"><i class="navicons fa fa-tasks"></i><span
+                data-localize="navCampaign">Campaigns</span>
+        <li class="resourcesPanelWasp list-group-item"><i class="navicons fa fa-certificate"></i><span
+                data-localize="navResources">Resources</span>
+        <li class="logoutPanel list-group-item"><i class="navicons fa fa-power-off"></i><span data-localize="navLogout">Logout</span>
+    </ul>
+</div>
+<div id="mainPanelWrapWasp" class="col-xs-12 col-sm-12 col-md-12 col-lg-11">
+<div id="campaignManagerViewWasp">
+    <div class="campaignSlider noScroll">
+        <div id="campaignSelectorWasp" class="page center">
+            <div class="yScroll">
+                <div id="campaignSelectionButtonsWasp" class="btn-group">
+                    <button id="newCampaignWasp" type="button" class="btn btn-default"><i style="font-size: 1em"
+                                                                                      class="fa fa-magic"></i> <span
+                            data-localize="campaign_wizard">new campaign wizard</span></button>
+                </div>
+                <div id="campaignSelectorListWasp" class="appList list-group"></div>
+            </div>
+        </div>
+        <div id="campaignNameSelectorWaspView" class="page right">
+            <button id="prev" type="button" class="openPropsButton btn btn-default btn-sm"><span
+                    class="glyphicon glyphicon-chevron-left"></span></button>
+            <button id="next" type="button" class="openPropsButton btn btn-default btn-sm"><span
+                    class="glyphicon glyphicon-chevron-right"></span></button>
+            <h3 data-localize="selectCampaignName">I am an example of a StackView Slider</h3>
+            <input id="newCampaignNameWasp" type="text" class="form-control" value="My campaign"
+                   placeholder="Enter new campaign name" data-localize="enterNewCompaignName">
+        </div>
+        <div id="orientationSelectorWasp" class="appHeight page right">
+            <button id="prev" type="button" class="openPropsButton btn btn-default btn-sm"><span
+                    class="glyphicon glyphicon-chevron-left"></span></button>
+            <h3 data-localize="screenOrientation">I am just another View</h3>
+
+            <div id="orientationViewWasp">
+                <table width="100%" border="0" cellspacing="0" cellpadding="50">
+                    <tr>
+                        <td align="center"><img class="img-responsive" id="imgHorizontalWasp"
+                                                src="_assets/orientationH.png"/></td>
+                        <td align="center"><img class="img-responsive" id="imgVerticalWasp"
+                                                src="_assets/orientationV.png"/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="resolutionSelectorWasp" class="page right">
+            <button id="prev" type="button" class="openPropsButton btn btn-default btn-sm"><span
+                    class="glyphicon glyphicon-chevron-left"></span></button>
+            <h3 data-localize="screenResolution">I am the last view</h3>
+
+            <div id="resolutionListWasp" class="list-group"></div>
+        </div>
+        <div id="screenLayoutSelectorWasp" class="page right">
+            <button id="prev" type="button" class="openPropsButton btn btn-default btn-sm"><span
+                    class="glyphicon glyphicon-chevron-left"></span></button>
+            <h3 data-localize="screenLayout">Select your screen layout</h3>
+
+            <div id="screenLayoutListWasp"></div>
+        </div>
+    </div>
+</div>
+<div id="resourcesPanelWasp" style="display: none">
+    <div id="resourcesListViewWasp">
+        <div id="filesWasp">
+            <div align="left">
+                <button id="fileRemoveWasp" type="button" class="btn btn-default"><span
+                        class="glyphicon glyphicon-remove"></span><span data-localize="remove"> remove </span></button>
+            </div>
+            <br/>
+
+            <div id="resourceLibListWrapWasp" class="yScroll">
+                <ul id="resourceLibListWasp" class="list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="logoutPanel" style="display: none">
+    <h5 data-localize="logout">logout</h5>
+</div>
+</div>
+</div>
