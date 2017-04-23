@@ -7,7 +7,7 @@ var HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     context: path.resolve(__dirname, '.'),
     entry: {
-        bundle: ['./init.js', './App.js']
+        bundle: ['babel-polyfill', './init.js', './App.js']
     },
     // amd: {
     //     jQuery: true
