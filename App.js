@@ -1,6 +1,6 @@
 /**
  MediaSignage Inc (c) open source digital signage project.
- Visit Github for license and docs: http://git.digitalsignage.com
+ Visit GitHub for license and docs: http://git.digitalsignage.com
  @class App
  @constructor
  @return {Object} instantiated App
