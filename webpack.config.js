@@ -11,7 +11,7 @@ module.exports = {
     // amd: {
     //     jQuery: true
     // },
-
+    devtool: "source-map",
     plugins: [
         new webpack.ProvidePlugin({'$': 'jquery', 'jQuery': 'jquery', "window.jQuery": "jquery", 'jquery': 'jquery'}),
         new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),

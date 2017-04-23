@@ -31,7 +31,7 @@ var whiteLabel = {
 var init = ()=> {
     console.log('would you like to setup branding?[Y/n]'.green);
     if (readlineSync.question('') == 'n') {
-        initServer();
+        // initServer();
     } else {
         authUser();
     }
@@ -196,21 +196,21 @@ var injectBranding = ()=> {
         silent: false
     });
 
-    initServer();
+    // initServer();
 }
 
-var initServer = ()=> {
-    var globs = {};
-    globs.IPLISTEN = '127.0.0.1';
-    globs.PORT_LISTEN_DIST = 8085;
-    var express = require('express');
-    var app = express();
-    app.use('/', express.static('bundleFiles'));
-    app.use(express.static(__dirname));
-    app.listen(globs.PORT_LISTEN_DIST, function () {
-        console.log('Now opening your browser to http://localhost:8085/msgetstarted.html'.yellow);
-    });
-    opn('http://localhost:8085/msgetstarted.html');
-}
+// var initServer = ()=> {
+//     var globs = {};
+//     globs.IPLISTEN = '127.0.0.1';
+//     globs.PORT_LISTEN_DIST = 8085;
+//     var express = require('express');
+//     var app = express();
+//     app.use('/', express.static('bundleFiles'));
+//     app.use(express.static(__dirname));
+//     app.listen(globs.PORT_LISTEN_DIST, function () {
+//         console.log('Now opening your browser to http://localhost:8085/msgetstarted.html'.yellow);
+//     });
+//     opn('http://localhost:8085/msgetstarted.html');
+// }
 
 init();

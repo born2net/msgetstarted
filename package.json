@@ -8,7 +8,7 @@
   "scripts": {
     "postinstall": "node ./express.js",
     "build": "webpack -p && node express.js",
-    "dev": "webpack-dev-server --progress --colors --open"
+    "dev": "webpack-dev-server --debug --devtool source-map --progress --colors --open"
   },
   "author": "Sean Levy",
   "license": "GPL V3 modified",
