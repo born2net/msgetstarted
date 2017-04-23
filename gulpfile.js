@@ -36,6 +36,27 @@ gulp.task('x_upload', function () {
     });
 });
 
+gulp.task('x_upload_development', function () {
+    var rsync = Rsync.build({
+        source: '/cygdrive/c/msweb/msgetstarted/_dist/',
+        destination: 'Sean@digitalsignage.com:/var/www/sites/gsignage.com/htdocs3',
+        exclude: ['*.bat', '*.iml', '.gitignore', 'gulpfile.js', '.git', '.idea', '.idea/', '_util']
+    });
+    rsync.set('progress');
+    rsync.flags('avz');
+    console.log('running the command ' + rsync.command());
+    rsync.output(
+        function (data) {
+            console.log('sync: ' + data);
+        }, function (data) {
+            console.log('sync: ' + data);
+        }
+    );
+    rsync.execute(function (error, stdout, stderr) {
+        console.log('completed ' + error + ' ' + stdout + ' ' + stderr)
+    });
+});
+
 gulp.task('x_replaceInitRoot', function (done) {
     replace({
         regex: 'baseUrl:"\/"',
