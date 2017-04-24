@@ -29,6 +29,8 @@ installing via npm:
 3. change directory ```cd msgetstarted```
 4. run the command: ```node ./start.js```
 5. follow the wizard's questions
+6. once you are ready for production run: ```npm run prod```
+7. upload the final ```_dist``` directory to your own web server
 
 
 Config
@@ -49,20 +51,7 @@ You can use any editor to change branding info manually:
 ```
 note that all of the above info will automatically popilate for you once you run the installtion and provide your crdentails
 
-Development
--------------------------
-This project is powered by the amazing gulp: https://github.com/gulpjs/gulp
-this means you can use gulp to run pre-compiled commands such as:
-- gulp local_server_dev
-- gulp local_server_dist
-- and you can add your own gulp commands to automate updates etc
-
-
-Development With WebpackV2.2.0
-----------------------------------------
-The webpack Dev is in development you can run it using
-- npm run build
-- npm run dev 
+  
 
 Links
 -------------------------
