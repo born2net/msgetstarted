@@ -24,11 +24,11 @@ video tutorial
 
 installing via npm:
 --------------------
-1. download and install nodejs from: ```https://nodejs.org/en/```
-2. run from the command line: git clone https://github.com/born2net/msgetstarted.git
+1. download and install nodejs from: https://nodejs.org
+2. run from the command line: ```git clone https://github.com/born2net/msgetstarted.git```
 3. change directory ```cd msgetstarted```
-3. run the command: ```node ./start.js```
-3. follow the wizard's questions
+4. run the command: ```node ./start.js```
+5. follow the wizard's questions
 
 
 Config
