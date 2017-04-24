@@ -14,6 +14,7 @@ var fetch = require('node-fetch');
 var colors = require('colors');
 var cheerio = require('cheerio');
 var replace = require("replace");
+var fs = require('fs');
 
 var whiteLabel = {
     logoLink: '',
@@ -28,7 +29,7 @@ var whiteLabel = {
     protocol: 'https://'
 }
 
-var init = ()=> {
+var init = () => {
     console.log('would you like to setup branding?[Y/n]'.green);
     if (readlineSync.question('') == 'n') {
         // initServer();
@@ -121,6 +122,8 @@ var loadResellerInfo = (i_resellerId) => {
                 }
             });
             injectBranding();
+            compile();
+
         }, function () {
         });
     }, function () {
@@ -129,7 +132,16 @@ var loadResellerInfo = (i_resellerId) => {
     });
 }
 
-var injectBranding = ()=> {
+var compile = () => {
+    console.log('please wait, compiling with webpack...');
+    var process = require('child_process');
+    process.exec('npm run dev', function (error, stdout, stderr) {
+        if (error)
+            console.log(error.code);
+    });
+}
+
+var injectBranding = () => {
     console.log(whiteLabel);
     replace({
         regex: "\/\/ START_REDIRECT[^]+\/\/ END_REDIRECT",
@@ -155,7 +167,7 @@ var injectBranding = ()=> {
         silent: false
     });
 
-    
+
     replace({
         regex: "\/\/ START_CLOUD[^]+\/\/ END_CLOUD",
         replacement: `\/\/ START_CLOUD\n\t\t\t\t BB.globs\['CLOUD'\] = ${whiteLabel['mediaCloud']} \n\t\t\t\t\/\/ END_CLOUD`,
