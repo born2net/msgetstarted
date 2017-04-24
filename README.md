@@ -3,7 +3,7 @@ DigitalSignage.com custom Get Started
 modify and brand the entire account creation process for DigitalSignage.com enterprise / resellers
 <h6>version 3.01</h6>
 
-Details
+details
 -----------------------------------------------------------------------------------------
 Enterprise / Resellers can have full control on how new users open and manage accounts on their own web site. The "GetStarted" wizard allows any JavaScript developer to change Studio, Template and Player selections during account creation as well as completely modify the open account process.
 The wizard consists of:
@@ -18,11 +18,11 @@ The wizard consists of:
  - Bootstrap Progressive layout
  - Developed with Backbone.js  
 
-video tutorial
+video tutorial:
 --------------------
 - Be sure to watch this video tutorial which will walk you through on how to host the entire "Get Started" app on your own web server: http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=msgetstarted
 
-installing via npm:
+installation:
 --------------------
 1. download and install nodejs from: https://nodejs.org
 2. run from the command line: ```git clone https://github.com/born2net/msgetstarted.git```
@@ -33,7 +33,7 @@ installing via npm:
 7. upload the final ```_dist``` directory to your own web server
 
 
-Config
+config
 -------------------------
 The entire enterprise configuration is generated and saved inside of:
 ```
@@ -53,10 +53,10 @@ note that all of the above info will automatically popilate for you once you run
 
   
 
-Links
+links
 -------------------------
 Visit landing page: http://dev.digitalsignage.com
 
-License:
+license:
 ------------------------------------------------------------------------
-- GPL V3
+- modified GPL V3
