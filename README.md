@@ -1,6 +1,6 @@
 DigitalSignage.com custom Get Started
 ====================================
-modify and brand the entire account creation process for DigitalSignage.com enterprise / resellers
+modify and brand the entire account creation process for http://www.DigitalSignage.com enterprise / reseller accounts
 <h6>version 3.01</h6>
 
 details
@@ -24,7 +24,7 @@ video tutorial:
 
 installation:
 --------------------
-1. download and install nodejs from: https://nodejs.org
+1. download and install nodejs & git from: https://nodejs.org and https://git-scm.com/downloads
 2. run from the command line: ```git clone https://github.com/born2net/msgetstarted.git```
 3. change directory ```cd msgetstarted```
 4. run the command: ```node ./start.js```
