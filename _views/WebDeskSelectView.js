@@ -34,7 +34,8 @@ define(['jquery', 'backbone', 'bootbox', 'platform', 'Elements'], function ($, B
                 var pass = self.m_businessModel.get('newAccPassword');
 
                 BB.Pepper.getStudioProURL(user, pass, BB.globs['MEDIA_CLOUD'], function (newRedirectUrl) {
-                    $(Elements.STUDIOPRO_INSERT).attr('src', newRedirectUrl);
+                    // $(Elements.STUDIOPRO_INSERT).attr('src', newRedirectUrl);
+                    window.location.replace(newRedirectUrl);
                 });
             })
         }
