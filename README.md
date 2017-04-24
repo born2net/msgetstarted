@@ -3,6 +3,10 @@ DigitalSignage.com custom Get Started
 modify and brand the entire account creation process for DigitalSignage.com enterprise / resellers
 <h6>version 2.24</h6>
 
+
+None webpack version (legacy)
+--------------------------
+
 Details
 -----------------------------------------------------------------------------------------
 Enterprise / Resellers can have full control on how new users open and manage accounts on their own web site. The "GetStarted" wizard allows any JavaScript developer to change Studio, Template and Player selections during account creation as well as completely modify the open account process.
