@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "node ./express.js",
-    "build": "rimraf _dist && webpack -p && cp -R _assets _dist && cp -R _common _dist && cp -R _templates _dist && cp style.css _dist && node express.js",
+    "prod": "rimraf _dist && webpack -p && cp -R _assets _dist && cp -R _common _dist && cp -R _libs _dist && cp -R _templates _dist && cp style.css _dist && cp _dist/index.html _dist/msgetstarted.html",
     "dev": "webpack-dev-server --debug --devtool source-map --progress --colors --open"
   },
   "author": "Sean Levy",

@@ -1636,10 +1636,10 @@ Studio / Player carousel
     line-height:18px;
     position: relative;
 }
-
+           
 .navbar-logo:before {
-    content: "";
-    background-image: url('http://www.digitalsignage.com/_images/logo.png');
+    content: "";               
+    background-image: url('https://secure.digitalsignage.com/msgetstarted/_assets/logo.png');
     width: 60px;
     height: 39px;
     background-size: 60px 39px;

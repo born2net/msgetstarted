@@ -61,7 +61,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             require(['LayoutRouter'], function (LayoutRouter) {
 
                 // START_REDIRECT
-                BB.CONSTS.REDIRECT = 'digitalsignage.com';
+                BB.CONSTS.REDIRECT = 'http://www.digitalsignage.com';
                 // END_REDIRECT
 
                 // START_RESELLER
