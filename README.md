@@ -24,13 +24,14 @@ video tutorial:
 
 installation:
 --------------------
-1. download and install nodejs & git from: https://nodejs.org and https://git-scm.com/downloads
-2. run from the command line: ```git clone https://github.com/born2net/msgetstarted.git```
-3. change directory ```cd msgetstarted```
-4. run the command: ```node ./start.js```
-5. follow the wizard's questions
-6. once you are ready for production run: ```npm run prod```
-7. upload the final ```_dist``` directory to your own web server
+- download and install nodejs: https://nodejs.org
+- download and install git: https://git-scm.com/downloads
+- run from the command line: ```git clone https://github.com/born2net/msgetstarted.git```
+- change directory ```cd msgetstarted```
+- install packages: ```npm install``` which will post execute for you ```node ./start.js```
+- follow the wizard's questions
+- once you are ready for production execute: ```npm run prod```
+- upload the final ```_dist``` directory to your own web server
 
 
 config
