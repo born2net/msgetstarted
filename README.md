@@ -49,7 +49,7 @@ You can use any editor to change branding info manually:
  BB.globs['CLOUD'] = true; // false if hosting in private server or hybrid server
  BB.globs['CHAT'] = 'URL_FOR_CHAT_SUPPORT';
 ```
-note that all of the above info will automatically popilate for you once you run the installtion and provide your crdentails
+note that all of the above data will automatically populate for you once you run the wizard and provide your credentials.
 
   
 
