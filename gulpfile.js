@@ -9,8 +9,15 @@ var runSequence = require('run-sequence');
 var replace = require('replace');
 var rimraf = require('rimraf');
 
+
+// go to :https://secure.digitalsignage.com/msgetstarted/
 gulp.task('release', function (done) {
     runSequence('x_npm_prod', 'x_upload', done);
+});
+
+// go to: https://secure.digitalsignage.com/msgetstarted/
+gulp.task('release_dev', function (done) {
+    runSequence('x_npm_prod', 'x_upload_dev', done);
 });
 
 gulp.task('x_upload', function () {
@@ -33,6 +40,28 @@ gulp.task('x_upload', function () {
         console.log('completed ' + error + ' ' + stdout + ' ' + stderr)
     });
 });
+
+gulp.task('x_upload_dev', function () {
+    var rsync = Rsync.build({
+        source: '/cygdrive/c/msweb/msgetstarted/_dist/',
+        destination: 'Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_msportal/_js/_node/_msgetstarted_dev',
+        exclude: ['*.bat', '*.iml', '.gitignore', 'gulpfile.js', '.git', '.idea', '.idea/', '_util']
+    });
+    rsync.set('progress');
+    rsync.flags('avz');
+    console.log('running the command ' + rsync.command());
+    rsync.output(
+        function (data) {
+            console.log('sync: ' + data);
+        }, function (data) {
+            console.log('sync: ' + data);
+        }
+    );
+    rsync.execute(function (error, stdout, stderr) {
+        console.log('completed ' + error + ' ' + stdout + ' ' + stderr)
+    });
+});
+
 
 gulp.task('x_npm_prod', shell.task([
     'npm run prod'
