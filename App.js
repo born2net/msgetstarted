@@ -5,13 +5,13 @@
  @constructor
  @return {Object} instantiated App
  **/
- var jquery = require('jquery');
+var jquery = require('jquery');
 define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder', 'BusinessModel', 'RC4'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder, BusinessModel, RC4) {
     var App = Backbone.Controller.extend({
 
         // app init
         initialize: function () {
-            console.log('msGetStarted version 3.02');
+            console.log('msGetStarted version 3.05');
             window.BB = Backbone;
             BB.globs = {};
             BB.SERVICES = {};
@@ -98,11 +98,11 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             // console.log('name: ' + platform.name + ' version: ' + platform.version + ' product: ' + platform.product + ' os: ' + platform.os);
 
             $(Elements.CLASS_SAMPLE_PREVIEW).hide();
-
-
             if (FlashDetect.installed || FlashDetect.versionAtLeast(13)) {
                 BB.APPS_SUPPORT = BB.CONSTS.OS_FLASH;
+                console.log('plugin installed');
             } else {
+                console.log('plugin not installed');
                 var os = BB.lib.getOS();
                 if (os == 'windows' || os == 'osx') {
                     BB.APPS_SUPPORT = BB.CONSTS.OS_DESK_NO_FLASH;

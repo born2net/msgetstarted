@@ -6,8 +6,8 @@
  @return {Object} instantiated AppRouter
  **/
 
-define(['underscore', 'jquery', 'backbone', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'WebDeskSelectNoFlashWinView', 'VerifyEmailView', 'NavigationView'],
-    function (_, $, Backbone, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, WebDeskSelectNoFlashWinView, VerifyEmailView, NavigationView) {
+define(['underscore', 'jquery', 'backbone', 'AppAuth', 'AppEntryFaderView', 'LoginView', 'AppContentFaderView', 'AppSelectorView', 'WaitView', 'bootbox', 'XDate', 'SignagePlayerView', 'CreateAccView', 'DirectDownloadView', 'RenameView', 'ChangePassView', 'ChangeBusinessView', 'ForgetPassView', 'StudioSelectView', 'StudioListView', 'AccountView', 'WebDeskSelectView', 'WebDeskSelectNoFlashView', 'WebDeskSelectNoFlashWinView', 'VerifyEmailView', 'NavigationView', 'platform'],
+    function (_, $, Backbone, AppAuth, AppEntryFaderView, LoginView, AppContentFaderView, AppSelectorView, WaitView, Bootbox, XDate, SignagePlayerView, CreateAccView, DirectDownloadView, RenameView, ChangePassView, ChangeBusinessView, ForgetPassView, StudioSelectView, StudioListView, AccountView, WebDeskSelectView, WebDeskSelectNoFlashView, WebDeskSelectNoFlashWinView, VerifyEmailView, NavigationView, platform) {
 
         BB.SERVICES.LAYOUT_ROUTER = 'LayoutRouter';
         BB.SERVICES.APP_CONTENT_MAILWASP_FADER_VIEW = 'AppContentMailWaspFaderView';
@@ -191,6 +191,8 @@ define(['underscore', 'jquery', 'backbone', 'AppAuth', 'AppEntryFaderView', 'Log
              @method _routeSelectWebOrDesktopNoFlash
              **/
             _routeSelectWebOrDesktopNoFlash: function () {
+                if (FlashDetect.installed && platform.name == 'Chrome')
+                    return Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectStudioDashboard', {trigger: true});
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectNoFlashView);
             },
 
@@ -199,6 +201,8 @@ define(['underscore', 'jquery', 'backbone', 'AppAuth', 'AppEntryFaderView', 'Log
              @method _routeSelectWebOrDesktopNoFlash
              **/
             _routeSelectWebOrDesktopNoFlashWin: function () {
+                if (FlashDetect.installed && platform.name == 'Chrome')
+                    return Backbone.comBroker.getService(Backbone.SERVICES.LAYOUT_ROUTER).navigate('selectStudioDashboard', {trigger: true});
                 this.m_appEntryFaderView.selectView(this.m_webDeskSelectNoFlashWinView);
             },
 
