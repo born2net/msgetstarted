@@ -1,1 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
+/_dist/**
+/_dist
+/_dist/*
+**.map

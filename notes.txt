@@ -1,17 +1,9 @@
-msGetStarted
-	http://www.digitalsignage.com/msgetstarted/msgetstarted.html#start
-msGetStarted WebDesk
-	http://www.digitalsignage.com/msgetstarted/msgetstarted.html#selectWebOrDesk
-msGetStarted debug (development)
-	http://gsignage.com/msgetstarted.html
-msGetStarted local
-	http://localhost:8080/msgetstarted/msgetstarted.html
+WebPack development:
+--------------------
+1. npm run dev
+2. open http://localhost:8080
 
-ftp dev:
-	C:\msweb\msgetstarted > /var/www/sites/gsignage.com/htdocs3
-	http://gsignage.com/
+WebPack production:
+--------------------
+1. gulp release
 
-release:
-    gulp release
-
-	

@@ -1,16 +1,17 @@
 /**
- App MediaSignage Inc (c) open source digital signage project.
- Visit Github for license and docs: http://git.digitalsignage.com
+ MediaSignage Inc (c) open source digital signage project.
+ Visit GitHub for license and docs: http://git.digitalsignage.com
  @class App
  @constructor
  @return {Object} instantiated App
  **/
-define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder', 'BusinessModel'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder, BusinessModel) {
+ var jquery = require('jquery');
+define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 'ComBroker', 'Lib', 'Pepper', 'Elements', 'bootbox', 'platform', 'flashdetect', 'placeholder', 'BusinessModel', 'RC4'], function (_, $, Backbone, Bootstrap, backbonecontroller, ComBroker, Lib, Pepper, Elements, bootbox, platform, flashdetect, placeholder, BusinessModel, RC4) {
     var App = Backbone.Controller.extend({
 
         // app init
         initialize: function () {
-            console.log('msGetStarted version 2.60');
+            console.log('msGetStarted version 3.02');
             window.BB = Backbone;
             BB.globs = {};
             BB.SERVICES = {};
@@ -60,7 +61,7 @@ define(['underscore', 'jquery', 'backbone', 'bootstrap', 'backbone.controller', 
             require(['LayoutRouter'], function (LayoutRouter) {
 
                 // START_REDIRECT
-                BB.CONSTS.REDIRECT = 'digitalsignage.com';
+                BB.CONSTS.REDIRECT = 'http://www.digitalsignage.com';
                 // END_REDIRECT
 
                 // START_RESELLER

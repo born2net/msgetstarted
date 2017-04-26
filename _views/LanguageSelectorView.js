@@ -4,7 +4,7 @@
  @constructor
  @return {Object} instantiated LanguageSelectorView
  **/
-define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer'], function ($, Backbone, simplestorage, bootbox, localizer) {
+define(['jquery', 'backbone', 'simplestorage', 'bootbox', 'localizer', 'Elements'], function ($, Backbone, simplestorage, bootbox, localizer, Elements) {
 
     BB.SERVICES.LANGUAGE_SELECTOR = 'LANGUAGE_SELECTOR';
 

@@ -7,7 +7,6 @@
 define(['jquery', 'backbone', 'StackView'], function ($, Backbone, StackView) {
 
     var AppContentFaderView = Backbone.StackView.Fader.extend({
-
         /**
          Constructor
          @method initialize

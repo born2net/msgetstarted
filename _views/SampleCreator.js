@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated SampleCreator
  **/
-define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html'], function ($, Backbone, videojs, templateSampleItem) {
+define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html', 'Elements'], function ($, Backbone, videojs, templateSampleItem, Elements) {
 
     var SampleCreator = Backbone.View.extend({
 
@@ -320,4 +320,3 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
     return SampleCreator;
 
 });
-

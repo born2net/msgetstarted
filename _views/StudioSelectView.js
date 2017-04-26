@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated StudioSelectView
  **/
-define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
+define(['jquery', 'backbone', 'bootbox', 'Elements'], function ($, Backbone, bootbox, Elements) {
 
     BB.SERVICES.STUDIO_SELECT_VIEW = 'StudioSelectView';
 
@@ -138,4 +138,3 @@ define(['jquery', 'backbone', 'bootbox'], function ($, Backbone, bootbox) {
     return StudioSelectView;
 
 });
-

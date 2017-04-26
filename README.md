@@ -1,9 +1,9 @@
 DigitalSignage.com custom Get Started
 ====================================
-modify and brand the entire account creation process for DigitalSignage.com enterprise / resellers
-<h6>version 2.24</h6>
+modify and brand the entire account creation process for http://www.DigitalSignage.com enterprise / reseller accounts
+<h6>version 3.01</h6>
 
-Details
+details
 -----------------------------------------------------------------------------------------
 Enterprise / Resellers can have full control on how new users open and manage accounts on their own web site. The "GetStarted" wizard allows any JavaScript developer to change Studio, Template and Player selections during account creation as well as completely modify the open account process.
 The wizard consists of:
@@ -18,26 +18,23 @@ The wizard consists of:
  - Bootstrap Progressive layout
  - Developed with Backbone.js  
 
-video tutorial
+video tutorial:
 --------------------
 - Be sure to watch this video tutorial which will walk you through on how to host the entire "Get Started" app on your own web server: http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=msgetstarted
 
-installing via npm:
+installation:
 --------------------
-```
-1. download and install node.js via: https://nodejs.org/en/
-2. run from the command line: npm install msGetStarted
-3. follow wizard questions
-```
+- download and install nodejs: https://nodejs.org
+- download and install git: https://git-scm.com/downloads
+- run from the command line: ```git clone https://github.com/born2net/msgetstarted.git```
+- change directory ```cd msgetstarted```
+- install packages: ```npm install``` which will post execute for you ```node ./start.js```
+- follow the wizard's questions
+- once you are ready for production execute: ```npm run prod```
+- upload the final ```_dist``` directory to your own web server
 
-to run the setup a second time or just re-launch the local test server:
-```
-. cd node_modules/msGetStarted
-. run local server via: node ./express.js
-. answer (n) when asked if to install branding
-```
 
-Config
+config
 -------------------------
 The entire enterprise configuration is generated and saved inside of:
 ```
@@ -53,22 +50,14 @@ You can use any editor to change branding info manually:
  BB.globs['CLOUD'] = true; // false if hosting in private server or hybrid server
  BB.globs['CHAT'] = 'URL_FOR_CHAT_SUPPORT';
 ```
-note that all of the above info will automatically popilate for you once you run the installtion and provide your crdentails
+note that all of the above data will automatically populate for you once you run the wizard and provide your credentials.
 
-Development
--------------------------
-This project is powered by the amazing gulp: https://github.com/gulpjs/gulp
-this means you can use gulp to run pre-compiled commands such as:
-- gulp local_server_dev
-- gulp local_server_dist
-- and you can add your own gulp commands to automate updates etc
+  
 
-Links
+links
 -------------------------
 Visit landing page: http://dev.digitalsignage.com
 
-License:
+license:
 ------------------------------------------------------------------------
-- GPL V3
-
-
+- modified GPL V3

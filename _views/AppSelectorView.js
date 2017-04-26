@@ -4,7 +4,7 @@
  @constructor
  @return {object} instantiated AppSelectorView
  **/
-define(['jquery', 'backbone', 'StackView', 'Base64', 'platform'], function ($, Backbone, StackView, Base64, platform) {
+define(['jquery', 'backbone', 'StackView', 'Base64', 'platform', 'Elements'], function ($, Backbone, StackView, Base64, platform, Elements) {
 
     BB.SERVICES.APP_SELECTOR = 'AppSelectorView';
 

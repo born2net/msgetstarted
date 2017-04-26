@@ -5,7 +5,7 @@
  @return {Object} instantiated AppAuth
  **/
 
-define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone, Cookie, RC4, bootbox) {
+define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox', 'Elements'], function ($, Backbone, Cookie, RC4, bootbox, Elements) {
 
     BB.SERVICES.APP_AUTH = 'AppAuth';
     BB.EVENTS.APP_LOGOUT = 'AppLogout';
@@ -211,5 +211,3 @@ define(['jquery', 'backbone', 'Cookie', 'RC4', 'bootbox'], function ($, Backbone
 
     return AppAuth;
 });
-
-

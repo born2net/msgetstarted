@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated StudioListView
  **/
-define(['jquery', 'backbone', 'SampleCreator'], function ($, Backbone, SampleCreator) {
+define(['jquery', 'backbone', 'SampleCreator', 'Elements'], function ($, Backbone, SampleCreator, Elements) {
 
     BB.CONSTS.STUDIO_LITE = 'STUDIO_LITE';
     BB.CONSTS.STUDIO_PRO = 'STUDIO_PRO';
@@ -63,4 +63,3 @@ define(['jquery', 'backbone', 'SampleCreator'], function ($, Backbone, SampleCre
     return StudioListView;
 
 });
-

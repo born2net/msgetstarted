@@ -5,7 +5,7 @@
  @constructor
  @return none instead instantiate derived classes
  **/
-define(['jquery', 'backbone', 'StackView'], function ($, Backbone, StackView) {
+define(['jquery', 'backbone', 'StackView', 'Elements'], function ($, Backbone, StackView, Elements) {
 
     /**
      EVent fired when a view is selected
@@ -35,9 +35,15 @@ define(['jquery', 'backbone', 'StackView'], function ($, Backbone, StackView) {
          **/
         addView: function (i_view) {
             i_view.$el.hide();
-            if (i_view.el==undefined)
+            var oid;
+            if (i_view.el==undefined){
                 log('')
-            var oid = i_view.el.id === '' ? i_view.cid : i_view.el.id;
+                oid = i_view.cid;
+              }else {
+                oid = i_view.el.id === '' ? i_view.cid : i_view.el.id;
+              }
+
+
             this.m_views[oid] = i_view;
             return oid;
         },

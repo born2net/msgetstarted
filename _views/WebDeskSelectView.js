@@ -3,7 +3,7 @@
  @constructor
  @return {Object} instantiated WebDeskSelectView
  **/
-define(['jquery', 'backbone', 'bootbox', 'platform'], function ($, Backbone, bootbox, platform) {
+define(['jquery', 'backbone', 'bootbox', 'platform', 'Elements'], function ($, Backbone, bootbox, platform, Elements) {
 
     var WebDeskSelectView = Backbone.View.extend({
 
@@ -34,7 +34,8 @@ define(['jquery', 'backbone', 'bootbox', 'platform'], function ($, Backbone, boo
                 var pass = self.m_businessModel.get('newAccPassword');
 
                 BB.Pepper.getStudioProURL(user, pass, BB.globs['MEDIA_CLOUD'], function (newRedirectUrl) {
-                    $(Elements.STUDIOPRO_INSERT).attr('src', newRedirectUrl);
+                    // $(Elements.STUDIOPRO_INSERT).attr('src', newRedirectUrl);
+                    window.location.replace(newRedirectUrl);
                 });
             })
         }
