@@ -7,3 +7,14 @@ WebPack production:
 --------------------
 1. gulp release
 
+
+dev:
+http://localhost:8080/#appSelector
+https://secure.digitalsignage.com/msgetstarted_dev/
+https://secure.digitalsignage.com/msgetstarted_dev/#selectWebOrDesk
+https://secure.digitalsignage.com/msgetstarted_dev/#selectWebOrDeskNoFlashWin
+
+
+production:
+https://secure.digitalsignage.com/msgetstarted/
+
