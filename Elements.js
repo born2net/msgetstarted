@@ -166,6 +166,7 @@ Elements.MSG_BOOTBOX_OLD_BROWSER = '#bootBoxOldBrowser';
 Elements.MSG_BOOTBOX_CHECK_EMAIL = '#bootBoxCheckEmail';
 Elements.MSG_BOOTBOX_COMPLETED = '#bootBoxCompleted';
 Elements.MSG_BOOTBOX_CANCEL_INVALID_EMAIL = '#bootBoxInvalidEmail';
+Elements.MSG_BOOTBOX_PHONE_TOO_SHORT = '#bootBoxPhoneTooShort';
 Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT = '#bootBoxPasswordTooShort';
 Elements.MSG_BOOTBOX_NO_FULL_NAME_PROVIDED = '#bootBoxNoFullNameProvided';
 Elements.MSG_BOOTBOX_BUSINESS_NAME_TOO_SHORT = '#bootBoxBusinessNameTooShort';

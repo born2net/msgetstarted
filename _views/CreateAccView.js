@@ -53,6 +53,10 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], functi
                     bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
                     return false;
                 }
+                if ((_.size(self.m_businessModel.get('workPhone')) < 4)) {
+                    bootbox.alert($(Elements.MSG_BOOTBOX_PHONE_TOO_SHORT).text());
+                    return false;
+                }
                 if (self.m_businessModel.get('newAccPassword') != self.m_businessModel.get('newAccPasswordConfirm')) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_NO_MATCH).text());
                     return false;
@@ -60,7 +64,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], functi
                 if (!BB.lib.validateAlphaNumeric(self.m_businessModel.get('newAccPassword'))) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_ALPHANUMERIC).text());
                     return false;
-                }
+                }        
 
                 BB.Pepper.createAccount(
                     BB.lib.cleanCharExtended(self.m_businessModel.get('businessName')),
@@ -86,7 +90,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], functi
                         } else {
                             self.m_businessModel.set('businessId', data.result);
                             self._verifyEmail();
-                        }
+                        }     
                     });
                 return false;
             });
@@ -104,7 +108,6 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], functi
                         var pass = self.m_businessModel.get('newAccPassword');
                         BB.comBroker.getService(BB.SERVICES.APP_AUTH).authenticate(user, pass);
                     }
-
                 });
             }, 3000);
         },
