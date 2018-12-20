@@ -443,6 +443,7 @@ Pepper.prototype = {
      **/
     getSampleList: function (i_callBack) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/getResellerTemplates.ashx?callback=?';
+        console.log('zzz ' + url);
         $.getJSON(url, function (data) {
             i_callBack(data);
         });

@@ -27,6 +27,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
         _initData: function(){
             var self = this;
             self.m_data = {
+                507527: 'Bar',
                 1019: 'Sushi Restaurant',
                 1029: 'food menu board',
                 1007: 'Home and Garden',
@@ -285,7 +286,18 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             var $ul = self.$('ul');
             var ul = $ul[0];
             BB.Pepper.getSampleList(function (data) {
+                // console.log(data);
                 for (var i in data['templates']) {
+                    if (data['templates'][i].name.match('simple')) {
+                        var newName = data['templates'][i].name.replace(/_simple/, '')
+                        data['templates'][i].name = newName + ' (simple)'
+                    } else if (data['templates'][i].name.match('touch')) {
+                        var newName = data['templates'][i].name.replace(/_touch/, '')
+                        data['templates'][i].name = newName + ' (touch)'
+                    } else {
+                        // data['templates'][i].name = data['templates'][i].name + ' (advanced mode)'
+                        data['templates'][i].name = data['templates'][i].name;
+                    }
                     var sample = data['templates'][i];
                     var sampleType = sample.lite;
                     if (accountType != sampleType)

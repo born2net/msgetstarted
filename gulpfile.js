@@ -23,7 +23,7 @@ gulp.task('release_dev', function (done) {
 gulp.task('x_upload', function () {
     var rsync = Rsync.build({
         source: '/cygdrive/c/msweb/msgetstarted/_dist/',
-        destination: 'Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_msportal/_js/_node/_msgetstarted',
+        destination: 'Sean@secure.digitalsignage.com:/var/www/sites/dynasite/htdocs/_msportal/_js/_node/_msgetstarted',
         exclude: ['*.bat', '*.iml', '.gitignore', 'gulpfile.js', '.git', '.idea', '.idea/', '_util']
     });
     rsync.set('progress');
@@ -41,10 +41,11 @@ gulp.task('x_upload', function () {
     });
 });
 
+// see: https://secure.digitalsignage.com/msgetstarted_dev
 gulp.task('x_upload_dev', function () {
     var rsync = Rsync.build({
         source: '/cygdrive/c/msweb/msgetstarted/_dist/',
-        destination: 'Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_msportal/_js/_node/_msgetstarted_dev',
+        destination: 'Sean@secure.digitalsignage.com:/var/www/sites/dynasite/htdocs/_msportal/_js/_node/_msgetstarted_dev',
         exclude: ['*.bat', '*.iml', '.gitignore', 'gulpfile.js', '.git', '.idea', '.idea/', '_util']
     });
     rsync.set('progress');
