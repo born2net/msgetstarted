@@ -181,6 +181,12 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
             i_fileName = i_fileName.replace(/ /ig, '');
             i_fileName = i_fileName.replace(/_/ig, '');
             i_fileName = i_fileName.replace(/-/ig, '');
+            i_fileName = i_fileName.replace(/|/ig, '');
+            i_fileName = i_fileName.replace(/\|/ig, '');
+            i_fileName = i_fileName.replace(/\\|/ig, '');
+            i_fileName = i_fileName.replace(/%/ig, '');
+            i_fileName = i_fileName.replace(/\%/ig, '');
+            i_fileName = i_fileName.replace(/["'()]/g,"");
             return i_fileName;
         },
 
@@ -198,7 +204,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
 
                 var videoName = $(this).attr('data-video');
                 videoName = self._cleanName(videoName);
-                // console.log(videoName);
+                console.log(videoName);
                 // var businessID  = $(this).attr('data-templateBusinessId');
                 self.m_videoPlayer.pause();
                 self._emptyVideos();
