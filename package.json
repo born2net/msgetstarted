@@ -47,7 +47,7 @@
     "connect-gzip-static": "^2.0.1",
     "exports-loader": "^0.6.4",
     "express": "^4.13.4",
-    "jquery": "^1.9.1",
+    "jquery": "^3.4.1",
     "live-server": "^1.0.0",
     "node-fetch": "^1.5.1",
     "opn": "^4.0.1",
