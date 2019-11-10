@@ -3,3 +3,6 @@
 /_dist
 /_dist/*
 **.map
+/.idea/
+/msgetstarted.iml
+/node_modules/

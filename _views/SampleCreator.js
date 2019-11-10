@@ -205,7 +205,8 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 var videoName = $(this).attr('data-video');
                 videoName = self._cleanName(videoName);
                 console.log(videoName);
-                // var businessID  = $(this).attr('data-templateBusinessId');
+                var businessID  = $(this).attr('data-templateBusinessId');
+                console.log(videoName + ' ' + businessID);
                 self.m_videoPlayer.pause();
                 self._emptyVideos();
                 self.m_videoIntro.find('video:nth-child(1)').append('<source src="http://videos.signage.me/samples/' + videoName + '.mp4" type="video/mp4"><source src="http://videos.signage.me/samples/' + videoName + '.webm" type="video/webm">');
