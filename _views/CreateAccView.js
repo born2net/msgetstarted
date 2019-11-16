@@ -53,10 +53,10 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], functi
                     bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_TOO_SHORT).text());
                     return false;
                 }
-                if ((_.size(self.m_businessModel.get('workPhone')) < 4)) {
-                    bootbox.alert($(Elements.MSG_BOOTBOX_PHONE_TOO_SHORT).text());
-                    return false;
-                }
+                // if ((_.size(self.m_businessModel.get('workPhone')) < 4)) {
+                //     bootbox.alert($(Elements.MSG_BOOTBOX_PHONE_TOO_SHORT).text());
+                //     return false;
+                // }
                 if (self.m_businessModel.get('newAccPassword') != self.m_businessModel.get('newAccPasswordConfirm')) {
                     bootbox.alert($(Elements.MSG_BOOTBOX_PASSWORD_NO_MATCH).text());
                     return false;
