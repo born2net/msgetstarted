@@ -33,7 +33,7 @@ define(['jquery', 'backbone', 'backbone.stickit', 'bootbox', 'Elements'], functi
 
         _listenCreateAccount: function () {
             var self = this;
-            console.log('create account v4');
+            console.log('create account v5');
             $(Elements.CREATE_ACCOUNT_INFO_BUTTON).on('click', function (e) {
                 bootbox.alert('Please be patient, creating account...');
                 e.preventDefault();
