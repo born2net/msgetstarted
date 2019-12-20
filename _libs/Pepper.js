@@ -363,6 +363,9 @@ Pepper.prototype = {
      @method createAccount
      @param {Function} i_callBack
      **/
+
+    // window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount&businessName=i_businessName&userName=i_userName&password=i_password&templateBusinessId=i_templateBusinessId&resellerId=i_resellerId&firstName=i_firstName&lastName=i_lastName&contactEmail=i_contactEmail&workPhone=i_workPhone&cellPhone=i_cellPhone&address=i_address&city=i_city&state=i_state&contry=i_contry&zipcode=i_zipcode&emailUpdates=i_newEmailUpdates&callback=?
+
     createAccount: function (i_businessName, i_userName, i_password, i_templateBusinessId, i_resellerId, i_firstName, i_lastName, i_contactEmail, i_workPhone, i_cellPhone, i_address, i_city, i_state, i_contry, i_zipcode, i_newEmailUpdates, i_callback) {
         var url = window.g_protocol + window.g_masterDomain + '/WebService/createNewAccount.ashx?command=CreateCustomerAccount'
         url += '&businessName=' + i_businessName;
