@@ -209,7 +209,7 @@ define(['jquery', 'backbone', 'video', 'text!_templates/_templateSampleItem.html
                 console.log(videoName + ' ' + businessID);
                 self.m_videoPlayer.pause();
                 self._emptyVideos();
-                self.m_videoIntro.find('video:nth-child(1)').append('<source src="http://videos.signage.me/samples/' + videoName + '.mp4" type="video/mp4"><source src="http://videos.signage.me/samples/' + videoName + '.webm" type="video/webm">');
+                self.m_videoIntro.find('video:nth-child(1)').append('<source src="https://www.digitalsignage.com/videos/samples/' + videoName + '.mp4" type="video/mp4"><source src="https://www.digitalsignage.com/videos/samples/' + videoName + '.webm" type="video/webm">');
                 self.m_videoPlayer.load();
                 self.m_videoIntro.width('768').height('432');
                 $('#videoModal').modal('show');
