@@ -49,7 +49,7 @@
     "express": "^4.13.4",
     "jquery": "^1.9.1",
     "live-server": "^1.0.0",
-    "node-fetch": "^1.5.1",
+    "node-fetch": "^2.6.1",
     "opn": "^4.0.1",
     "readline-sync": "^1.4.2",
     "replace": "^0.3.0",
